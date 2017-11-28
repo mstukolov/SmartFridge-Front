@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./style.css";
 import { Switch, Route } from "react-router-dom";
 
-import MenuAppBar from "../MenuAppBar";
-import ButtonAppBar from "../ButtonAppBar";
+import Header from "../Header";
+import Footer from "../Footer";
 import MainPage from "../../pages/Main";
 import TablePage from "../../pages/Table";
 
@@ -19,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <MenuAppBar />
+        <Header />
         <section>
           <Switch>
             <Route exact path="/" component={MainPage} />
@@ -28,7 +28,7 @@ class App extends Component {
           </Switch>
         </section>
 
-        <ButtonAppBar />
+        <Footer />
       </div>
     );
   }

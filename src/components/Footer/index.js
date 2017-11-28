@@ -29,7 +29,7 @@ const styles = theme => ({
  * @param       {[type]} props
  * @constructor
  */
-function ButtonAppBar(props) {
+function Footer(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
@@ -51,8 +51,8 @@ function ButtonAppBar(props) {
   );
 }
 
-ButtonAppBar.propTypes = {
+Footer.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(ButtonAppBar);
+export default withStyles(styles)(Footer);
