@@ -28,6 +28,10 @@ const styles = theme => ({
   }
 });
 
+/**
+ * Компонент верхней навигационной панели
+ * @extends Component
+ */
 class MenuAppBar extends React.Component {
   state = {
     auth: true,
@@ -35,24 +39,39 @@ class MenuAppBar extends React.Component {
     left: false
   };
 
+  // TODO: убрать - создано для скрытия иконки авторизации
   handleChange = (event, checked) => {
     this.setState({ auth: checked });
   };
 
+  /**
+   * Открытие меню авторизации
+   * @param  {SytheticEvent} event [description]
+   */
   handleMenu = event => {
     this.setState({ anchorEl: event.currentTarget });
   };
 
+  /**
+   * Обработка закрытия меню авторизации
+   */
   handleRequestClose = () => {
     this.setState({ anchorEl: null });
   };
 
+  /**
+   * Обработчик открытия/закрытия главного меню
+   */
   toggleDrawer = () => {
     this.setState({
       left: !this.state.left
     });
   };
 
+  /**
+   * render
+   * @return {ReactElement} разметка
+   */
   render() {
     const { classes } = this.props;
     const { auth, anchorEl } = this.state;

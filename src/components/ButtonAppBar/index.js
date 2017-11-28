@@ -24,6 +24,11 @@ const styles = theme => ({
   }
 });
 
+/**
+ * Нижняя навикационная панель
+ * @param       {[type]} props
+ * @constructor
+ */
 function ButtonAppBar(props) {
   const { classes } = props;
   return (

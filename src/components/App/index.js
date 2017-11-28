@@ -7,7 +7,15 @@ import ButtonAppBar from "../ButtonAppBar";
 import MainPage from "../../pages/Main";
 import TablePage from "../../pages/Table";
 
+/**
+ * Компонент приложения с базовой разметкой
+ * @extends Component
+ */
 class App extends Component {
+  /**
+   * render
+   * @return {ReactElement} разметка
+   */
   render() {
     return (
       <div className="App">
