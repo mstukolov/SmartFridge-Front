@@ -1,6 +1,6 @@
-import * as React from "react";
+import React, { Component } from "react";
 
-class MainPage extends React.Component {
+class MainPage extends Component {
   render() {
     return <div>MainPage</div>;
   }

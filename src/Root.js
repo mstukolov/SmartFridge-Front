@@ -1,8 +1,8 @@
-import * as React from "react";
-import App from "../App";
+import React, { Component } from "react";
+import App from "./components/App";
 import { BrowserRouter } from "react-router-dom";
 
-class Main extends React.Component {
+class Root extends Component {
   render() {
     return (
       <BrowserRouter>
@@ -12,4 +12,4 @@ class Main extends React.Component {
   }
 }
 
-export default Main;
+export default Root;
