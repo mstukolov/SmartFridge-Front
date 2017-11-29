@@ -13,8 +13,15 @@ import Switch from "material-ui/Switch";
 import { FormControlLabel, FormGroup } from "material-ui/Form";
 import Menu, { MenuItem } from "material-ui/Menu";
 import Drawer from "material-ui/Drawer";
+import { NavLink } from "react-router-dom";
 
 const styles = theme => ({
+  list: {
+    width: 250
+  },
+  listFull: {
+    width: "auto"
+  },
   root: {
     marginTop: 0,
     width: "100%"
@@ -90,7 +97,7 @@ class Header extends React.Component {
               <MenuIcon />
             </IconButton>
             <Typography type="title" color="inherit" className={classes.flex}>
-              Title
+              Coca Cola Smart Fridge
             </Typography>
             {auth && (
               <div>
@@ -127,27 +134,38 @@ class Header extends React.Component {
 
           <Drawer open={this.state.left} onRequestClose={this.toggleDrawer}>
             <div
+              className={classes.list}
               tabIndex={0}
               role="button"
               onClick={this.toggleDrawer}
               onKeyDown={this.toggleDrawer}
             >
-              mailFolderListItems
+              <MenuItem>
+                <NavLink to="/" activeClassName="selected">
+                  Главная
+                </NavLink>
+              </MenuItem>
+
+              <MenuItem>
+                <NavLink to="/schedule" activeClassName="selected">
+                  Schedule
+                </NavLink>
+              </MenuItem>
             </div>
           </Drawer>
         </AppBar>
-        <FormGroup>
+        {/* <FormGroup>
           <FormControlLabel
             control={
-              <Switch
-                checked={auth}
-                onChange={this.handleChange}
-                aria-label="LoginSwitch"
-              />
+          <Switch
+          checked={auth}
+          onChange={this.handleChange}
+          aria-label="LoginSwitch"
+          />
             }
             label={auth ? "Logout" : "Login"}
           />
-        </FormGroup>
+        </FormGroup> */}
       </div>
     );
   }

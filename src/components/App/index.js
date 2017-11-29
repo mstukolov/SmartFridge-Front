@@ -1,11 +1,19 @@
 import React, { Component } from "react";
-import "./style.css";
 import { Switch, Route } from "react-router-dom";
 
 import Header from "../Header";
 import Footer from "../Footer";
 import MainPage from "../../pages/Main";
-import TablePage from "../../pages/Table";
+import SchedulePage from "../../pages/Schedule";
+import injectSheet from "react-jss";
+
+const styles = {
+  container: {
+    height: "calc(100vh - 128px)",
+    padding: "16px",
+    boxSizing: "border-box"
+  }
+};
 
 /**
  * Компонент приложения с базовой разметкой
@@ -17,13 +25,15 @@ class App extends Component {
    * @return {ReactElement} разметка
    */
   render() {
+    const { classes } = this.props;
+
     return (
       <div className="App">
         <Header />
-        <section>
+        <section className={classes.container}>
           <Switch>
             <Route exact path="/" component={MainPage} />
-            <Route path="/table" component={TablePage} />
+            <Route path="/schedule" component={SchedulePage} />
             {/* <Route path="/schedule" component={Schedule} /> */}
           </Switch>
         </section>
@@ -34,4 +44,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default injectSheet(styles)(App);
