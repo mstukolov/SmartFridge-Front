@@ -23,6 +23,8 @@ import IconButton from "material-ui/IconButton";
 import Tooltip from "material-ui/Tooltip";
 import DeleteIcon from "material-ui-icons/Delete";
 import FilterListIcon from "material-ui-icons/FilterList";
+import { connect } from "react-redux";
+import { callAllFridges } from "../../AC";
 
 let counter = 0;
 /**
@@ -83,7 +85,7 @@ const columnData = [
     id: "front",
     numeric: true,
     disablePadding: false,
-    label: "Тип фронтальной панели)"
+    label: "Тип фронтальной панели"
   },
   {
     id: "completeness",
@@ -398,6 +400,13 @@ class EnhancedTable extends React.Component {
    * render
    * @return {ReactElement} разметка
    */
+
+  /**
+   * Делаем запрос всех устройств с сервера
+   */
+  componentDidMount() {
+    this.props.callAllFridges();
+  }
   render() {
     const { classes } = this.props;
     const { data, order, orderBy, selected, rowsPerPage, page } = this.state;
@@ -468,4 +477,12 @@ EnhancedTable.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(EnhancedTable);
+export default connect(
+  state => {
+    return {
+      fridges: state.fridges.collection,
+      loading: state.fridges.isLoading
+    };
+  },
+  { callAllFridges }
+)(withStyles(styles)(EnhancedTable));
