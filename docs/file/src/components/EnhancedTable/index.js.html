@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">src/components/EnhancedTable/index.js | coca-cola-smart-fridge</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Root.js~Root.html">Root</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-checkValidServiceWorker">checkValidServiceWorker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-register">register</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-registerValidSW">registerValidSW</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-unregister">unregister</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-isLocalhost">isLocalhost</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-app">components/App</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/App/index.js~App.html">App</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-styles">styles</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-enhancedtable">components/EnhancedTable</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/EnhancedTable/index.js~EnhancedTable.html">EnhancedTable</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/EnhancedTable/index.js~EnhancedTableHead.html">EnhancedTableHead</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-EnhancedTableToolbar">EnhancedTableToolbar</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createData">createData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-styles">styles</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toolbarStyles">toolbarStyles</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-columnData">columnData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-counter">counter</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-footer">components/Footer</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Footer">Footer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-styles">styles</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-header">components/Header</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Header/index.js~Header.html">Header</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-styles">styles</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#pages-main">pages/Main</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/pages/Main/index.js~MainPage.html">MainPage</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#pages-schedule">pages/Schedule</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/pages/Schedule/index.js~SchedulePage.html">SchedulePage</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/components/EnhancedTable/index.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/* eslint-disable flowtype/require-valid-file-annotation */
+/* eslint-disable react/no-multi-comp */
+
+import React from &quot;react&quot;;
+import classNames from &quot;classnames&quot;;
+import PropTypes from &quot;prop-types&quot;;
+import { withStyles } from &quot;material-ui/styles&quot;;
+import keycode from &quot;keycode&quot;;
+import Table, {
+  TableBody,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TablePagination,
+  TableRow,
+  TableSortLabel
+} from &quot;material-ui/Table&quot;;
+import Toolbar from &quot;material-ui/Toolbar&quot;;
+import Typography from &quot;material-ui/Typography&quot;;
+import Paper from &quot;material-ui/Paper&quot;;
+import Checkbox from &quot;material-ui/Checkbox&quot;;
+import IconButton from &quot;material-ui/IconButton&quot;;
+import Tooltip from &quot;material-ui/Tooltip&quot;;
+import DeleteIcon from &quot;material-ui-icons/Delete&quot;;
+import FilterListIcon from &quot;material-ui-icons/FilterList&quot;;
+
+let counter = 0;
+/**
+ * &#x421;&#x43E;&#x437;&#x434;&#x430;&#x435;&#x442; &#x44D;&#x43A;&#x437;&#x435;&#x43C;&#x43F;&#x43B;&#x44F;&#x440; &#x43E;&#x431;&#x43E;&#x440;&#x443;&#x434;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x434;&#x43B;&#x44F; &#x442;&#x430;&#x431;&#x43B;&#x438;&#x446;&#x44B;
+ * @param  {String} model                   &#x43C;&#x43E;&#x434;&#x435;&#x43B;&#x44C;
+ * @param  {String} serial                  &#x441;&#x435;&#x440;&#x438;&#x439;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440;
+ * @param  {String} type                    &#x442;&#x438;&#x43F;
+ * @param  {String} front                   &#x442;&#x438;&#x43F; &#x444;&#x440;&#x43E;&#x43D;&#x442;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x439; &#x43F;&#x43B;&#x43E;&#x441;&#x43A;&#x43E;&#x441;&#x442;&#x438;
+ * @param  {String} [completeness=&quot;&#x41F;&#x43E;&#x43B;&#x43D;&#x430;&#x44F;&quot;] &#x43A;&#x43E;&#x43C;&#x43F;&#x43B;&#x435;&#x43A;&#x442;&#x43D;&#x43E;&#x441;&#x442;&#x44C;
+ * @param  {Number} [cost=999999]           &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x44C;
+ * @param  {String} [location=&quot;&#x41C;&#x43E;&#x441;&#x43A;&#x432;&#x430;&quot;]     &#x440;&#x430;&#x441;&#x43F;&#x43E;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x435;
+ * @param  {Date}   [date=new               Date(]        &#x414;&#x430;&#x442;&#x430;
+ * @return {[type]}                         [description]
+ */
+function createData(
+  model,
+  serial,
+  type,
+  front,
+  completeness = &quot;&#x41F;&#x43E;&#x43B;&#x43D;&#x430;&#x44F;&quot;,
+  cost = 999999,
+  location = &quot;&#x41C;&#x43E;&#x441;&#x43A;&#x432;&#x430;&quot;,
+  date = new Date()
+) {
+  counter += 1;
+  return {
+    id: counter,
+    model,
+    serial,
+    type,
+    front,
+    completeness,
+    cost,
+    location,
+    date
+  };
+}
+
+/**
+ * &#x41D;&#x430;&#x431;&#x43E;&#x440; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445; &#x434;&#x43B;&#x44F; &#x437;&#x430;&#x433;&#x43E;&#x43B;&#x43E;&#x432;&#x43A;&#x43E;&#x432; &#x442;&#x430;&#x431;&#x43B;&#x438;&#x446;&#x44B;
+ * @type {Array}
+ */
+const columnData = [
+  {
+    id: &quot;model&quot;,
+    numeric: false,
+    disablePadding: true,
+    label: &quot;&#x41C;&#x43E;&#x434;&#x435;&#x43B;&#x44C;&quot;
+  },
+  {
+    id: &quot;serial&quot;,
+    numeric: true,
+    disablePadding: false,
+    label: &quot;&#x421;&#x435;&#x440;&#x438;&#x439;&#x43D;&#x44B;&#x439; &#x43D;&#x43E;&#x43C;&#x435;&#x440;&quot;
+  },
+  { id: &quot;type&quot;, numeric: true, disablePadding: false, label: &quot;&#x422;&#x438;&#x43F;&quot; },
+  {
+    id: &quot;front&quot;,
+    numeric: true,
+    disablePadding: false,
+    label: &quot;&#x422;&#x438;&#x43F; &#x444;&#x440;&#x43E;&#x43D;&#x442;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x439; &#x43F;&#x430;&#x43D;&#x435;&#x43B;&#x438;)&quot;
+  },
+  {
+    id: &quot;completeness&quot;,
+    numeric: true,
+    disablePadding: false,
+    label: &quot;&#x41A;&#x43E;&#x43C;&#x43F;&#x43B;&#x435;&#x43A;&#x442;&#x43D;&#x43E;&#x441;&#x442;&#x44C;&quot;
+  },
+  {
+    id: &quot;cost&quot;,
+    numeric: true,
+    disablePadding: false,
+    label: &quot;&#x421;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x44C;&quot;
+  },
+  {
+    id: &quot;location&quot;,
+    numeric: true,
+    disablePadding: false,
+    label: &quot;&#x41B;&#x43E;&#x43A;&#x430;&#x446;&#x438;&#x44F;&quot;
+  },
+  {
+    id: &quot;date&quot;,
+    numeric: true,
+    disablePadding: false,
+    label: &quot;&#x414;&#x430;&#x442;&#x430;&quot;
+  }
+];
+
+/**
+ * &#x41A;&#x43E;&#x43C;&#x43F;&#x43E;&#x43D;&#x435;&#x43D;&#x442; &#x448;&#x430;&#x43F;&#x43A;&#x438; &#x442;&#x430;&#x431;&#x43B;&#x438;&#x446;&#x44B;
+ * @extends React
+ */
+class EnhancedTableHead extends React.Component {
+  static propTypes = {
+    numSelected: PropTypes.number.isRequired,
+    onRequestSort: PropTypes.func.isRequired,
+    onSelectAllClick: PropTypes.func.isRequired,
+    order: PropTypes.string.isRequired,
+    orderBy: PropTypes.string.isRequired,
+    rowCount: PropTypes.number.isRequired
+  };
+  /**
+   * &#x41E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x447;&#x438;&#x43A; &#x441;&#x43E;&#x440;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x43A;&#x438; &#x432; &#x448;&#x430;&#x43F;&#x43A;&#x435; &#x442;&#x430;&#x431;&#x43B;&#x438;&#x446;&#x44B;
+   * @param  {String} property &#x43F;&#x43E;&#x43B;&#x435; &#x441;&#x43E;&#x440;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x43A;&#x438;
+   * @param  {SytheticEvent} event
+   */
+  createSortHandler = property =&gt; event =&gt; {
+    this.props.onRequestSort(event, property);
+  };
+  /**
+   * render
+   * @return {ReactElement} &#x440;&#x430;&#x437;&#x43C;&#x435;&#x442;&#x43A;&#x430;
+   */
+  render() {
+    const {
+      onSelectAllClick,
+      order,
+      orderBy,
+      numSelected,
+      rowCount
+    } = this.props;
+
+    return (
+      &lt;TableHead&gt;
+        &lt;TableRow&gt;
+          &lt;TableCell padding=&quot;checkbox&quot;&gt;
+            &lt;Checkbox
+              indeterminate={numSelected &gt; 0 &amp;&amp; numSelected &lt; rowCount}
+              checked={numSelected === rowCount}
+              onChange={onSelectAllClick}
+            /&gt;
+          &lt;/TableCell&gt;
+          {columnData.map(column =&gt; {
+            return (
+              &lt;TableCell
+                key={column.id}
+                numeric={column.numeric}
+                padding={column.disablePadding ? &quot;none&quot; : &quot;default&quot;}
+              &gt;
+                &lt;Tooltip
+                  title=&quot;&#x421;&#x43E;&#x440;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x43A;&#x430;&quot;
+                  placement={column.numeric ? &quot;bottom-end&quot; : &quot;bottom-start&quot;}
+                  enterDelay={300}
+                &gt;
+                  &lt;TableSortLabel
+                    active={orderBy === column.id}
+                    direction={order}
+                    onClick={this.createSortHandler(column.id)}
+                  &gt;
+                    {column.label}
+                  &lt;/TableSortLabel&gt;
+                &lt;/Tooltip&gt;
+              &lt;/TableCell&gt;
+            );
+          }, this)}
+        &lt;/TableRow&gt;
+      &lt;/TableHead&gt;
+    );
+  }
+}
+
+const toolbarStyles = theme =&gt; ({
+  root: {
+    paddingRight: 2
+  },
+  highlight:
+    theme.palette.type === &quot;light&quot;
+      ? {
+          color: theme.palette.secondary.A700,
+          backgroundColor: theme.palette.secondary.A100
+        }
+      : {
+          color: theme.palette.secondary.A100,
+          backgroundColor: theme.palette.secondary.A700
+        },
+  spacer: {
+    flex: &quot;1 1 100%&quot;
+  },
+  actions: {
+    color: theme.palette.text.secondary
+  },
+  title: {
+    flex: &quot;0 0 auto&quot;
+  }
+});
+
+/**
+ * &#x41F;&#x430;&#x43D;&#x435;&#x43B;&#x44C; &#x432;&#x44B;&#x431;&#x43E;&#x440;&#x430; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x439; (&#x432;&#x44B;&#x43F;&#x430;&#x434;&#x430;&#x435;&#x442; &#x43F;&#x440;&#x438; &#x43A;&#x43B;&#x438;&#x43A;&#x435; &#x43D;&#x430; &#x447;&#x435;&#x43A;&#x431;&#x43E;&#x43A;&#x441;)
+ * @param {[type]} props
+ * @return {ReactElement} &#x440;&#x430;&#x437;&#x43C;&#x435;&#x442;&#x43A;&#x430;
+ */
+let EnhancedTableToolbar = props =&gt; {
+  const { numSelected, classes } = props;
+
+  return (
+    &lt;Toolbar
+      className={classNames(classes.root, {
+        [classes.highlight]: numSelected &gt; 0
+      })}
+    &gt;
+      &lt;div className={classes.title}&gt;
+        {numSelected &gt; 0 ? (
+          &lt;Typography type=&quot;subheading&quot;&gt;
+            &#x412;&#x44B;&#x431;&#x440;&#x430;&#x43D;&#x43E; &#x443;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x441;&#x442;&#x432;: {numSelected}
+          &lt;/Typography&gt;
+        ) : (
+          &lt;Typography type=&quot;title&quot;&gt;&#x423;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x441;&#x442;&#x432;&#x430;&lt;/Typography&gt;
+        )}
+      &lt;/div&gt;
+      &lt;div className={classes.spacer} /&gt;
+      &lt;div className={classes.actions}&gt;
+        {numSelected &gt; 0 ? (
+          &lt;Tooltip title=&quot;&#x423;&#x434;&#x430;&#x43B;&#x438;&#x442;&#x44C;&quot;&gt;
+            &lt;IconButton aria-label=&quot;Delete&quot;&gt;
+              &lt;DeleteIcon /&gt;
+            &lt;/IconButton&gt;
+          &lt;/Tooltip&gt;
+        ) : (
+          &lt;Tooltip title=&quot;&#x424;&#x438;&#x43B;&#x44C;&#x442;&#x440;&#x44B;&quot;&gt;
+            &lt;IconButton aria-label=&quot;&#x424;&#x438;&#x43B;&#x44C;&#x442;&#x440;&#x44B;&quot;&gt;
+              &lt;FilterListIcon /&gt;
+            &lt;/IconButton&gt;
+          &lt;/Tooltip&gt;
+        )}
+      &lt;/div&gt;
+    &lt;/Toolbar&gt;
+  );
+};
+
+EnhancedTableToolbar.propTypes = {
+  classes: PropTypes.object.isRequired,
+  numSelected: PropTypes.number.isRequired
+};
+
+EnhancedTableToolbar = withStyles(toolbarStyles)(EnhancedTableToolbar);
+
+const styles = theme =&gt; ({
+  root: {
+    width: &quot;100%&quot;
+    // marginTop: theme.spacing.unit * 3
+  },
+  table: {
+    minWidth: 800
+  },
+  tableWrapper: {
+    overflowX: &quot;auto&quot;
+  }
+});
+
+/**
+ * &#x41A;&#x43E;&#x43C;&#x43F;&#x43E;&#x43D;&#x435;&#x43D;&#x442; &#x442;&#x430;&#x431;&#x43B;&#x438;&#x446;&#x44B;
+ * @extends React
+ */
+class EnhancedTable extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+
+    this.state = {
+      order: &quot;asc&quot;,
+      orderBy: &quot;model&quot;,
+      selected: [],
+      data: [
+        createData(&quot;Cupcake&quot;, 305, 3.7, 67, 4.3),
+        createData(&quot;Donut&quot;, 452, 25.0, 51, 4.9),
+        createData(&quot;Eclair&quot;, 262, 16.0, 24, 6.0),
+        createData(&quot;Frozen yoghurt&quot;, 159, 6.0, 24, 4.0),
+        createData(&quot;Gingerbread&quot;, 356, 16.0, 49, 3.9),
+        createData(&quot;Honeycomb&quot;, 408, 3.2, 87, 6.5),
+        createData(&quot;Ice cream sandwich&quot;, 237, 9.0, 37, 4.3),
+        createData(&quot;Jelly Bean&quot;, 375, 0.0, 94, 0.0),
+        createData(&quot;KitKat&quot;, 518, 26.0, 65, 7.0),
+        createData(&quot;Lollipop&quot;, 392, 0.2, 98, 0.0),
+        createData(&quot;Marshmallow&quot;, 318, 0, 81, 2.0),
+        createData(&quot;Nougat&quot;, 360, 19.0, 9, 37.0),
+        createData(&quot;Oreo&quot;, 437, 18.0, 63, 4.0)
+      ],
+      page: 0,
+      rowsPerPage: 5
+    };
+  }
+  /**
+   * &#x424;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x44F; &#x441;&#x43E;&#x440;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x43A;&#x438; &#x43F;&#x43E; &#x430;&#x43B;&#x444;&#x430;&#x432;&#x438;&#x442;&#x443;
+   * @param  {SytheticEvent} event    &#x441;&#x43E;&#x431;&#x44B;&#x442;&#x438;&#x435; react
+   * @param  {String} property        &#x43F;&#x440;&#x438;&#x437;&#x43D;&#x430;&#x43A; &#x441;&#x43E;&#x440;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x43A;&#x438;
+   * @return {ReactElement}           &#x440;&#x430;&#x437;&#x43C;&#x435;&#x442;&#x43A;&#x430;
+   */
+  handleRequestSort = (event, property) =&gt; {
+    const orderBy = property;
+    let order = &quot;desc&quot;;
+
+    if (this.state.orderBy === property &amp;&amp; this.state.order === &quot;desc&quot;) {
+      order = &quot;asc&quot;;
+    }
+
+    const data =
+      order === &quot;desc&quot;
+        ? this.state.data.sort((a, b) =&gt; (b[orderBy] &lt; a[orderBy] ? -1 : 1))
+        : this.state.data.sort((a, b) =&gt; (a[orderBy] &lt; b[orderBy] ? -1 : 1));
+
+    this.setState({ data, order, orderBy });
+  };
+
+  /**
+   * &#x412;&#x44B;&#x431;&#x43E;&#x440; &#x432;&#x441;&#x435;&#x445; &#x441;&#x442;&#x440;&#x43E;&#x43A;
+   * @param  {SytheticEvent} event    &#x441;&#x43E;&#x431;&#x44B;&#x442;&#x438;&#x435; react
+   * @param  {Boolean} checked        &#x43F;&#x440;&#x438;&#x437;&#x43D;&#x430;&#x43A; &#x432;&#x44B;&#x431;&#x43E;&#x440;&#x430; &#x432;&#x441;&#x435;&#x445; &#x43F;&#x443;&#x43D;&#x43A;&#x442;&#x43E;&#x432;
+   */
+  handleSelectAllClick = (event, checked) =&gt; {
+    if (checked) {
+      this.setState({ selected: this.state.data.map(n =&gt; n.id) });
+      return;
+    }
+    this.setState({ selected: [] });
+  };
+  /**
+   * &#x423;&#x43F;&#x440;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x441; &#x43A;&#x43B;&#x430;&#x432;&#x438;&#x430;&#x442;&#x443;&#x440;&#x44B;, &#x43A;&#x43B;&#x438;&#x43A; &#x43F;&#x440;&#x438; &#x43F;&#x43E;&#x43C;&#x43E;&#x449;&#x438; &#x43F;&#x440;&#x43E;&#x431;&#x435;&#x43B;&#x430;
+   * @param  {SynteticEvent} event &#x441;&#x43E;&#x431;&#x44B;&#x442;&#x438;&#x435; react
+   * @param  {String} id           &#x438;&#x434;&#x435;&#x43D;&#x442;&#x438;&#x444;&#x438;&#x43A;&#x430;&#x442;&#x43E;&#x440;
+   */
+  handleKeyDown = (event, id) =&gt; {
+    if (keycode(event) === &quot;space&quot;) {
+      this.handleClick(event, id);
+    }
+  };
+  /**
+   * &#x41E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x430; &#x43A;&#x43B;&#x438;&#x43A;&#x430;, &#x443;&#x441;&#x442;&#x430;&#x43D;&#x430;&#x432;&#x43B;&#x438;&#x432;&#x430;&#x435;&#x442;/&#x441;&#x43D;&#x438;&#x43C;&#x430;&#x435;&#x442; &#x432;&#x44B;&#x434;&#x435;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x441;&#x442;&#x440;&#x43E;&#x43A;&#x438;
+   * @param  {SynteticEvent} event &#x441;&#x43E;&#x431;&#x44B;&#x442;&#x438;&#x435; react
+   * @param  {String} id           &#x438;&#x434;&#x435;&#x43D;&#x442;&#x438;&#x444;&#x438;&#x43A;&#x430;&#x442;&#x43E;&#x440;
+   */
+  handleClick = (event, id) =&gt; {
+    const { selected } = this.state;
+    const selectedIndex = selected.indexOf(id);
+    let newSelected = [];
+
+    if (selectedIndex === -1) {
+      newSelected = newSelected.concat(selected, id);
+    } else if (selectedIndex === 0) {
+      newSelected = newSelected.concat(selected.slice(1));
+    } else if (selectedIndex === selected.length - 1) {
+      newSelected = newSelected.concat(selected.slice(0, -1));
+    } else if (selectedIndex &gt; 0) {
+      newSelected = newSelected.concat(
+        selected.slice(0, selectedIndex),
+        selected.slice(selectedIndex + 1)
+      );
+    }
+
+    this.setState({ selected: newSelected });
+  };
+
+  /**
+   * &#x41F;&#x435;&#x440;&#x435;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x441;&#x442;&#x440;&#x430;&#x43D;&#x438;&#x446;&#x44B; &#x432; &#x43F;&#x430;&#x433;&#x438;&#x43D;&#x430;&#x446;&#x438;&#x438; &#x442;&#x430;&#x431;&#x43B;&#x438;&#x446;&#x44B;
+   * @param  {SynteticEvent} event &#x441;&#x43E;&#x431;&#x44B;&#x442;&#x438;&#x435; react
+   * @param  {Number} page         &#x43D;&#x43E;&#x43C;&#x435;&#x440; &#x441;&#x442;&#x440;&#x430;&#x43D;&#x438;&#x446;&#x44B;
+   */
+  handleChangePage = (event, page) =&gt; {
+    this.setState({ page });
+  };
+  /**
+   * &#x423;&#x441;&#x442;&#x430;&#x43D;&#x430;&#x432;&#x43B;&#x438;&#x432;&#x430;&#x435;&#x442; &#x43A;&#x43E;&#x43B;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43E; &#x43E;&#x442;&#x43E;&#x431;&#x440;&#x430;&#x436;&#x430;&#x435;&#x43C;&#x44B;&#x445; &#x441;&#x442;&#x440;&#x43E;&#x43A; &#x43D;&#x430; &#x441;&#x442;&#x440;&#x430;&#x43D;&#x438;&#x446;&#x435;
+   * @param  {SynteticEvent} event &#x441;&#x43E;&#x431;&#x44B;&#x442;&#x438;&#x435; react
+   */
+  handleChangeRowsPerPage = event =&gt; {
+    this.setState({ rowsPerPage: event.target.value });
+  };
+  /**
+   * &#x41F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x44F;&#x435;&#x442;, &#x432;&#x44B;&#x431;&#x440;&#x430;&#x43D;&#x430; &#x43B;&#x438; &#x442;&#x435;&#x43A;&#x443;&#x449;&#x430;&#x44F; &#x441;&#x442;&#x440;&#x43E;&#x43A;&#x430;
+   * @param  {String}  id &#x438;&#x434;&#x435;&#x43D;&#x442;&#x438;&#x444;&#x438;&#x43A;&#x430;&#x442;&#x43E;&#x440; &#x442;&#x435;&#x43A;&#x443;&#x449;&#x435;&#x439; &#x441;&#x442;&#x440;&#x43E;&#x43A;&#x438;
+   * @return {Boolean}
+   */
+  isSelected = id =&gt; this.state.selected.indexOf(id) !== -1;
+  /**
+   * render
+   * @return {ReactElement} &#x440;&#x430;&#x437;&#x43C;&#x435;&#x442;&#x43A;&#x430;
+   */
+  render() {
+    const { classes } = this.props;
+    const { data, order, orderBy, selected, rowsPerPage, page } = this.state;
+
+    return (
+      &lt;Paper className={classes.root}&gt;
+        &lt;EnhancedTableToolbar numSelected={selected.length} /&gt;
+        &lt;div className={classes.tableWrapper}&gt;
+          &lt;Table className={classes.table}&gt;
+            &lt;EnhancedTableHead
+              numSelected={selected.length}
+              order={order}
+              orderBy={orderBy}
+              onSelectAllClick={this.handleSelectAllClick}
+              onRequestSort={this.handleRequestSort}
+              rowCount={data.length}
+            /&gt;
+            &lt;TableBody&gt;
+              {data
+                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                .map(n =&gt; {
+                  const isSelected = this.isSelected(n.id);
+                  return (
+                    &lt;TableRow
+                      hover
+                      onClick={event =&gt; this.handleClick(event, n.id)}
+                      onKeyDown={event =&gt; this.handleKeyDown(event, n.id)}
+                      role=&quot;checkbox&quot;
+                      aria-checked={isSelected}
+                      tabIndex={-1}
+                      key={n.id}
+                      selected={isSelected}
+                    &gt;
+                      &lt;TableCell padding=&quot;checkbox&quot;&gt;
+                        &lt;Checkbox checked={isSelected} /&gt;
+                      &lt;/TableCell&gt;
+                      &lt;TableCell padding=&quot;none&quot;&gt;{n.model}&lt;/TableCell&gt;
+                      &lt;TableCell numeric&gt;{n.serial}&lt;/TableCell&gt;
+                      &lt;TableCell numeric&gt;{n.type}&lt;/TableCell&gt;
+                      &lt;TableCell numeric&gt;{n.front}&lt;/TableCell&gt;
+                      &lt;TableCell numeric&gt;{n.completeness}&lt;/TableCell&gt;
+                      &lt;TableCell numeric&gt;{n.cost}&lt;/TableCell&gt;
+                      &lt;TableCell numeric&gt;{n.location}&lt;/TableCell&gt;
+                      &lt;TableCell numeric&gt;{n.date.toString()}&lt;/TableCell&gt;
+                    &lt;/TableRow&gt;
+                  );
+                })}
+            &lt;/TableBody&gt;
+            &lt;TableFooter&gt;
+              &lt;TableRow&gt;
+                &lt;TablePagination
+                  count={data.length}
+                  rowsPerPage={rowsPerPage}
+                  page={page}
+                  onChangePage={this.handleChangePage}
+                  onChangeRowsPerPage={this.handleChangeRowsPerPage}
+                /&gt;
+              &lt;/TableRow&gt;
+            &lt;/TableFooter&gt;
+          &lt;/Table&gt;
+        &lt;/div&gt;
+      &lt;/Paper&gt;
+    );
+  }
+}
+
+EnhancedTable.propTypes = {
+  classes: PropTypes.object.isRequired
+};
+
+export default withStyles(styles)(EnhancedTable);
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

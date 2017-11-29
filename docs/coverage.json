@@ -1,0 +1,64 @@
+{
+  "coverage": "73.33%",
+  "expectCount": 45,
+  "actualCount": 33,
+  "files": {
+    "src/Root.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/components/App/index.js": {
+      "expectCount": 3,
+      "actualCount": 2,
+      "undocumentLines": [
+        9
+      ]
+    },
+    "src/components/EnhancedTable/index.js": {
+      "expectCount": 21,
+      "actualCount": 15,
+      "undocumentLines": [
+        27,
+        119,
+        187,
+        262,
+        280,
+        283
+      ]
+    },
+    "src/components/Footer/index.js": {
+      "expectCount": 2,
+      "actualCount": 1,
+      "undocumentLines": [
+        13
+      ]
+    },
+    "src/components/Header/index.js": {
+      "expectCount": 8,
+      "actualCount": 5,
+      "undocumentLines": [
+        18,
+        43,
+        50
+      ]
+    },
+    "src/pages/Main/index.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/pages/Schedule/index.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/registerServiceWorker.js": {
+      "expectCount": 5,
+      "actualCount": 4,
+      "undocumentLines": [
+        11
+      ]
+    }
+  }
+}

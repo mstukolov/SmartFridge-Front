@@ -62,7 +62,7 @@ function createData(
 }
 
 /**
- * Набор данных для заколовков таблицы
+ * Набор данных для заголовков таблицы
  * @type {Array}
  */
 const columnData = [

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
-
 import Header from "../Header";
 import Footer from "../Footer";
 import MainPage from "../../pages/Main";
@@ -9,7 +8,7 @@ import injectSheet from "react-jss";
 
 const styles = {
   container: {
-    height: "calc(100vh - 128px)",
+    minHeight: "calc(100vh - 128px)",
     padding: "16px",
     boxSizing: "border-box"
   }

@@ -24,8 +24,8 @@ const styles = theme => ({
 });
 
 /**
- * Нижняя навикационная панель
- * @param       {[type]} props
+ * Нижняя навигационная панель
+ * @param       {Object} props
  * @constructor
  */
 function Footer(props) {
