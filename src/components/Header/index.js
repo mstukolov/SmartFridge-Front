@@ -53,7 +53,7 @@ class Header extends React.Component {
 
   /**
    * Открытие меню авторизации
-   * @param  {SytheticEvent} event [description]
+   * @param  {SytheticEvent} event
    */
   handleMenu = event => {
     this.setState({ anchorEl: event.currentTarget });
@@ -148,7 +148,7 @@ class Header extends React.Component {
 
               <MenuItem>
                 <NavLink to="/schedule" activeClassName="selected">
-                  Schedule
+                  Таблица устройств
                 </NavLink>
               </MenuItem>
             </div>
