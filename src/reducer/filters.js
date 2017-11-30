@@ -1,8 +1,11 @@
-import { CHANGE_DATE_RANGE, CHANGE_SELECTION } from "../constants";
+import { ORDER_BY } from "../constants";
 import { Record, Map } from "immutable";
 
 const FiltersModel = new Record({
-  selected: [],
+  order: new Map({
+    type: "asc",
+    orderBy: "model"
+  }),
   dateRange: new Map()
 });
 
@@ -17,11 +20,11 @@ const defaultFilters = new FiltersModel();
 export default (filters = defaultFilters, action) => {
   const { type, payload } = action;
   switch (type) {
-    case CHANGE_DATE_RANGE:
-      return filters.setIn(["dateRange"], payload.dateRange);
-
-    case CHANGE_SELECTION:
-      return filters.setIn(["selected"], payload.selected);
+    case ORDER_BY:
+      return filters;
+    //
+    // case CHANGE_SELECTION:
+    //   return filters.setIn(["selected"], payload.selected);
 
     default:
       return filters;

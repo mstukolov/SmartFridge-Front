@@ -7,7 +7,6 @@ import {
   START,
   SUCCESS
 } from "../constants";
-import { arrayToMap } from "../utils";
 import { Record, List, Map } from "immutable";
 
 let DefaulrReducerState = new Record({
@@ -57,11 +56,11 @@ export default (state = defaultState, action) => {
       return state.setIn(["selected"], selected.set(newSelected, true));
 
     case SELECT_ALL_FRIDGES:
-      console.log(state.collection.length, state.selected.size);
       if (state.collection.length === state.selected.size)
         return state.setIn(["selected"], new Map({}));
       let result = {};
-      let allId = state.collection.forEach(item => {
+
+      state.collection.forEach(item => {
         result[item.id] = true;
       });
       return state.setIn(["selected"], new Map(result));

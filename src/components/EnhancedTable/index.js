@@ -91,6 +91,10 @@ class EnhancedTableHead extends React.Component {
     orderBy: PropTypes.string.isRequired,
     rowCount: PropTypes.number.isRequired
   };
+
+  static defaultProps = {
+    rowCount: 0
+  };
   /**
    * Обработчик сортировки в шапке таблицы
    * @param  {String} property поле сортировки
@@ -248,9 +252,6 @@ class EnhancedTable extends React.Component {
     super(props, context);
 
     this.state = {
-      order: "asc",
-      orderBy: "model",
-      selected: [],
       page: 0,
       rowsPerPage: 5
     };
@@ -348,7 +349,6 @@ class EnhancedTable extends React.Component {
   render() {
     const { data, classes, selected } = this.props;
     const { order, orderBy, rowsPerPage, page } = this.state;
-    console.log(selected);
 
     return (
       <Paper className={classes.root}>

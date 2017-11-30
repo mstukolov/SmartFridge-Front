@@ -44,13 +44,13 @@ export default store => next => action => {
 
   const collection = [];
 
-  for (var i = 0; i < 1000; i++) {
+  for (var i = 0; i < 100000; i++) {
     collection.push(createData("Oreo_" + i, 437, 18.0, 63, 4.0));
   }
   // TODO: dev only !!!!
   setTimeout(() => {
     next({ ...rest, type: type + SUCCESS, collection });
-  }, 3000);
+  }, 1500);
 
   // fetch(callAPI, { mode: "cors" })
   //   .then(function(response) {
