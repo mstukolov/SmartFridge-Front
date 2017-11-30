@@ -25,43 +25,8 @@ import DeleteIcon from "material-ui-icons/Delete";
 import FilterListIcon from "material-ui-icons/FilterList";
 import { connect } from "react-redux";
 import { callAllFridges } from "../../AC";
-
-let counter = 0;
-/**
- * Создает экземпляр оборудования для таблицы
- * @param  {String} model                   модель
- * @param  {String} serial                  серийный номер
- * @param  {String} type                    тип
- * @param  {String} front                   тип фронтальной плоскости
- * @param  {String} [completeness="Полная"] комплектность
- * @param  {Number} [cost=999999]           стоимость
- * @param  {String} [location="Москва"]     расположение
- * @param  {Date}   [date=new               Date(]        Дата
- * @return {[type]}                         [description]
- */
-function createData(
-  model,
-  serial,
-  type,
-  front,
-  completeness = "Полная",
-  cost = 999999,
-  location = "Москва",
-  date = new Date()
-) {
-  counter += 1;
-  return {
-    id: counter,
-    model,
-    serial,
-    type,
-    front,
-    completeness,
-    cost,
-    location,
-    date
-  };
-}
+import { mapToArray } from "../../utils";
+import LinearQuery from "../LinearQuery";
 
 /**
  * Набор данных для заголовков таблицы
@@ -286,21 +251,6 @@ class EnhancedTable extends React.Component {
       order: "asc",
       orderBy: "model",
       selected: [],
-      data: [
-        createData("Cupcake", 305, 3.7, 67, 4.3),
-        createData("Donut", 452, 25.0, 51, 4.9),
-        createData("Eclair", 262, 16.0, 24, 6.0),
-        createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-        createData("Gingerbread", 356, 16.0, 49, 3.9),
-        createData("Honeycomb", 408, 3.2, 87, 6.5),
-        createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-        createData("Jelly Bean", 375, 0.0, 94, 0.0),
-        createData("KitKat", 518, 26.0, 65, 7.0),
-        createData("Lollipop", 392, 0.2, 98, 0.0),
-        createData("Marshmallow", 318, 0, 81, 2.0),
-        createData("Nougat", 360, 19.0, 9, 37.0),
-        createData("Oreo", 437, 18.0, 63, 4.0)
-      ],
       page: 0,
       rowsPerPage: 5
     };
@@ -407,14 +357,28 @@ class EnhancedTable extends React.Component {
   componentDidMount() {
     this.props.callAllFridges();
   }
+
+  /**
+   * Индикация загрузки данных
+   * @return {ReactElement} разметка прелоадера
+   */
+  getDataPreloader() {
+    return this.props.loading ? <LinearQuery /> : null;
+  }
+
+  /**
+   * render
+   * @return {ReactElement} разметка React
+   */
   render() {
-    const { classes } = this.props;
-    const { data, order, orderBy, selected, rowsPerPage, page } = this.state;
+    const { data, classes } = this.props;
+    const { order, orderBy, selected, rowsPerPage, page } = this.state;
 
     return (
       <Paper className={classes.root}>
         <EnhancedTableToolbar numSelected={selected.length} />
         <div className={classes.tableWrapper}>
+          {this.getDataPreloader()}
           <Table className={classes.table}>
             <EnhancedTableHead
               numSelected={selected.length}
@@ -424,6 +388,7 @@ class EnhancedTable extends React.Component {
               onRequestSort={this.handleRequestSort}
               rowCount={data.length}
             />
+
             <TableBody>
               {data
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
@@ -480,7 +445,7 @@ EnhancedTable.propTypes = {
 export default connect(
   state => {
     return {
-      fridges: state.fridges.collection,
+      data: mapToArray(state.fridges.collection),
       loading: state.fridges.isLoading
     };
   },

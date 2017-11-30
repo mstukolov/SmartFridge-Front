@@ -21,7 +21,7 @@ const styles = {
 class App extends Component {
   /**
    * render
-   * @return {ReactElement} разметка
+   * @return {ReactElement} разметка React
    */
   render() {
     const { classes } = this.props;

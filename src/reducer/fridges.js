@@ -5,7 +5,7 @@ import {
   START,
   SUCCESS
 } from "../constants";
-
+import { arrayToMap } from "../utils";
 import { Record, Map } from "immutable";
 let DefaulrReducerState = new Record({
   isLoading: false,
@@ -13,12 +13,14 @@ let DefaulrReducerState = new Record({
 });
 const FridgeModel = Record({
   id: null,
-  date: null,
-  title: null,
-  text: null,
-  comments: [],
-  isLoading: false,
-  isLoaded: false
+  model: null,
+  serial: null,
+  type: null,
+  front: null,
+  completeness: null,
+  cost: null,
+  location: null,
+  date: null
 });
 
 const defaultState = new DefaulrReducerState();
@@ -37,7 +39,9 @@ export default (state = defaultState, action) => {
       return state.set("isLoading", true);
 
     case LOAD_ALL_FRIDGES + SUCCESS:
-      return state.set("isLoading", false).set("collection", collection);
+      return state
+        .set("isLoading", false)
+        .set("collection", arrayToMap(collection, FridgeModel));
 
     // case LOAD_FRIDGE + START:
     //   return state.setIn(["collection", payload.id, "isLoading"], true);
