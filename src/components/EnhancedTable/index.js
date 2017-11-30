@@ -252,6 +252,8 @@ class EnhancedTable extends React.Component {
     super(props, context);
 
     this.state = {
+      order: "asc",
+      orderBy: "model",
       page: 0,
       rowsPerPage: 5
     };
