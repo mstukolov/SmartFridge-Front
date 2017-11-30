@@ -1,4 +1,10 @@
-import { DELETE_FRIDGE, LOAD_ALL_FRIDGES, LOAD_FRIDGE } from "../constants";
+import {
+  DELETE_FRIDGE,
+  LOAD_ALL_FRIDGES,
+  LOAD_FRIDGE,
+  SELECT_FRIDGE,
+  SELECT_ALL_FRIDGES
+} from "../constants";
 
 /**
  * Создает экшн удаления стаьи по id
@@ -15,24 +21,37 @@ export function deleteFridge(id) {
 
   return action;
 }
-// /**
-//  * Создает экшн выбора статей из селекта
-//  * @param  {array} selected массив выбранных статей
-//  * @return {object}         объект экшена
-//  */
-// export function selectFRIDGEs(selected) {
-//   const action = {
-//     type: CHANGE_SELECTION,
-//     payload: {
-//       selected
-//     }
-//   };
-//
-//   return action;
-// }
 
 /**
- * Создает экшн для запроса всех статей
+ * Создает экшн выбора оборудования из списка
+ * @param  {String} selected массив выбранных  холодильников
+ * @return {Object}         объект экшена
+ */
+export function selectFridge(newSelected) {
+  const action = {
+    type: SELECT_FRIDGE,
+    payload: {
+      newSelected
+    }
+  };
+
+  return action;
+}
+
+/**
+ * Создает экшн выбора всего оборудования из списка
+ * @return {Object}         объект экшена
+ */
+export function selectAllFridges() {
+  const action = {
+    type: SELECT_ALL_FRIDGES
+  };
+
+  return action;
+}
+
+/**
+ * Создает экшн для запроса всех холодильников
  * @return {object} объект экшена
  */
 export function callAllFridges() {

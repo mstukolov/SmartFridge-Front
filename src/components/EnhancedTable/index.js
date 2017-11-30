@@ -24,7 +24,7 @@ import Tooltip from "material-ui/Tooltip";
 import DeleteIcon from "material-ui-icons/Delete";
 import FilterListIcon from "material-ui-icons/FilterList";
 import { connect } from "react-redux";
-import { callAllFridges } from "../../AC";
+import { callAllFridges, selectFridge, selectAllFridges } from "../../AC";
 import { mapToArray } from "../../utils";
 import LinearQuery from "../LinearQuery";
 
@@ -278,16 +278,12 @@ class EnhancedTable extends React.Component {
   };
 
   /**
-   * Выбор всех строк
+   * Выбор всех строк оборудования
    * @param  {SytheticEvent} event    событие react
    * @param  {Boolean} checked        признак выбора всех пунктов
    */
   handleSelectAllClick = (event, checked) => {
-    if (checked) {
-      this.setState({ selected: this.state.data.map(n => n.id) });
-      return;
-    }
-    this.setState({ selected: [] });
+    this.props.selectAllFridges();
   };
   /**
    * Управление с клавиатуры, клик при помощи пробела
@@ -305,24 +301,7 @@ class EnhancedTable extends React.Component {
    * @param  {String} id           идентификатор
    */
   handleClick = (event, id) => {
-    const { selected } = this.state;
-    const selectedIndex = selected.indexOf(id);
-    let newSelected = [];
-
-    if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, id);
-    } else if (selectedIndex === 0) {
-      newSelected = newSelected.concat(selected.slice(1));
-    } else if (selectedIndex === selected.length - 1) {
-      newSelected = newSelected.concat(selected.slice(0, -1));
-    } else if (selectedIndex > 0) {
-      newSelected = newSelected.concat(
-        selected.slice(0, selectedIndex),
-        selected.slice(selectedIndex + 1)
-      );
-    }
-
-    this.setState({ selected: newSelected });
+    this.props.selectFridge(id);
   };
 
   /**
@@ -345,11 +324,7 @@ class EnhancedTable extends React.Component {
    * @param  {String}  id идентификатор текущей строки
    * @return {Boolean}
    */
-  isSelected = id => this.state.selected.indexOf(id) !== -1;
-  /**
-   * render
-   * @return {ReactElement} разметка
-   */
+  isSelected = id => this.props.selected.has(id);
 
   /**
    * Делаем запрос всех устройств с сервера
@@ -371,17 +346,18 @@ class EnhancedTable extends React.Component {
    * @return {ReactElement} разметка React
    */
   render() {
-    const { data, classes } = this.props;
-    const { order, orderBy, selected, rowsPerPage, page } = this.state;
+    const { data, classes, selected } = this.props;
+    const { order, orderBy, rowsPerPage, page } = this.state;
+    console.log(selected);
 
     return (
       <Paper className={classes.root}>
-        <EnhancedTableToolbar numSelected={selected.length} />
+        <EnhancedTableToolbar numSelected={selected.size} />
         <div className={classes.tableWrapper}>
           {this.getDataPreloader()}
           <Table className={classes.table}>
             <EnhancedTableHead
-              numSelected={selected.length}
+              numSelected={selected.size}
               order={order}
               orderBy={orderBy}
               onSelectAllClick={this.handleSelectAllClick}
@@ -445,9 +421,10 @@ EnhancedTable.propTypes = {
 export default connect(
   state => {
     return {
-      data: mapToArray(state.fridges.collection),
+      data: state.fridges.collection,
+      selected: state.fridges.selected,
       loading: state.fridges.isLoading
     };
   },
-  { callAllFridges }
+  { callAllFridges, selectFridge, selectAllFridges }
 )(withStyles(styles)(EnhancedTable));

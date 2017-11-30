@@ -2,15 +2,20 @@ import {
   DELETE_FRIDGE,
   LOAD_ALL_FRIDGES,
   LOAD_FRIDGE,
+  SELECT_FRIDGE,
+  SELECT_ALL_FRIDGES,
   START,
   SUCCESS
 } from "../constants";
 import { arrayToMap } from "../utils";
-import { Record, Map } from "immutable";
+import { Record, List, Map } from "immutable";
+
 let DefaulrReducerState = new Record({
   isLoading: false,
-  collection: new Map({})
+  collection: new List([]),
+  selected: new Map({})
 });
+
 const FridgeModel = Record({
   id: null,
   model: null,
@@ -33,18 +38,33 @@ const defaultState = new DefaulrReducerState();
  */
 export default (state = defaultState, action) => {
   const { type, payload, collection } = action;
+  const { selected } = state;
 
   switch (type) {
     case LOAD_ALL_FRIDGES + START:
       return state.set("isLoading", true);
 
     case LOAD_ALL_FRIDGES + SUCCESS:
-      return state
-        .set("isLoading", false)
-        .set("collection", arrayToMap(collection, FridgeModel));
+      return state.set("isLoading", false).set("collection", collection);
 
-    // case LOAD_FRIDGE + START:
-    //   return state.setIn(["collection", payload.id, "isLoading"], true);
+    case SELECT_FRIDGE:
+      const { newSelected } = payload;
+
+      if (selected.has(newSelected)) {
+        return state.setIn(["selected"], selected.delete(newSelected));
+      }
+
+      return state.setIn(["selected"], selected.set(newSelected, true));
+
+    case SELECT_ALL_FRIDGES:
+      console.log(state.collection.length, state.selected.size);
+      if (state.collection.length === state.selected.size)
+        return state.setIn(["selected"], new Map({}));
+      let result = {};
+      let allId = state.collection.forEach(item => {
+        result[item.id] = true;
+      });
+      return state.setIn(["selected"], new Map(result));
     //
     // case LOAD_FRIDGE + SUCCESS:
     //   return state

@@ -6,6 +6,7 @@ import { Map } from "immutable";
  * @return {Object}    обект с хэш-ключами из id
  */
 export function arrayToMap(arr, Model) {
+  console.log("arrayToMap");
   if (arr)
     return arr.reduce(
       (acc, entry) => acc.set(entry.id, Model ? new Model(entry) : entry),
@@ -20,6 +21,7 @@ export function arrayToMap(arr, Model) {
  * @return {Array}      массив с обектами с полем id
  */
 export function mapToArray(map) {
+  console.log("mapToArray");
   return map.valueSeq().toArray();
 }
 

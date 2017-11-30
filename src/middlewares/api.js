@@ -1,4 +1,5 @@
 import { START, SUCCESS, FAIL } from "../constants";
+import { makeid } from "../utils";
 
 export default store => next => action => {
   if (!action.callAPI) return next(action);
@@ -6,7 +7,6 @@ export default store => next => action => {
   const { callAPI, type, ...rest } = action;
   next({ ...rest, type: type + START });
 
-  let counter = 0;
   /**
    * Создает экземпляр оборудования для таблицы
    * @param  {String} model                   модель
@@ -29,9 +29,8 @@ export default store => next => action => {
     location = "Москва",
     date = new Date()
   ) {
-    counter += 1;
     return {
-      id: counter,
+      id: makeid(6),
       model,
       serial,
       type,
@@ -43,22 +42,12 @@ export default store => next => action => {
     };
   }
 
-  const collection = [
-    createData("Cupcake", 305, 3.7, 67, 4.3),
-    createData("Donut", 452, 25.0, 51, 4.9),
-    createData("Eclair", 262, 16.0, 24, 6.0),
-    createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-    createData("Gingerbread", 356, 16.0, 49, 3.9),
-    createData("Honeycomb", 408, 3.2, 87, 6.5),
-    createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-    createData("Jelly Bean", 375, 0.0, 94, 0.0),
-    createData("KitKat", 518, 26.0, 65, 7.0),
-    createData("Lollipop", 392, 0.2, 98, 0.0),
-    createData("Marshmallow", 318, 0, 81, 2.0),
-    createData("Nougat", 360, 19.0, 9, 37.0),
-    createData("Oreo", 437, 18.0, 63, 4.0)
-  ];
+  const collection = [];
 
+  for (var i = 0; i < 1000; i++) {
+    collection.push(createData("Oreo_" + i, 437, 18.0, 63, 4.0));
+  }
+  // TODO: dev only !!!!
   setTimeout(() => {
     next({ ...rest, type: type + SUCCESS, collection });
   }, 3000);
