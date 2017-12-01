@@ -12,7 +12,8 @@ const styles = {
     marginTop: "64px",
     marginBottom: "64px",
     boxSizing: "border-box",
-    overflow: "auto"
+    overflowY: "auto",
+    overflowX: "hidden"
   },
   inner: {
     padding: "16px"

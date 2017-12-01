@@ -22,6 +22,7 @@ import Checkbox from "material-ui/Checkbox";
 import IconButton from "material-ui/IconButton";
 import Tooltip from "material-ui/Tooltip";
 import DeleteIcon from "material-ui-icons/Delete";
+import EditIcon from "material-ui-icons/Edit";
 import FilterListIcon from "material-ui-icons/FilterList";
 import { connect } from "react-redux";
 import { callAllFridges, selectFridge, selectAllFridges } from "../../AC";
@@ -177,6 +178,10 @@ const toolbarStyles = theme => ({
   },
   title: {
     flex: "0 0 auto"
+  },
+
+  flex: {
+    display: "flex"
   }
 });
 
@@ -206,11 +211,18 @@ let EnhancedTableToolbar = props => {
       <div className={classes.spacer} />
       <div className={classes.actions}>
         {numSelected > 0 ? (
-          <Tooltip title="Удалить">
-            <IconButton aria-label="Delete">
-              <DeleteIcon />
-            </IconButton>
-          </Tooltip>
+          <div className={classes.flex}>
+            <Tooltip title="Редактировать">
+              <IconButton aria-label="Edit">
+                <EditIcon />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="Удалить">
+              <IconButton aria-label="Delete">
+                <DeleteIcon />
+              </IconButton>
+            </Tooltip>
+          </div>
         ) : (
           <Tooltip title="Фильтры">
             <IconButton aria-label="Фильтры">
@@ -240,6 +252,9 @@ const styles = theme => ({
   },
   tableWrapper: {
     overflowX: "auto"
+  },
+  preloader: {
+    height: "5px"
   }
 });
 
@@ -356,7 +371,8 @@ class EnhancedTable extends React.Component {
       <Paper className={classes.root}>
         <EnhancedTableToolbar numSelected={selected.size} />
         <div className={classes.tableWrapper}>
-          {this.getDataPreloader()}
+          <div className={classes.preloader}>{this.getDataPreloader()}</div>
+
           <Table className={classes.table}>
             <EnhancedTableHead
               numSelected={selected.size}
