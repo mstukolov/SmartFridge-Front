@@ -6,6 +6,20 @@ import MainPage from "../../pages/Main";
 import SchedulePage from "../../pages/Schedule";
 import injectSheet from "react-jss";
 
+import moment from "moment/min/moment-with-locales";
+import Moment from "react-moment";
+// Sets the moment instance to use.
+Moment.globalMoment = moment;
+
+// Set the locale for every react-moment instance to French.
+Moment.globalLocale = "ru";
+
+// Set the output format for every react-moment instance.
+Moment.globalFormat = "D MMM YYYY";
+
+// Use a <span> tag for every react-moment instance.
+Moment.globalElement = "span";
+
 const styles = {
   container: {
     height: "calc(100vh - 128px)",

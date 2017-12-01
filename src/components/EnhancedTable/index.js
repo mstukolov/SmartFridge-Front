@@ -28,6 +28,7 @@ import { connect } from "react-redux";
 import { callAllFridges, selectFridge, selectAllFridges } from "../../AC";
 import { mapToArray } from "../../utils";
 import LinearQuery from "../LinearQuery";
+import Moment from "react-moment";
 
 /**
  * Набор данных для заголовков таблицы
@@ -409,7 +410,9 @@ class EnhancedTable extends React.Component {
                       <TableCell numeric>{n.completeness}</TableCell>
                       <TableCell numeric>{n.cost}</TableCell>
                       <TableCell numeric>{n.location}</TableCell>
-                      <TableCell numeric>{n.date.toString()}</TableCell>
+                      <TableCell numeric>
+                        <Moment>{n.date}</Moment>
+                      </TableCell>
                     </TableRow>
                   );
                 })}
