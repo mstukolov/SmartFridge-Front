@@ -17,7 +17,7 @@ import { NavLink } from "react-router-dom";
 import { ListItemIcon, ListItemText } from "material-ui/List";
 import DvrIcon from "material-ui-icons/Dvr";
 import HomeIcon from "material-ui-icons/Home";
-import logo from "../logo.png";
+import logo from "../logo_C2M_alternative_ru.svg";
 
 const styles = theme => ({
   list: {
@@ -41,7 +41,8 @@ const styles = theme => ({
   },
   logo: {
     marginRight: "20px",
-    height: "27px"
+    height: "28px",
+    fill: "#fff"
   }
 });
 
