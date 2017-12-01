@@ -9,11 +9,17 @@ import Typography from "material-ui/Typography";
 import IconButton from "material-ui/IconButton";
 import MenuIcon from "material-ui-icons/Menu";
 import AccountCircle from "material-ui-icons/AccountCircle";
-import Switch from "material-ui/Switch";
-import { FormControlLabel, FormGroup } from "material-ui/Form";
+// import Switch from "material-ui/Switch";
+// import { FormControlLabel, FormGroup } from "material-ui/Form";
 import Menu, { MenuItem } from "material-ui/Menu";
 import Drawer from "material-ui/Drawer";
 import { NavLink } from "react-router-dom";
+
+import { ListItemIcon, ListItemText } from "material-ui/List";
+
+import DvrIcon from "material-ui-icons/Dvr";
+
+import HomeIcon from "material-ui-icons/Home";
 
 const styles = theme => ({
   list: {
@@ -140,17 +146,31 @@ class Header extends React.Component {
               onClick={this.toggleDrawer}
               onKeyDown={this.toggleDrawer}
             >
-              <MenuItem>
-                <NavLink to="/" activeClassName="selected">
-                  Главная
-                </NavLink>
-              </MenuItem>
+              <NavLink to="/" activeClassName="selected">
+                <MenuItem>
+                  <ListItemIcon className={classes.icon}>
+                    <HomeIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    classes={{ text: classes.text }}
+                    inset
+                    primary="Главная"
+                  />
+                </MenuItem>
+              </NavLink>
 
-              <MenuItem>
-                <NavLink to="/schedule" activeClassName="selected">
-                  Таблица устройств
-                </NavLink>
-              </MenuItem>
+              <NavLink to="/schedule" activeClassName="selected">
+                <MenuItem>
+                  <ListItemIcon className={classes.icon}>
+                    <DvrIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    classes={{ text: classes.text }}
+                    inset
+                    primary="Таблица устройств"
+                  />
+                </MenuItem>
+              </NavLink>
             </div>
           </Drawer>
         </AppBar>
