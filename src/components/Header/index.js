@@ -14,12 +14,10 @@ import AccountCircle from "material-ui-icons/AccountCircle";
 import Menu, { MenuItem } from "material-ui/Menu";
 import Drawer from "material-ui/Drawer";
 import { NavLink } from "react-router-dom";
-
 import { ListItemIcon, ListItemText } from "material-ui/List";
-
 import DvrIcon from "material-ui-icons/Dvr";
-
 import HomeIcon from "material-ui-icons/Home";
+import logo from "../logo.png";
 
 const styles = theme => ({
   list: {
@@ -40,6 +38,10 @@ const styles = theme => ({
   menuButton: {
     marginLeft: -12,
     marginRight: 20
+  },
+  logo: {
+    marginRight: "20px",
+    height: "27px"
   }
 });
 
@@ -104,8 +106,9 @@ class Header extends React.Component {
             >
               <MenuIcon />
             </IconButton>
+            <img src={logo} className={classes.logo} alt="logo" />
             <Typography type="title" color="inherit" className={classes.flex}>
-              Coca Cola Smart Fridge
+              Smart Fridge
             </Typography>
             {auth && (
               <div>
