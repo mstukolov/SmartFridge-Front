@@ -2,7 +2,7 @@
 /* eslint-disable react/no-multi-comp */
 
 import React from "react";
-import classNames from "classnames";
+// import classNames from "classnames";
 import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
 import keycode from "keycode";
@@ -10,238 +10,23 @@ import Table, {
   TableBody,
   TableCell,
   TableFooter,
-  TableHead,
   TablePagination,
-  TableRow,
-  TableSortLabel
+  TableRow
 } from "material-ui/Table";
-import Toolbar from "material-ui/Toolbar";
-import Typography from "material-ui/Typography";
 import Paper from "material-ui/Paper";
 import Checkbox from "material-ui/Checkbox";
-import IconButton from "material-ui/IconButton";
-import Tooltip from "material-ui/Tooltip";
-import DeleteIcon from "material-ui-icons/Delete";
-import EditIcon from "material-ui-icons/Edit";
-import FilterListIcon from "material-ui-icons/FilterList";
 import { connect } from "react-redux";
-import { callAllFridges, selectFridge, selectAllFridges } from "../../AC";
-import { mapToArray } from "../../utils";
+import {
+  callAllFridges,
+  selectFridge,
+  selectAllFridges,
+  sortOrderBy
+} from "../../AC";
 import LinearQuery from "../LinearQuery";
 import Moment from "react-moment";
-
-/**
- * Набор данных для заголовков таблицы
- * @type {Array}
- */
-const columnData = [
-  {
-    id: "model",
-    numeric: false,
-    disablePadding: true,
-    label: "Модель"
-  },
-  {
-    id: "serial",
-    numeric: true,
-    disablePadding: false,
-    label: "Серийный номер"
-  },
-  { id: "type", numeric: true, disablePadding: false, label: "Тип" },
-  {
-    id: "front",
-    numeric: true,
-    disablePadding: false,
-    label: "Тип фронтальной панели"
-  },
-  {
-    id: "completeness",
-    numeric: true,
-    disablePadding: false,
-    label: "Комплектность"
-  },
-  {
-    id: "cost",
-    numeric: true,
-    disablePadding: false,
-    label: "Стоимость"
-  },
-  {
-    id: "location",
-    numeric: true,
-    disablePadding: false,
-    label: "Локация"
-  },
-  {
-    id: "date",
-    numeric: true,
-    disablePadding: false,
-    label: "Дата"
-  }
-];
-
-/**
- * Компонент шапки таблицы
- * @extends React
- */
-class EnhancedTableHead extends React.Component {
-  static propTypes = {
-    numSelected: PropTypes.number.isRequired,
-    onRequestSort: PropTypes.func.isRequired,
-    onSelectAllClick: PropTypes.func.isRequired,
-    order: PropTypes.string.isRequired,
-    orderBy: PropTypes.string.isRequired,
-    rowCount: PropTypes.number.isRequired
-  };
-
-  static defaultProps = {
-    rowCount: 0
-  };
-  /**
-   * Обработчик сортировки в шапке таблицы
-   * @param  {String} property поле сортировки
-   * @param  {SytheticEvent} event
-   */
-  createSortHandler = property => event => {
-    this.props.onRequestSort(event, property);
-  };
-  /**
-   * render
-   * @return {ReactElement} разметка
-   */
-  render() {
-    const {
-      onSelectAllClick,
-      order,
-      orderBy,
-      numSelected,
-      rowCount
-    } = this.props;
-
-    return (
-      <TableHead>
-        <TableRow>
-          <TableCell padding="checkbox">
-            <Checkbox
-              indeterminate={numSelected > 0 && numSelected < rowCount}
-              checked={numSelected === rowCount}
-              onChange={onSelectAllClick}
-            />
-          </TableCell>
-          {columnData.map(column => {
-            return (
-              <TableCell
-                key={column.id}
-                numeric={column.numeric}
-                padding={column.disablePadding ? "none" : "default"}
-              >
-                <Tooltip
-                  title="Сортировка"
-                  placement={column.numeric ? "bottom-end" : "bottom-start"}
-                  enterDelay={300}
-                >
-                  <TableSortLabel
-                    active={orderBy === column.id}
-                    direction={order}
-                    onClick={this.createSortHandler(column.id)}
-                  >
-                    {column.label}
-                  </TableSortLabel>
-                </Tooltip>
-              </TableCell>
-            );
-          }, this)}
-        </TableRow>
-      </TableHead>
-    );
-  }
-}
-
-const toolbarStyles = theme => ({
-  root: {
-    paddingRight: 2
-  },
-  highlight:
-    theme.palette.type === "light"
-      ? {
-          color: theme.palette.secondary.A700,
-          backgroundColor: theme.palette.secondary.A100
-        }
-      : {
-          color: theme.palette.secondary.A100,
-          backgroundColor: theme.palette.secondary.A700
-        },
-  spacer: {
-    flex: "1 1 100%"
-  },
-  actions: {
-    color: theme.palette.text.secondary
-  },
-  title: {
-    flex: "0 0 auto"
-  },
-
-  flex: {
-    display: "flex"
-  }
-});
-
-/**
- * Панель выбора значений (выпадает при клике на чекбокс)
- * @param {[type]} props
- * @return {ReactElement} разметка
- */
-let EnhancedTableToolbar = props => {
-  const { numSelected, classes } = props;
-
-  return (
-    <Toolbar
-      className={classNames(classes.root, {
-        [classes.highlight]: numSelected > 0
-      })}
-    >
-      <div className={classes.title}>
-        {numSelected > 0 ? (
-          <Typography type="subheading">
-            Выбрано устройств: {numSelected}
-          </Typography>
-        ) : (
-          <Typography type="title">Устройства</Typography>
-        )}
-      </div>
-      <div className={classes.spacer} />
-      <div className={classes.actions}>
-        {numSelected > 0 ? (
-          <div className={classes.flex}>
-            <Tooltip title="Редактировать">
-              <IconButton aria-label="Edit">
-                <EditIcon />
-              </IconButton>
-            </Tooltip>
-            <Tooltip title="Удалить">
-              <IconButton aria-label="Delete">
-                <DeleteIcon />
-              </IconButton>
-            </Tooltip>
-          </div>
-        ) : (
-          <Tooltip title="Фильтры">
-            <IconButton aria-label="Фильтры">
-              <FilterListIcon />
-            </IconButton>
-          </Tooltip>
-        )}
-      </div>
-    </Toolbar>
-  );
-};
-
-EnhancedTableToolbar.propTypes = {
-  classes: PropTypes.object.isRequired,
-  numSelected: PropTypes.number.isRequired
-};
-
-EnhancedTableToolbar = withStyles(toolbarStyles)(EnhancedTableToolbar);
+import { orderedRowsSelector } from "../../selectors";
+import EnhancedTableHead from "./head";
+import EnhancedTableToolbar from "./toolbar";
 
 const styles = theme => ({
   root: {
@@ -268,8 +53,6 @@ class EnhancedTable extends React.Component {
     super(props, context);
 
     this.state = {
-      order: "asc",
-      orderBy: "model",
       page: 0,
       rowsPerPage: 5
     };
@@ -278,28 +61,17 @@ class EnhancedTable extends React.Component {
    * Функция сортировки по алфавиту
    * @param  {SytheticEvent} event    событие react
    * @param  {String} property        признак сортировки
-   * @return {ReactElement}           разметка
+   * @return {void}
    */
   handleRequestSort = (event, property) => {
-    const orderBy = property;
-    let order = "desc";
-
-    if (this.state.orderBy === property && this.state.order === "desc") {
-      order = "asc";
-    }
-
-    const data =
-      order === "desc"
-        ? this.state.data.sort((a, b) => (b[orderBy] < a[orderBy] ? -1 : 1))
-        : this.state.data.sort((a, b) => (a[orderBy] < b[orderBy] ? -1 : 1));
-
-    this.setState({ data, order, orderBy });
+    this.props.sortOrderBy(property);
   };
 
   /**
    * Выбор всех строк оборудования
    * @param  {SytheticEvent} event    событие react
    * @param  {Boolean} checked        признак выбора всех пунктов
+   * @return {void}
    */
   handleSelectAllClick = (event, checked) => {
     this.props.selectAllFridges();
@@ -308,6 +80,7 @@ class EnhancedTable extends React.Component {
    * Управление с клавиатуры, клик при помощи пробела
    * @param  {SynteticEvent} event событие react
    * @param  {String} id           идентификатор
+   * @return {void}
    */
   handleKeyDown = (event, id) => {
     if (keycode(event) === "space") {
@@ -318,6 +91,7 @@ class EnhancedTable extends React.Component {
    * Обработка клика, устанавливает/снимает выделение строки
    * @param  {SynteticEvent} event событие react
    * @param  {String} id           идентификатор
+   * @return {void}
    */
   handleClick = (event, id) => {
     this.props.selectFridge(id);
@@ -327,6 +101,7 @@ class EnhancedTable extends React.Component {
    * Переключение страницы в пагинации таблицы
    * @param  {SynteticEvent} event событие react
    * @param  {Number} page         номер страницы
+   * @return {void}
    */
   handleChangePage = (event, page) => {
     this.setState({ page });
@@ -334,6 +109,7 @@ class EnhancedTable extends React.Component {
   /**
    * Устанавливает колличество отображаемых строк на странице
    * @param  {SynteticEvent} event событие react
+   * @return {void}
    */
   handleChangeRowsPerPage = event => {
     this.setState({ rowsPerPage: event.target.value });
@@ -347,6 +123,7 @@ class EnhancedTable extends React.Component {
 
   /**
    * Делаем запрос всех устройств с сервера
+   * @return {void}
    */
   componentDidMount() {
     this.props.callAllFridges();
@@ -365,8 +142,8 @@ class EnhancedTable extends React.Component {
    * @return {ReactElement} разметка React
    */
   render() {
-    const { data, classes, selected } = this.props;
-    const { order, orderBy, rowsPerPage, page } = this.state;
+    const { order, orderBy, data, classes, selected } = this.props;
+    const { rowsPerPage, page } = this.state;
 
     return (
       <Paper className={classes.root}>
@@ -442,10 +219,12 @@ EnhancedTable.propTypes = {
 export default connect(
   state => {
     return {
-      data: state.fridges.collection,
+      data: orderedRowsSelector(state),
       selected: state.fridges.selected,
-      loading: state.fridges.isLoading
+      loading: state.fridges.isLoading,
+      order: state.filters.orderData.get("order"),
+      orderBy: state.filters.orderData.get("orderBy")
     };
   },
-  { callAllFridges, selectFridge, selectAllFridges }
+  { callAllFridges, selectFridge, selectAllFridges, sortOrderBy }
 )(withStyles(styles)(EnhancedTable));

@@ -3,13 +3,14 @@ import {
   LOAD_ALL_FRIDGES,
   LOAD_FRIDGE,
   SELECT_FRIDGE,
-  SELECT_ALL_FRIDGES
+  SELECT_ALL_FRIDGES,
+  ORDER_BY
 } from "../constants";
 
 /**
  * Создает экшн удаления стаьи по id
- * @param  {string} id удаляемой статьи
- * @return {object}    объект экшена
+ * @param  {String} id удаляемой статьи
+ * @return {Object}    объект экшена
  */
 export function deleteFridge(id) {
   const action = {
@@ -52,7 +53,7 @@ export function selectAllFridges() {
 
 /**
  * Создает экшн для запроса всех холодильников
- * @return {object} объект экшена
+ * @return {Object} объект экшена
  */
 export function callAllFridges() {
   const action = {
@@ -63,9 +64,25 @@ export function callAllFridges() {
   return action;
 }
 
+/**
+ * Создает сортировки по полю
+ * @param  {String} id удаляемой статьи
+ * @return {Object}    объект экшена
+ */
+export function sortOrderBy(property) {
+  const action = {
+    type: ORDER_BY,
+    payload: {
+      property
+    }
+  };
+
+  return action;
+}
+
 // /**
 //  * Создает экшн для запроса текста статьи
-//  * @return {object} объект экшена
+//  * @return {Object} объект экшена
 //  */
 // export function loadFRIDGE(id) {
 //   const action = {

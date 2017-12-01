@@ -2,8 +2,8 @@ import { ORDER_BY } from "../constants";
 import { Record, Map } from "immutable";
 
 const FiltersModel = new Record({
-  order: new Map({
-    type: "asc",
+  orderData: new Map({
+    order: "asc",
     orderBy: "model"
   }),
   dateRange: new Map()
@@ -21,7 +21,21 @@ export default (filters = defaultFilters, action) => {
   const { type, payload } = action;
   switch (type) {
     case ORDER_BY:
-      return filters;
+      const { property } = payload;
+
+      const orderBy = property;
+      let order = "desc";
+
+      if (
+        filters.getIn(["orderData", "orderBy"]) === property &&
+        filters.getIn(["orderData", "order"]) === "desc"
+      ) {
+        order = "asc";
+      }
+
+      return filters
+        .setIn(["orderData", "order"], order)
+        .setIn(["orderData", "orderBy"], property);
     //
     // case CHANGE_SELECTION:
     //   return filters.setIn(["selected"], payload.selected);

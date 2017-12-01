@@ -17,7 +17,7 @@ export default store => next => action => {
    * @param  {Number} [cost=999999]           стоимость
    * @param  {String} [location="Москва"]     расположение
    * @param  {Date}   [date=new               Date(]        Дата
-   * @return {[type]}                         [description]
+   * @return {Object}                         [description]
    */
   function createData(
     model,
@@ -44,13 +44,13 @@ export default store => next => action => {
 
   const collection = [];
 
-  for (var i = 0; i < 100000; i++) {
+  for (var i = 0; i < 10000; i++) {
     collection.push(createData("Oreo_" + i, 437, 18.0, 63, 4.0));
   }
   // TODO: dev only !!!!
   setTimeout(() => {
     next({ ...rest, type: type + SUCCESS, collection });
-  }, 1500);
+  }, 2000);
 
   // fetch(callAPI, { mode: "cors" })
   //   .then(function(response) {
