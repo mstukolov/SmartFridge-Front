@@ -12,7 +12,9 @@ import MenuIcon from "material-ui-icons/Menu";
 
 const styles = theme => ({
   root: {
-    width: "100%"
+    width: "100%",
+    position: "fixed",
+    bottom: 0
   },
   flex: {
     flex: 1

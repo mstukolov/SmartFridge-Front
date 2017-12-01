@@ -8,9 +8,14 @@ import injectSheet from "react-jss";
 
 const styles = {
   container: {
-    minHeight: "calc(100vh - 128px)",
-    padding: "16px",
-    boxSizing: "border-box"
+    height: "calc(100vh - 128px)",
+    marginTop: "64px",
+    marginBottom: "64px",
+    boxSizing: "border-box",
+    overflow: "auto"
+  },
+  inner: {
+    padding: "16px"
   }
 };
 
@@ -30,11 +35,13 @@ class App extends Component {
       <div className="App">
         <Header />
         <section className={classes.container}>
-          <Switch>
-            <Route exact path="/" component={MainPage} />
-            <Route path="/schedule" component={SchedulePage} />
-            {/* <Route path="/schedule" component={Schedule} /> */}
-          </Switch>
+          <div className={classes.inner}>
+            <Switch>
+              <Route exact path="/" component={MainPage} />
+              <Route path="/schedule" component={SchedulePage} />
+              {/* <Route path="/schedule" component={Schedule} /> */}
+            </Switch>
+          </div>
         </section>
 
         <Footer />
