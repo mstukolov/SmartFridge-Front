@@ -126,7 +126,7 @@ class EnhancedTable extends React.Component {
    * @return {void}
    */
   componentDidMount() {
-    this.props.callAllFridges();
+    if (!this.props.data.length) this.props.callAllFridges();
   }
 
   /**

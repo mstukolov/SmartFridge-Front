@@ -26,11 +26,9 @@ const styles = {
     marginTop: "64px",
     marginBottom: "64px",
     boxSizing: "border-box",
+    padding: "16px",
     overflowY: "auto",
     overflowX: "hidden"
-  },
-  inner: {
-    padding: "16px"
   }
 };
 
@@ -50,13 +48,11 @@ class App extends Component {
       <div className="App">
         <Header />
         <section className={classes.container}>
-          <div className={classes.inner}>
-            <Switch>
-              <Route exact path="/" component={MainPage} />
-              <Route path="/schedule" component={SchedulePage} />
-              {/* <Route path="/schedule" component={Schedule} /> */}
-            </Switch>
-          </div>
+          <Switch>
+            <Route exact path="/" component={MainPage} />
+            <Route path="/schedule" component={SchedulePage} />
+            {/* <Route path="/schedule" component={Schedule} /> */}
+          </Switch>
         </section>
 
         <Footer />
