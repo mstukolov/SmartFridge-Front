@@ -20,7 +20,9 @@ import {
   callAllFridges,
   selectFridge,
   selectAllFridges,
-  sortOrderBy
+  sortOrderBy,
+  deleteFridges,
+  writeFridges
 } from "../../AC";
 import LinearQuery from "../LinearQuery";
 import Moment from "react-moment";
@@ -82,9 +84,10 @@ class EnhancedTable extends React.Component {
    * @param  {String} id           идентификатор
    * @return {void}
    */
-  handleKeyDown = (event, id) => {
+  handleKeyDown = (event, item) => {
+    event.preventDefault();
     if (keycode(event) === "space") {
-      this.handleClick(event, id);
+      this.handleClick(event, item);
     }
   };
   /**
@@ -93,8 +96,9 @@ class EnhancedTable extends React.Component {
    * @param  {String} id           идентификатор
    * @return {void}
    */
-  handleClick = (event, id) => {
-    this.props.selectFridge(id);
+  handleClick = (event, item) => {
+    event.preventDefault();
+    this.props.selectFridge(item);
   };
 
   /**
@@ -142,12 +146,24 @@ class EnhancedTable extends React.Component {
    * @return {ReactElement} разметка React
    */
   render() {
-    const { order, orderBy, data, classes, selected } = this.props;
+    const {
+      order,
+      orderBy,
+      data,
+      classes,
+      selected,
+      deleteFridges,
+      writeFridges
+    } = this.props;
     const { rowsPerPage, page } = this.state;
 
     return (
       <Paper className={classes.root}>
-        <EnhancedTableToolbar numSelected={selected.size} />
+        <EnhancedTableToolbar
+          numSelected={selected.size}
+          deleteList={deleteFridges}
+          writeList={writeFridges}
+        />
         <div className={classes.tableWrapper}>
           <div className={classes.preloader}>{this.getDataPreloader()}</div>
 
@@ -169,8 +185,8 @@ class EnhancedTable extends React.Component {
                   return (
                     <TableRow
                       hover
-                      onClick={event => this.handleClick(event, n.id)}
-                      onKeyDown={event => this.handleKeyDown(event, n.id)}
+                      onClick={event => this.handleClick(event, n)}
+                      onKeyDown={event => this.handleKeyDown(event, n)}
                       role="checkbox"
                       aria-checked={isSelected}
                       tabIndex={-1}
@@ -226,5 +242,12 @@ export default connect(
       orderBy: state.filters.orderData.get("orderBy")
     };
   },
-  { callAllFridges, selectFridge, selectAllFridges, sortOrderBy }
+  {
+    callAllFridges,
+    selectFridge,
+    selectAllFridges,
+    sortOrderBy,
+    deleteFridges,
+    writeFridges
+  }
 )(withStyles(styles)(EnhancedTable));

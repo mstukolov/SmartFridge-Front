@@ -1,5 +1,6 @@
 import {
-  DELETE_FRIDGE,
+  DELETE_FRIDGES,
+  WRITE_FRIDGES,
   LOAD_ALL_FRIDGES,
   LOAD_FRIDGE,
   SELECT_FRIDGE,
@@ -8,16 +9,24 @@ import {
 } from "../constants";
 
 /**
- * Создает экшн удаления стаьи по id
- * @param  {String} id удаляемой статьи
+ * Создает экшн удаления выбранных статей
  * @return {Object}    объект экшена
  */
-export function deleteFridge(id) {
+export function deleteFridges() {
   const action = {
-    type: DELETE_FRIDGE,
-    payload: {
-      id
-    }
+    type: DELETE_FRIDGES
+  };
+
+  return action;
+}
+
+/**
+ * Создает экшн для редактирования списка выбранного оборудования
+ * @return {Object} объект экшена
+ */
+export function writeFridges() {
+  const action = {
+    type: WRITE_FRIDGES
   };
 
   return action;
@@ -28,11 +37,11 @@ export function deleteFridge(id) {
  * @param  {String} selected массив выбранных  холодильников
  * @return {Object}         объект экшена
  */
-export function selectFridge(newSelected) {
+export function selectFridge(item) {
   const action = {
     type: SELECT_FRIDGE,
     payload: {
-      newSelected
+      item
     }
   };
 
@@ -79,17 +88,3 @@ export function sortOrderBy(property) {
 
   return action;
 }
-
-// /**
-//  * Создает экшн для запроса текста статьи
-//  * @return {Object} объект экшена
-//  */
-// export function loadFRIDGE(id) {
-//   const action = {
-//     type: LOAD_FRIDGE,
-//     payload: { id },
-//     callAPI: `http://localhost:3001/api/FRIDGE/${id}`
-//   };
-//
-//   return action;
-// }

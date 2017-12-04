@@ -25,7 +25,7 @@ export default store => next => action => {
     type,
     front,
     completeness = "Полная",
-    cost = 999999,
+    cost,
     location = "Москва",
     date = new Date()
   ) {
@@ -45,7 +45,16 @@ export default store => next => action => {
   const collection = [];
 
   for (var i = 0; i < 10000; i++) {
-    collection.push(createData("Oreo_" + i, 437, 18.0, 63, 4.0));
+    collection.push(
+      createData(
+        "Oreo_" + i,
+        makeid(15),
+        makeid(6),
+        makeid(1),
+        makeid(4),
+        makeid(7)
+      )
+    );
   }
   // TODO: dev only !!!!
   setTimeout(() => {

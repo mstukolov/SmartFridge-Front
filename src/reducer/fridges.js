@@ -1,5 +1,6 @@
 import {
-  DELETE_FRIDGE,
+  DELETE_FRIDGES,
+  WRITE_FRIDGES,
   LOAD_ALL_FRIDGES,
   LOAD_FRIDGE,
   SELECT_FRIDGE,
@@ -47,13 +48,13 @@ export default (state = defaultState, action) => {
       return state.set("isLoading", false).set("collection", collection);
 
     case SELECT_FRIDGE:
-      const { newSelected } = payload;
+      const { item } = payload;
 
-      if (selected.has(newSelected)) {
-        return state.setIn(["selected"], selected.delete(newSelected));
+      if (selected.has(item.id)) {
+        return state.setIn(["selected"], selected.delete(item.id));
       }
 
-      return state.setIn(["selected"], selected.set(newSelected, true));
+      return state.setIn(["selected"], selected.set(item.id, item));
 
     case SELECT_ALL_FRIDGES:
       if (state.collection.length === state.selected.size)
@@ -61,27 +62,22 @@ export default (state = defaultState, action) => {
       let result = {};
 
       state.collection.forEach(item => {
-        result[item.id] = true;
+        result[item.id] = item;
       });
       return state.setIn(["selected"], new Map(result));
-    //
-    // case LOAD_FRIDGE + SUCCESS:
-    //   return state
-    //     .setIn(["collection", payload.id, "isLoading"], false)
-    //     .setIn(
-    //       ["collection", payload.id],
-    //       new FridgeModel({ ...collection, isLoaded: true })
-    //     );
-    //
-    // case DELETE_FRIDGE:
-    //   return state.deleteIn(["collection", payload.id]);
-    //
-    // case ADD_COMMENT:
-    //   const { randomId } = action;
-    //   const { FRIDGEId } = payload.newComment;
-    //   return state.updateIn(["collection", FRIDGEId, "comments"], comments =>
-    //     comments.concat(randomId)
-    //   );
+
+    case DELETE_FRIDGES:
+      let newCollection = state.collection.filter(item => {
+        return !state.selected.includes(item);
+      });
+
+      return state
+        .setIn(["collection"], newCollection)
+        .setIn(["selected"], new Map({}));
+
+    case WRITE_FRIDGES:
+      console.log(WRITE_FRIDGES);
+      return state;
 
     default:
       return state;

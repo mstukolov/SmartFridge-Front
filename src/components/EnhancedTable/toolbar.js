@@ -46,54 +46,85 @@ const toolbarStyles = theme => ({
  * @param {props} props
  * @return {ReactElement} разметка
  */
-let EnhancedTableToolbar = props => {
-  const { numSelected, classes } = props;
 
-  return (
-    <Toolbar
-      className={classNames(classes.root, {
-        [classes.highlight]: numSelected > 0
-      })}
-    >
-      <div className={classes.title}>
-        {numSelected > 0 ? (
-          <Typography type="subheading">
-            Выбрано устройств: {numSelected}
-          </Typography>
-        ) : (
-          <Typography type="title">Устройства</Typography>
-        )}
-      </div>
-      <div className={classes.spacer} />
-      <div className={classes.actions}>
-        {numSelected > 0 ? (
-          <div className={classes.flex}>
-            <Tooltip title="Редактировать">
-              <IconButton aria-label="Edit">
-                <EditIcon />
+class EnhancedTableToolbar extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+  }
+
+  /**
+   * Функция обработки удаления списка выделленных элементов
+   * @param  {SynteticEvent} ev React событие
+   * @return {void}    [description]
+   */
+  handleDelete = ev => {
+    ev.preventDefault();
+    this.props.deleteList();
+  };
+  /**
+   * Функция обработки редактирования списка выделленных элементов
+   * @param  {SynteticEvent} ev React событие
+   * @return {void}    [description]
+   */
+  handleEdit = ev => {
+    ev.preventDefault();
+    this.props.writeList();
+  };
+  /**
+   * render
+   * @return {ReactElement} разметка React
+   */
+  render() {
+    const { numSelected, classes } = this.props;
+
+    return (
+      <Toolbar
+        className={classNames(classes.root, {
+          [classes.highlight]: numSelected > 0
+        })}
+      >
+        <div className={classes.title}>
+          {numSelected > 0 ? (
+            <Typography type="subheading">
+              Выбрано устройств: {numSelected}
+            </Typography>
+          ) : (
+            <Typography type="title">Устройства</Typography>
+          )}
+        </div>
+        <div className={classes.spacer} />
+        <div className={classes.actions}>
+          {numSelected > 0 ? (
+            <div className={classes.flex}>
+              <Tooltip title="Редактировать">
+                <IconButton aria-label="Edit" onClick={this.handleEdit}>
+                  <EditIcon />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Удалить">
+                <IconButton onClick={this.handleDelete} aria-label="Delete">
+                  <DeleteIcon />
+                </IconButton>
+              </Tooltip>
+            </div>
+          ) : (
+            <Tooltip title="Фильтры">
+              <IconButton aria-label="Фильтры">
+                <FilterListIcon />
               </IconButton>
             </Tooltip>
-            <Tooltip title="Удалить">
-              <IconButton aria-label="Delete">
-                <DeleteIcon />
-              </IconButton>
-            </Tooltip>
-          </div>
-        ) : (
-          <Tooltip title="Фильтры">
-            <IconButton aria-label="Фильтры">
-              <FilterListIcon />
-            </IconButton>
-          </Tooltip>
-        )}
-      </div>
-    </Toolbar>
-  );
-};
+          )}
+        </div>
+      </Toolbar>
+    );
+  }
+}
 
 EnhancedTableToolbar.propTypes = {
   classes: PropTypes.object.isRequired,
   numSelected: PropTypes.number.isRequired
+  // deleteList: React.PropTypes.func,
+  // writeList: React.PropTypes.func
 };
 
 export default (EnhancedTableToolbar = withStyles(toolbarStyles)(
