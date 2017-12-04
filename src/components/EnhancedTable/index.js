@@ -22,7 +22,8 @@ import {
   selectAllFridges,
   sortOrderBy,
   deleteFridges,
-  writeFridges
+  writeFridges,
+  showFridges
 } from "../../AC";
 import LinearQuery from "../LinearQuery";
 import Moment from "react-moment";
@@ -153,7 +154,8 @@ class EnhancedTable extends React.Component {
       classes,
       selected,
       deleteFridges,
-      writeFridges
+      writeFridges,
+      showFridges
     } = this.props;
     const { rowsPerPage, page } = this.state;
 
@@ -163,6 +165,7 @@ class EnhancedTable extends React.Component {
           numSelected={selected.size}
           deleteList={deleteFridges}
           writeList={writeFridges}
+          visibilityList={showFridges}
         />
         <div className={classes.tableWrapper}>
           <div className={classes.preloader}>{this.getDataPreloader()}</div>
@@ -248,6 +251,7 @@ export default connect(
     selectAllFridges,
     sortOrderBy,
     deleteFridges,
-    writeFridges
+    writeFridges,
+    showFridges
   }
 )(withStyles(styles)(EnhancedTable));

@@ -4,6 +4,7 @@ import Header from "../Header";
 import Footer from "../Footer";
 import MainPage from "../../pages/Main";
 import SchedulePage from "../../pages/Schedule";
+import DevicePage from "../../pages/Device";
 import injectSheet from "react-jss";
 
 import moment from "moment/min/moment-with-locales";
@@ -26,7 +27,7 @@ const styles = {
     marginTop: "64px",
     marginBottom: "64px",
     boxSizing: "border-box",
-    padding: "16px",
+    padding: "12px",
     overflowY: "auto",
     overflowX: "hidden"
   }
@@ -51,7 +52,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={MainPage} />
             <Route path="/schedule" component={SchedulePage} />
-            {/* <Route path="/schedule" component={Schedule} /> */}
+            <Route path="/device" component={DevicePage} />
           </Switch>
         </section>
 

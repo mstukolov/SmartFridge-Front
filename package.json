@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "google-map-react": "^0.25.0",
     "immutable": "^3.8.2",
     "jss": "^9.3.3",
     "jss-preset-default": "^4.0.1",

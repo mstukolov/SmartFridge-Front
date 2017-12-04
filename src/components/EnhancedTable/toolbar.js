@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
 import DeleteIcon from "material-ui-icons/Delete";
 import EditIcon from "material-ui-icons/Edit";
+import VisibilityIcon from "material-ui-icons/Visibility";
 import IconButton from "material-ui/IconButton";
 import Tooltip from "material-ui/Tooltip";
 import FilterListIcon from "material-ui-icons/FilterList";
@@ -70,6 +71,17 @@ class EnhancedTableToolbar extends React.Component {
     ev.preventDefault();
     this.props.writeList();
   };
+
+  /**
+   * Функция обработки просмотра списка выделленных элементов
+   * @param  {SynteticEvent} ev React событие
+   * @return {void}    [description]
+   */
+  handleShow = ev => {
+    ev.preventDefault();
+    this.props.visibilityList();
+  };
+
   /**
    * render
    * @return {ReactElement} разметка React
@@ -96,6 +108,11 @@ class EnhancedTableToolbar extends React.Component {
         <div className={classes.actions}>
           {numSelected > 0 ? (
             <div className={classes.flex}>
+              <Tooltip title="Просомотреть">
+                <IconButton aria-label="Visibility" onClick={this.handleShow}>
+                  <VisibilityIcon />
+                </IconButton>
+              </Tooltip>
               <Tooltip title="Редактировать">
                 <IconButton aria-label="Edit" onClick={this.handleEdit}>
                   <EditIcon />
@@ -124,6 +141,7 @@ EnhancedTableToolbar.propTypes = {
   classes: PropTypes.object.isRequired,
   numSelected: PropTypes.number.isRequired
   // deleteList: React.PropTypes.func,
+  // visibilityList: React.PropTypes.func
   // writeList: React.PropTypes.func
 };
 
