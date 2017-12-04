@@ -4,6 +4,7 @@ import Grid from "material-ui/Grid";
 import Typography from "material-ui/Typography";
 import { withStyles } from "material-ui/styles";
 import PropTypes from "prop-types";
+import AuthForm from "../../components/AuthForm";
 
 const styles = theme => ({
   root: {
@@ -40,6 +41,12 @@ class MainPage extends Component {
             <Typography type="title" gutterBottom>
               Главная страница
             </Typography>
+          </Paper>
+        </Grid>
+
+        <Grid item xs={12}>
+          <Paper className={classes.paper}>
+            <AuthForm />
           </Paper>
         </Grid>
       </Grid>
