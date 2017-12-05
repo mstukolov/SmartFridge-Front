@@ -27,7 +27,7 @@ export default store => next => action => {
     completeness = "Полная",
     cost,
     location = "Москва",
-    date = new Date(),
+    date = new Date()
   ) {
     return {
       id: makeid(6),
@@ -38,13 +38,13 @@ export default store => next => action => {
       completeness,
       cost,
       location,
-      date,
+      date
     };
   }
 
   const collection = [];
 
-  for (var i = 0; i < 100000; i++) {
+  for (var i = 0; i < 100; i++) {
     collection.push(
       createData(
         "Oreo_" + i,
@@ -52,8 +52,8 @@ export default store => next => action => {
         makeid(6),
         makeid(1),
         makeid(4),
-        makeid(7),
-      ),
+        makeid(7)
+      )
     );
   }
   // TODO: dev only !!!!

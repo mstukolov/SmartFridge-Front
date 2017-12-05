@@ -110,6 +110,7 @@ class EnhancedTable extends React.Component {
    */
   handleChangePage = (event, page) => {
     this.setState({ page });
+    localStorage.setItem("page", page);
   };
   /**
    * Устанавливает колличество отображаемых строк на странице
@@ -118,6 +119,7 @@ class EnhancedTable extends React.Component {
    */
   handleChangeRowsPerPage = event => {
     this.setState({ rowsPerPage: event.target.value });
+    localStorage.setItem("rowsPerPage", +event.target.value);
   };
   /**
    * Проверяет, выбрана ли текущая строка
@@ -127,11 +129,22 @@ class EnhancedTable extends React.Component {
   isSelected = id => this.props.selected.has(id);
 
   /**
-   * Делаем запрос всех устройств с сервера
+   * Делаем запрос всех устройств с сервера и настроек просмотра из  storage
    * @return {void}
    */
   componentDidMount() {
     if (!this.props.data.length) this.props.callAllFridges();
+    const rowsPerPage = localStorage.getItem("rowsPerPage");
+    const page = localStorage.getItem("page");
+    if (rowsPerPage)
+      this.setState({
+        rowsPerPage: +rowsPerPage
+      });
+
+    if (page)
+      this.setState({
+        page: +page
+      });
   }
 
   /**
