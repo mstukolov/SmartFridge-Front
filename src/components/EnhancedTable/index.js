@@ -228,13 +228,15 @@ class EnhancedTable extends React.Component {
             </TableBody>
             <TableFooter>
               <TableRow>
-                <TablePagination
-                  count={data.length}
-                  rowsPerPage={rowsPerPage}
-                  page={page}
-                  onChangePage={this.handleChangePage}
-                  onChangeRowsPerPage={this.handleChangeRowsPerPage}
-                />
+                {this.props.loading ? null : (
+                  <TablePagination
+                    count={data.length}
+                    rowsPerPage={rowsPerPage}
+                    page={page}
+                    onChangePage={this.handleChangePage}
+                    onChangeRowsPerPage={this.handleChangeRowsPerPage}
+                  />
+                )}
               </TableRow>
             </TableFooter>
           </Table>
