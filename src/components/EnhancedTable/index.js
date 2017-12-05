@@ -230,6 +230,10 @@ class EnhancedTable extends React.Component {
               <TableRow>
                 {this.props.loading ? null : (
                   <TablePagination
+                    labelRowsPerPage="Показывыать на странице:"
+                    labelDisplayedRows={({ from, to, count }) =>
+                      `${from}-${to} из ${count}`
+                    }
                     count={data.length}
                     rowsPerPage={rowsPerPage}
                     page={page}

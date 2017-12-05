@@ -23,11 +23,8 @@ Moment.globalElement = "span";
 
 const styles = {
   container: {
-    height: "calc(100vh - 128px)",
-    marginTop: "64px",
-    marginBottom: "64px",
     boxSizing: "border-box",
-    padding: "12px",
+    padding: "76px 12px",
     overflowY: "auto",
     overflowX: "hidden"
   }

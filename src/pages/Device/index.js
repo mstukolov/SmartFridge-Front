@@ -8,7 +8,6 @@ import Grid from "material-ui/Grid";
 import SimpleMap from "../../components/SimpleMap";
 import Typography from "material-ui/Typography";
 import DeviceForm from "../../components/DeviceForm";
-import ChipsPanel from "../../components/ChipsPanel";
 
 const styles = theme => ({
   root: {
@@ -38,7 +37,6 @@ function Device(props) {
             <Typography type="title" gutterBottom>
               Информация об оборудовании
             </Typography>
-            <ChipsPanel />
           </Paper>
         </Grid>
         <Grid item xs={12} sm={6}>

@@ -30,7 +30,8 @@ const styles = theme => ({
     marginTop: 0,
     width: "100%",
     position: "fixed",
-    top: 0
+    top: 0,
+    zIndex: 1
   },
   flex: {
     flex: 1

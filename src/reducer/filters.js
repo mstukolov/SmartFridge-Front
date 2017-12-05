@@ -10,7 +10,15 @@ const FiltersModel = new Record({
   dateRange: new Map()
 });
 
-const defaultFilters = new FiltersModel();
+let defaultFilters = new FiltersModel();
+
+// Проверяем наличие данных сорировки в локальном хранилище
+if (localStorage.getItem("orderData")) {
+  defaultFilters = defaultFilters.setIn(
+    ["orderData"],
+    new Map(JSON.parse(localStorage.getItem("orderData")))
+  );
+}
 
 /**
  * Редьюссер хранения и обработки данных фильтрации
@@ -33,9 +41,15 @@ export default (filters = defaultFilters, action) => {
         order = "asc";
       }
 
-      return filters
+      const newFilters = filters
         .setIn(["orderData", "order"], order)
         .setIn(["orderData", "orderBy"], property);
+
+      localStorage.setItem(
+        "orderData",
+        JSON.stringify(newFilters.get("orderData").toJS())
+      );
+      return newFilters;
     //
     // case CHANGE_SELECTION:
     //   return filters.setIn(["selected"], payload.selected);
