@@ -44,7 +44,7 @@ export default store => next => action => {
 
   const collection = [];
 
-  for (var i = 0; i < 100; i++) {
+  for (var i = 0; i < 100000; i++) {
     collection.push(
       createData(
         "Oreo_" + i,
