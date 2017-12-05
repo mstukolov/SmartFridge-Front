@@ -49,7 +49,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={MainPage} />
             <Route path="/schedule" component={SchedulePage} />
-            <Route path="/device" component={DevicePage} />
+            <Route path="/:device" component={DevicePage} />
           </Switch>
         </section>
 

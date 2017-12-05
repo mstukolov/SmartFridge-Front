@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import App from "./components/App";
-import { BrowserRouter } from "react-router-dom";
+import { Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 import { MuiThemeProvider, createMuiTheme } from "material-ui/styles";
 import blue from "material-ui/colors/blue";
 import grey from "material-ui/colors/grey";
+import history from "./history";
 const theme = createMuiTheme({
   palette: {
     primary: blue,
@@ -28,11 +29,11 @@ class Root extends Component {
   render() {
     return (
       <Provider store={store}>
-        <BrowserRouter>
+        <Router history={history}>
           <MuiThemeProvider theme={theme}>
             <App />
           </MuiThemeProvider>
-        </BrowserRouter>
+        </Router>
       </Provider>
     );
   }

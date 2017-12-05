@@ -9,6 +9,7 @@ import {
   SUCCESS
 } from "../constants";
 import { Record, List, Map } from "immutable";
+import history from "../history";
 
 let DefaulrReducerState = new Record({
   isLoading: false,
@@ -76,7 +77,9 @@ export default (state = defaultState, action) => {
         .setIn(["selected"], new Map({}));
 
     case WRITE_FRIDGES:
+      history.push(`/${selected.first().id}`);
       console.log(WRITE_FRIDGES);
+
       return state;
 
     default:
