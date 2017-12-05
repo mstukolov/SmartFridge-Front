@@ -105,12 +105,20 @@ class EnhancedTableToolbar extends React.Component {
           {numSelected > 0 ? (
             <div className={classes.flex}>
               <Tooltip title="Просомотреть">
-                <IconButton aria-label="Visibility" onClick={this.handleShow}>
+                <IconButton
+                  disabled={numSelected > 1 ? true : false}
+                  aria-label="Visibility"
+                  onClick={this.handleShow}
+                >
                   <VisibilityIcon />
                 </IconButton>
               </Tooltip>
               <Tooltip title="Редактировать">
-                <IconButton aria-label="Edit" onClick={this.handleEdit}>
+                <IconButton
+                  aria-label="Edit"
+                  disabled={numSelected > 1 ? true : false}
+                  onClick={this.handleEdit}
+                >
                   <EditIcon />
                 </IconButton>
               </Tooltip>
