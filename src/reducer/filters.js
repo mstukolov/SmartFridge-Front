@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import { ORDER_BY } from "../constants";
 import { Record, Map } from "immutable";
 
@@ -23,7 +24,6 @@ export default (filters = defaultFilters, action) => {
     case ORDER_BY:
       const { property } = payload;
 
-      const orderBy = property;
       let order = "desc";
 
       if (

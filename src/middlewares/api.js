@@ -1,4 +1,4 @@
-import { START, SUCCESS, FAIL } from "../constants";
+import { START, SUCCESS } from "../constants";
 import { makeid } from "../utils";
 
 export default store => next => action => {
@@ -27,7 +27,7 @@ export default store => next => action => {
     completeness = "Полная",
     cost,
     location = "Москва",
-    date = new Date()
+    date = new Date(),
   ) {
     return {
       id: makeid(6),
@@ -38,7 +38,7 @@ export default store => next => action => {
       completeness,
       cost,
       location,
-      date
+      date,
     };
   }
 
@@ -52,8 +52,8 @@ export default store => next => action => {
         makeid(6),
         makeid(1),
         makeid(4),
-        makeid(7)
-      )
+        makeid(7),
+      ),
     );
   }
   // TODO: dev only !!!!

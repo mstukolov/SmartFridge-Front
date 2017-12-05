@@ -17,7 +17,6 @@ const styles = theme => ({
     flexWrap: "wrap"
   }
 });
-
 class ChipsPanel extends React.Component {
   styles = {
     chip: {

@@ -49,10 +49,6 @@ const toolbarStyles = theme => ({
  */
 
 class EnhancedTableToolbar extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-  }
-
   /**
    * Функция обработки удаления списка выделленных элементов
    * @param  {SynteticEvent} ev React событие

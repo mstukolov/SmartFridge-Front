@@ -13,8 +13,7 @@ export const orderedRowsSelector = createSelector(
       return collection.sort((a, b) => (b[orderBy] < a[orderBy] ? -1 : 1));
     } else {
       return collection.sort((a, b) => (a[orderBy] < b[orderBy] ? -1 : 1));
-    }
-
+    } // eslint-disable-next-line
     return collection;
   }
 );
