@@ -1,3 +1,4 @@
+// @flow
 import { START, SUCCESS } from "../constants";
 import { makeid, randomInteger } from "../utils";
 
@@ -19,7 +20,7 @@ export default store => next => action => {
    * @param  {Date}   [date=new               Date(]        Дата
    * @return {Object}                         [description]
    */
-  function createData(
+  function createFakeData(
     model,
     serial,
     type,
@@ -46,7 +47,7 @@ export default store => next => action => {
 
   for (var i = 0; i < 100; i++) {
     collection.push(
-      createData(
+      createFakeData(
         randomInteger(0, 3),
         makeid(15),
         randomInteger(0, 3),

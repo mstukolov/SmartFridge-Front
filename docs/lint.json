@@ -1,6 +1,6 @@
 [
   {
-    "name": "createData",
+    "name": "createFakeData",
     "filePath": "src/components/EnhancedTable/index.js",
     "lines": [
       {
@@ -53,7 +53,7 @@
       },
       {
         "lineNumber": 39,
-        "line": "function createData("
+        "line": "function createFakeData("
       }
     ],
     "codeParams": [

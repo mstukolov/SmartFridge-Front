@@ -1,7 +1,6 @@
-// @flow weak
+// @flow
 
 import React from "react";
-import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
 import AppBar from "material-ui/AppBar";
 import Toolbar from "material-ui/Toolbar";
@@ -11,24 +10,32 @@ const styles = theme => ({
   root: {
     width: "100%",
     position: "fixed",
-    bottom: 0,
+    bottom: 0
   },
   flex: {
-    flex: 1,
+    flex: 1
   },
   menuButton: {
     marginLeft: -12,
-    marginRight: 20,
-  },
+    marginRight: 20
+  }
 });
+
+type Props = {
+  classes: {
+    root: string,
+    flex: string
+  }
+};
 
 /**
  * Нижняя навигационная панель
  * @param       {Object} props
  * @constructor
  */
-function Footer(props) {
+function Footer(props: Props) {
   const { classes } = props;
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -49,8 +56,8 @@ function Footer(props) {
   );
 }
 
-Footer.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+// Footer.propTypes = {
+//   classes: PropTypes.object.isRequired
+// };
 
 export default withStyles(styles)(Footer);

@@ -40,7 +40,7 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-enhancedtable">components/EnhancedTable</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/EnhancedTable/index.js~EnhancedTable.html">EnhancedTable</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/EnhancedTable/index.js~EnhancedTableHead.html">EnhancedTableHead</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-EnhancedTableToolbar">EnhancedTableToolbar</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createData">createData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createFakeData">createFakeData</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-styles">styles</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toolbarStyles">toolbarStyles</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-columnData">columnData</a></span></span></li>
@@ -95,7 +95,7 @@ let counter = 0;
  * @param  {Date}   [date=new               Date(]        &#x414;&#x430;&#x442;&#x430;
  * @return {[type]}                         [description]
  */
-function createData(
+function createFakeData(
   model,
   serial,
   type,
@@ -343,19 +343,19 @@ class EnhancedTable extends React.Component {
       orderBy: &quot;model&quot;,
       selected: [],
       data: [
-        createData(&quot;Cupcake&quot;, 305, 3.7, 67, 4.3),
-        createData(&quot;Donut&quot;, 452, 25.0, 51, 4.9),
-        createData(&quot;Eclair&quot;, 262, 16.0, 24, 6.0),
-        createData(&quot;Frozen yoghurt&quot;, 159, 6.0, 24, 4.0),
-        createData(&quot;Gingerbread&quot;, 356, 16.0, 49, 3.9),
-        createData(&quot;Honeycomb&quot;, 408, 3.2, 87, 6.5),
-        createData(&quot;Ice cream sandwich&quot;, 237, 9.0, 37, 4.3),
-        createData(&quot;Jelly Bean&quot;, 375, 0.0, 94, 0.0),
-        createData(&quot;KitKat&quot;, 518, 26.0, 65, 7.0),
-        createData(&quot;Lollipop&quot;, 392, 0.2, 98, 0.0),
-        createData(&quot;Marshmallow&quot;, 318, 0, 81, 2.0),
-        createData(&quot;Nougat&quot;, 360, 19.0, 9, 37.0),
-        createData(&quot;Oreo&quot;, 437, 18.0, 63, 4.0)
+        createFakeData(&quot;Cupcake&quot;, 305, 3.7, 67, 4.3),
+        createFakeData(&quot;Donut&quot;, 452, 25.0, 51, 4.9),
+        createFakeData(&quot;Eclair&quot;, 262, 16.0, 24, 6.0),
+        createFakeData(&quot;Frozen yoghurt&quot;, 159, 6.0, 24, 4.0),
+        createFakeData(&quot;Gingerbread&quot;, 356, 16.0, 49, 3.9),
+        createFakeData(&quot;Honeycomb&quot;, 408, 3.2, 87, 6.5),
+        createFakeData(&quot;Ice cream sandwich&quot;, 237, 9.0, 37, 4.3),
+        createFakeData(&quot;Jelly Bean&quot;, 375, 0.0, 94, 0.0),
+        createFakeData(&quot;KitKat&quot;, 518, 26.0, 65, 7.0),
+        createFakeData(&quot;Lollipop&quot;, 392, 0.2, 98, 0.0),
+        createFakeData(&quot;Marshmallow&quot;, 318, 0, 81, 2.0),
+        createFakeData(&quot;Nougat&quot;, 360, 19.0, 9, 37.0),
+        createFakeData(&quot;Oreo&quot;, 437, 18.0, 63, 4.0)
       ],
       page: 0,
       rowsPerPage: 5

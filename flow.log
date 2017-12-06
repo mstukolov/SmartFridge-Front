@@ -1,0 +1,19 @@
+[2017-12-06 15:18:49] argv=/home/roman/Projects/CocaColaSmartFridge/node_modules/flow-bin/flow-linux64-v0.60.1/flow start --temp-dir /tmp/flow /home/roman/Projects/CocaColaSmartFridge
+[2017-12-06 15:18:49] Initializing Server (This might take some time)
+[2017-12-06 15:18:49] executable=/home/roman/Projects/CocaColaSmartFridge/node_modules/flow-bin/flow-linux64-v0.60.1/flow
+[2017-12-06 15:18:49] version=0.60.1
+[2017-12-06 15:18:49] Parsing
+[2017-12-06 15:18:50] Building package heap
+[2017-12-06 15:18:50] Loading libraries
+[2017-12-06 15:18:50] Resolving dependencies
+[2017-12-06 15:18:51] to_merge: Focused: 23, Dependents: 0, Dependencies: 0
+[2017-12-06 15:18:51] Calculating dependencies
+[2017-12-06 15:18:51] Merging
+[2017-12-06 15:18:51] Done
+[2017-12-06 15:18:51] Checked set: Focused: 23, Dependents: 0, Dependencies: 0
+[2017-12-06 15:18:51] Server is READY
+[2017-12-06 15:18:51] Took 1.429347 seconds to initialize.
+[2017-12-06 15:18:51] Status: Error
+[2017-12-06 15:19:09] Status: Error
+[2017-12-06 15:19:09] /home/roman/Projects/CocaColaSmartFridge/.flowconfig changed in an incompatible way. Exiting.
+

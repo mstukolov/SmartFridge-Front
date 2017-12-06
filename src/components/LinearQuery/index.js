@@ -1,18 +1,22 @@
 // @flow weak
-
 import React from "react";
-import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
 import { LinearProgress } from "material-ui/Progress";
 
 const styles = theme => ({
   root: {
     width: "100%"
-    // marginTop: theme.spacing.unit * 3
   }
 });
 
-function LinearQuery(props) {
+type Props = {
+  classes: {
+    root: string,
+    test: string
+  }
+};
+
+function LinearQuery(props: Props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
@@ -20,9 +24,5 @@ function LinearQuery(props) {
     </div>
   );
 }
-
-LinearQuery.propTypes = {
-  classes: PropTypes.object.isRequired
-};
 
 export default withStyles(styles)(LinearQuery);

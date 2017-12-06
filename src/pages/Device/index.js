@@ -1,7 +1,5 @@
 // @flow weak
-
 import React from "react";
-import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
 import Paper from "material-ui/Paper";
 import Grid from "material-ui/Grid";
@@ -20,13 +18,21 @@ const styles = theme => ({
     height: "100%",
     color: theme.palette.text.secondary
   },
-  mapp: {
+  map: {
     padding: 16,
     height: "300px"
   }
 });
 
-function Device(props) {
+type Props = {
+  classes: {
+    root: string,
+    paper: string,
+    map: string
+  }
+};
+
+function Device(props: Props) {
   const { classes } = props;
   console.log(props);
 
@@ -47,7 +53,7 @@ function Device(props) {
         </Grid>
         <Grid item xs={12} sm={6}>
           <Paper>
-            <div className={classes.mapp}>
+            <div className={classes.map}>
               <SimpleMap />
             </div>
           </Paper>
@@ -56,9 +62,5 @@ function Device(props) {
     </div>
   );
 }
-
-Device.propTypes = {
-  classes: PropTypes.object.isRequired
-};
 
 export default withStyles(styles)(Device);

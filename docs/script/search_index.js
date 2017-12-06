@@ -72,9 +72,9 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
-    "coca-cola-smart-fridge/src/components/enhancedtable/index.js~createdata",
-    "function/index.html#static-function-createData",
-    "<span>createData</span> <span class=\"search-result-import-path\">coca-cola-smart-fridge/src/components/EnhancedTable/index.js</span>",
+    "coca-cola-smart-fridge/src/components/enhancedtable/index.js~createFakeData",
+    "function/index.html#static-function-createFakeData",
+    "<span>createFakeData</span> <span class=\"search-result-import-path\">coca-cola-smart-fridge/src/components/EnhancedTable/index.js</span>",
     "function"
   ],
   [
