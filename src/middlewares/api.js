@@ -1,5 +1,5 @@
 import { START, SUCCESS } from "../constants";
-import { makeid } from "../utils";
+import { makeid, randomInteger } from "../utils";
 
 export default store => next => action => {
   if (!action.callAPI) return next(action);
@@ -24,7 +24,7 @@ export default store => next => action => {
     serial,
     type,
     front,
-    completeness = "Полная",
+    completeness,
     cost,
     location = "Москва",
     date = new Date()
@@ -47,12 +47,12 @@ export default store => next => action => {
   for (var i = 0; i < 100; i++) {
     collection.push(
       createData(
-        "Oreo_" + i,
+        randomInteger(0, 3),
         makeid(15),
-        makeid(6),
-        makeid(1),
-        makeid(4),
-        makeid(7)
+        randomInteger(0, 3),
+        randomInteger(0, 3),
+        makeid(7),
+        Math.floor(Math.random() * 100000)
       )
     );
   }

@@ -3,7 +3,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
-
+import { connect } from "react-redux";
 import TextField from "material-ui/TextField";
 
 import Input, { InputLabel } from "material-ui/Input";
@@ -28,8 +28,6 @@ const styles = theme => ({
 
 class DeviceForm extends React.Component {
   state = {
-    model: "10",
-    serial: "",
     multiline:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   };
@@ -41,22 +39,44 @@ class DeviceForm extends React.Component {
     });
   };
 
+  getModels = () => {
+    if (this.props.models)
+      return this.props.models.map(item => {
+        return <MenuItem value={item.id}>{item.name}</MenuItem>;
+      });
+    return null;
+  };
+
+  getTypes = () => {
+    if (this.props.types)
+      return this.props.types.map(item => {
+        return <MenuItem value={item.id}>{item.name}</MenuItem>;
+      });
+    return null;
+  };
+
+  getFront = () => {
+    if (this.props.front)
+      return this.props.front.map(item => {
+        return <MenuItem value={item.id}>{item.name}</MenuItem>;
+      });
+    return null;
+  };
+
   render() {
-    const { classes } = this.props;
+    const { classes, fridge, models, types, front } = this.props;
 
     return (
       <form className={classes.container} noValidate autoComplete="off">
         <FormControl fullWidth className={classes.formControl}>
           <InputLabel htmlFor="model">Модель</InputLabel>
           <Select
-            value={this.state.model}
+            value={models[fridge.model].id}
             onChange={this.handleChange(this.name)}
             input={<Input name="model" id="model" />}
             autoWidth
           >
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
+            {this.getModels()}
           </Select>
           <FormHelperText>5 символов</FormHelperText>
         </FormControl>
@@ -64,6 +84,7 @@ class DeviceForm extends React.Component {
         <TextField
           id="full-width"
           label="Серийный номер"
+          value={fridge.serial}
           InputLabelProps={{
             shrink: true
           }}
@@ -74,16 +95,14 @@ class DeviceForm extends React.Component {
         />
 
         <FormControl fullWidth className={classes.formControl}>
-          <InputLabel htmlFor="model">Тип</InputLabel>
+          <InputLabel htmlFor="type">Тип</InputLabel>
           <Select
-            value={this.state.model}
+            value={types[fridge.type].id}
             onChange={this.handleChange(this.name)}
-            input={<Input name="model" id="model" />}
+            input={<Input name="type" id="type" />}
             autoWidth
           >
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
+            {this.getTypes()}
           </Select>
           <FormHelperText>5 символов</FormHelperText>
         </FormControl>
@@ -91,14 +110,12 @@ class DeviceForm extends React.Component {
         <FormControl fullWidth className={classes.formControl}>
           <InputLabel htmlFor="model">Тип фронтальной части</InputLabel>
           <Select
-            value={this.state.model}
+            value={front[fridge.front].id}
             onChange={this.handleChange(this.name)}
             input={<Input name="model" id="model" />}
             autoWidth
           >
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
+            {this.getFront()}
           </Select>
           <FormHelperText>5 символов</FormHelperText>
         </FormControl>
@@ -106,6 +123,7 @@ class DeviceForm extends React.Component {
         <TextField
           id="full-width"
           label="Комплектность"
+          value={fridge.completeness}
           InputLabelProps={{
             shrink: true
           }}
@@ -118,6 +136,7 @@ class DeviceForm extends React.Component {
         <TextField
           id="full-width"
           label="Стоимость"
+          value={fridge.cost}
           InputLabelProps={{
             shrink: true
           }}
@@ -130,6 +149,7 @@ class DeviceForm extends React.Component {
         <TextField
           id="full-width"
           label="Локация"
+          value={fridge.location}
           InputLabelProps={{
             shrink: true
           }}
@@ -153,10 +173,21 @@ class DeviceForm extends React.Component {
       </form>
     );
   }
+
+  componentDidMount() {}
 }
 
 DeviceForm.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(DeviceForm);
+export default connect(state => {
+  const { activeItem } = state.fridgeForm;
+  const { models, types, front } = state.vocabulary;
+  return {
+    fridge: activeItem,
+    models,
+    types,
+    front
+  };
+}, {})(withStyles(styles)(DeviceForm));

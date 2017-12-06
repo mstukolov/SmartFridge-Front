@@ -156,6 +156,16 @@ class EnhancedTable extends React.Component {
   }
 
   /**
+   * Поулчаем из словаяря читабельный эквивалент id
+   * @param  {String} type тип поля
+   * @param  {String} id   значение
+   * @return {String}      читаемое значение
+   */
+  getVocabularyNameById = (type, id) => {
+    return this.props.vocabulary[type][id].name;
+  };
+
+  /**
    * render
    * @return {ReactElement} разметка React
    */
@@ -212,10 +222,16 @@ class EnhancedTable extends React.Component {
                       <TableCell padding="checkbox">
                         <Checkbox checked={isSelected} />
                       </TableCell>
-                      <TableCell padding="none">{n.model}</TableCell>
+                      <TableCell padding="none">
+                        {this.getVocabularyNameById("models", n.model)}
+                      </TableCell>
                       <TableCell numeric>{n.serial}</TableCell>
-                      <TableCell numeric>{n.type}</TableCell>
-                      <TableCell numeric>{n.front}</TableCell>
+                      <TableCell numeric>
+                        {this.getVocabularyNameById("types", n.type)}
+                      </TableCell>
+                      <TableCell numeric>
+                        {this.getVocabularyNameById("front", n.front)}
+                      </TableCell>
                       <TableCell numeric>{n.completeness}</TableCell>
                       <TableCell numeric>{n.cost}</TableCell>
                       <TableCell numeric>{n.location}</TableCell>
@@ -261,7 +277,8 @@ export default connect(
       selected: state.fridges.selected,
       loading: state.fridges.isLoading,
       order: state.filters.orderData.get("order"),
-      orderBy: state.filters.orderData.get("orderBy")
+      orderBy: state.filters.orderData.get("orderBy"),
+      vocabulary: state.vocabulary
     };
   },
   {

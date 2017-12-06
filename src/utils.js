@@ -40,3 +40,15 @@ export function makeid(num) {
 
   return text;
 }
+
+/**
+ * Генерирует случайное число
+ * @param  {Number} min минимальное значение
+ * @param  {Number} max максимальное значение
+ * @return {Number}     число
+ */
+export function randomInteger(min, max) {
+  let rand = min + Math.random() * (max + 1 - min);
+  rand = Math.floor(rand);
+  return rand;
+}
