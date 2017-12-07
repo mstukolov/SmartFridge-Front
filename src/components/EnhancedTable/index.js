@@ -2,7 +2,6 @@
 /* eslint-disable react/no-multi-comp */
 
 import React from "react";
-// import classNames from "classnames";
 import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
 import keycode from "keycode";
@@ -20,10 +19,7 @@ import {
   callAllFridges,
   selectFridge,
   selectAllFridges,
-  sortOrderBy,
-  deleteFridges,
-  writeFridges,
-  showFridges
+  sortOrderBy
 } from "../../AC";
 import LinearQuery from "../LinearQuery";
 import Moment from "react-moment";
@@ -151,7 +147,7 @@ class EnhancedTable extends React.Component {
    * Индикация загрузки данных
    * @return {ReactElement} разметка прелоадера
    */
-  getDataPreloader() {
+  showLoading() {
     return this.props.loading ? <LinearQuery /> : null;
   }
 
@@ -162,7 +158,7 @@ class EnhancedTable extends React.Component {
    * @return {String}      читаемое значение
    */
   getVocabularyNameById = (type, id) => {
-    return this.props.vocabulary[type][id].name;
+    if (type && id) return this.props.vocabulary[type][id].name;
   };
 
   /**
@@ -170,28 +166,14 @@ class EnhancedTable extends React.Component {
    * @return {ReactElement} разметка React
    */
   render() {
-    const {
-      order,
-      orderBy,
-      data,
-      classes,
-      selected,
-      deleteFridges,
-      writeFridges,
-      showFridges
-    } = this.props;
+    const { order, orderBy, data, classes, selected } = this.props;
     const { rowsPerPage, page } = this.state;
 
     return (
       <Paper className={classes.root}>
-        <EnhancedTableToolbar
-          numSelected={selected.size}
-          deleteList={deleteFridges}
-          writeList={writeFridges}
-          visibilityList={showFridges}
-        />
+        <EnhancedTableToolbar />
         <div className={classes.tableWrapper}>
-          <div className={classes.preloader}>{this.getDataPreloader()}</div>
+          <div className={classes.preloader}>{this.showLoading()}</div>
 
           <Table className={classes.table}>
             <EnhancedTableHead
@@ -285,9 +267,6 @@ export default connect(
     callAllFridges,
     selectFridge,
     selectAllFridges,
-    sortOrderBy,
-    deleteFridges,
-    writeFridges,
-    showFridges
+    sortOrderBy
   }
 )(withStyles(styles)(EnhancedTable));

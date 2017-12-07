@@ -42,7 +42,11 @@ class DeviceForm extends React.Component {
   getModels = () => {
     if (this.props.models)
       return this.props.models.map(item => {
-        return <MenuItem value={item.id}>{item.name}</MenuItem>;
+        return (
+          <MenuItem key={item.id} value={item.id}>
+            {item.name}
+          </MenuItem>
+        );
       });
     return null;
   };
@@ -50,7 +54,11 @@ class DeviceForm extends React.Component {
   getTypes = () => {
     if (this.props.types)
       return this.props.types.map(item => {
-        return <MenuItem value={item.id}>{item.name}</MenuItem>;
+        return (
+          <MenuItem key={item.id} value={item.id}>
+            {item.name}
+          </MenuItem>
+        );
       });
     return null;
   };
@@ -58,9 +66,18 @@ class DeviceForm extends React.Component {
   getFront = () => {
     if (this.props.front)
       return this.props.front.map(item => {
-        return <MenuItem value={item.id}>{item.name}</MenuItem>;
+        return (
+          <MenuItem key={item.id} value={item.id}>
+            {item.name}
+          </MenuItem>
+        );
       });
     return null;
+  };
+
+  isDisabledControl = () => {
+    return true;
+    // return !this.props.edit;
   };
 
   render() {
@@ -68,7 +85,11 @@ class DeviceForm extends React.Component {
 
     return (
       <form className={classes.container} noValidate autoComplete="off">
-        <FormControl fullWidth className={classes.formControl}>
+        <FormControl
+          disabled={this.isDisabledControl()}
+          fullWidth
+          className={classes.formControl}
+        >
           <InputLabel htmlFor="model">Модель</InputLabel>
           <Select
             value={models[fridge.model].id}
@@ -85,6 +106,7 @@ class DeviceForm extends React.Component {
           id="full-width"
           label="Серийный номер"
           value={fridge.serial}
+          disabled={this.isDisabledControl()}
           InputLabelProps={{
             shrink: true
           }}
@@ -94,7 +116,11 @@ class DeviceForm extends React.Component {
           margin="normal"
         />
 
-        <FormControl fullWidth className={classes.formControl}>
+        <FormControl
+          disabled={this.isDisabledControl()}
+          fullWidth
+          className={classes.formControl}
+        >
           <InputLabel htmlFor="type">Тип</InputLabel>
           <Select
             value={types[fridge.type].id}
@@ -107,7 +133,11 @@ class DeviceForm extends React.Component {
           <FormHelperText>5 символов</FormHelperText>
         </FormControl>
 
-        <FormControl fullWidth className={classes.formControl}>
+        <FormControl
+          disabled={this.isDisabledControl()}
+          fullWidth
+          className={classes.formControl}
+        >
           <InputLabel htmlFor="model">Тип фронтальной части</InputLabel>
           <Select
             value={front[fridge.front].id}
@@ -124,6 +154,7 @@ class DeviceForm extends React.Component {
           id="full-width"
           label="Комплектность"
           value={fridge.completeness}
+          disabled={this.isDisabledControl()}
           InputLabelProps={{
             shrink: true
           }}
@@ -137,6 +168,7 @@ class DeviceForm extends React.Component {
           id="full-width"
           label="Стоимость"
           value={fridge.cost}
+          disabled={this.isDisabledControl()}
           InputLabelProps={{
             shrink: true
           }}
@@ -150,6 +182,7 @@ class DeviceForm extends React.Component {
           id="full-width"
           label="Локация"
           value={fridge.location}
+          disabled={this.isDisabledControl()}
           InputLabelProps={{
             shrink: true
           }}
@@ -163,6 +196,7 @@ class DeviceForm extends React.Component {
           fullWidth
           id="multiline-flexible"
           label="Дополниельная информация"
+          disabled={this.isDisabledControl()}
           multiline
           rowsMax="4"
           value={this.state.multiline}
@@ -182,10 +216,11 @@ DeviceForm.propTypes = {
 };
 
 export default connect(state => {
-  const { activeItem } = state.fridgeForm;
+  const { edit } = state.fridgeForm;
   const { models, types, front } = state.vocabulary;
+  const fridge = state.fridges.selected.first();
   return {
-    fridge: activeItem,
+    fridge,
     models,
     types,
     front

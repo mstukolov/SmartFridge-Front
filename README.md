@@ -1,20 +1,25 @@
-This project was bootstrapped with
-[Create React App](https://github.com/facebookincubator/create-react-app).
-
-Below you will find some information on how to perform common tasks.<br> You can
-find the most recent version of this guide
-[here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
-
 ## Coca Cola Smart Fridge
+
+###Frontend
+Проект сгенерирован при помощи
+[Create React App](https://github.com/facebookincubator/create-react-app).
 
 Available Scripts
 
-* [npm start] - запускает приложение в режиме разработки
-* [npm test] - запускает тесты
-* [npm run build] - билд для продакшена
-* [npm run eject] - достает скрипты и конфиги, ломает createApp
-* [npm run doc] - генерация документации
-*
+* [yarn start] - запускает приложение в режиме разработки
+* [yarn test] - запускает тесты
+* [yarn run build] - билд для продакшена
+* [yarn run eject] - достает скрипты и конфиги, ломает createApp
+* [yarn run doc] - генерация документации
 
 За более подробной информацие о возможностях
 [Create React App](https://github.com/facebookincubator/create-react-app).
+
+###Backend
+Express приложение создано при помощи express-generator.
+
+В проекте находится папка backend
+
+1. Переходим в папку
+2. Делаем yarn или yarn install
+3. Запускаем сервер при помощи PORT=3001 node bin/www

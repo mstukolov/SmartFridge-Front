@@ -1,7 +1,7 @@
 import {
   DELETE_FRIDGES,
-  WRITE_FRIDGES,
-  SHOW_FRIDGES,
+  WRITE_FRIDGE,
+  SHOW_FRIDGE,
   LOAD_ALL_FRIDGES,
   LOAD_FRIDGE,
   SELECT_FRIDGE,
@@ -25,21 +25,12 @@ export function deleteFridges() {
  * Создает экшн для редактирования списка выбранного оборудования
  * @return {Object} объект экшена
  */
-export function showFridges() {
+export function showFridge(edit) {
   const action = {
-    type: SHOW_FRIDGES
-  };
-
-  return action;
-}
-
-/**
- * Создает экшн для редактирования списка выбранного оборудования
- * @return {Object} объект экшена
- */
-export function writeFridges() {
-  const action = {
-    type: WRITE_FRIDGES
+    type: SHOW_FRIDGE,
+    payload: {
+      edit
+    }
   };
 
   return action;

@@ -12,6 +12,8 @@ import Tooltip from "material-ui/Tooltip";
 import FilterListIcon from "material-ui-icons/FilterList";
 import Typography from "material-ui/Typography";
 import Toolbar from "material-ui/Toolbar";
+import { connect } from "react-redux";
+import { deleteFridges, showFridge } from "../../AC";
 
 const toolbarStyles = theme => ({
   root: {
@@ -56,7 +58,7 @@ class EnhancedTableToolbar extends React.Component {
    */
   handleDelete = ev => {
     ev.preventDefault();
-    this.props.deleteList();
+    this.props.deleteFridges();
   };
   /**
    * Функция обработки редактирования списка выделленных элементов
@@ -65,7 +67,7 @@ class EnhancedTableToolbar extends React.Component {
    */
   handleEdit = ev => {
     ev.preventDefault();
-    this.props.writeList();
+    this.props.showFridge(true);
   };
 
   /**
@@ -75,7 +77,7 @@ class EnhancedTableToolbar extends React.Component {
    */
   handleShow = ev => {
     ev.preventDefault();
-    this.props.visibilityList();
+    this.props.showFridge(false);
   };
 
   /**
@@ -142,13 +144,20 @@ class EnhancedTableToolbar extends React.Component {
 }
 
 EnhancedTableToolbar.propTypes = {
-  classes: PropTypes.object.isRequired,
-  numSelected: PropTypes.number.isRequired
-  // deleteList: React.PropTypes.func,
-  // visibilityList: React.PropTypes.func
-  // writeList: React.PropTypes.func
+  classes: PropTypes.object.isRequired
 };
 
-export default (EnhancedTableToolbar = withStyles(toolbarStyles)(
-  EnhancedTableToolbar
-));
+export default connect(
+  state => {
+    return {
+      selected: state.fridges.selected,
+      loading: state.fridges.isLoading,
+      numSelected: state.fridges.selected.size,
+      vocabulary: state.vocabulary
+    };
+  },
+  {
+    deleteFridges,
+    showFridge
+  }
+)((EnhancedTableToolbar = withStyles(toolbarStyles)(EnhancedTableToolbar)));
