@@ -19,7 +19,7 @@ export default (formData = defaultForm, action) => {
   const { type, payload } = action;
   switch (type) {
     case SHOW_FRIDGE:
-      console.log(payload);
+      // console.log(payload);
       const { edit } = payload;
       return formData.setIn(["edit"], edit);
 

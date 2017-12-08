@@ -12,7 +12,6 @@ const styles = theme => ({
   paper: {
     padding: 16,
     boxSizing: "border-box",
-    textAlign: "center",
     height: "100%",
     color: theme.palette.text.secondary
   },

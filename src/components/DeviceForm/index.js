@@ -5,11 +5,15 @@ import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
 import { connect } from "react-redux";
 import TextField from "material-ui/TextField";
-
 import Input, { InputLabel } from "material-ui/Input";
 import { MenuItem } from "material-ui/Menu";
 import { FormControl, FormHelperText } from "material-ui/Form";
 import Select from "material-ui/Select";
+import Button from "material-ui/Button";
+import Delete from "material-ui-icons/Delete";
+
+import Done from "material-ui-icons/Done";
+import ModeEditIcon from "material-ui-icons/ModeEdit";
 
 const styles = theme => ({
   container: {
@@ -23,6 +27,19 @@ const styles = theme => ({
   },
   menu: {
     width: 200
+  },
+  button: {
+    margin: theme.spacing.unit
+  },
+  leftIcon: {
+    marginRight: theme.spacing.unit
+  },
+  rightIcon: {
+    marginLeft: theme.spacing.unit
+  },
+  buttonSet: {
+    textAlign: "right",
+    width: "100%"
   }
 });
 
@@ -76,8 +93,30 @@ class DeviceForm extends React.Component {
   };
 
   isDisabledControl = () => {
-    return true;
-    // return !this.props.edit;
+    return !this.props.edit;
+  };
+
+  getButtonSet = () => {
+    const { classes } = this.props;
+    const btns = this.props.edit ? (
+      <Button className={classes.button} raised color="primary">
+        Сохранить
+        <Done className={classes.rightIcon} />
+      </Button>
+    ) : (
+      <Button className={classes.button} raised color="primary">
+        Редактировать
+        <ModeEditIcon className={classes.rightIcon} />
+      </Button>
+    );
+    return (
+      <div className={classes.buttonSet}>
+        <Button className={classes.button} raised color="accent">
+          Отменить
+        </Button>
+        {btns}
+      </div>
+    );
   };
 
   render() {
@@ -201,9 +240,9 @@ class DeviceForm extends React.Component {
           rowsMax="4"
           value={this.state.multiline}
           onChange={this.handleChange("multiline")}
-          className={classes.textField}
-          margin="normal"
         />
+
+        {this.getButtonSet()}
       </form>
     );
   }
@@ -216,7 +255,7 @@ DeviceForm.propTypes = {
 };
 
 export default connect(state => {
-  const { edit } = state.fridgeForm;
+  const edit = state.fridgeForm.get("edit");
   const { models, types, front } = state.vocabulary;
   const fridge = state.fridges.selected.first();
   // TODO: Переделать организацию хранения данных в сторэдж
@@ -225,6 +264,7 @@ export default connect(state => {
     fridge: fridge || storageItem,
     models,
     types,
-    front
+    front,
+    edit
   };
 }, {})(withStyles(styles)(DeviceForm));

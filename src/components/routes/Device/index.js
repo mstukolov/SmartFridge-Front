@@ -14,7 +14,6 @@ const styles = theme => ({
   paper: {
     padding: 16,
     boxSizing: "border-box",
-    textAlign: "center",
     height: "100%",
     color: theme.palette.text.secondary
   },
@@ -34,7 +33,7 @@ type Props = {
 
 function Device(props: Props) {
   const { classes } = props;
-  console.log(props);
+  // console.log(props);
 
   return (
     <div className={classes.root}>
