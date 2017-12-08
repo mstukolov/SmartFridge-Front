@@ -10,7 +10,6 @@ import { MenuItem } from "material-ui/Menu";
 import { FormControl, FormHelperText } from "material-ui/Form";
 import Select from "material-ui/Select";
 import Button from "material-ui/Button";
-import Delete from "material-ui-icons/Delete";
 
 import Done from "material-ui-icons/Done";
 import ModeEditIcon from "material-ui-icons/ModeEdit";
@@ -43,19 +42,47 @@ const styles = theme => ({
   }
 });
 
+/**
+ * Компонент формы просмотра/редактирования оборудования
+ * @extends React
+ */
 class DeviceForm extends React.Component {
-  // state = {
-  //   multiline:
-  //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  // };
+  state = {
+    model: "Данные отсутствуют",
+    serial: "Данные отсутствуют",
+    type: "Данные отсутствуют",
+    front: "Данные отсутствуют",
+    completeness: "Данные отсутствуют",
+    cost: "Данные отсутствуют",
+    location: "Данные отсутствуют",
+    date: "Данные отсутствуют",
+    additionalInformation: "Данные отсутствуют"
+  };
 
+  /**
+   * Функция обработки изменений занчения поля
+   * @param name имя поля
+   * @returns {void}
+   */
   handleChange = name => event => {
-    console.log("set", event.target.value);
+    console.log("set - " + name, event.target.value);
     this.setState({
       [name]: event.target.value
     });
   };
 
+  /**
+   * Обработка отправки формы
+   * @param ev
+   */
+  handleSubmit = ev => {
+    console.log("submit -->", this.state);
+  };
+
+  /**
+   * Создает список пунктов для селекта выбора модели устройства
+   * @returns {ReactElement}
+   */
   getModels = () => {
     if (this.props.models)
       return this.props.models.map(item => {
@@ -68,6 +95,10 @@ class DeviceForm extends React.Component {
     return null;
   };
 
+  /**
+   * Создает список пунктов для селекта выбора типа устройства
+   * @returns {ReactElement}
+   */
   getTypes = () => {
     if (this.props.types)
       return this.props.types.map(item => {
@@ -80,6 +111,10 @@ class DeviceForm extends React.Component {
     return null;
   };
 
+  /**
+   * Создает список пунктов для селекта выбора фронта устройства
+   * @returns {ReactElement}
+   */
   getFront = () => {
     if (this.props.front)
       return this.props.front.map(item => {
@@ -92,14 +127,27 @@ class DeviceForm extends React.Component {
     return null;
   };
 
+  /**
+   * Проверяет блокировать ли контролы
+   * @returns {boolean}
+   */
   isDisabledControl = () => {
     return !this.props.edit;
   };
 
+  /**
+   * Создает набор кнопок для управления формой
+   * @returns {ReactElement}
+   */
   getButtonSet = () => {
     const { classes } = this.props;
     const btns = this.props.edit ? (
-      <Button className={classes.button} raised color="primary">
+      <Button
+        onClick={this.handleSubmit}
+        className={classes.button}
+        raised
+        color="primary"
+      >
         Сохранить
         <Done className={classes.rightIcon} />
       </Button>
@@ -118,12 +166,20 @@ class DeviceForm extends React.Component {
       </div>
     );
   };
-
+  /**
+   * render
+   * @return {ReactElement} разметка React
+   */
   render() {
-    const { classes, fridge, models, types, front } = this.props;
+    const { classes } = this.props;
 
     return (
-      <form className={classes.container} noValidate autoComplete="off">
+      <form
+        onSubmit={this.handleSubmit}
+        className={classes.container}
+        noValidate
+        autoComplete="off"
+      >
         <FormControl
           disabled={this.isDisabledControl()}
           fullWidth
@@ -131,8 +187,8 @@ class DeviceForm extends React.Component {
         >
           <InputLabel htmlFor="model">Модель</InputLabel>
           <Select
-            value={models[fridge.model].id}
-            onChange={this.handleChange(this.name)}
+            value={this.state.model}
+            onChange={this.handleChange("model")}
             input={<Input name="model" id="model" />}
             autoWidth
           >
@@ -144,7 +200,9 @@ class DeviceForm extends React.Component {
         <TextField
           id="full-width"
           label="Серийный номер"
-          value={fridge.serial}
+          onChange={this.handleChange("serial")}
+          name={"serial"}
+          value={this.state.serial}
           disabled={this.isDisabledControl()}
           InputLabelProps={{
             shrink: true
@@ -162,8 +220,8 @@ class DeviceForm extends React.Component {
         >
           <InputLabel htmlFor="type">Тип</InputLabel>
           <Select
-            value={types[fridge.type].id}
-            onChange={this.handleChange(this.name)}
+            value={this.state.type}
+            onChange={this.handleChange("type")}
             input={<Input name="type" id="type" />}
             autoWidth
           >
@@ -177,11 +235,11 @@ class DeviceForm extends React.Component {
           fullWidth
           className={classes.formControl}
         >
-          <InputLabel htmlFor="model">Тип фронтальной части</InputLabel>
+          <InputLabel htmlFor="front">Тип фронтальной части</InputLabel>
           <Select
-            value={front[fridge.front].id}
-            onChange={this.handleChange(this.name)}
-            input={<Input name="model" id="model" />}
+            value={this.state.front}
+            onChange={this.handleChange("front")}
+            input={<Input name="front" id="front" />}
             autoWidth
           >
             {this.getFront()}
@@ -192,7 +250,8 @@ class DeviceForm extends React.Component {
         <TextField
           id="full-width"
           label="Комплектность"
-          value={fridge.completeness}
+          value={this.state.completeness}
+          onChange={this.handleChange("completeness")}
           disabled={this.isDisabledControl()}
           InputLabelProps={{
             shrink: true
@@ -206,7 +265,8 @@ class DeviceForm extends React.Component {
         <TextField
           id="full-width"
           label="Стоимость"
-          value={fridge.cost}
+          value={this.state.cost}
+          onChange={this.handleChange("cost")}
           disabled={this.isDisabledControl()}
           InputLabelProps={{
             shrink: true
@@ -220,7 +280,8 @@ class DeviceForm extends React.Component {
         <TextField
           id="full-width"
           label="Локация"
-          value={fridge.location}
+          onChange={this.handleChange("location")}
+          value={this.state.location}
           disabled={this.isDisabledControl()}
           InputLabelProps={{
             shrink: true
@@ -238,8 +299,8 @@ class DeviceForm extends React.Component {
           disabled={this.isDisabledControl()}
           multiline
           rowsMax="4"
-          value={fridge.additionalInformation}
-          onChange={this.handleChange("multiline")}
+          value={this.state.additionalInformation}
+          onChange={this.handleChange("additionalInformation")}
         />
 
         {this.getButtonSet()}
@@ -247,7 +308,23 @@ class DeviceForm extends React.Component {
     );
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    const { fridge } = this.props;
+    console.log("---=>", fridge);
+
+    this.setState({
+      model: fridge.model || "Данные отсутствуют",
+      serial: fridge.serial || "Данные отсутствуют",
+      type: fridge.type || "Данные отсутствуют",
+      front: fridge.front || "Данные отсутствуют",
+      completeness: fridge.completeness || "Данные отсутствуют",
+      cost: fridge.cost || "Данные отсутствуют",
+      location: fridge.location || "Данные отсутствуют",
+      date: fridge.date || "Данные отсутствуют",
+      additionalInformation:
+        fridge.additionalInformation || "Данные отсутствуют"
+    });
+  }
 }
 
 DeviceForm.propTypes = {
