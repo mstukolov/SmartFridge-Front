@@ -1,6 +1,7 @@
 // eslint-disable-next-line
-import { SELECT_FRIDGE, SHOW_FRIDGE, WRITE_FRIDGE } from "../constants";
+import { SHOW_FRIDGE, EDIT_FRIDGE, CANCEL_FRIDGE } from "../constants";
 import { Record, Map } from "immutable";
+import history from "../history";
 
 const FridgeFormModel = new Record({
   activeItem: {},
@@ -19,12 +20,15 @@ export default (formData = defaultForm, action) => {
   const { type, payload } = action;
   switch (type) {
     case SHOW_FRIDGE:
-      const { edit } = payload;
-      return formData.setIn(["edit"], edit);
+      return formData.setIn(["edit"], false);
 
-    // localStorage.setItem(activeItem, item)
+    case EDIT_FRIDGE:
+      return formData.setIn(["edit"], true);
 
-    // return formData.set("activeItem", item);
+    case CANCEL_FRIDGE:
+      history.push("/schedule");
+      //TODO: вынести
+      return formData.setIn(["edit"], false);
 
     default:
       return formData;

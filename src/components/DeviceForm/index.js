@@ -10,7 +10,7 @@ import { MenuItem } from "material-ui/Menu";
 import { FormControl, FormHelperText } from "material-ui/Form";
 import Select from "material-ui/Select";
 import Button from "material-ui/Button";
-
+import { cancelFridge, editFridge, showFridge } from "../../redux/AC";
 import Done from "material-ui-icons/Done";
 import ModeEditIcon from "material-ui-icons/ModeEdit";
 
@@ -69,14 +69,6 @@ class DeviceForm extends React.Component {
     this.setState({
       [name]: event.target.value
     });
-  };
-
-  /**
-   * Обработка отправки формы
-   * @param ev
-   */
-  handleSubmit = ev => {
-    console.log("submit -->", this.state);
   };
 
   /**
@@ -182,7 +174,8 @@ class DeviceForm extends React.Component {
    * {SynteticEvent} ev событие react
    */
   handleBtnCancelClick = ev => {
-    console.log("cancel!!!");
+    ev.preventDefault();
+    this.props.cancelFridge();
   };
 
   /**
@@ -190,12 +183,23 @@ class DeviceForm extends React.Component {
    * {SynteticEvent} ev событие react
    */
   handleBtnEditClick = ev => {
-    console.log("edit!!!");
+    ev.preventDefault();
+    this.props.editFridge();
   };
   /**
    * render
    * @return {ReactElement} разметка React
    */
+
+  /**
+   * Обработка отправки формы
+   * @param ev
+   */
+  handleSubmit = ev => {
+    ev.preventDefault();
+    this.props.showFridge();
+    console.log("submit -->", this.state);
+  };
   render() {
     const { classes } = this.props;
 
@@ -357,17 +361,24 @@ DeviceForm.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default connect(state => {
-  const edit = state.fridgeForm.get("edit");
-  const { models, types, front } = state.vocabulary;
-  const fridge = state.fridges.selected.first();
-  // TODO: Переделать организацию хранения данных в сторэдж
-  const storageItem = JSON.parse(localStorage.getItem("activeItem"));
-  return {
-    fridge: fridge || storageItem,
-    models,
-    types,
-    front,
-    edit
-  };
-}, {})(withStyles(styles)(DeviceForm));
+export default connect(
+  state => {
+    const edit = state.fridgeForm.get("edit");
+    const { models, types, front } = state.vocabulary;
+    const fridge = state.fridges.selected.first();
+    // TODO: Переделать организацию хранения данных в сторэдж
+    const storageItem = JSON.parse(localStorage.getItem("activeItem"));
+    return {
+      fridge: fridge || storageItem,
+      models,
+      types,
+      front,
+      edit
+    };
+  },
+  {
+    cancelFridge,
+    editFridge,
+    showFridge
+  }
+)(withStyles(styles)(DeviceForm));

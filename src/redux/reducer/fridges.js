@@ -1,6 +1,6 @@
 import {
   DELETE_FRIDGES,
-  WRITE_FRIDGE,
+  EDIT_FRIDGE,
   SHOW_FRIDGE,
   LOAD_ALL_FRIDGES,
   LOAD_FRIDGE,
@@ -79,10 +79,7 @@ export default (state = defaultState, action) => {
         .setIn(["selected"], new Map({}));
 
     case SHOW_FRIDGE:
-    case WRITE_FRIDGE:
-      // history.push(`/${selected.first().id}`);
-      console.log(WRITE_FRIDGE);
-      // redirect to page
+    case EDIT_FRIDGE:
       history.push("/device");
 
       return state;

@@ -13,7 +13,7 @@ import FilterListIcon from "material-ui-icons/FilterList";
 import Typography from "material-ui/Typography";
 import Toolbar from "material-ui/Toolbar";
 import { connect } from "react-redux";
-import { deleteFridges, showFridge } from "../../redux/AC";
+import { deleteFridges, showFridge, editFridge } from "../../redux/AC";
 
 const toolbarStyles = theme => ({
   root: {
@@ -67,7 +67,7 @@ class EnhancedTableToolbar extends React.Component {
    */
   handleEdit = ev => {
     ev.preventDefault();
-    this.props.showFridge(true);
+    this.props.editFridge();
   };
 
   /**
@@ -77,7 +77,7 @@ class EnhancedTableToolbar extends React.Component {
    */
   handleShow = ev => {
     ev.preventDefault();
-    this.props.showFridge(false);
+    this.props.showFridge();
   };
 
   /**
@@ -158,6 +158,7 @@ export default connect(
   },
   {
     deleteFridges,
-    showFridge
+    showFridge,
+    editFridge
   }
 )((EnhancedTableToolbar = withStyles(toolbarStyles)(EnhancedTableToolbar)));
