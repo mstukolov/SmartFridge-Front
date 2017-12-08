@@ -6,7 +6,7 @@ import store from "../redux/store/index";
 import { MuiThemeProvider, createMuiTheme } from "material-ui/styles";
 import blue from "material-ui/colors/blue";
 import grey from "material-ui/colors/grey";
-import history from "../history";
+import history from "../redux/history";
 const theme = createMuiTheme({
   palette: {
     primary: blue,
