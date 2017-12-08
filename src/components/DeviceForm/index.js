@@ -219,8 +219,10 @@ export default connect(state => {
   const { edit } = state.fridgeForm;
   const { models, types, front } = state.vocabulary;
   const fridge = state.fridges.selected.first();
+  // TODO: Переделать организацию хранения данных в сторэдж
+  const storageItem = JSON.parse(localStorage.getItem("activeItem"));
   return {
-    fridge,
+    fridge: fridge || storageItem,
     models,
     types,
     front

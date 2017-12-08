@@ -96,6 +96,13 @@ class EnhancedTable extends React.Component {
   handleClick = (event, item) => {
     event.preventDefault();
     this.props.selectFridge(item);
+
+    //TODO: Подумать куда перенести эту логику и переделать этот костыль
+    // Сохраняем значение в сторедж для возможности просмотра записи
+    setTimeout(() => {
+      const activeItem = JSON.stringify(this.props.selected.first());
+      // TODO: Переделать организацию хранения данных в сторэджlocalStorage.setItem("activeItem", activeItem);
+    }, 100);
   };
 
   /**
@@ -106,6 +113,7 @@ class EnhancedTable extends React.Component {
    */
   handleChangePage = (event, page) => {
     this.setState({ page });
+    // TODO: Переделать организацию хранения данных в сторэдж
     localStorage.setItem("page", page);
   };
   /**
@@ -115,6 +123,7 @@ class EnhancedTable extends React.Component {
    */
   handleChangeRowsPerPage = event => {
     this.setState({ rowsPerPage: event.target.value });
+    // TODO: Переделать организацию хранения данных в сторэдж
     localStorage.setItem("rowsPerPage", +event.target.value);
   };
   /**
@@ -130,6 +139,7 @@ class EnhancedTable extends React.Component {
    */
   componentDidMount() {
     if (!this.props.data.length) this.props.callAllFridges();
+    // TODO: Переделать организацию хранения данных в сторэдж
     const rowsPerPage = localStorage.getItem("rowsPerPage");
     const page = localStorage.getItem("page");
     if (rowsPerPage)

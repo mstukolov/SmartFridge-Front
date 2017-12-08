@@ -13,6 +13,7 @@ const FiltersModel = new Record({
 let defaultFilters = new FiltersModel();
 
 // Проверяем наличие данных сорировки в локальном хранилище
+// TODO: Переделать организацию хранения данных в сторэдж
 if (localStorage.getItem("orderData")) {
   defaultFilters = defaultFilters.setIn(
     ["orderData"],
@@ -45,6 +46,7 @@ export default (filters = defaultFilters, action) => {
         .setIn(["orderData", "order"], order)
         .setIn(["orderData", "orderBy"], property);
 
+      // TODO: Переделать организацию хранения данных в сторэдж
       localStorage.setItem(
         "orderData",
         JSON.stringify(newFilters.get("orderData").toJS())
