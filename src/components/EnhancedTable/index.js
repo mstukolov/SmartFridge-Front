@@ -20,10 +20,10 @@ import {
   selectFridge,
   selectAllFridges,
   sortOrderBy
-} from "../../AC";
+} from "../../redux/AC";
 import LinearQuery from "../LinearQuery";
 import Moment from "react-moment";
-import { orderedRowsSelector } from "../../selectors";
+import { orderedRowsSelector } from "../../redux/selectors";
 import EnhancedTableHead from "./head";
 import EnhancedTableToolbar from "./toolbar";
 

@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import Header from "../Header";
 import Footer from "../Footer";
-import MainPage from "../../pages/Main";
-import SchedulePage from "../../pages/Schedule";
-import DevicePage from "../../pages/Device";
+import MainPage from "../routes/Main";
+import SchedulePage from "../routes/Schedule";
+import DevicePage from "../routes/Device";
 import injectSheet from "react-jss";
 
 import moment from "moment/min/moment-with-locales";

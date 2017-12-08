@@ -3,7 +3,7 @@ import Paper from "material-ui/Paper";
 import Grid from "material-ui/Grid";
 import Typography from "material-ui/Typography";
 import { withStyles } from "material-ui/styles";
-import AuthForm from "../../components/AuthForm";
+import AuthForm from "../../AuthForm/index";
 
 const styles = theme => ({
   root: {

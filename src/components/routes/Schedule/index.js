@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import EnhancedTable from "../../components/EnhancedTable";
+import EnhancedTable from "../../EnhancedTable/index";
 
 /**
  * Страница с табличным представление данных

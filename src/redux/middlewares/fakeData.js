@@ -1,4 +1,4 @@
-import { makeid, randomInteger } from "../utils";
+import { makeid, randomInteger } from "../../utils";
 
 export const collection = [
   {

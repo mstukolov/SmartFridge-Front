@@ -3,9 +3,9 @@ import React from "react";
 import { withStyles } from "material-ui/styles";
 import Paper from "material-ui/Paper";
 import Grid from "material-ui/Grid";
-import SimpleMap from "../../components/SimpleMap";
+import SimpleMap from "../../SimpleMap/index";
 import Typography from "material-ui/Typography";
-import DeviceForm from "../../components/DeviceForm";
+import DeviceForm from "../../DeviceForm/index";
 
 const styles = theme => ({
   root: {

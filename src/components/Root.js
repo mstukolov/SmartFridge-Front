@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import App from "./components/App";
+import App from "./App/index";
 import { Router } from "react-router-dom";
 import { Provider } from "react-redux";
-import store from "./store";
+import store from "../redux/store/index";
 import { MuiThemeProvider, createMuiTheme } from "material-ui/styles";
 import blue from "material-ui/colors/blue";
 import grey from "material-ui/colors/grey";
-import history from "./history";
+import history from "../history";
 const theme = createMuiTheme({
   palette: {
     primary: blue,

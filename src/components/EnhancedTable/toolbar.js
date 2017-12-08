@@ -13,7 +13,7 @@ import FilterListIcon from "material-ui-icons/FilterList";
 import Typography from "material-ui/Typography";
 import Toolbar from "material-ui/Toolbar";
 import { connect } from "react-redux";
-import { deleteFridges, showFridge } from "../../AC";
+import { deleteFridges, showFridge } from "../../redux/AC";
 
 const toolbarStyles = theme => ({
   root: {

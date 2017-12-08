@@ -10,7 +10,7 @@ import {
   SUCCESS
 } from "../constants";
 import { Record, List, Map } from "immutable";
-import history from "../history";
+import history from "../../history";
 
 let DefaulrReducerState = new Record({
   isLoading: false,
