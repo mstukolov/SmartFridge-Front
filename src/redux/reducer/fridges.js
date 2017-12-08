@@ -27,7 +27,8 @@ const FridgeModel = Record({
   completeness: null,
   cost: null,
   location: null,
-  date: null
+  date: null,
+  additionalInformation: null
 });
 
 const defaultState = new DefaulrReducerState();

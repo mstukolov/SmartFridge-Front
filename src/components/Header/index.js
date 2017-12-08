@@ -179,18 +179,18 @@ class Header extends React.Component {
                 </MenuItem>
               </NavLink>
 
-              <NavLink to="/device" activeClassName="selected">
-                <MenuItem>
-                  <ListItemIcon className={classes.icon}>
-                    <DvrIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    classes={{ text: classes.text }}
-                    inset
-                    primary="Просмотр выбранного"
-                  />
-                </MenuItem>
-              </NavLink>
+              {/*<NavLink to="/device" activeClassName="selected">*/}
+              {/*<MenuItem>*/}
+              {/*<ListItemIcon className={classes.icon}>*/}
+              {/*<DvrIcon />*/}
+              {/*</ListItemIcon>*/}
+              {/*<ListItemText*/}
+              {/*classes={{ text: classes.text }}*/}
+              {/*inset*/}
+              {/*primary="Просмотр выбранного"*/}
+              {/*/>*/}
+              {/*</MenuItem>*/}
+              {/*</NavLink>*/}
             </div>
           </Drawer>
         </AppBar>

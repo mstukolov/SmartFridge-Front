@@ -10,7 +10,9 @@ export const collection = [
     completeness: "1IZWva9",
     cost: 76056,
     location: "Москва",
-    date: "2017-12-07T12:47:53.348Z"
+    date: "2017-12-07T12:47:53.348Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "2g8rdS",
@@ -21,7 +23,9 @@ export const collection = [
     completeness: "tZ3QbzP",
     cost: 84362,
     location: "Москва",
-    date: "2017-12-07T12:47:53.348Z"
+    date: "2017-12-07T12:47:53.348Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "mhhPfP",
@@ -32,7 +36,9 @@ export const collection = [
     completeness: "J2ZModz",
     cost: 81797,
     location: "Москва",
-    date: "2017-12-07T12:47:53.348Z"
+    date: "2017-12-07T12:47:53.348Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "IId9kl",
@@ -43,7 +49,9 @@ export const collection = [
     completeness: "zJpxQ4E",
     cost: 78988,
     location: "Москва",
-    date: "2017-12-07T12:47:53.348Z"
+    date: "2017-12-07T12:47:53.348Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "j6xaUh",
@@ -54,7 +62,9 @@ export const collection = [
     completeness: "RRCQCCi",
     cost: 80750,
     location: "Москва",
-    date: "2017-12-07T12:47:53.348Z"
+    date: "2017-12-07T12:47:53.348Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "OdcFqp",
@@ -65,7 +75,9 @@ export const collection = [
     completeness: "ThSa1Jl",
     cost: 21277,
     location: "Москва",
-    date: "2017-12-07T12:47:53.348Z"
+    date: "2017-12-07T12:47:53.348Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "oyzRi4",
@@ -76,7 +88,9 @@ export const collection = [
     completeness: "MJAL2Dd",
     cost: 97821,
     location: "Москва",
-    date: "2017-12-07T12:47:53.348Z"
+    date: "2017-12-07T12:47:53.348Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "Zbem0i",
@@ -87,7 +101,9 @@ export const collection = [
     completeness: "ipIHE3z",
     cost: 28951,
     location: "Москва",
-    date: "2017-12-07T12:47:53.348Z"
+    date: "2017-12-07T12:47:53.348Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "KacFh6",
@@ -98,7 +114,9 @@ export const collection = [
     completeness: "DYb2ztx",
     cost: 18504,
     location: "Москва",
-    date: "2017-12-07T12:47:53.348Z"
+    date: "2017-12-07T12:47:53.348Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "hTLSjU",
@@ -109,7 +127,9 @@ export const collection = [
     completeness: "2j2gbPj",
     cost: 71734,
     location: "Москва",
-    date: "2017-12-07T12:47:53.348Z"
+    date: "2017-12-07T12:47:53.348Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "NA7DnR",
@@ -120,7 +140,9 @@ export const collection = [
     completeness: "RyqXNMg",
     cost: 99355,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "dqAL2C",
@@ -131,7 +153,9 @@ export const collection = [
     completeness: "nZCAmIx",
     cost: 58755,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "PRAP58",
@@ -142,7 +166,9 @@ export const collection = [
     completeness: "ZVcadR5",
     cost: 52435,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "DPZeJH",
@@ -153,7 +179,9 @@ export const collection = [
     completeness: "QW4dYlE",
     cost: 16707,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "oHYlbT",
@@ -164,7 +192,9 @@ export const collection = [
     completeness: "c1q3ery",
     cost: 26990,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "rPl8Mt",
@@ -175,7 +205,9 @@ export const collection = [
     completeness: "7dTUer3",
     cost: 3560,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "TXYYSw",
@@ -186,7 +218,9 @@ export const collection = [
     completeness: "a0BnWBO",
     cost: 96425,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "fgTlEU",
@@ -197,7 +231,9 @@ export const collection = [
     completeness: "s8ikWQE",
     cost: 74914,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "fgElC8",
@@ -208,7 +244,9 @@ export const collection = [
     completeness: "14hkKig",
     cost: 17554,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "gO5DNm",
@@ -219,7 +257,9 @@ export const collection = [
     completeness: "BzuZjle",
     cost: 15185,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "qGJzla",
@@ -230,7 +270,9 @@ export const collection = [
     completeness: "S3JJYOq",
     cost: 70973,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "A9YTBn",
@@ -241,7 +283,9 @@ export const collection = [
     completeness: "roudU1U",
     cost: 76310,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "DTDfM5",
@@ -252,7 +296,9 @@ export const collection = [
     completeness: "Bd33vgN",
     cost: 51118,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "91Ku4h",
@@ -263,7 +309,9 @@ export const collection = [
     completeness: "Bzdx5Nd",
     cost: 9949,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "tl3lUd",
@@ -274,7 +322,9 @@ export const collection = [
     completeness: "QZTZhyf",
     cost: 23341,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "WtLyeU",
@@ -285,7 +335,9 @@ export const collection = [
     completeness: "QeUOz6T",
     cost: 69384,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "Jii6ku",
@@ -296,7 +348,9 @@ export const collection = [
     completeness: "OuIszkS",
     cost: 3753,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "kSxHUc",
@@ -307,7 +361,9 @@ export const collection = [
     completeness: "5UFlCyR",
     cost: 89688,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "NcsHOe",
@@ -318,7 +374,9 @@ export const collection = [
     completeness: "fFgMa34",
     cost: 17017,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "dGuggE",
@@ -329,7 +387,9 @@ export const collection = [
     completeness: "YE71Dzr",
     cost: 1227,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "I3Hed8",
@@ -340,7 +400,9 @@ export const collection = [
     completeness: "MYrKV7n",
     cost: 48979,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "noI8Qs",
@@ -351,7 +413,9 @@ export const collection = [
     completeness: "JDWA03Y",
     cost: 34981,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "KcQ8c0",
@@ -362,7 +426,9 @@ export const collection = [
     completeness: "TgWgA4P",
     cost: 16709,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "6KY7sH",
@@ -373,7 +439,9 @@ export const collection = [
     completeness: "S7T2hdT",
     cost: 39339,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "6wG2nF",
@@ -384,7 +452,9 @@ export const collection = [
     completeness: "63yDF4I",
     cost: 93239,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "WGRpJ3",
@@ -395,7 +465,9 @@ export const collection = [
     completeness: "bocnCMO",
     cost: 84536,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "lSyv4L",
@@ -406,7 +478,9 @@ export const collection = [
     completeness: "zGL7Ywd",
     cost: 16626,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "7tbfya",
@@ -417,7 +491,9 @@ export const collection = [
     completeness: "KosOEaf",
     cost: 56867,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "3yIDWD",
@@ -428,7 +504,9 @@ export const collection = [
     completeness: "jqkIrdG",
     cost: 54959,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "X9AKSj",
@@ -439,7 +517,9 @@ export const collection = [
     completeness: "McUuRWd",
     cost: 40315,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "eNqpEx",
@@ -450,7 +530,9 @@ export const collection = [
     completeness: "9IcsBgF",
     cost: 59986,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "8jowlD",
@@ -461,7 +543,9 @@ export const collection = [
     completeness: "YpgE5uU",
     cost: 63309,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "CJnX4B",
@@ -472,7 +556,9 @@ export const collection = [
     completeness: "6CBvpRf",
     cost: 18500,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "n86qp9",
@@ -483,7 +569,9 @@ export const collection = [
     completeness: "G2lQG0n",
     cost: 67245,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "sYHkIF",
@@ -494,7 +582,9 @@ export const collection = [
     completeness: "Uryancb",
     cost: 47032,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "azrun7",
@@ -505,7 +595,9 @@ export const collection = [
     completeness: "zvUcvvQ",
     cost: 2088,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "LoVtQZ",
@@ -516,7 +608,9 @@ export const collection = [
     completeness: "szJdgij",
     cost: 82022,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "KdvNMW",
@@ -527,7 +621,9 @@ export const collection = [
     completeness: "xrmJX0l",
     cost: 7973,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "kX6w5t",
@@ -538,7 +634,9 @@ export const collection = [
     completeness: "cihrf8m",
     cost: 80981,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "Ihpr8b",
@@ -549,7 +647,9 @@ export const collection = [
     completeness: "k6Lt7PY",
     cost: 39789,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "m91Hg8",
@@ -560,7 +660,9 @@ export const collection = [
     completeness: "en6lbxd",
     cost: 61714,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "qjYgyr",
@@ -571,7 +673,9 @@ export const collection = [
     completeness: "jLMfhW8",
     cost: 80910,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "dEHtxp",
@@ -582,7 +686,9 @@ export const collection = [
     completeness: "zk8FAJU",
     cost: 63568,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "QaBfsT",
@@ -593,7 +699,9 @@ export const collection = [
     completeness: "ffblZ5n",
     cost: 54709,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "nYTWMH",
@@ -604,7 +712,9 @@ export const collection = [
     completeness: "Jm7rfr0",
     cost: 62030,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "L1hDRY",
@@ -615,7 +725,9 @@ export const collection = [
     completeness: "ZfYPH2m",
     cost: 42008,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "9hRafb",
@@ -626,7 +738,9 @@ export const collection = [
     completeness: "zzO0VS3",
     cost: 59940,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "zurJie",
@@ -637,7 +751,9 @@ export const collection = [
     completeness: "5TBJzyu",
     cost: 2597,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "IbcupJ",
@@ -648,7 +764,9 @@ export const collection = [
     completeness: "a3SoJSZ",
     cost: 26238,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "816aP1",
@@ -659,7 +777,9 @@ export const collection = [
     completeness: "8sFf18E",
     cost: 58235,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "rX8sUM",
@@ -670,7 +790,9 @@ export const collection = [
     completeness: "XswVeMF",
     cost: 30965,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "YXipzy",
@@ -681,7 +803,9 @@ export const collection = [
     completeness: "p3qPzea",
     cost: 20415,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "xjcSb9",
@@ -692,7 +816,9 @@ export const collection = [
     completeness: "QT92PEG",
     cost: 77264,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "mtkKVp",
@@ -703,7 +829,9 @@ export const collection = [
     completeness: "HtXjfcR",
     cost: 27493,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "2kfPui",
@@ -714,7 +842,9 @@ export const collection = [
     completeness: "Jw8wFfi",
     cost: 97460,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "pgSiOK",
@@ -725,7 +855,9 @@ export const collection = [
     completeness: "Bl8ESnF",
     cost: 80895,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "8Pubcy",
@@ -736,7 +868,9 @@ export const collection = [
     completeness: "fn9HK2h",
     cost: 95180,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "DgR0nH",
@@ -747,7 +881,9 @@ export const collection = [
     completeness: "mUyJzxq",
     cost: 14585,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "B5Y4NU",
@@ -758,7 +894,9 @@ export const collection = [
     completeness: "q6I4CkM",
     cost: 33414,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "ZjFz68",
@@ -769,7 +907,9 @@ export const collection = [
     completeness: "5p7kQPi",
     cost: 38492,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "x44AbD",
@@ -780,7 +920,9 @@ export const collection = [
     completeness: "glKyfUs",
     cost: 12952,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "bK1Sdx",
@@ -791,7 +933,9 @@ export const collection = [
     completeness: "W4olZUd",
     cost: 11231,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "A2mZcD",
@@ -802,7 +946,9 @@ export const collection = [
     completeness: "UuJ6W3o",
     cost: 1489,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "4bXmur",
@@ -813,7 +959,9 @@ export const collection = [
     completeness: "7O61VlA",
     cost: 11310,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "cBWo5N",
@@ -824,7 +972,9 @@ export const collection = [
     completeness: "csPxt5B",
     cost: 50710,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "Lug1Hv",
@@ -835,7 +985,9 @@ export const collection = [
     completeness: "sfJudPH",
     cost: 38668,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "vPnCmI",
@@ -846,7 +998,9 @@ export const collection = [
     completeness: "woAGb8C",
     cost: 49696,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "8VZGqr",
@@ -857,7 +1011,9 @@ export const collection = [
     completeness: "rCJ7VOf",
     cost: 41949,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "6zneSA",
@@ -868,7 +1024,9 @@ export const collection = [
     completeness: "Leo1qZh",
     cost: 62951,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "99Dc1x",
@@ -879,7 +1037,9 @@ export const collection = [
     completeness: "i043KYo",
     cost: 19306,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "VUQONv",
@@ -890,7 +1050,9 @@ export const collection = [
     completeness: "r3or9hr",
     cost: 75816,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "9mEYDU",
@@ -901,7 +1063,9 @@ export const collection = [
     completeness: "JJl2PIH",
     cost: 87395,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "tG5Sst",
@@ -912,7 +1076,9 @@ export const collection = [
     completeness: "haw7PED",
     cost: 93768,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "853a6v",
@@ -923,7 +1089,9 @@ export const collection = [
     completeness: "n1M3Ont",
     cost: 50070,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "8JNygr",
@@ -934,7 +1102,9 @@ export const collection = [
     completeness: "LLRLFzJ",
     cost: 97105,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "sa8cFo",
@@ -945,7 +1115,9 @@ export const collection = [
     completeness: "RZCMBO7",
     cost: 75199,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "gNXAQw",
@@ -956,7 +1128,9 @@ export const collection = [
     completeness: "vJ3Ki15",
     cost: 98562,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "40ayfr",
@@ -967,7 +1141,9 @@ export const collection = [
     completeness: "S9FgNbu",
     cost: 34481,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "TUO8h3",
@@ -978,7 +1154,9 @@ export const collection = [
     completeness: "ic80NZ1",
     cost: 58730,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "ysH49Y",
@@ -989,7 +1167,9 @@ export const collection = [
     completeness: "kFjaLuL",
     cost: 12383,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "gBMFfP",
@@ -1000,7 +1180,9 @@ export const collection = [
     completeness: "kCSKqUX",
     cost: 55260,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "qEbztG",
@@ -1011,7 +1193,9 @@ export const collection = [
     completeness: "5EjgaNC",
     cost: 29212,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "gT7bnY",
@@ -1022,7 +1206,9 @@ export const collection = [
     completeness: "LXO6FRk",
     cost: 52592,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "CYn8uC",
@@ -1033,7 +1219,9 @@ export const collection = [
     completeness: "nZy9Ur4",
     cost: 64480,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "pWOBrm",
@@ -1044,7 +1232,9 @@ export const collection = [
     completeness: "SVzNLF2",
     cost: 60842,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "cwEzM2",
@@ -1055,7 +1245,9 @@ export const collection = [
     completeness: "EVlxF8z",
     cost: 90158,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "fRQCgq",
@@ -1066,7 +1258,9 @@ export const collection = [
     completeness: "8eI2X8k",
     cost: 40270,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "dM3mC8",
@@ -1077,7 +1271,9 @@ export const collection = [
     completeness: "RqBXI1I",
     cost: 35737,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "Btjoua",
@@ -1088,7 +1284,9 @@ export const collection = [
     completeness: "GngmcT3",
     cost: 83312,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     id: "9qo5zf",
@@ -1099,7 +1297,9 @@ export const collection = [
     completeness: "VPWb8fw",
     cost: 79914,
     location: "Москва",
-    date: "2017-12-07T12:47:53.349Z"
+    date: "2017-12-07T12:47:53.349Z",
+    additionalInformation:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   }
 ];
 // import { makeid, randomInteger } from "../utils";
