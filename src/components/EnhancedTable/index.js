@@ -97,7 +97,7 @@ class EnhancedTable extends React.Component {
     event.preventDefault();
     this.props.selectFridge(item);
 
-    //TODO: Подумать куда перенести эту логику и переделать этот костыль
+    //TODO: Подумать куда перенести эту логику и переделать костыль
     // Сохраняем значение в сторедж для возможности просмотра записи
     setTimeout(() => {
       const activeItem = JSON.stringify(this.props.selected.first());

@@ -152,19 +152,45 @@ class DeviceForm extends React.Component {
         <Done className={classes.rightIcon} />
       </Button>
     ) : (
-      <Button className={classes.button} raised color="primary">
+      <Button
+        className={classes.button}
+        onClick={this.handleBtnEditClick}
+        raised
+        color="primary"
+      >
         Редактировать
         <ModeEditIcon className={classes.rightIcon} />
       </Button>
     );
     return (
       <div className={classes.buttonSet}>
-        <Button className={classes.button} raised color="accent">
+        <Button
+          className={classes.button}
+          onClick={this.handleBtnCancelClick}
+          raised
+          color="accent"
+        >
           Отменить
         </Button>
         {btns}
       </div>
     );
+  };
+
+  /**
+   * Обработка клика по кнопке отмены
+   * {SynteticEvent} ev событие react
+   */
+  handleBtnCancelClick = ev => {
+    console.log("cancel!!!");
+  };
+
+  /**
+   * Обработка клика по кнопке редактирования записи
+   * {SynteticEvent} ev событие react
+   */
+  handleBtnEditClick = ev => {
+    console.log("edit!!!");
   };
   /**
    * render
