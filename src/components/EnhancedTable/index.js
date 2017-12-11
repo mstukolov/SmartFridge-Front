@@ -169,7 +169,9 @@ class EnhancedTable extends React.Component {
    * @return {String}      читаемое значение
    */
   getVocabularyNameById = (type, id) => {
-    if (type && id) return this.props.vocabulary[type][id].name;
+    const lib = this.props.vocabulary.get(type);
+
+    return type && id && lib ? lib.get(id) : "Значение не определено";
   };
 
   /**

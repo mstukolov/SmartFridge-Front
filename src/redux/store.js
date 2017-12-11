@@ -4,8 +4,7 @@ import logger from "redux-logger";
 import { routerMiddleware } from "react-router-redux";
 import history from "./history";
 import { mainTable } from "../ducks/mainTable";
-
-// import thunk from "redux-thunk";
+import thunk from "redux-thunk";
 
 const composeEnhancers =
   typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
@@ -15,7 +14,7 @@ const composeEnhancers =
     : compose;
 
 const enhancer = composeEnhancers(
-  applyMiddleware(mainTable, routerMiddleware(history), logger)
+  applyMiddleware(thunk, routerMiddleware(history), logger)
   // other store enhancers if any
 );
 const store = createStore(reducer, enhancer);

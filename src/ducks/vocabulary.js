@@ -1,25 +1,26 @@
 // eslint-disable-next-line
-import { Record } from "immutable";
+import { Record, Map } from "immutable";
 
 const VocabularyModel = new Record({
-  models: [
-    { name: "Зил", id: 1 },
-    { name: "Морозко", id: 2 },
-    { name: "Атлант", id: 3 },
-    { name: "Свияга", id: 0 }
-  ],
-  types: [
-    { name: "Какой-то тип", id: 1 },
-    { name: "Какой-то особенный тип ", id: 2 },
-    { name: "Какой-то другой тип", id: 3 },
-    { name: "Супер-тип", id: 0 }
-  ],
-  front: [
-    { name: "Стекло", id: 1 },
-    { name: "С подсветкой", id: 2 },
-    { name: "Железный", id: 3 },
-    { name: "Дубовая дверь с замком", id: 0 }
-  ]
+  models: new Map({
+    id_1: "Зил",
+    id_2: "Морозко",
+    id_3: "Атлант",
+    id_4: "Свияга"
+  }),
+  types: new Map({
+    id_1: "Какой-то тип",
+    id_2: "Какой-то особенный тип",
+    id_3: "Какой-то другой тип",
+    id_4: "Супер-тип"
+  }),
+
+  front: new Map({
+    id_1: "Стекло",
+    id_2: "С подсветкой",
+    id_3: "Железный",
+    id_4: "Дубовая дверь с замком"
+  })
 });
 
 let defaultVocabulary = new VocabularyModel();

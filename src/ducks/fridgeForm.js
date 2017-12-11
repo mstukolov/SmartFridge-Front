@@ -1,6 +1,5 @@
 // eslint-disable-next-line
 import { Record } from "immutable";
-import history from "../redux/history";
 import { appName } from "../config";
 
 /**
@@ -39,8 +38,6 @@ export default (formData = defaultForm, action) => {
       return formData.setIn(["edit"], true);
 
     case CANCEL_FRIDGE:
-      history.push("/schedule");
-      //TODO: вынести
       return formData.setIn(["edit"], false);
 
     default:

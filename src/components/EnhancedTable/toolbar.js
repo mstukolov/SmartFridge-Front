@@ -13,8 +13,9 @@ import FilterListIcon from "material-ui-icons/FilterList";
 import Typography from "material-ui/Typography";
 import Toolbar from "material-ui/Toolbar";
 import { connect } from "react-redux";
-import { deleteFridges, showFridge, editFridge } from "../../ducks/mainTable";
-
+import { deleteFridges } from "../../ducks/mainTable";
+import { showFridge, editFridge } from "../../ducks/fridgeForm";
+import { NavLink } from "react-router-dom";
 const toolbarStyles = theme => ({
   root: {
     paddingRight: 2
@@ -66,7 +67,6 @@ class EnhancedTableToolbar extends React.Component {
    * @return {void}    [description]
    */
   handleEdit = ev => {
-    ev.preventDefault();
     this.props.editFridge();
   };
 
@@ -76,7 +76,6 @@ class EnhancedTableToolbar extends React.Component {
    * @return {void}    [description]
    */
   handleShow = ev => {
-    ev.preventDefault();
     this.props.showFridge();
   };
 
@@ -107,22 +106,26 @@ class EnhancedTableToolbar extends React.Component {
           {numSelected > 0 ? (
             <div className={classes.flex}>
               <Tooltip title="Просомотреть">
-                <IconButton
-                  disabled={numSelected > 1 ? true : false}
-                  aria-label="Visibility"
-                  onClick={this.handleShow}
-                >
-                  <VisibilityIcon />
-                </IconButton>
+                <NavLink to="/device" activeClassName="selected">
+                  <IconButton
+                    disabled={numSelected > 1 ? true : false}
+                    aria-label="Visibility"
+                    onClick={this.handleShow}
+                  >
+                    <VisibilityIcon />
+                  </IconButton>
+                </NavLink>
               </Tooltip>
               <Tooltip title="Редактировать">
-                <IconButton
-                  aria-label="Edit"
-                  disabled={numSelected > 1 ? true : false}
-                  onClick={this.handleEdit}
-                >
-                  <EditIcon />
-                </IconButton>
+                <NavLink to="/device" activeClassName="selected">
+                  <IconButton
+                    aria-label="Edit"
+                    disabled={numSelected > 1 ? true : false}
+                    onClick={this.handleEdit}
+                  >
+                    <EditIcon />
+                  </IconButton>
+                </NavLink>
               </Tooltip>
               <Tooltip title="Удалить">
                 <IconButton onClick={this.handleDelete} aria-label="Delete">

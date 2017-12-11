@@ -13,6 +13,7 @@ import Button from "material-ui/Button";
 import { cancelFridge, editFridge, showFridge } from "../../ducks/fridgeForm";
 import Done from "material-ui-icons/Done";
 import ModeEditIcon from "material-ui-icons/ModeEdit";
+import { NavLink } from "react-router-dom";
 
 const styles = theme => ({
   container: {
@@ -77,10 +78,10 @@ class DeviceForm extends React.Component {
    */
   getModels = () => {
     if (this.props.models)
-      return this.props.models.map(item => {
+      return this.props.models.map((item, key) => {
         return (
-          <MenuItem key={item.id} value={item.id}>
-            {item.name}
+          <MenuItem key={key} value={item}>
+            {item}
           </MenuItem>
         );
       });
@@ -93,10 +94,10 @@ class DeviceForm extends React.Component {
    */
   getTypes = () => {
     if (this.props.types)
-      return this.props.types.map(item => {
+      return this.props.types.map((item, key) => {
         return (
-          <MenuItem key={item.id} value={item.id}>
-            {item.name}
+          <MenuItem key={key} value={item}>
+            {item}
           </MenuItem>
         );
       });
@@ -109,10 +110,10 @@ class DeviceForm extends React.Component {
    */
   getFront = () => {
     if (this.props.front)
-      return this.props.front.map(item => {
+      return this.props.front.map((item, key) => {
         return (
-          <MenuItem key={item.id} value={item.id}>
-            {item.name}
+          <MenuItem key={key} value={item}>
+            {item}
           </MenuItem>
         );
       });
@@ -156,14 +157,17 @@ class DeviceForm extends React.Component {
     );
     return (
       <div className={classes.buttonSet}>
-        <Button
-          className={classes.button}
-          onClick={this.handleBtnCancelClick}
-          raised
-          color="accent"
-        >
-          Отменить
-        </Button>
+        <NavLink to="/schedule" activeClassName="selected">
+          <Button
+            className={classes.button}
+            // s.handleBtnCancelClick}
+            raised
+            color="accent"
+          >
+            Отменить
+          </Button>
+        </NavLink>
+
         {btns}
       </div>
     );
@@ -340,19 +344,17 @@ class DeviceForm extends React.Component {
 
   componentDidMount() {
     const { fridge } = this.props;
-    console.log("---=>", fridge);
 
     this.setState({
-      model: fridge.model || "Данные отсутствуют",
-      serial: fridge.serial || "Данные отсутствуют",
-      type: fridge.type || "Данные отсутствуют",
-      front: fridge.front || "Данные отсутствуют",
-      completeness: fridge.completeness || "Данные отсутствуют",
-      cost: fridge.cost || "Данные отсутствуют",
-      location: fridge.location || "Данные отсутствуют",
-      date: fridge.date || "Данные отсутствуют",
-      additionalInformation:
-        fridge.additionalInformation || "Данные отсутствуют"
+      model: fridge.model,
+      serial: fridge.serial,
+      type: fridge.type,
+      front: fridge.front,
+      completeness: fridge.completeness,
+      cost: fridge.cost,
+      location: fridge.location,
+      date: fridge.date,
+      additionalInformation: fridge.additionalInformation
     });
   }
 }
@@ -364,15 +366,15 @@ DeviceForm.propTypes = {
 export default connect(
   state => {
     const edit = state.fridgeForm.get("edit");
-    const { models, types, front } = state.vocabulary;
+
     const fridge = state.fridges.selected.first();
     // TODO: Переделать организацию хранения данных в сторэдж
     const storageItem = JSON.parse(localStorage.getItem("activeItem"));
     return {
       fridge: fridge || storageItem,
-      models,
-      types,
-      front,
+      models: state.vocabulary.get("models"),
+      types: state.vocabulary.get("types"),
+      front: state.vocabulary.get("front"),
       edit
     };
   },

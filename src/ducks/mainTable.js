@@ -16,8 +16,6 @@ export const DELETE_FRIDGES = `${prefix}/DELETE_FRIDGES`;
 export const SELECT_FRIDGE = `${prefix}/SELECT_FRIDGE`;
 export const SELECT_ALL_FRIDGES = `${prefix}/SELECT_ALL_FRIDGES`;
 export const ORDER_BY = `${prefix}/ORDER_BY`;
-export const SHOW_FRIDGE = `${prefix}/SHOW_FRIDGE`;
-export const EDIT_FRIDGE = `${prefix}/EDIT_FRIDGE`;
 
 /**
  * Reducer
@@ -32,23 +30,10 @@ let DefaulrReducerState = new Record({
   })
 });
 
-const FridgeModel = Record({
-  id: null,
-  model: null,
-  serial: null,
-  type: null,
-  front: null,
-  completeness: null,
-  cost: null,
-  location: null,
-  date: null,
-  additionalInformation: null
-});
-
 const defaultState = new DefaulrReducerState();
 
 export default function reducer(state = defaultState, action) {
-  const { type, payload, collection } = action;
+  const { type, payload } = action;
   const { selected } = state;
 
   switch (type) {
@@ -56,7 +41,9 @@ export default function reducer(state = defaultState, action) {
       return state.set("isLoading", true);
 
     case LOAD_ALL_FRIDGES_SUCCESS:
-      return state.set("isLoading", false).set("collection", collection);
+      return state
+        .set("isLoading", false)
+        .set("collection", payload.collection);
 
     case SELECT_FRIDGE:
       const { item } = payload;
@@ -85,10 +72,6 @@ export default function reducer(state = defaultState, action) {
       return state
         .setIn(["collection"], newCollection)
         .setIn(["selected"], new Map({}));
-
-    case SHOW_FRIDGE:
-    case EDIT_FRIDGE:
-      history.push("/device");
 
       return state;
 
@@ -139,7 +122,6 @@ export const orderedRowsSelector = createSelector(
     return collection;
   }
 );
-// export const userSelector = state => state[moduleName].user
 
 /**
  * Action Creators
@@ -152,30 +134,6 @@ export const orderedRowsSelector = createSelector(
 export function deleteFridges() {
   const action = {
     type: DELETE_FRIDGES
-  };
-
-  return action;
-}
-
-/**
- * Создает экшн для включения режима редактирования оборудования
- * @return {Object} объект экшена
- */
-export function showFridge() {
-  const action = {
-    type: SHOW_FRIDGE
-  };
-
-  return action;
-}
-
-/**
- * Создает экшн для включения режима просмотра оборудования
- * @return {Object} объект экшена
- */
-export function editFridge() {
-  const action = {
-    type: EDIT_FRIDGE
   };
 
   return action;
@@ -213,7 +171,7 @@ export function selectFridge(item) {
  */
 export function callAllFridges() {
   const action = {
-    type: LOAD_ALL_FRIDGES,
+    type: LOAD_ALL_FRIDGES_START,
     callAPI: "http://localhost:3001/api/FRIDGE"
   };
 
@@ -239,14 +197,9 @@ export function sortOrderBy(property) {
 // side effects, only as applicable
 // e.g. thunks, epics, etc
 
-export const mainTable = store => next => action => {
-  if (!action.callAPI) return next(action);
-
-  const { callAPI, type, ...rest } = action;
-  next({ ...rest, type: LOAD_ALL_FRIDGES_START });
-
-  // TODO: dev only !!!!
-  setTimeout(() => {
-    next({ ...rest, type: LOAD_ALL_FRIDGES_SUCCESS, collection });
-  }, 2000);
-};
+setTimeout(() => {
+  window.store.dispatch({
+    type: LOAD_ALL_FRIDGES_SUCCESS,
+    payload: { collection }
+  });
+}, 1000);
