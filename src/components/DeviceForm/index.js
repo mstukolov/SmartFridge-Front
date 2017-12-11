@@ -10,7 +10,7 @@ import { MenuItem } from "material-ui/Menu";
 import { FormControl, FormHelperText } from "material-ui/Form";
 import Select from "material-ui/Select";
 import Button from "material-ui/Button";
-import { cancelFridge, editFridge, showFridge } from "../../redux/AC";
+import { cancelFridge, editFridge, showFridge } from "../../ducks/fridgeForm";
 import Done from "material-ui-icons/Done";
 import ModeEditIcon from "material-ui-icons/ModeEdit";
 

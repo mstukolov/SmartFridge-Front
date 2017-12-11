@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-import { Record, Map } from "immutable";
+import { Record } from "immutable";
 
 const VocabularyModel = new Record({
   models: [

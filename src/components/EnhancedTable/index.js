@@ -19,11 +19,12 @@ import {
   callAllFridges,
   selectFridge,
   selectAllFridges,
-  sortOrderBy
-} from "../../redux/AC";
+  sortOrderBy,
+  orderedRowsSelector
+} from "../../ducks/mainTable";
 import LinearQuery from "../LinearQuery";
 import Moment from "react-moment";
-import { orderedRowsSelector } from "../../redux/selectors";
+// import { orderedRowsSelector } from "../../redux/selectors";
 import EnhancedTableHead from "./head";
 import EnhancedTableToolbar from "./toolbar";
 
@@ -268,8 +269,8 @@ export default connect(
       data: orderedRowsSelector(state),
       selected: state.fridges.selected,
       loading: state.fridges.isLoading,
-      order: state.filters.orderData.get("order"),
-      orderBy: state.filters.orderData.get("orderBy"),
+      order: state.fridges.orderData.get("order"),
+      orderBy: state.fridges.orderData.get("orderBy"),
       vocabulary: state.vocabulary
     };
   },
