@@ -10,21 +10,13 @@ import { collection } from "./fakeData";
 export const moduleName = "mainTable";
 const prefix = `${appName}/${moduleName}`;
 export const LOAD_ALL_FRIDGES = `${prefix}/LOAD_ALL_FRIDGES`;
-
 export const LOAD_ALL_FRIDGES_START = `${prefix}/LOAD_ALL_FRIDGES_START`;
-
 export const LOAD_ALL_FRIDGES_SUCCESS = `${prefix}/LOAD_ALL_FRIDGES_SUCCESS`;
-
 export const DELETE_FRIDGES = `${prefix}/DELETE_FRIDGES`;
-
 export const SELECT_FRIDGE = `${prefix}/SELECT_FRIDGE`;
-
 export const SELECT_ALL_FRIDGES = `${prefix}/SELECT_ALL_FRIDGES`;
-
 export const ORDER_BY = `${prefix}/ORDER_BY`;
-
 export const SHOW_FRIDGE = `${prefix}/SHOW_FRIDGE`;
-
 export const EDIT_FRIDGE = `${prefix}/EDIT_FRIDGE`;
 
 /**

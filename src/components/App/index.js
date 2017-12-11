@@ -6,7 +6,8 @@ import MainPage from "../routes/Main";
 import SchedulePage from "../routes/Schedule";
 import DevicePage from "../routes/Device";
 import injectSheet from "react-jss";
-
+import { ConnectedRouter } from "react-router-redux";
+import history from "../../redux/history";
 import moment from "moment/min/moment-with-locales";
 import Moment from "react-moment";
 // Sets the moment instance to use.
@@ -46,11 +47,13 @@ class App extends Component {
       <div className="App">
         <Header />
         <section className={classes.container}>
-          <Switch>
-            <Route exact path="/" component={MainPage} />
-            <Route path="/schedule" component={SchedulePage} />
-            <Route path="/device" component={DevicePage} />
-          </Switch>
+          <ConnectedRouter history={history}>
+            <Switch>
+              <Route exact path="/" component={MainPage} />
+              <Route path="/schedule" component={SchedulePage} />
+              <Route path="/device" component={DevicePage} />
+            </Switch>
+          </ConnectedRouter>
         </section>
 
         <Footer />
