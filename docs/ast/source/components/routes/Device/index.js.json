@@ -1603,9 +1603,9 @@
               "line": 34,
               "column": 15
             },
-            "identifierName": "Device"
+            "identifierName": "RetailEquipmentPageView"
           },
-          "name": "Device"
+          "name": "RetailEquipmentPageView"
         },
         "generator": false,
         "expression": false,
@@ -4287,9 +4287,9 @@
                   "line": 65,
                   "column": 40
                 },
-                "identifierName": "Device"
+                "identifierName": "RetailEquipmentPageView"
               },
-              "name": "Device"
+              "name": "RetailEquipmentPageView"
             }
           ],
           "leadingComments": [],
@@ -7342,7 +7342,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "Device",
+      "value": "RetailEquipmentPageView",
       "start": 645,
       "end": 651,
       "loc": {
@@ -12428,7 +12428,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "Device",
+      "value": "RetailEquipmentPageView",
       "start": 1436,
       "end": 1442,
       "loc": {

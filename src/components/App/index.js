@@ -3,8 +3,8 @@ import { Switch, Route } from "react-router-dom";
 import Header from "../Header";
 import Footer from "../Footer";
 import MainPage from "../routes/Main";
-import SchedulePage from "../routes/Schedule";
-import DevicePage from "../routes/Device";
+import RetailEquipmentPageMain from "../routes/RetailEquipment/Main/index";
+import RetailEquipmentPageViewPage from "../routes/RetailEquipment/View";
 import injectSheet from "react-jss";
 import { ConnectedRouter } from "react-router-redux";
 import history from "../../redux/history";
@@ -50,8 +50,11 @@ class App extends Component {
           <ConnectedRouter history={history}>
             <Switch>
               <Route exact path="/" component={MainPage} />
-              <Route path="/schedule" component={SchedulePage} />
-              <Route path="/device" component={DevicePage} />
+              <Route path="/schedule" component={RetailEquipmentPageMain} />
+              <Route
+                path="/RetailEquipmentPageView"
+                component={RetailEquipmentPageViewPage}
+              />
             </Switch>
           </ConnectedRouter>
         </section>

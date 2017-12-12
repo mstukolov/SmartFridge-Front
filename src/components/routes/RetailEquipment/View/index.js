@@ -3,9 +3,9 @@ import React from "react";
 import { withStyles } from "material-ui/styles";
 import Paper from "material-ui/Paper";
 import Grid from "material-ui/Grid";
-import SimpleMap from "../../SimpleMap/index";
+import SimpleMap from "../../../SimpleMap/index";
 import Typography from "material-ui/Typography";
-import RetailEquipmentForm from "../../RetailEquipment/Form/index";
+import RetailEquipmentForm from "../../../RetailEquipment/Form/index";
 
 const styles = theme => ({
   root: {
@@ -31,7 +31,7 @@ type Props = {
   }
 };
 
-function Device(props: Props) {
+function RetailEquipmentPageView(props: Props) {
   const { classes } = props;
   // console.log(props);
 
@@ -62,4 +62,4 @@ function Device(props: Props) {
   );
 }
 
-export default withStyles(styles)(Device);
+export default withStyles(styles)(RetailEquipmentPageView);

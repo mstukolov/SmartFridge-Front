@@ -6879,10 +6879,10 @@
                                 }
                               },
                               "extra": {
-                                "rawValue": "/device",
-                                "raw": "\"/device\""
+                                "rawValue": "/RetailEquipmentPageView",
+                                "raw": "\"/RetailEquipmentPageView\""
                               },
-                              "value": "/device"
+                              "value": "/RetailEquipmentPageView"
                             }
                           ]
                         }
@@ -28365,7 +28365,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "/device",
+      "value": "/RetailEquipmentPageView",
       "start": 2527,
       "end": 2536,
       "loc": {

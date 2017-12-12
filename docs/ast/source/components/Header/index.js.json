@@ -10593,7 +10593,7 @@
                                         "innerComments": [
                                           {
                                             "type": "CommentBlock",
-                                            "value": "<NavLink to=\"/device\" activeClassName=\"selected\">",
+                                            "value": "<NavLink to=\"/RetailEquipmentPageView\" activeClassName=\"selected\">",
                                             "start": 5059,
                                             "end": 5112,
                                             "loc": {
@@ -11994,7 +11994,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "<NavLink to=\"/device\" activeClassName=\"selected\">",
+      "value": "<NavLink to=\"/RetailEquipmentPageView\" activeClassName=\"selected\">",
       "start": 5059,
       "end": 5112,
       "loc": {
@@ -31844,7 +31844,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "<NavLink to=\"/device\" activeClassName=\"selected\">",
+      "value": "<NavLink to=\"/RetailEquipmentPageView\" activeClassName=\"selected\">",
       "start": 5059,
       "end": 5112,
       "loc": {

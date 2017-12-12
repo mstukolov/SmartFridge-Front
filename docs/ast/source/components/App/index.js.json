@@ -608,9 +608,9 @@
                   "line": 7,
                   "column": 17
                 },
-                "identifierName": "DevicePage"
+                "identifierName": "RetailEquipmentPageViewPage"
               },
-              "name": "DevicePage"
+              "name": "RetailEquipmentPageViewPage"
             }
           }
         ],
@@ -630,10 +630,10 @@
             }
           },
           "extra": {
-            "rawValue": "../routes/Device",
-            "raw": "\"../routes/Device\""
+            "rawValue": "../routes/RetailEquipmentPageView",
+            "raw": "\"../routes/RetailEquipmentPageView\""
           },
-          "value": "../routes/Device"
+          "value": "../routes/RetailEquipmentPageView"
         }
       },
       {
@@ -3329,7 +3329,7 @@
                                                 }
                                               },
                                               "extra": null,
-                                              "value": "/device"
+                                              "value": "/RetailEquipmentPageView"
                                             }
                                           },
                                           {
@@ -3389,9 +3389,9 @@
                                                     "line": 54,
                                                     "column": 57
                                                   },
-                                                  "identifierName": "DevicePage"
+                                                  "identifierName": "RetailEquipmentPageViewPage"
                                                 },
-                                                "name": "DevicePage"
+                                                "name": "RetailEquipmentPageViewPage"
                                               }
                                             }
                                           }
@@ -4854,7 +4854,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "DevicePage",
+      "value": "RetailEquipmentPageViewPage",
       "start": 249,
       "end": 259,
       "loc": {
@@ -4907,7 +4907,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "../routes/Device",
+      "value": "../routes/RetailEquipmentPageView",
       "start": 265,
       "end": 283,
       "loc": {
@@ -9388,7 +9388,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "/device",
+      "value": "/RetailEquipmentPageView",
       "start": 1536,
       "end": 1545,
       "loc": {
@@ -9493,7 +9493,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "DevicePage",
+      "value": "RetailEquipmentPageViewPage",
       "start": 1557,
       "end": 1567,
       "loc": {

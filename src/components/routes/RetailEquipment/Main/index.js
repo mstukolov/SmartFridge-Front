@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import RetailEquipmentTable from "../../RetailEquipment/Table/index";
+import RetailEquipmentTable from "../../../RetailEquipment/Table/index";
 
 /**
  * Страница с табличным представление данных
  * @extends Component
  */
-class SchedulePage extends Component {
+class RetailEquipmentPageMain extends Component {
   /**
    * Создает разметку React
    * @return {ReactElement} разметка
@@ -15,4 +15,4 @@ class SchedulePage extends Component {
   }
 }
 
-export default SchedulePage;
+export default RetailEquipmentPageMain;

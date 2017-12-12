@@ -179,7 +179,7 @@ class Header extends React.Component {
                 </MenuItem>
               </NavLink>
 
-              {/*<NavLink to="/device" activeClassName="selected">*/}
+              {/*<NavLink to="/RetailEquipmentPageView" activeClassName="selected">*/}
               {/*<MenuItem>*/}
               {/*<ListItemIcon className={classes.icon}>*/}
               {/*<DvrIcon />*/}
