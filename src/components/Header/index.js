@@ -166,7 +166,7 @@ class Header extends React.Component {
                 </MenuItem>
               </NavLink>
 
-              <NavLink to="/schedule" activeClassName="selected">
+              <NavLink to="/equipment" activeClassName="selected">
                 <MenuItem>
                   <ListItemIcon className={classes.icon}>
                     <DvrIcon />

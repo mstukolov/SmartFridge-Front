@@ -50,9 +50,9 @@ class App extends Component {
           <ConnectedRouter history={history}>
             <Switch>
               <Route exact path="/" component={MainPage} />
-              <Route path="/schedule" component={RetailEquipmentPageMain} />
+              <Route path="/equipment" component={RetailEquipmentPageMain} />
               <Route
-                path="/RetailEquipmentPageView"
+                path="/equipment-view"
                 component={RetailEquipmentPageViewPage}
               />
             </Switch>

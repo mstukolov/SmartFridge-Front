@@ -106,10 +106,7 @@ class RetailEquipmentTableToolbar extends React.Component {
           {numSelected > 0 ? (
             <div className={classes.flex}>
               <Tooltip title="Просомотреть">
-                <NavLink
-                  to="/RetailEquipmentPageView"
-                  activeClassName="selected"
-                >
+                <NavLink to="/equipment-view" activeClassName="selected">
                   <IconButton
                     disabled={numSelected > 1 ? true : false}
                     aria-label="Visibility"
@@ -120,10 +117,7 @@ class RetailEquipmentTableToolbar extends React.Component {
                 </NavLink>
               </Tooltip>
               <Tooltip title="Редактировать">
-                <NavLink
-                  to="/RetailEquipmentPageView"
-                  activeClassName="selected"
-                >
+                <NavLink to="/equipment-view" activeClassName="selected">
                   <IconButton
                     aria-label="Edit"
                     disabled={numSelected > 1 ? true : false}
