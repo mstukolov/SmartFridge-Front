@@ -85,14 +85,18 @@ class RetailEquipmentForm extends React.Component {
    * @returns {ReactElement}
    */
   getModels = () => {
-    if (this.props.models)
-      return this.props.models.toArray().map((item, key) => {
-        return (
-          <MenuItem key={key} value={item}>
+    if (this.props.models) {
+      const items = [];
+      for (const [key, item] of this.props.models) {
+        items.push(
+          <MenuItem key={key} value={key}>
             {item}
           </MenuItem>
         );
-      });
+      }
+      return items;
+    }
+
     return null;
   };
 
@@ -101,14 +105,18 @@ class RetailEquipmentForm extends React.Component {
    * @returns {ReactElement}
    */
   getTypes = () => {
-    if (this.props.types)
-      return this.props.types.toArray().map((item, key) => {
-        return (
-          <MenuItem key={key} value={item}>
+    if (this.props.types) {
+      const items = [];
+      for (const [key, item] of this.props.types) {
+        items.push(
+          <MenuItem key={key} value={key}>
             {item}
           </MenuItem>
         );
-      });
+      }
+      return items;
+    }
+
     return null;
   };
 
@@ -117,14 +125,18 @@ class RetailEquipmentForm extends React.Component {
    * @returns {ReactElement}
    */
   getFront = () => {
-    if (this.props.front)
-      return this.props.front.toArray().map((item, key) => {
-        return (
-          <MenuItem key={key} value={item}>
+    if (this.props.front) {
+      const items = [];
+      for (const [key, item] of this.props.front) {
+        items.push(
+          <MenuItem key={key} value={key}>
             {item}
           </MenuItem>
         );
-      });
+      }
+      return items;
+    }
+
     return null;
   };
 
