@@ -2806,9 +2806,9 @@
               "line": 53,
               "column": 26
             },
-            "identifierName": "EnhancedTableToolbar"
+            "identifierName": "RetailEquipmentTableToolbar"
           },
-          "name": "EnhancedTableToolbar",
+          "name": "RetailEquipmentTableToolbar",
           "leadingComments": null
         },
         "superClass": {
@@ -8066,9 +8066,9 @@
                   "line": 146,
                   "column": 20
                 },
-                "identifierName": "EnhancedTableToolbar"
+                "identifierName": "RetailEquipmentTableToolbar"
               },
-              "name": "EnhancedTableToolbar"
+              "name": "RetailEquipmentTableToolbar"
             },
             "property": {
               "type": "Identifier",
@@ -9059,9 +9059,9 @@
                     "line": 164,
                     "column": 23
                   },
-                  "identifierName": "EnhancedTableToolbar"
+                  "identifierName": "RetailEquipmentTableToolbar"
                 },
-                "name": "EnhancedTableToolbar"
+                "name": "RetailEquipmentTableToolbar"
               },
               "right": {
                 "type": "CallExpression",
@@ -9142,9 +9142,9 @@
                         "line": 164,
                         "column": 72
                       },
-                      "identifierName": "EnhancedTableToolbar"
+                      "identifierName": "RetailEquipmentTableToolbar"
                     },
-                    "name": "EnhancedTableToolbar"
+                    "name": "RetailEquipmentTableToolbar"
                   }
                 ]
               },
@@ -14305,7 +14305,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "EnhancedTableToolbar",
+      "value": "RetailEquipmentTableToolbar",
       "start": 1438,
       "end": 1458,
       "loc": {
@@ -24474,7 +24474,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "EnhancedTableToolbar",
+      "value": "RetailEquipmentTableToolbar",
       "start": 4053,
       "end": 4073,
       "loc": {
@@ -26237,7 +26237,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "EnhancedTableToolbar",
+      "value": "RetailEquipmentTableToolbar",
       "start": 4417,
       "end": 4437,
       "loc": {
@@ -26417,7 +26417,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "EnhancedTableToolbar",
+      "value": "RetailEquipmentTableToolbar",
       "start": 4466,
       "end": 4486,
       "loc": {

@@ -21,13 +21,13 @@ import {
   selectAllFridges,
   sortOrderBy,
   orderedRowsSelector
-} from "../../ducks/mainTable";
-import LinearQuery from "../LinearQuery";
+} from "../../../ducks/mainTable";
+import LinearQuery from "../../LinearQuery/index";
 import Moment from "react-moment";
 // import { orderedRowsSelector } from "../../redux/selectors";
-import EnhancedTableHead from "./head";
-import EnhancedTableToolbar from "./toolbar";
-import SimpleSnackbar from "../SimpleSnackbar";
+import RetailEquipmentTableHead from "./head";
+import RetailEquipmentTableToolbar from "./toolbar";
+import SimpleSnackbar from "../../SimpleSnackbar/index";
 
 const styles = theme => ({
   root: {
@@ -49,7 +49,7 @@ const styles = theme => ({
  * Компонент таблицы
  * @extends React
  */
-class EnhancedTable extends React.Component {
+class RetailEquipmentTable extends React.Component {
   constructor(props, context) {
     super(props, context);
 
@@ -184,12 +184,12 @@ class EnhancedTable extends React.Component {
     return (
       <Paper className={classes.root}>
         {this.showError()}
-        <EnhancedTableToolbar />
+        <RetailEquipmentTableToolbar />
         <div className={classes.tableWrapper}>
           <div className={classes.preloader}>{this.showLoading()}</div>
 
           <Table className={classes.table}>
-            <EnhancedTableHead
+            <RetailEquipmentTableHead
               numSelected={selected.size}
               order={order}
               orderBy={orderBy}
@@ -261,7 +261,7 @@ class EnhancedTable extends React.Component {
   }
 }
 
-EnhancedTable.propTypes = {
+RetailEquipmentTable.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
@@ -283,4 +283,4 @@ export default connect(
     selectAllFridges,
     sortOrderBy
   }
-)(withStyles(styles)(EnhancedTable));
+)(withStyles(styles)(RetailEquipmentTable));

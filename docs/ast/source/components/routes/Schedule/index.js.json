@@ -190,9 +190,9 @@
                   "line": 2,
                   "column": 20
                 },
-                "identifierName": "EnhancedTable"
+                "identifierName": "RetailEquipmentTable"
               },
-              "name": "EnhancedTable"
+              "name": "RetailEquipmentTable"
             }
           }
         ],
@@ -212,10 +212,10 @@
             }
           },
           "extra": {
-            "rawValue": "../../EnhancedTable/index",
-            "raw": "\"../../EnhancedTable/index\""
+            "rawValue": "../../RetailEquipmentTable/index",
+            "raw": "\"../../RetailEquipmentTable/index\""
           },
-          "value": "../../EnhancedTable/index"
+          "value": "../../RetailEquipmentTable/index"
         },
         "trailingComments": [
           {
@@ -412,7 +412,7 @@
                               "column": 25
                             }
                           },
-                          "name": "EnhancedTable"
+                          "name": "RetailEquipmentTable"
                         },
                         "selfClosing": true
                       },
@@ -673,7 +673,7 @@
                                 "column": 25
                               }
                             },
-                            "name": "EnhancedTable"
+                            "name": "RetailEquipmentTable"
                           },
                           "selfClosing": true
                         },
@@ -1041,7 +1041,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "EnhancedTable",
+      "value": "RetailEquipmentTable",
       "start": 49,
       "end": 62,
       "loc": {
@@ -1094,7 +1094,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "../../EnhancedTable/index",
+      "value": "../../RetailEquipmentTable/index",
       "start": 68,
       "end": 95,
       "loc": {
@@ -1466,7 +1466,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "EnhancedTable",
+      "value": "RetailEquipmentTable",
       "start": 314,
       "end": 327,
       "loc": {

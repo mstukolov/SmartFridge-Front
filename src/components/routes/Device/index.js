@@ -5,7 +5,7 @@ import Paper from "material-ui/Paper";
 import Grid from "material-ui/Grid";
 import SimpleMap from "../../SimpleMap/index";
 import Typography from "material-ui/Typography";
-import DeviceForm from "../../DeviceForm/index";
+import RetailEquipmentForm from "../../RetailEquipment/Form/index";
 
 const styles = theme => ({
   root: {
@@ -47,7 +47,7 @@ function Device(props: Props) {
         </Grid>
         <Grid item xs={12} sm={6}>
           <Paper className={classes.paper}>
-            <DeviceForm />
+            <RetailEquipmentForm />
           </Paper>
         </Grid>
         <Grid item xs={12} sm={6}>

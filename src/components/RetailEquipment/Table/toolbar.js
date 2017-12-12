@@ -13,8 +13,8 @@ import FilterListIcon from "material-ui-icons/FilterList";
 import Typography from "material-ui/Typography";
 import Toolbar from "material-ui/Toolbar";
 import { connect } from "react-redux";
-import { deleteFridges } from "../../ducks/mainTable";
-import { showFridge, editFridge } from "../../ducks/fridgeForm";
+import { deleteFridges } from "../../../ducks/mainTable";
+import { showFridge, editFridge } from "../../../ducks/fridgeForm";
 import { NavLink } from "react-router-dom";
 const toolbarStyles = theme => ({
   root: {
@@ -51,7 +51,7 @@ const toolbarStyles = theme => ({
  * @return {ReactElement} разметка
  */
 
-class EnhancedTableToolbar extends React.Component {
+class RetailEquipmentTableToolbar extends React.Component {
   /**
    * Функция обработки удаления списка выделленных элементов
    * @param  {SynteticEvent} ev React событие
@@ -146,7 +146,7 @@ class EnhancedTableToolbar extends React.Component {
   }
 }
 
-EnhancedTableToolbar.propTypes = {
+RetailEquipmentTableToolbar.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
@@ -164,4 +164,8 @@ export default connect(
     showFridge,
     editFridge
   }
-)((EnhancedTableToolbar = withStyles(toolbarStyles)(EnhancedTableToolbar)));
+)(
+  (RetailEquipmentTableToolbar = withStyles(toolbarStyles)(
+    RetailEquipmentTableToolbar
+  ))
+);

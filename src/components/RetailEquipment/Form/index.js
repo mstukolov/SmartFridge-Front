@@ -10,7 +10,11 @@ import { MenuItem } from "material-ui/Menu";
 import { FormControl, FormHelperText } from "material-ui/Form";
 import Select from "material-ui/Select";
 import Button from "material-ui/Button";
-import { cancelFridge, editFridge, showFridge } from "../../ducks/fridgeForm";
+import {
+  cancelFridge,
+  editFridge,
+  showFridge
+} from "../../../ducks/fridgeForm";
 import Done from "material-ui-icons/Done";
 import ModeEditIcon from "material-ui-icons/ModeEdit";
 import { NavLink } from "react-router-dom";
@@ -47,7 +51,7 @@ const styles = theme => ({
  * Компонент формы просмотра/редактирования оборудования
  * @extends React
  */
-class DeviceForm extends React.Component {
+class RetailEquipmentForm extends React.Component {
   state = {
     model: "Данные отсутствуют",
     serial: "Данные отсутствуют",
@@ -370,7 +374,7 @@ class DeviceForm extends React.Component {
   }
 }
 
-DeviceForm.propTypes = {
+RetailEquipmentForm.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
@@ -393,4 +397,4 @@ export default connect(
     editFridge,
     showFridge
   }
-)(withStyles(styles)(DeviceForm));
+)(withStyles(styles)(RetailEquipmentForm));

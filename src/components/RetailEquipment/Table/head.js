@@ -66,7 +66,7 @@ const columnData = [
  * Компонент шапки таблицы
  * @extends React
  */
-export default class EnhancedTableHead extends React.Component {
+export default class RetailEquipmentTableHead extends React.Component {
   static propTypes = {
     numSelected: PropTypes.number.isRequired,
     onRequestSort: PropTypes.func.isRequired,

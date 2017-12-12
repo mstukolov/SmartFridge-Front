@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import EnhancedTable from "../../EnhancedTable/index";
+import RetailEquipmentTable from "../../RetailEquipment/Table/index";
 
 /**
  * Страница с табличным представление данных
@@ -11,7 +11,7 @@ class SchedulePage extends Component {
    * @return {ReactElement} разметка
    */
   render() {
-    return <EnhancedTable />;
+    return <RetailEquipmentTable />;
   }
 }
 

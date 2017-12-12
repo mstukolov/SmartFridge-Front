@@ -1398,9 +1398,9 @@
                   "line": 28,
                   "column": 24
                 },
-                "identifierName": "EnhancedTableHead"
+                "identifierName": "RetailEquipmentTableHead"
               },
-              "name": "EnhancedTableHead",
+              "name": "RetailEquipmentTableHead",
               "leadingComments": null
             },
             "leadingComments": null
@@ -1488,9 +1488,9 @@
                   "line": 29,
                   "column": 27
                 },
-                "identifierName": "EnhancedTableToolbar"
+                "identifierName": "RetailEquipmentTableToolbar"
               },
-              "name": "EnhancedTableToolbar"
+              "name": "RetailEquipmentTableToolbar"
             }
           }
         ],
@@ -2134,9 +2134,9 @@
               "line": 51,
               "column": 19
             },
-            "identifierName": "EnhancedTable"
+            "identifierName": "RetailEquipmentTable"
           },
-          "name": "EnhancedTable",
+          "name": "RetailEquipmentTable",
           "leadingComments": null
         },
         "superClass": {
@@ -8333,7 +8333,7 @@
                                   "column": 29
                                 }
                               },
-                              "name": "EnhancedTableToolbar"
+                              "name": "RetailEquipmentTableToolbar"
                             },
                             "selfClosing": true
                           },
@@ -9567,7 +9567,7 @@
                                           "column": 30
                                         }
                                       },
-                                      "name": "EnhancedTableHead"
+                                      "name": "RetailEquipmentTableHead"
                                     },
                                     "selfClosing": true
                                   },
@@ -14861,9 +14861,9 @@
                   "line": 262,
                   "column": 13
                 },
-                "identifierName": "EnhancedTable"
+                "identifierName": "RetailEquipmentTable"
               },
-              "name": "EnhancedTable"
+              "name": "RetailEquipmentTable"
             },
             "property": {
               "type": "Identifier",
@@ -16271,9 +16271,9 @@
                       "line": 283,
                       "column": 34
                     },
-                    "identifierName": "EnhancedTable"
+                    "identifierName": "RetailEquipmentTable"
                   },
-                  "name": "EnhancedTable"
+                  "name": "RetailEquipmentTable"
                 }
               ]
             }
@@ -18859,7 +18859,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "EnhancedTableHead",
+      "value": "RetailEquipmentTableHead",
       "start": 763,
       "end": 780,
       "loc": {
@@ -18992,7 +18992,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "EnhancedTableToolbar",
+      "value": "RetailEquipmentTableToolbar",
       "start": 803,
       "end": 823,
       "loc": {
@@ -20218,7 +20218,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "EnhancedTable",
+      "value": "RetailEquipmentTable",
       "start": 1118,
       "end": 1131,
       "loc": {
@@ -31363,7 +31363,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "EnhancedTableToolbar",
+      "value": "RetailEquipmentTableToolbar",
       "start": 4955,
       "end": 4975,
       "loc": {
@@ -32636,7 +32636,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "EnhancedTableHead",
+      "value": "RetailEquipmentTableHead",
       "start": 5156,
       "end": 5173,
       "loc": {
@@ -44175,7 +44175,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "EnhancedTable",
+      "value": "RetailEquipmentTable",
       "start": 7916,
       "end": 7929,
       "loc": {
@@ -46686,7 +46686,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "EnhancedTable",
+      "value": "RetailEquipmentTable",
       "start": 8415,
       "end": 8428,
       "loc": {
