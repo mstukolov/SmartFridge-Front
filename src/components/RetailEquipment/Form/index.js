@@ -14,7 +14,8 @@ import {
   cancelEquipment,
   editEquipment,
   showEquipment,
-  loadEquipment
+  loadEquipment,
+  saveEditEquipment
 } from "../../../ducks/RetailEquipment/form";
 import Done from "material-ui-icons/Done";
 import ModeEditIcon from "material-ui-icons/ModeEdit";
@@ -258,7 +259,8 @@ class RetailEquipmentForm extends React.Component {
    */
   handleSubmit = ev => {
     ev.preventDefault();
-    this.props.showEquipment();
+    this.props.saveEditEquipment(this.state);
+    // this.props.showEquipment();
     console.log("submit -->", this.state);
   };
 
@@ -439,6 +441,7 @@ export default connect(
     cancelEquipment,
     editEquipment,
     showEquipment,
-    loadEquipment
+    loadEquipment,
+    saveEditEquipment
   }
 )(withStyles(styles)(RetailEquipmentForm));

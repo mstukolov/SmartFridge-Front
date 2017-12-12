@@ -9,10 +9,17 @@ import { collection } from "../../fakeData";
  * */
 export const moduleName = "fridgeForm";
 const prefix = `${appName}/${moduleName}`;
+
 export const LOAD_EQUIPMENT_REQUEST = `${prefix}/LOAD_EQUIPMENT_REQUEST`;
 export const LOAD_EQUIPMENT_START = `${prefix}/LOAD_EQUIPMENT_START`;
 export const LOAD_EQUIPMENT_SUCCESS = `${prefix}/LOAD_EQUIPMENT_SUCCESS`;
 export const LOAD_EQUIPMENT_ERROR = `${prefix}/LOAD_EQUIPMENT_ERROR`;
+
+export const SAVE_EDIT_EQUIPMENT_REQUEST = `${prefix}/SAVE_EDIT_EQUIPMENT_REQUEST`;
+export const SAVE_EDIT_EQUIPMENT_START = `${prefix}/SAVE_EDIT_EQUIPMENT_START`;
+export const SAVE_EDIT_EQUIPMENT_SUCCESS = `${prefix}/SAVE_EDIT_EQUIPMENT_SUCCESS`;
+export const SAVE_EDIT_EQUIPMENT_ERROR = `${prefix}/SAVE_EDIT_EQUIPMENT_ERROR`;
+
 export const SHOW_EQUIPMENT = `${prefix}/SHOW_EQUIPMENT`;
 export const EDIT_EQUIPMENT = `${prefix}/EDIT_EQUIPMENT`;
 export const CANCEL_EQUIPMENT = `${prefix}/CANCEL_EQUIPMENT`;
@@ -47,6 +54,7 @@ export default (state = defaultForm, action) => {
       return state
         .set("isLoading", false)
         .set("activeItem", payload.activeItem);
+    case SAVE_EDIT_EQUIPMENT_ERROR:
     case LOAD_EQUIPMENT_ERROR:
       return state.setIn(["error"], payload.error).set("isLoading", false);
 
@@ -58,6 +66,12 @@ export default (state = defaultForm, action) => {
 
     case CANCEL_EQUIPMENT:
       return state.setIn(["edit"], false);
+
+    case SAVE_EDIT_EQUIPMENT_START:
+      return state.set("isLoading", true);
+    case SAVE_EDIT_EQUIPMENT_SUCCESS:
+      return state.set("isLoading", false);
+    // .set("activeItem", payload.activeItem);
 
     default:
       return state;
@@ -107,6 +121,21 @@ export function editEquipment() {
 }
 
 /**
+ * Создает экшн для запроса на изменение данных об оборудовании
+ * @return {Object} объект экшена
+ */
+export function saveEditEquipment(editItem) {
+  const action = {
+    type: SAVE_EDIT_EQUIPMENT_REQUEST,
+    payload: {
+      editItem
+    }
+  };
+
+  return action;
+}
+
+/**
  * Создает экшн для включения режима просмотра оборудования
  * @return {Object} объект экшена
  */
@@ -149,6 +178,36 @@ export const loadSaga = function*(action) {
   }
 };
 
+export const saveEditSaga = function*(action) {
+  const editItem = action.payload.editItem;
+  // const activeItem = collection.filter(item => {
+  //     return item.id === id;
+  // })[0];
+
+  yield put({
+    type: SAVE_EDIT_EQUIPMENT_START
+  });
+
+  try {
+    //TODO: Здесь сделать нормальную логику запроса данных
+    console.log("editItem", editItem);
+    // throw new Error("Ошибка сохранения данных");
+
+    yield put({
+      type: SAVE_EDIT_EQUIPMENT_SUCCESS,
+      payload: { editItem }
+    });
+  } catch (error) {
+    yield put({
+      type: SAVE_EDIT_EQUIPMENT_ERROR,
+      payload: { error }
+    });
+  }
+};
+
 export const saga = function*() {
-  yield all([takeEvery(LOAD_EQUIPMENT_REQUEST, loadSaga)]);
+  yield all([
+    takeEvery(LOAD_EQUIPMENT_REQUEST, loadSaga),
+    takeEvery(SAVE_EDIT_EQUIPMENT_REQUEST, saveEditSaga)
+  ]);
 };
