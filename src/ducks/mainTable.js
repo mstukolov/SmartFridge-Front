@@ -1,8 +1,9 @@
 import { appName } from "../config";
 import { Record, List, Map } from "immutable";
-import history from "../redux/history";
 import { createSelector } from "reselect";
-import { collection } from "./fakeData";
+import { collection } from "../fakeData";
+
+import { all, takeEvery, take, put, apply, call } from "redux-saga/effects";
 
 /**
  * Constants
@@ -10,8 +11,10 @@ import { collection } from "./fakeData";
 export const moduleName = "mainTable";
 const prefix = `${appName}/${moduleName}`;
 export const LOAD_ALL_FRIDGES = `${prefix}/LOAD_ALL_FRIDGES`;
+export const LOAD_ALL_FRIDGES_REQUEST = `${prefix}/LOAD_ALL_FRIDGES_REQUEST`;
 export const LOAD_ALL_FRIDGES_START = `${prefix}/LOAD_ALL_FRIDGES_START`;
 export const LOAD_ALL_FRIDGES_SUCCESS = `${prefix}/LOAD_ALL_FRIDGES_SUCCESS`;
+export const LOAD_ALL_FRIDGES_ERROR = `${prefix}/LOAD_ALL_FRIDGES_ERROR`;
 export const DELETE_FRIDGES = `${prefix}/DELETE_FRIDGES`;
 export const SELECT_FRIDGE = `${prefix}/SELECT_FRIDGE`;
 export const SELECT_ALL_FRIDGES = `${prefix}/SELECT_ALL_FRIDGES`;
@@ -171,8 +174,7 @@ export function selectFridge(item) {
  */
 export function callAllFridges() {
   const action = {
-    type: LOAD_ALL_FRIDGES_START,
-    callAPI: "http://localhost:3001/api/FRIDGE"
+    type: LOAD_ALL_FRIDGES_REQUEST
   };
 
   return action;
@@ -194,12 +196,47 @@ export function sortOrderBy(property) {
   return action;
 }
 
+/**
+ * Sagas
+ */
+
+export const loadAllSaga = function*(action) {
+  // const { email, password } = action.payload;
+
+  yield put({
+    type: LOAD_ALL_FRIDGES_START
+  });
+
+  try {
+    //TODO: Здесь сделать нормальную логику запроса данных
+    // const auth = firebase.auth();
+    // const user = yield apply(auth, auth.signInWithEmailAndPassword, [
+    //   email,
+    //   password,
+    // ]);
+
+    yield put({
+      type: LOAD_ALL_FRIDGES_SUCCESS,
+      payload: { collection }
+    });
+  } catch (error) {
+    yield put({
+      type: LOAD_ALL_FRIDGES_ERROR,
+      payload: { error }
+    });
+  }
+};
+
+export const saga = function*() {
+  yield all([takeEvery(LOAD_ALL_FRIDGES_REQUEST, loadAllSaga)]);
+};
+
 // side effects, only as applicable
 // e.g. thunks, epics, etc
 
-setTimeout(() => {
-  window.store.dispatch({
-    type: LOAD_ALL_FRIDGES_SUCCESS,
-    payload: { collection }
-  });
-}, 1000);
+// setTimeout(() => {
+//   window.store.dispatch({
+//     type: LOAD_ALL_FRIDGES_SUCCESS,
+//     payload: { collection }
+//   });
+// }, 1000);

@@ -342,20 +342,31 @@ class DeviceForm extends React.Component {
     );
   }
 
-  componentDidMount() {
-    const { fridge } = this.props;
-
-    this.setState({
-      model: fridge.model,
-      serial: fridge.serial,
-      type: fridge.type,
-      front: fridge.front,
-      completeness: fridge.completeness,
-      cost: fridge.cost,
-      location: fridge.location,
-      date: fridge.date,
-      additionalInformation: fridge.additionalInformation
-    });
+  componentWillReceiveProps(nextProps) {
+    console.log("nextProps -->", nextProps);
+    //   const {
+    //     model,
+    //     serial,
+    //     type,
+    //     front,
+    //     completeness,
+    //     cost,
+    //     location,
+    //     date,
+    //     additionalInformation,
+    //   } = this.props.fridge;
+    //
+    //   this.setState({
+    //     model,
+    //     serial,
+    //     type,
+    //     front,
+    //     completeness,
+    //     cost,
+    //     location,
+    //     date,
+    //     additionalInformation,
+    //   });
   }
 }
 
@@ -366,7 +377,6 @@ DeviceForm.propTypes = {
 export default connect(
   state => {
     const edit = state.fridgeForm.get("edit");
-
     const fridge = state.fridges.selected.first();
     // TODO: Переделать организацию хранения данных в сторэдж
     const storageItem = JSON.parse(localStorage.getItem("activeItem"));
