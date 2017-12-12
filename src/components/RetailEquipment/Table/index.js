@@ -16,15 +16,14 @@ import Paper from "material-ui/Paper";
 import Checkbox from "material-ui/Checkbox";
 import { connect } from "react-redux";
 import {
-  callAllFridges,
-  selectFridge,
-  selectAllFridges,
+  callAllEquipment,
+  selectEquipment,
+  selectAllEquipment,
   sortOrderBy,
   orderedRowsSelector
 } from "../../../ducks/RetailEquipment/table";
 import LinearQuery from "../../LinearQuery/index";
 import Moment from "react-moment";
-// import { orderedRowsSelector } from "../../redux/selectors";
 import RetailEquipmentTableHead from "./head";
 import RetailEquipmentTableToolbar from "./toolbar";
 import SimpleSnackbar from "../../SimpleSnackbar/index";
@@ -75,7 +74,7 @@ class RetailEquipmentTable extends React.Component {
    * @return {void}
    */
   handleSelectAllClick = (event, checked) => {
-    this.props.selectAllFridges();
+    this.props.selectAllEquipment();
   };
   /**
    * Управление с клавиатуры, клик при помощи пробела
@@ -97,7 +96,7 @@ class RetailEquipmentTable extends React.Component {
    */
   handleClick = (event, item) => {
     event.preventDefault();
-    this.props.selectFridge(item);
+    this.props.selectEquipment(item);
   };
 
   /**
@@ -142,7 +141,7 @@ class RetailEquipmentTable extends React.Component {
    * @return {void}
    */
   componentDidMount() {
-    if (!this.props.data.length) this.props.callAllFridges();
+    if (!this.props.data.length) this.props.callAllEquipment();
     // TODO: Переделать организацию хранения данных в сторэдж
     const rowsPerPage = localStorage.getItem("rowsPerPage");
     const page = localStorage.getItem("page");
@@ -273,18 +272,18 @@ export default connect(
   state => {
     return {
       data: orderedRowsSelector(state),
-      selected: state.fridges.selected,
-      loading: state.fridges.isLoading,
-      order: state.fridges.orderData.get("order"),
-      orderBy: state.fridges.orderData.get("orderBy"),
+      selected: state.equipment.selected,
+      loading: state.equipment.isLoading,
+      order: state.equipment.orderData.get("order"),
+      orderBy: state.equipment.orderData.get("orderBy"),
       vocabulary: state.vocabulary,
-      error: state.fridges.error
+      error: state.equipment.error
     };
   },
   {
-    callAllFridges,
-    selectFridge,
-    selectAllFridges,
+    callAllEquipment,
+    selectEquipment,
+    selectAllEquipment,
     sortOrderBy
   }
 )(withStyles(styles)(RetailEquipmentTable));

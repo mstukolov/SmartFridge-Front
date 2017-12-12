@@ -1052,9 +1052,9 @@
                   "line": 16,
                   "column": 22
                 },
-                "identifierName": "deleteFridges"
+                "identifierName": "deleteEquipment"
               },
-              "name": "deleteFridges"
+              "name": "deleteEquipment"
             },
             "importKind": null,
             "local": {
@@ -1070,9 +1070,9 @@
                   "line": 16,
                   "column": 22
                 },
-                "identifierName": "deleteFridges"
+                "identifierName": "deleteEquipment"
               },
-              "name": "deleteFridges"
+              "name": "deleteEquipment"
             }
           },
           {
@@ -1102,9 +1102,9 @@
                   "line": 16,
                   "column": 34
                 },
-                "identifierName": "showFridge"
+                "identifierName": "showEquipment"
               },
-              "name": "showFridge"
+              "name": "showEquipment"
             },
             "importKind": null,
             "local": {
@@ -1120,9 +1120,9 @@
                   "line": 16,
                   "column": 34
                 },
-                "identifierName": "showFridge"
+                "identifierName": "showEquipment"
               },
-              "name": "showFridge"
+              "name": "showEquipment"
             }
           },
           {
@@ -1152,9 +1152,9 @@
                   "line": 16,
                   "column": 46
                 },
-                "identifierName": "editFridge"
+                "identifierName": "editEquipment"
               },
-              "name": "editFridge"
+              "name": "editEquipment"
             },
             "importKind": null,
             "local": {
@@ -1170,9 +1170,9 @@
                   "line": 16,
                   "column": 46
                 },
-                "identifierName": "editFridge"
+                "identifierName": "editEquipment"
               },
-              "name": "editFridge"
+              "name": "editEquipment"
             }
           }
         ],
@@ -3147,9 +3147,9 @@
                                 "line": 61,
                                 "column": 28
                               },
-                              "identifierName": "deleteFridges"
+                              "identifierName": "deleteEquipment"
                             },
-                            "name": "deleteFridges"
+                            "name": "deleteEquipment"
                           },
                           "computed": false
                         },
@@ -3468,9 +3468,9 @@
                                 "line": 70,
                                 "column": 25
                               },
-                              "identifierName": "editFridge"
+                              "identifierName": "editEquipment"
                             },
-                            "name": "editFridge"
+                            "name": "editEquipment"
                           },
                           "computed": false
                         },
@@ -3789,9 +3789,9 @@
                                 "line": 80,
                                 "column": 25
                               },
-                              "identifierName": "showFridge"
+                              "identifierName": "showEquipment"
                             },
-                            "name": "showFridge"
+                            "name": "showEquipment"
                           },
                           "computed": false
                         },
@@ -8459,9 +8459,9 @@
                                       "line": 153,
                                       "column": 29
                                     },
-                                    "identifierName": "fridges"
+                                    "identifierName": "equipment"
                                   },
-                                  "name": "fridges"
+                                  "name": "equipment"
                                 },
                                 "computed": false
                               },
@@ -8577,9 +8577,9 @@
                                       "line": 154,
                                       "column": 28
                                     },
-                                    "identifierName": "fridges"
+                                    "identifierName": "equipment"
                                   },
-                                  "name": "fridges"
+                                  "name": "equipment"
                                 },
                                 "computed": false
                               },
@@ -8709,9 +8709,9 @@
                                         "line": 155,
                                         "column": 32
                                       },
-                                      "identifierName": "fridges"
+                                      "identifierName": "equipment"
                                     },
-                                    "name": "fridges"
+                                    "name": "equipment"
                                   },
                                   "computed": false
                                 },
@@ -8891,9 +8891,9 @@
                           "line": 160,
                           "column": 17
                         },
-                        "identifierName": "deleteFridges"
+                        "identifierName": "deleteEquipment"
                       },
-                      "name": "deleteFridges"
+                      "name": "deleteEquipment"
                     },
                     "value": {
                       "type": "Identifier",
@@ -8908,9 +8908,9 @@
                           "line": 160,
                           "column": 17
                         },
-                        "identifierName": "deleteFridges"
+                        "identifierName": "deleteEquipment"
                       },
-                      "name": "deleteFridges"
+                      "name": "deleteEquipment"
                     },
                     "extra": {
                       "shorthand": true
@@ -8946,9 +8946,9 @@
                           "line": 161,
                           "column": 14
                         },
-                        "identifierName": "showFridge"
+                        "identifierName": "showEquipment"
                       },
-                      "name": "showFridge"
+                      "name": "showEquipment"
                     },
                     "value": {
                       "type": "Identifier",
@@ -8963,9 +8963,9 @@
                           "line": 161,
                           "column": 14
                         },
-                        "identifierName": "showFridge"
+                        "identifierName": "showEquipment"
                       },
-                      "name": "showFridge"
+                      "name": "showEquipment"
                     },
                     "extra": {
                       "shorthand": true
@@ -9001,9 +9001,9 @@
                           "line": 162,
                           "column": 14
                         },
-                        "identifierName": "editFridge"
+                        "identifierName": "editEquipment"
                       },
-                      "name": "editFridge"
+                      "name": "editEquipment"
                     },
                     "value": {
                       "type": "Identifier",
@@ -9018,9 +9018,9 @@
                           "line": 162,
                           "column": 14
                         },
-                        "identifierName": "editFridge"
+                        "identifierName": "editEquipment"
                       },
-                      "name": "editFridge"
+                      "name": "editEquipment"
                     },
                     "extra": {
                       "shorthand": true
@@ -11202,7 +11202,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "deleteFridges",
+      "value": "deleteEquipment",
       "start": 698,
       "end": 711,
       "loc": {
@@ -11254,7 +11254,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "showFridge",
+      "value": "showEquipment",
       "start": 713,
       "end": 723,
       "loc": {
@@ -11306,7 +11306,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "editFridge",
+      "value": "editEquipment",
       "start": 725,
       "end": 735,
       "loc": {
@@ -14868,7 +14868,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "deleteFridges",
+      "value": "deleteEquipment",
       "start": 1706,
       "end": 1719,
       "loc": {
@@ -15427,7 +15427,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "editFridge",
+      "value": "editEquipment",
       "start": 1953,
       "end": 1963,
       "loc": {
@@ -15986,7 +15986,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "showFridge",
+      "value": "showEquipment",
       "start": 2193,
       "end": 2203,
       "loc": {
@@ -25178,7 +25178,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "fridges",
+      "value": "equipment",
       "start": 4203,
       "end": 4210,
       "loc": {
@@ -25386,7 +25386,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "fridges",
+      "value": "equipment",
       "start": 4242,
       "end": 4249,
       "loc": {
@@ -25594,7 +25594,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "fridges",
+      "value": "equipment",
       "start": 4286,
       "end": 4293,
       "loc": {
@@ -26007,7 +26007,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "deleteFridges",
+      "value": "deleteEquipment",
       "start": 4364,
       "end": 4377,
       "loc": {
@@ -26059,7 +26059,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "showFridge",
+      "value": "showEquipment",
       "start": 4383,
       "end": 4393,
       "loc": {
@@ -26111,7 +26111,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "editFridge",
+      "value": "editEquipment",
       "start": 4399,
       "end": 4409,
       "loc": {

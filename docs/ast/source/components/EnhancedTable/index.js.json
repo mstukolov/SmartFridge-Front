@@ -952,9 +952,9 @@
                   "line": 19,
                   "column": 16
                 },
-                "identifierName": "callAllFridges"
+                "identifierName": "callAllEquipment"
               },
-              "name": "callAllFridges"
+              "name": "callAllEquipment"
             },
             "importKind": null,
             "local": {
@@ -970,9 +970,9 @@
                   "line": 19,
                   "column": 16
                 },
-                "identifierName": "callAllFridges"
+                "identifierName": "callAllEquipment"
               },
-              "name": "callAllFridges"
+              "name": "callAllEquipment"
             }
           },
           {
@@ -1002,9 +1002,9 @@
                   "line": 20,
                   "column": 14
                 },
-                "identifierName": "selectFridge"
+                "identifierName": "selectEquipment"
               },
-              "name": "selectFridge"
+              "name": "selectEquipment"
             },
             "importKind": null,
             "local": {
@@ -1020,9 +1020,9 @@
                   "line": 20,
                   "column": 14
                 },
-                "identifierName": "selectFridge"
+                "identifierName": "selectEquipment"
               },
-              "name": "selectFridge"
+              "name": "selectEquipment"
             }
           },
           {
@@ -1052,9 +1052,9 @@
                   "line": 21,
                   "column": 18
                 },
-                "identifierName": "selectAllFridges"
+                "identifierName": "selectAllEquipment"
               },
-              "name": "selectAllFridges"
+              "name": "selectAllEquipment"
             },
             "importKind": null,
             "local": {
@@ -1070,9 +1070,9 @@
                   "line": 21,
                   "column": 18
                 },
-                "identifierName": "selectAllFridges"
+                "identifierName": "selectAllEquipment"
               },
-              "name": "selectAllFridges"
+              "name": "selectAllEquipment"
             }
           },
           {
@@ -3085,9 +3085,9 @@
                                 "line": 77,
                                 "column": 31
                               },
-                              "identifierName": "selectAllFridges"
+                              "identifierName": "selectAllEquipment"
                             },
-                            "name": "selectAllFridges"
+                            "name": "selectAllEquipment"
                           },
                           "computed": false
                         },
@@ -3884,9 +3884,9 @@
                                 "line": 99,
                                 "column": 27
                               },
-                              "identifierName": "selectFridge"
+                              "identifierName": "selectEquipment"
                             },
-                            "name": "selectFridge"
+                            "name": "selectEquipment"
                           },
                           "computed": false
                         },
@@ -6000,9 +6000,9 @@
                                 "line": 142,
                                 "column": 58
                               },
-                              "identifierName": "callAllFridges"
+                              "identifierName": "callAllEquipment"
                             },
-                            "name": "callAllFridges"
+                            "name": "callAllEquipment"
                           },
                           "computed": false
                         },
@@ -15340,9 +15340,9 @@
                                       "line": 270,
                                       "column": 29
                                     },
-                                    "identifierName": "fridges"
+                                    "identifierName": "equipment"
                                   },
-                                  "name": "fridges"
+                                  "name": "equipment"
                                 },
                                 "computed": false
                               },
@@ -15458,9 +15458,9 @@
                                       "line": 271,
                                       "column": 28
                                     },
-                                    "identifierName": "fridges"
+                                    "identifierName": "equipment"
                                   },
-                                  "name": "fridges"
+                                  "name": "equipment"
                                 },
                                 "computed": false
                               },
@@ -15604,9 +15604,9 @@
                                           "line": 272,
                                           "column": 26
                                         },
-                                        "identifierName": "fridges"
+                                        "identifierName": "equipment"
                                       },
-                                      "name": "fridges"
+                                      "name": "equipment"
                                     },
                                     "computed": false
                                   },
@@ -15792,9 +15792,9 @@
                                           "line": 273,
                                           "column": 28
                                         },
-                                        "identifierName": "fridges"
+                                        "identifierName": "equipment"
                                       },
-                                      "name": "fridges"
+                                      "name": "equipment"
                                     },
                                     "computed": false
                                   },
@@ -15997,9 +15997,9 @@
                           "line": 278,
                           "column": 18
                         },
-                        "identifierName": "callAllFridges"
+                        "identifierName": "callAllEquipment"
                       },
-                      "name": "callAllFridges"
+                      "name": "callAllEquipment"
                     },
                     "value": {
                       "type": "Identifier",
@@ -16014,9 +16014,9 @@
                           "line": 278,
                           "column": 18
                         },
-                        "identifierName": "callAllFridges"
+                        "identifierName": "callAllEquipment"
                       },
-                      "name": "callAllFridges"
+                      "name": "callAllEquipment"
                     },
                     "extra": {
                       "shorthand": true
@@ -16052,9 +16052,9 @@
                           "line": 279,
                           "column": 16
                         },
-                        "identifierName": "selectFridge"
+                        "identifierName": "selectEquipment"
                       },
-                      "name": "selectFridge"
+                      "name": "selectEquipment"
                     },
                     "value": {
                       "type": "Identifier",
@@ -16069,9 +16069,9 @@
                           "line": 279,
                           "column": 16
                         },
-                        "identifierName": "selectFridge"
+                        "identifierName": "selectEquipment"
                       },
-                      "name": "selectFridge"
+                      "name": "selectEquipment"
                     },
                     "extra": {
                       "shorthand": true
@@ -16107,9 +16107,9 @@
                           "line": 280,
                           "column": 20
                         },
-                        "identifierName": "selectAllFridges"
+                        "identifierName": "selectAllEquipment"
                       },
-                      "name": "selectAllFridges"
+                      "name": "selectAllEquipment"
                     },
                     "value": {
                       "type": "Identifier",
@@ -16124,9 +16124,9 @@
                           "line": 280,
                           "column": 20
                         },
-                        "identifierName": "selectAllFridges"
+                        "identifierName": "selectAllEquipment"
                       },
-                      "name": "selectAllFridges"
+                      "name": "selectAllEquipment"
                     },
                     "extra": {
                       "shorthand": true
@@ -18211,7 +18211,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "callAllFridges",
+      "value": "callAllEquipment",
       "start": 494,
       "end": 508,
       "loc": {
@@ -18263,7 +18263,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "selectFridge",
+      "value": "selectEquipment",
       "start": 512,
       "end": 524,
       "loc": {
@@ -18315,7 +18315,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "selectAllFridges",
+      "value": "selectAllEquipment",
       "start": 528,
       "end": 544,
       "loc": {
@@ -22015,7 +22015,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "selectAllFridges",
+      "value": "selectAllEquipment",
       "start": 1797,
       "end": 1813,
       "loc": {
@@ -23647,7 +23647,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "selectFridge",
+      "value": "selectEquipment",
       "start": 2426,
       "end": 2438,
       "loc": {
@@ -27288,7 +27288,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "callAllFridges",
+      "value": "callAllEquipment",
       "start": 3888,
       "end": 3902,
       "loc": {
@@ -45059,7 +45059,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "fridges",
+      "value": "equipment",
       "start": 8099,
       "end": 8106,
       "loc": {
@@ -45267,7 +45267,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "fridges",
+      "value": "equipment",
       "start": 8138,
       "end": 8145,
       "loc": {
@@ -45475,7 +45475,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "fridges",
+      "value": "equipment",
       "start": 8176,
       "end": 8183,
       "loc": {
@@ -45812,7 +45812,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "fridges",
+      "value": "equipment",
       "start": 8229,
       "end": 8236,
       "loc": {
@@ -46302,7 +46302,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "callAllFridges",
+      "value": "callAllEquipment",
       "start": 8318,
       "end": 8332,
       "loc": {
@@ -46354,7 +46354,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "selectFridge",
+      "value": "selectEquipment",
       "start": 8338,
       "end": 8350,
       "loc": {
@@ -46406,7 +46406,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "selectAllFridges",
+      "value": "selectAllEquipment",
       "start": 8356,
       "end": 8372,
       "loc": {

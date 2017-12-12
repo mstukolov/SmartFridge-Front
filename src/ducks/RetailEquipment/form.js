@@ -17,7 +17,7 @@ export const SHOW_EQUIPMENT = `${prefix}/SHOW_EQUIPMENT`;
 export const EDIT_EQUIPMENT = `${prefix}/EDIT_EQUIPMENT`;
 export const CANCEL_EQUIPMENT = `${prefix}/CANCEL_EQUIPMENT`;
 
-const FridgeFormModel = new Record({
+const EquipmentFormModel = new Record({
   activeItem: null,
   location: null,
   edit: false,
@@ -25,7 +25,7 @@ const FridgeFormModel = new Record({
   error: null
 });
 
-let defaultForm = new FridgeFormModel();
+let defaultForm = new EquipmentFormModel();
 
 /**
  * Reducer
@@ -72,7 +72,7 @@ export default (state = defaultForm, action) => {
  * Создает экшн для получения данных об оборудовании
  * @return {Object} объект экшена
  */
-export function loadFridge(location) {
+export function loadEquipment(location) {
   const action = {
     type: LOAD_EQUIPMENT_REQUEST,
     payload: {
@@ -86,7 +86,7 @@ export function loadFridge(location) {
  * Создает экшн для включения режима редактирования оборудования
  * @return {Object} объект экшена
  */
-export function showFridge() {
+export function showEquipment() {
   const action = {
     type: SHOW_EQUIPMENT
   };
@@ -98,7 +98,7 @@ export function showFridge() {
  * Создает экшн для включения режима просмотра оборудования
  * @return {Object} объект экшена
  */
-export function editFridge() {
+export function editEquipment() {
   const action = {
     type: EDIT_EQUIPMENT
   };
@@ -110,7 +110,7 @@ export function editFridge() {
  * Создает экшн для включения режима просмотра оборудования
  * @return {Object} объект экшена
  */
-export function cancelFridge() {
+export function cancelEquipment() {
   const action = {
     type: CANCEL_EQUIPMENT
   };

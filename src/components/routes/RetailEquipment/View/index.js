@@ -51,7 +51,9 @@ function RetailEquipmentPageView(props: Props) {
         </Grid>
         <Grid item xs={12} sm={6}>
           <Paper>
-            <div className={classes.map}>{/*<SimpleMap />*/}</div>
+            <div className={classes.map}>
+              <SimpleMap />
+            </div>
           </Paper>
         </Grid>
       </Grid>

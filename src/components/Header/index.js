@@ -110,7 +110,7 @@ class Header extends React.Component {
             </IconButton>
             <img src={logo} className={classes.logo} alt="logo" />
             <Typography type="title" color="inherit" className={classes.flex}>
-              Smart Fridge
+              Smart Equipment
             </Typography>
             {auth && (
               <div>

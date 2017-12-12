@@ -1,4 +1,4 @@
-## Coca Cola Smart Fridge
+## Coca Cola Smart Equipment
 
 ###Frontend
 Проект сгенерирован при помощи

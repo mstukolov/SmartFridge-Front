@@ -246,9 +246,9 @@
                   "line": 3,
                   "column": 14
                 },
-                "identifierName": "fridges"
+                "identifierName": "equipment"
               },
-              "name": "fridges"
+              "name": "equipment"
             }
           }
         ],
@@ -576,9 +576,9 @@
                         "line": 13,
                         "column": 9
                       },
-                      "identifierName": "fridges"
+                      "identifierName": "equipment"
                     },
-                    "name": "fridges"
+                    "name": "equipment"
                   },
                   "value": {
                     "type": "Identifier",
@@ -593,9 +593,9 @@
                         "line": 13,
                         "column": 9
                       },
-                      "identifierName": "fridges"
+                      "identifierName": "equipment"
                     },
-                    "name": "fridges"
+                    "name": "equipment"
                   },
                   "extra": {
                     "shorthand": true
@@ -1181,7 +1181,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "fridges",
+      "value": "equipment",
       "start": 100,
       "end": 107,
       "loc": {
@@ -1804,7 +1804,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "fridges",
+      "value": "equipment",
       "start": 323,
       "end": 330,
       "loc": {

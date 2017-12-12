@@ -11,15 +11,16 @@ import { FormControl, FormHelperText } from "material-ui/Form";
 import Select from "material-ui/Select";
 import Button from "material-ui/Button";
 import {
-  cancelFridge,
-  editFridge,
-  showFridge,
-  loadFridge
+  cancelEquipment,
+  editEquipment,
+  showEquipment,
+  loadEquipment
 } from "../../../ducks/RetailEquipment/form";
 import Done from "material-ui-icons/Done";
 import ModeEditIcon from "material-ui-icons/ModeEdit";
 import { NavLink } from "react-router-dom";
 import SimpleSnackbar from "../../SimpleSnackbar";
+import LinearQuery from "../../LinearQuery/index";
 
 const styles = theme => ({
   container: {
@@ -141,6 +142,14 @@ class RetailEquipmentForm extends React.Component {
   };
 
   /**
+   * Индикация загрузки данных
+   * @return {ReactElement} разметка прелоадера
+   */
+  showLoading() {
+    return this.props.loading ? <LinearQuery /> : null;
+  }
+
+  /**
    * Проверяет блокировать ли контролы
    * @returns {boolean}
    */
@@ -153,6 +162,7 @@ class RetailEquipmentForm extends React.Component {
    * @returns {ReactElement}
    */
   getButtonSet = () => {
+    if (this.props.error) return null;
     const { classes } = this.props;
     const btns = this.props.edit ? (
       <Button
@@ -194,7 +204,7 @@ class RetailEquipmentForm extends React.Component {
    */
   handleBtnCancelClick = ev => {
     ev.preventDefault();
-    this.props.cancelFridge();
+    this.props.cancelEquipment();
   };
 
   /**
@@ -203,7 +213,7 @@ class RetailEquipmentForm extends React.Component {
    */
   handleBtnEditClick = ev => {
     ev.preventDefault();
-    this.props.editFridge();
+    this.props.editEquipment();
   };
 
   /**
@@ -211,7 +221,7 @@ class RetailEquipmentForm extends React.Component {
    * @return {void}
    */
   componentDidMount() {
-    this.props.loadFridge(this.props.location);
+    this.props.loadEquipment(this.props.location);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -248,7 +258,7 @@ class RetailEquipmentForm extends React.Component {
    */
   handleSubmit = ev => {
     ev.preventDefault();
-    this.props.showFridge();
+    this.props.showEquipment();
     console.log("submit -->", this.state);
   };
 
@@ -274,6 +284,7 @@ class RetailEquipmentForm extends React.Component {
         noValidate
         autoComplete="off"
       >
+        {this.showLoading()}
         {this.showError()}
         <FormControl
           disabled={this.isDisabledControl()}
@@ -416,17 +427,18 @@ export default connect(
 
     return {
       fridge: state.fridgeForm.activeItem,
+      error: state.fridgeForm.error,
+      loading: state.fridgeForm.isLoading,
       models: state.vocabulary.get("models"),
       types: state.vocabulary.get("types"),
       front: state.vocabulary.get("front"),
-      edit,
-      error: state.fridgeForm.error
+      edit
     };
   },
   {
-    cancelFridge,
-    editFridge,
-    showFridge,
-    loadFridge
+    cancelEquipment,
+    editEquipment,
+    showEquipment,
+    loadEquipment
   }
 )(withStyles(styles)(RetailEquipmentForm));

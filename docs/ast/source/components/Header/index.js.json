@@ -6101,7 +6101,7 @@
                                         }
                                       },
                                       "extra": null,
-                                      "value": "\n              Smart Fridge\n            "
+                                      "value": "\n              Smart Equipment\n            "
                                     }
                                   ]
                                 },
@@ -23134,7 +23134,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "\n              Smart Fridge\n            ",
+      "value": "\n              Smart Equipment\n            ",
       "start": 2730,
       "end": 2770,
       "loc": {

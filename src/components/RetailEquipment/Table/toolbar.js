@@ -13,8 +13,11 @@ import FilterListIcon from "material-ui-icons/FilterList";
 import Typography from "material-ui/Typography";
 import Toolbar from "material-ui/Toolbar";
 import { connect } from "react-redux";
-import { deleteFridges } from "../../../ducks/RetailEquipment/table";
-import { showFridge, editFridge } from "../../../ducks/RetailEquipment/form";
+import { deleteEquipment } from "../../../ducks/RetailEquipment/table";
+import {
+  showEquipment,
+  editEquipment
+} from "../../../ducks/RetailEquipment/form";
 import { NavLink } from "react-router-dom";
 const toolbarStyles = theme => ({
   root: {
@@ -59,7 +62,7 @@ class RetailEquipmentTableToolbar extends React.Component {
    */
   handleDelete = ev => {
     ev.preventDefault();
-    this.props.deleteFridges();
+    this.props.deleteEquipment(this.props.selected);
   };
   /**
    * Функция обработки редактирования списка выделленных элементов
@@ -75,7 +78,7 @@ class RetailEquipmentTableToolbar extends React.Component {
    * @return {void}    [description]
    */
   handleShow = ev => {
-    this.props.showFridge();
+    this.props.showEquipment();
   };
 
   /**
@@ -150,15 +153,15 @@ RetailEquipmentTableToolbar.propTypes = {
 export default connect(
   state => {
     return {
-      selected: state.fridges.selected,
-      loading: state.fridges.isLoading,
-      numSelected: state.fridges.selected.size
+      selected: state.equipment.selected,
+      loading: state.equipment.isLoading,
+      numSelected: state.equipment.selected.size
     };
   },
   {
-    deleteFridges,
-    showFridge,
-    editFridge
+    deleteEquipment,
+    showEquipment,
+    editEquipment
   }
 )(
   (RetailEquipmentTableToolbar = withStyles(toolbarStyles)(

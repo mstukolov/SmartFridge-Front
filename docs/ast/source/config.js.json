@@ -105,10 +105,10 @@
                   }
                 },
                 "extra": {
-                  "rawValue": "colaFridges",
-                  "raw": "\"colaFridges\""
+                  "rawValue": "colaEquipment",
+                  "raw": "\"colaEquipment\""
                 },
-                "value": "colaFridges"
+                "value": "colaEquipment"
               }
             }
           ],
@@ -245,7 +245,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "colaFridges",
+      "value": "colaEquipment",
       "start": 23,
       "end": 36,
       "loc": {

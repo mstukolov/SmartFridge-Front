@@ -1,1 +1,1 @@
-export const appName = "colaFridges";
+export const appName = "colaEquipment";

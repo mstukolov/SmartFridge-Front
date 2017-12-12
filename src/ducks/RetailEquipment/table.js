@@ -10,14 +10,21 @@ import { all, takeEvery, put } from "redux-saga/effects";
  * */
 export const moduleName = "mainTable";
 const prefix = `${appName}/${moduleName}`;
-export const LOAD_ALL_EQUIPMENT = `${prefix}/LOAD_ALL_EQUIPMENT`;
+
+// export const LOAD_ALL_EQUIPMENT = `${prefix}/LOAD_ALL_EQUIPMENT`;
 export const LOAD_ALL_EQUIPMENT_REQUEST = `${prefix}/LOAD_ALL_EQUIPMENT_REQUEST`;
 export const LOAD_ALL_EQUIPMENT_START = `${prefix}/LOAD_ALL_EQUIPMENT_START`;
 export const LOAD_ALL_EQUIPMENT_SUCCESS = `${prefix}/LOAD_ALL_EQUIPMENT_SUCCESS`;
 export const LOAD_ALL_EQUIPMENT_ERROR = `${prefix}/LOAD_ALL_EQUIPMENT_ERROR`;
-export const DELETE_EQUIPMENT = `${prefix}/DELETE_EQUIPMENT`;
+
+export const DELETE_EQUIPMENT_REQUEST = `${prefix}/DELETE_EQUIPMENT_REQUEST`;
+export const DELETE_EQUIPMENT_START = `${prefix}/DELETE_EQUIPMENT_START`;
+export const DELETE_EQUIPMENT_SUCCESS = `${prefix}/DELETE_EQUIPMENT_SUCCESS`;
+export const DELETE_EQUIPMENT_ERROR = `${prefix}/DELETE_EQUIPMENT_ERROR`;
+
 export const SELECT_EQUIPMENT = `${prefix}/SELECT_EQUIPMENT`;
 export const SELECT_ALL_EQUIPMENT = `${prefix}/SELECT_ALL_EQUIPMENT`;
+
 export const ORDER_BY = `${prefix}/ORDER_BY`;
 
 /**
@@ -71,16 +78,18 @@ export default function reducer(state = defaultState, action) {
       });
       return state.setIn(["selected"], new Map(result));
 
-    case DELETE_EQUIPMENT:
-      let newCollection = state.collection.filter(item => {
-        return !state.selected.includes(item);
-      });
+    case DELETE_EQUIPMENT_START:
+      return state.set("isLoading", true);
 
+    case DELETE_EQUIPMENT_SUCCESS:
       return state
-        .setIn(["collection"], newCollection)
+        .set("isLoading", false)
+        .set("collection", payload.collection)
         .setIn(["selected"], new Map({}));
 
       return state;
+    case DELETE_EQUIPMENT_ERROR:
+      return state.setIn(["error"], payload.error).set("isLoading", false);
 
     case ORDER_BY:
       const { property } = payload;
@@ -112,8 +121,8 @@ export default function reducer(state = defaultState, action) {
 /**
  * Selectors
  * */
-const rowsGetter = state => state.fridges.get("collection");
-const orderstateGetter = state => state.fridges.get("orderData");
+const rowsGetter = state => state.equipment.get("collection");
+const orderstateGetter = state => state.equipment.get("orderData");
 
 export const orderedRowsSelector = createSelector(
   rowsGetter,
@@ -138,9 +147,10 @@ export const orderedRowsSelector = createSelector(
  * Создает экшн удаления выбранных статей
  * @return {Object}    объект экшена
  */
-export function deleteFridges() {
+export function deleteEquipment(deleted) {
   const action = {
-    type: DELETE_EQUIPMENT
+    type: DELETE_EQUIPMENT_REQUEST,
+    payload: { deleted }
   };
 
   return action;
@@ -150,7 +160,7 @@ export function deleteFridges() {
  * Создает экшн выбора всего оборудования из списка
  * @return {Object}         объект экшена
  */
-export function selectAllFridges() {
+export function selectAllEquipment() {
   const action = {
     type: SELECT_ALL_EQUIPMENT
   };
@@ -163,7 +173,7 @@ export function selectAllFridges() {
  * @param  {String} selected массив выбранных  холодильников
  * @return {Object}         объект экшена
  */
-export function selectFridge(item) {
+export function selectEquipment(item) {
   const action = {
     type: SELECT_EQUIPMENT,
     payload: {
@@ -176,7 +186,7 @@ export function selectFridge(item) {
  * Создает экшн для запроса всех холодильников
  * @return {Object} объект экшена
  */
-export function callAllFridges() {
+export function callAllEquipment() {
   const action = {
     type: LOAD_ALL_EQUIPMENT_REQUEST
   };
@@ -205,7 +215,7 @@ export function sortOrderBy(property) {
  */
 
 export const loadAllSaga = function*(action) {
-  // const { email, password } = action.payload;
+  // const { collection } = action.payload;
 
   yield put({
     type: LOAD_ALL_EQUIPMENT_START
@@ -213,11 +223,6 @@ export const loadAllSaga = function*(action) {
 
   try {
     //TODO: Здесь сделать нормальную логику запроса данных
-    // const auth = firebase.auth();
-    // const user = yield apply(auth, auth.signInWithEmailAndPassword, [
-    //   email,
-    //   password,
-    // ]);
 
     // throw new Error("Ошибка получения данных");
 
@@ -233,6 +238,34 @@ export const loadAllSaga = function*(action) {
   }
 };
 
+export const deleteSaga = function*(action) {
+  yield put({
+    type: DELETE_EQUIPMENT_START
+  });
+
+  try {
+    //TODO: Здесь сделать нормальную логику запроса данных
+    // throw new Error("Ошибка отправки данных");
+
+    let newCollection = collection.filter(item => {
+      return !action.payload.deleted.includes(item);
+    });
+
+    yield put({
+      type: DELETE_EQUIPMENT_SUCCESS,
+      payload: { collection: newCollection }
+    });
+  } catch (error) {
+    yield put({
+      type: DELETE_EQUIPMENT_ERROR,
+      payload: { error }
+    });
+  }
+};
+
 export const saga = function*() {
-  yield all([takeEvery(LOAD_ALL_EQUIPMENT_REQUEST, loadAllSaga)]);
+  yield all([
+    takeEvery(LOAD_ALL_EQUIPMENT_REQUEST, loadAllSaga),
+    takeEvery(DELETE_EQUIPMENT_REQUEST, deleteSaga)
+  ]);
 };

@@ -1082,9 +1082,9 @@
                   "line": 15,
                   "column": 21
                 },
-                "identifierName": "FridgeFormModel"
+                "identifierName": "EquipmentFormModel"
               },
-              "name": "FridgeFormModel"
+              "name": "EquipmentFormModel"
             },
             "init": {
               "type": "NewExpression",
@@ -1316,9 +1316,9 @@
                     "line": 20,
                     "column": 37
                   },
-                  "identifierName": "FridgeFormModel"
+                  "identifierName": "EquipmentFormModel"
                 },
-                "name": "FridgeFormModel"
+                "name": "EquipmentFormModel"
               },
               "arguments": []
             }
@@ -2570,9 +2570,9 @@
                 "line": 59,
                 "column": 26
               },
-              "identifierName": "showFridge"
+              "identifierName": "showEquipment"
             },
-            "name": "showFridge",
+            "name": "showEquipment",
             "leadingComments": null
           },
           "generator": false,
@@ -2903,9 +2903,9 @@
                 "line": 71,
                 "column": 26
               },
-              "identifierName": "editFridge"
+              "identifierName": "editEquipment"
             },
-            "name": "editFridge",
+            "name": "editEquipment",
             "leadingComments": null
           },
           "generator": false,
@@ -3204,9 +3204,9 @@
                 "line": 83,
                 "column": 28
               },
-              "identifierName": "cancelFridge"
+              "identifierName": "cancelEquipment"
             },
-            "name": "cancelFridge",
+            "name": "cancelEquipment",
             "leadingComments": null
           },
           "generator": false,
@@ -5644,7 +5644,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "FridgeFormModel",
+      "value": "EquipmentFormModel",
       "start": 415,
       "end": 430,
       "loc": {
@@ -6194,7 +6194,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "FridgeFormModel",
+      "value": "EquipmentFormModel",
       "start": 505,
       "end": 520,
       "loc": {
@@ -8659,7 +8659,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "showFridge",
+      "value": "showEquipment",
       "start": 1424,
       "end": 1434,
       "loc": {
@@ -9171,7 +9171,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "editFridge",
+      "value": "editEquipment",
       "start": 1624,
       "end": 1634,
       "loc": {
@@ -9683,7 +9683,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "cancelFridge",
+      "value": "cancelEquipment",
       "start": 1824,
       "end": 1836,
       "loc": {
