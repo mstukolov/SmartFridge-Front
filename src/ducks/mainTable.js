@@ -30,7 +30,8 @@ let DefaulrReducerState = new Record({
   orderData: new Map({
     order: "asc",
     orderBy: "model"
-  })
+  }),
+  error: null
 });
 
 const defaultState = new DefaulrReducerState();
@@ -47,6 +48,9 @@ export default function reducer(state = defaultState, action) {
       return state
         .set("isLoading", false)
         .set("collection", payload.collection);
+
+    case LOAD_ALL_FRIDGES_ERROR:
+      return state.setIn(["error"], payload.error).set("isLoading", false);
 
     case SELECT_FRIDGE:
       const { item } = payload;
@@ -215,6 +219,8 @@ export const loadAllSaga = function*(action) {
     //   password,
     // ]);
 
+    // throw new Error("Ошибка получения данных");
+
     yield put({
       type: LOAD_ALL_FRIDGES_SUCCESS,
       payload: { collection }
@@ -230,13 +236,3 @@ export const loadAllSaga = function*(action) {
 export const saga = function*() {
   yield all([takeEvery(LOAD_ALL_FRIDGES_REQUEST, loadAllSaga)]);
 };
-
-// side effects, only as applicable
-// e.g. thunks, epics, etc
-
-// setTimeout(() => {
-//   window.store.dispatch({
-//     type: LOAD_ALL_FRIDGES_SUCCESS,
-//     payload: { collection }
-//   });
-// }, 1000);

@@ -27,6 +27,7 @@ import Moment from "react-moment";
 // import { orderedRowsSelector } from "../../redux/selectors";
 import EnhancedTableHead from "./head";
 import EnhancedTableToolbar from "./toolbar";
+import SimpleSnackbar from "../SimpleSnackbar";
 
 const styles = theme => ({
   root: {
@@ -127,6 +128,11 @@ class EnhancedTable extends React.Component {
    */
   isSelected = id => this.props.selected.has(id);
 
+  showError = () => {
+    if (!this.props.error) return;
+    return <SimpleSnackbar text={this.props.error.message} />;
+  };
+
   /**
    * Делаем запрос всех устройств с сервера и настроек просмотра из  storage
    * @return {void}
@@ -177,6 +183,7 @@ class EnhancedTable extends React.Component {
 
     return (
       <Paper className={classes.root}>
+        {this.showError()}
         <EnhancedTableToolbar />
         <div className={classes.tableWrapper}>
           <div className={classes.preloader}>{this.showLoading()}</div>
@@ -266,7 +273,8 @@ export default connect(
       loading: state.fridges.isLoading,
       order: state.fridges.orderData.get("order"),
       orderBy: state.fridges.orderData.get("orderBy"),
-      vocabulary: state.vocabulary
+      vocabulary: state.vocabulary,
+      error: state.fridges.error
     };
   },
   {
