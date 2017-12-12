@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import { routerReducer } from "react-router-redux";
-import fridges from "../ducks/mainTable";
-import fridgeForm from "../ducks/fridgeForm";
+import fridges from "../ducks/RetailEquipment/table";
+import fridgeForm from "../ducks/RetailEquipment/form";
 
 import vocabulary from "../ducks/vocabulary";
 

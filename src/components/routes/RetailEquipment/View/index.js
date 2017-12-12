@@ -33,7 +33,6 @@ type Props = {
 
 function RetailEquipmentPageView(props: Props) {
   const { classes } = props;
-  // console.log(props);
 
   return (
     <div className={classes.root}>
@@ -47,14 +46,12 @@ function RetailEquipmentPageView(props: Props) {
         </Grid>
         <Grid item xs={12} sm={6}>
           <Paper className={classes.paper}>
-            <RetailEquipmentForm />
+            <RetailEquipmentForm location={props.location.pathname} />
           </Paper>
         </Grid>
         <Grid item xs={12} sm={6}>
           <Paper>
-            <div className={classes.map}>
-              <SimpleMap />
-            </div>
+            <div className={classes.map}>{/*<SimpleMap />*/}</div>
           </Paper>
         </Grid>
       </Grid>

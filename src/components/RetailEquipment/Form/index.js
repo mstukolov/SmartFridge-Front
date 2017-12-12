@@ -13,11 +13,13 @@ import Button from "material-ui/Button";
 import {
   cancelFridge,
   editFridge,
-  showFridge
-} from "../../../ducks/fridgeForm";
+  showFridge,
+  loadFridge
+} from "../../../ducks/RetailEquipment/form";
 import Done from "material-ui-icons/Done";
 import ModeEditIcon from "material-ui-icons/ModeEdit";
 import { NavLink } from "react-router-dom";
+import SimpleSnackbar from "../../SimpleSnackbar";
 
 const styles = theme => ({
   container: {
@@ -52,17 +54,20 @@ const styles = theme => ({
  * @extends React
  */
 class RetailEquipmentForm extends React.Component {
-  state = {
-    model: "Данные отсутствуют",
-    serial: "Данные отсутствуют",
-    type: "Данные отсутствуют",
-    front: "Данные отсутствуют",
-    completeness: "Данные отсутствуют",
-    cost: "Данные отсутствуют",
-    location: "Данные отсутствуют",
-    date: "Данные отсутствуют",
-    additionalInformation: "Данные отсутствуют"
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      model: "Данные отсутствуют",
+      serial: "Данные отсутствуют",
+      type: "Данные отсутствуют",
+      front: "Данные отсутствуют",
+      completeness: "Данные отсутствуют",
+      cost: "Данные отсутствуют",
+      location: "Данные отсутствуют",
+      date: "Данные отсутствуют",
+      additionalInformation: "Данные отсутствуют"
+    };
+  }
 
   /**
    * Функция обработки изменений занчения поля
@@ -70,7 +75,6 @@ class RetailEquipmentForm extends React.Component {
    * @returns {void}
    */
   handleChange = name => event => {
-    console.log("set - " + name, event.target.value);
     this.setState({
       [name]: event.target.value
     });
@@ -82,7 +86,7 @@ class RetailEquipmentForm extends React.Component {
    */
   getModels = () => {
     if (this.props.models)
-      return this.props.models.map((item, key) => {
+      return this.props.models.toArray().map((item, key) => {
         return (
           <MenuItem key={key} value={item}>
             {item}
@@ -98,7 +102,7 @@ class RetailEquipmentForm extends React.Component {
    */
   getTypes = () => {
     if (this.props.types)
-      return this.props.types.map((item, key) => {
+      return this.props.types.toArray().map((item, key) => {
         return (
           <MenuItem key={key} value={item}>
             {item}
@@ -114,7 +118,7 @@ class RetailEquipmentForm extends React.Component {
    */
   getFront = () => {
     if (this.props.front)
-      return this.props.front.map((item, key) => {
+      return this.props.front.toArray().map((item, key) => {
         return (
           <MenuItem key={key} value={item}>
             {item}
@@ -161,13 +165,8 @@ class RetailEquipmentForm extends React.Component {
     );
     return (
       <div className={classes.buttonSet}>
-        <NavLink to="/schedule" activeClassName="selected">
-          <Button
-            className={classes.button}
-            // s.handleBtnCancelClick}
-            raised
-            color="accent"
-          >
+        <NavLink to="/equipment" activeClassName="selected">
+          <Button className={classes.button} raised color="accent">
             Отменить
           </Button>
         </NavLink>
@@ -194,10 +193,42 @@ class RetailEquipmentForm extends React.Component {
     ev.preventDefault();
     this.props.editFridge();
   };
+
   /**
-   * render
-   * @return {ReactElement} разметка React
+   * Делаем запрос устройства с сервера
+   * @return {void}
    */
+  componentDidMount() {
+    this.props.loadFridge(this.props.location);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.fridge) {
+      const {
+        model,
+        serial,
+        type,
+        front,
+        completeness,
+        cost,
+        location,
+        date,
+        additionalInformation
+      } = nextProps.fridge;
+
+      this.setState({
+        model,
+        serial,
+        type,
+        front,
+        completeness,
+        cost,
+        location,
+        date,
+        additionalInformation
+      });
+    }
+  }
 
   /**
    * Обработка отправки формы
@@ -208,9 +239,22 @@ class RetailEquipmentForm extends React.Component {
     this.props.showFridge();
     console.log("submit -->", this.state);
   };
+
+  /**
+   * Показывает нотификатор с текстом ошибки
+   * @returns {*}
+   */
+  showError = () => {
+    if (!this.props.error) return;
+    return <SimpleSnackbar text={this.props.error.message} />;
+  };
+
+  /**
+   * render
+   * @return {ReactElement} разметка React
+   */
   render() {
     const { classes } = this.props;
-
     return (
       <form
         onSubmit={this.handleSubmit}
@@ -218,6 +262,7 @@ class RetailEquipmentForm extends React.Component {
         noValidate
         autoComplete="off"
       >
+        {this.showError()}
         <FormControl
           disabled={this.isDisabledControl()}
           fullWidth
@@ -345,56 +390,31 @@ class RetailEquipmentForm extends React.Component {
       </form>
     );
   }
-
-  componentWillReceiveProps(nextProps) {
-    console.log("nextProps -->", nextProps);
-    //   const {
-    //     model,
-    //     serial,
-    //     type,
-    //     front,
-    //     completeness,
-    //     cost,
-    //     location,
-    //     date,
-    //     additionalInformation,
-    //   } = this.props.fridge;
-    //
-    //   this.setState({
-    //     model,
-    //     serial,
-    //     type,
-    //     front,
-    //     completeness,
-    //     cost,
-    //     location,
-    //     date,
-    //     additionalInformation,
-    //   });
-  }
 }
 
 RetailEquipmentForm.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  location: PropTypes.string.isRequired
 };
 
 export default connect(
   state => {
     const edit = state.fridgeForm.get("edit");
-    const fridge = state.fridges.selected.first();
-    // TODO: Переделать организацию хранения данных в сторэдж
-    const storageItem = JSON.parse(localStorage.getItem("activeItem"));
+    console.log("state.fridgeForm.activeItem", state.fridgeForm.activeItem);
+
     return {
-      fridge: fridge || storageItem,
+      fridge: state.fridgeForm.activeItem,
       models: state.vocabulary.get("models"),
       types: state.vocabulary.get("types"),
       front: state.vocabulary.get("front"),
-      edit
+      edit,
+      error: state.fridgeForm.error
     };
   },
   {
     cancelFridge,
     editFridge,
-    showFridge
+    showFridge,
+    loadFridge
   }
 )(withStyles(styles)(RetailEquipmentForm));

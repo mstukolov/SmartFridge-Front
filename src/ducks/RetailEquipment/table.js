@@ -1,7 +1,7 @@
-import { appName } from "../config";
+import { appName } from "../../config";
 import { Record, List, Map } from "immutable";
 import { createSelector } from "reselect";
-import { collection } from "../fakeData";
+import { collection } from "../../fakeData";
 
 import { all, takeEvery, put } from "redux-saga/effects";
 
@@ -10,14 +10,14 @@ import { all, takeEvery, put } from "redux-saga/effects";
  * */
 export const moduleName = "mainTable";
 const prefix = `${appName}/${moduleName}`;
-export const LOAD_ALL_FRIDGES = `${prefix}/LOAD_ALL_FRIDGES`;
-export const LOAD_ALL_FRIDGES_REQUEST = `${prefix}/LOAD_ALL_FRIDGES_REQUEST`;
-export const LOAD_ALL_FRIDGES_START = `${prefix}/LOAD_ALL_FRIDGES_START`;
-export const LOAD_ALL_FRIDGES_SUCCESS = `${prefix}/LOAD_ALL_FRIDGES_SUCCESS`;
-export const LOAD_ALL_FRIDGES_ERROR = `${prefix}/LOAD_ALL_FRIDGES_ERROR`;
-export const DELETE_FRIDGES = `${prefix}/DELETE_FRIDGES`;
-export const SELECT_FRIDGE = `${prefix}/SELECT_FRIDGE`;
-export const SELECT_ALL_FRIDGES = `${prefix}/SELECT_ALL_FRIDGES`;
+export const LOAD_ALL_EQUIPMENT = `${prefix}/LOAD_ALL_EQUIPMENT`;
+export const LOAD_ALL_EQUIPMENT_REQUEST = `${prefix}/LOAD_ALL_EQUIPMENT_REQUEST`;
+export const LOAD_ALL_EQUIPMENT_START = `${prefix}/LOAD_ALL_EQUIPMENT_START`;
+export const LOAD_ALL_EQUIPMENT_SUCCESS = `${prefix}/LOAD_ALL_EQUIPMENT_SUCCESS`;
+export const LOAD_ALL_EQUIPMENT_ERROR = `${prefix}/LOAD_ALL_EQUIPMENT_ERROR`;
+export const DELETE_EQUIPMENT = `${prefix}/DELETE_EQUIPMENT`;
+export const SELECT_EQUIPMENT = `${prefix}/SELECT_EQUIPMENT`;
+export const SELECT_ALL_EQUIPMENT = `${prefix}/SELECT_ALL_EQUIPMENT`;
 export const ORDER_BY = `${prefix}/ORDER_BY`;
 
 /**
@@ -41,18 +41,18 @@ export default function reducer(state = defaultState, action) {
   const { selected } = state;
 
   switch (type) {
-    case LOAD_ALL_FRIDGES_START:
+    case LOAD_ALL_EQUIPMENT_START:
       return state.set("isLoading", true);
 
-    case LOAD_ALL_FRIDGES_SUCCESS:
+    case LOAD_ALL_EQUIPMENT_SUCCESS:
       return state
         .set("isLoading", false)
         .set("collection", payload.collection);
 
-    case LOAD_ALL_FRIDGES_ERROR:
+    case LOAD_ALL_EQUIPMENT_ERROR:
       return state.setIn(["error"], payload.error).set("isLoading", false);
 
-    case SELECT_FRIDGE:
+    case SELECT_EQUIPMENT:
       const { item } = payload;
 
       if (selected.has(item.id)) {
@@ -61,7 +61,7 @@ export default function reducer(state = defaultState, action) {
 
       return state.setIn(["selected"], selected.set(item.id, item));
 
-    case SELECT_ALL_FRIDGES:
+    case SELECT_ALL_EQUIPMENT:
       if (state.collection.length === state.selected.size)
         return state.setIn(["selected"], new Map({}));
       let result = {};
@@ -71,7 +71,7 @@ export default function reducer(state = defaultState, action) {
       });
       return state.setIn(["selected"], new Map(result));
 
-    case DELETE_FRIDGES:
+    case DELETE_EQUIPMENT:
       let newCollection = state.collection.filter(item => {
         return !state.selected.includes(item);
       });
@@ -140,7 +140,7 @@ export const orderedRowsSelector = createSelector(
  */
 export function deleteFridges() {
   const action = {
-    type: DELETE_FRIDGES
+    type: DELETE_EQUIPMENT
   };
 
   return action;
@@ -152,7 +152,7 @@ export function deleteFridges() {
  */
 export function selectAllFridges() {
   const action = {
-    type: SELECT_ALL_FRIDGES
+    type: SELECT_ALL_EQUIPMENT
   };
 
   return action;
@@ -165,7 +165,7 @@ export function selectAllFridges() {
  */
 export function selectFridge(item) {
   const action = {
-    type: SELECT_FRIDGE,
+    type: SELECT_EQUIPMENT,
     payload: {
       item
     }
@@ -178,7 +178,7 @@ export function selectFridge(item) {
  */
 export function callAllFridges() {
   const action = {
-    type: LOAD_ALL_FRIDGES_REQUEST
+    type: LOAD_ALL_EQUIPMENT_REQUEST
   };
 
   return action;
@@ -208,7 +208,7 @@ export const loadAllSaga = function*(action) {
   // const { email, password } = action.payload;
 
   yield put({
-    type: LOAD_ALL_FRIDGES_START
+    type: LOAD_ALL_EQUIPMENT_START
   });
 
   try {
@@ -222,17 +222,17 @@ export const loadAllSaga = function*(action) {
     // throw new Error("Ошибка получения данных");
 
     yield put({
-      type: LOAD_ALL_FRIDGES_SUCCESS,
+      type: LOAD_ALL_EQUIPMENT_SUCCESS,
       payload: { collection }
     });
   } catch (error) {
     yield put({
-      type: LOAD_ALL_FRIDGES_ERROR,
+      type: LOAD_ALL_EQUIPMENT_ERROR,
       payload: { error }
     });
   }
 };
 
 export const saga = function*() {
-  yield all([takeEvery(LOAD_ALL_FRIDGES_REQUEST, loadAllSaga)]);
+  yield all([takeEvery(LOAD_ALL_EQUIPMENT_REQUEST, loadAllSaga)]);
 };

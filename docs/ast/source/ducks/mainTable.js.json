@@ -916,9 +916,9 @@
                     "line": 12,
                     "column": 29
                   },
-                  "identifierName": "LOAD_ALL_FRIDGES"
+                  "identifierName": "LOAD_ALL_EQUIPMENT"
                 },
-                "name": "LOAD_ALL_FRIDGES"
+                "name": "LOAD_ALL_EQUIPMENT"
               },
               "init": {
                 "type": "TemplateLiteral",
@@ -989,8 +989,8 @@
                       }
                     },
                     "value": {
-                      "raw": "/LOAD_ALL_FRIDGES",
-                      "cooked": "/LOAD_ALL_FRIDGES"
+                      "raw": "/LOAD_ALL_EQUIPMENT",
+                      "cooked": "/LOAD_ALL_EQUIPMENT"
                     },
                     "tail": true
                   }
@@ -1062,9 +1062,9 @@
                     "line": 13,
                     "column": 35
                   },
-                  "identifierName": "LOAD_ALL_FRIDGES_START"
+                  "identifierName": "LOAD_ALL_EQUIPMENT_START"
                 },
-                "name": "LOAD_ALL_FRIDGES_START"
+                "name": "LOAD_ALL_EQUIPMENT_START"
               },
               "init": {
                 "type": "TemplateLiteral",
@@ -1135,8 +1135,8 @@
                       }
                     },
                     "value": {
-                      "raw": "/LOAD_ALL_FRIDGES_START",
-                      "cooked": "/LOAD_ALL_FRIDGES_START"
+                      "raw": "/LOAD_ALL_EQUIPMENT_START",
+                      "cooked": "/LOAD_ALL_EQUIPMENT_START"
                     },
                     "tail": true
                   }
@@ -1208,9 +1208,9 @@
                     "line": 14,
                     "column": 37
                   },
-                  "identifierName": "LOAD_ALL_FRIDGES_SUCCESS"
+                  "identifierName": "LOAD_ALL_EQUIPMENT_SUCCESS"
                 },
-                "name": "LOAD_ALL_FRIDGES_SUCCESS"
+                "name": "LOAD_ALL_EQUIPMENT_SUCCESS"
               },
               "init": {
                 "type": "TemplateLiteral",
@@ -1281,8 +1281,8 @@
                       }
                     },
                     "value": {
-                      "raw": "/LOAD_ALL_FRIDGES_SUCCESS",
-                      "cooked": "/LOAD_ALL_FRIDGES_SUCCESS"
+                      "raw": "/LOAD_ALL_EQUIPMENT_SUCCESS",
+                      "cooked": "/LOAD_ALL_EQUIPMENT_SUCCESS"
                     },
                     "tail": true
                   }
@@ -1354,9 +1354,9 @@
                     "line": 15,
                     "column": 27
                   },
-                  "identifierName": "DELETE_FRIDGES"
+                  "identifierName": "DELETE_EQUIPMENT"
                 },
-                "name": "DELETE_FRIDGES"
+                "name": "DELETE_EQUIPMENT"
               },
               "init": {
                 "type": "TemplateLiteral",
@@ -1427,8 +1427,8 @@
                       }
                     },
                     "value": {
-                      "raw": "/DELETE_FRIDGES",
-                      "cooked": "/DELETE_FRIDGES"
+                      "raw": "/DELETE_EQUIPMENT",
+                      "cooked": "/DELETE_EQUIPMENT"
                     },
                     "tail": true
                   }
@@ -1500,9 +1500,9 @@
                     "line": 16,
                     "column": 26
                   },
-                  "identifierName": "SELECT_FRIDGE"
+                  "identifierName": "SELECT_EQUIPMENT"
                 },
-                "name": "SELECT_FRIDGE"
+                "name": "SELECT_EQUIPMENT"
               },
               "init": {
                 "type": "TemplateLiteral",
@@ -1573,8 +1573,8 @@
                       }
                     },
                     "value": {
-                      "raw": "/SELECT_FRIDGE",
-                      "cooked": "/SELECT_FRIDGE"
+                      "raw": "/SELECT_EQUIPMENT",
+                      "cooked": "/SELECT_EQUIPMENT"
                     },
                     "tail": true
                   }
@@ -1646,9 +1646,9 @@
                     "line": 17,
                     "column": 31
                   },
-                  "identifierName": "SELECT_ALL_FRIDGES"
+                  "identifierName": "SELECT_ALL_EQUIPMENT"
                 },
-                "name": "SELECT_ALL_FRIDGES"
+                "name": "SELECT_ALL_EQUIPMENT"
               },
               "init": {
                 "type": "TemplateLiteral",
@@ -1719,8 +1719,8 @@
                       }
                     },
                     "value": {
-                      "raw": "/SELECT_ALL_FRIDGES",
-                      "cooked": "/SELECT_ALL_FRIDGES"
+                      "raw": "/SELECT_ALL_EQUIPMENT",
+                      "cooked": "/SELECT_ALL_EQUIPMENT"
                     },
                     "tail": true
                   }
@@ -1938,9 +1938,9 @@
                     "line": 19,
                     "column": 24
                   },
-                  "identifierName": "SHOW_FRIDGE"
+                  "identifierName": "SHOW_EQUIPMENT"
                 },
-                "name": "SHOW_FRIDGE"
+                "name": "SHOW_EQUIPMENT"
               },
               "init": {
                 "type": "TemplateLiteral",
@@ -2011,8 +2011,8 @@
                       }
                     },
                     "value": {
-                      "raw": "/SHOW_FRIDGE",
-                      "cooked": "/SHOW_FRIDGE"
+                      "raw": "/SHOW_EQUIPMENT",
+                      "cooked": "/SHOW_EQUIPMENT"
                     },
                     "tail": true
                   }
@@ -2084,9 +2084,9 @@
                     "line": 20,
                     "column": 24
                   },
-                  "identifierName": "EDIT_FRIDGE"
+                  "identifierName": "EDIT_EQUIPMENT"
                 },
-                "name": "EDIT_FRIDGE"
+                "name": "EDIT_EQUIPMENT"
               },
               "init": {
                 "type": "TemplateLiteral",
@@ -2157,8 +2157,8 @@
                       }
                     },
                     "value": {
-                      "raw": "/EDIT_FRIDGE",
-                      "cooked": "/EDIT_FRIDGE"
+                      "raw": "/EDIT_EQUIPMENT",
+                      "cooked": "/EDIT_EQUIPMENT"
                     },
                     "tail": true
                   }
@@ -4093,9 +4093,9 @@
                           "line": 55,
                           "column": 31
                         },
-                        "identifierName": "LOAD_ALL_FRIDGES_START"
+                        "identifierName": "LOAD_ALL_EQUIPMENT_START"
                       },
-                      "name": "LOAD_ALL_FRIDGES_START"
+                      "name": "LOAD_ALL_EQUIPMENT_START"
                     }
                   },
                   {
@@ -4332,9 +4332,9 @@
                           "line": 58,
                           "column": 33
                         },
-                        "identifierName": "LOAD_ALL_FRIDGES_SUCCESS"
+                        "identifierName": "LOAD_ALL_EQUIPMENT_SUCCESS"
                       },
-                      "name": "LOAD_ALL_FRIDGES_SUCCESS"
+                      "name": "LOAD_ALL_EQUIPMENT_SUCCESS"
                     }
                   },
                   {
@@ -5128,9 +5128,9 @@
                           "line": 61,
                           "column": 22
                         },
-                        "identifierName": "SELECT_FRIDGE"
+                        "identifierName": "SELECT_EQUIPMENT"
                       },
-                      "name": "SELECT_FRIDGE"
+                      "name": "SELECT_EQUIPMENT"
                     }
                   },
                   {
@@ -6067,9 +6067,9 @@
                           "line": 70,
                           "column": 27
                         },
-                        "identifierName": "SELECT_ALL_FRIDGES"
+                        "identifierName": "SELECT_ALL_EQUIPMENT"
                       },
-                      "name": "SELECT_ALL_FRIDGES"
+                      "name": "SELECT_ALL_EQUIPMENT"
                     }
                   },
                   {
@@ -6732,9 +6732,9 @@
                           "line": 80,
                           "column": 23
                         },
-                        "identifierName": "DELETE_FRIDGES"
+                        "identifierName": "DELETE_EQUIPMENT"
                       },
-                      "name": "DELETE_FRIDGES"
+                      "name": "DELETE_EQUIPMENT"
                     }
                   },
                   {
@@ -6765,9 +6765,9 @@
                           "line": 89,
                           "column": 20
                         },
-                        "identifierName": "SHOW_FRIDGE"
+                        "identifierName": "SHOW_EQUIPMENT"
                       },
-                      "name": "SHOW_FRIDGE"
+                      "name": "SHOW_EQUIPMENT"
                     }
                   },
                   {
@@ -6933,9 +6933,9 @@
                           "line": 90,
                           "column": 20
                         },
-                        "identifierName": "EDIT_FRIDGE"
+                        "identifierName": "EDIT_EQUIPMENT"
                       },
-                      "name": "EDIT_FRIDGE"
+                      "name": "EDIT_EQUIPMENT"
                     }
                   },
                   {
@@ -10389,9 +10389,9 @@
                                 "line": 154,
                                 "column": 24
                               },
-                              "identifierName": "DELETE_FRIDGES"
+                              "identifierName": "DELETE_EQUIPMENT"
                             },
-                            "name": "DELETE_FRIDGES"
+                            "name": "DELETE_EQUIPMENT"
                           }
                         }
                       ]
@@ -10754,9 +10754,9 @@
                                 "line": 166,
                                 "column": 21
                               },
-                              "identifierName": "SHOW_FRIDGE"
+                              "identifierName": "SHOW_EQUIPMENT"
                             },
-                            "name": "SHOW_FRIDGE"
+                            "name": "SHOW_EQUIPMENT"
                           }
                         }
                       ]
@@ -11055,9 +11055,9 @@
                                 "line": 178,
                                 "column": 21
                               },
-                              "identifierName": "EDIT_FRIDGE"
+                              "identifierName": "EDIT_EQUIPMENT"
                             },
-                            "name": "EDIT_FRIDGE"
+                            "name": "EDIT_EQUIPMENT"
                           }
                         }
                       ]
@@ -11356,9 +11356,9 @@
                                 "line": 190,
                                 "column": 28
                               },
-                              "identifierName": "SELECT_ALL_FRIDGES"
+                              "identifierName": "SELECT_ALL_EQUIPMENT"
                             },
-                            "name": "SELECT_ALL_FRIDGES"
+                            "name": "SELECT_ALL_EQUIPMENT"
                           }
                         }
                       ]
@@ -11675,9 +11675,9 @@
                                 "line": 203,
                                 "column": 23
                               },
-                              "identifierName": "SELECT_FRIDGE"
+                              "identifierName": "SELECT_EQUIPMENT"
                             },
-                            "name": "SELECT_FRIDGE"
+                            "name": "SELECT_EQUIPMENT"
                           }
                         },
                         {
@@ -12083,9 +12083,9 @@
                                 "line": 216,
                                 "column": 26
                               },
-                              "identifierName": "LOAD_ALL_FRIDGES"
+                              "identifierName": "LOAD_ALL_EQUIPMENT"
                             },
-                            "name": "LOAD_ALL_FRIDGES"
+                            "name": "LOAD_ALL_EQUIPMENT"
                           }
                         },
                         {
@@ -13429,9 +13429,9 @@
                                           "line": 246,
                                           "column": 46
                                         },
-                                        "identifierName": "LOAD_ALL_FRIDGES_START"
+                                        "identifierName": "LOAD_ALL_EQUIPMENT_START"
                                       },
-                                      "name": "LOAD_ALL_FRIDGES_START"
+                                      "name": "LOAD_ALL_EQUIPMENT_START"
                                     }
                                   }
                                 ]
@@ -13678,9 +13678,9 @@
                                                       "line": 250,
                                                       "column": 50
                                                     },
-                                                    "identifierName": "LOAD_ALL_FRIDGES_SUCCESS"
+                                                    "identifierName": "LOAD_ALL_EQUIPMENT_SUCCESS"
                                                   },
-                                                  "name": "LOAD_ALL_FRIDGES_SUCCESS"
+                                                  "name": "LOAD_ALL_EQUIPMENT_SUCCESS"
                                                 }
                                               },
                                               {
@@ -15754,7 +15754,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "LOAD_ALL_FRIDGES",
+      "value": "LOAD_ALL_EQUIPMENT",
       "start": 327,
       "end": 343,
       "loc": {
@@ -15936,7 +15936,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "/LOAD_ALL_FRIDGES",
+      "value": "/LOAD_ALL_EQUIPMENT",
       "start": 356,
       "end": 373,
       "loc": {
@@ -16069,7 +16069,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "LOAD_ALL_FRIDGES_START",
+      "value": "LOAD_ALL_EQUIPMENT_START",
       "start": 389,
       "end": 411,
       "loc": {
@@ -16251,7 +16251,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "/LOAD_ALL_FRIDGES_START",
+      "value": "/LOAD_ALL_EQUIPMENT_START",
       "start": 424,
       "end": 447,
       "loc": {
@@ -16384,7 +16384,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "LOAD_ALL_FRIDGES_SUCCESS",
+      "value": "LOAD_ALL_EQUIPMENT_SUCCESS",
       "start": 463,
       "end": 487,
       "loc": {
@@ -16566,7 +16566,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "/LOAD_ALL_FRIDGES_SUCCESS",
+      "value": "/LOAD_ALL_EQUIPMENT_SUCCESS",
       "start": 500,
       "end": 525,
       "loc": {
@@ -16699,7 +16699,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "DELETE_FRIDGES",
+      "value": "DELETE_EQUIPMENT",
       "start": 541,
       "end": 555,
       "loc": {
@@ -16881,7 +16881,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "/DELETE_FRIDGES",
+      "value": "/DELETE_EQUIPMENT",
       "start": 568,
       "end": 583,
       "loc": {
@@ -17014,7 +17014,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "SELECT_FRIDGE",
+      "value": "SELECT_EQUIPMENT",
       "start": 599,
       "end": 612,
       "loc": {
@@ -17196,7 +17196,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "/SELECT_FRIDGE",
+      "value": "/SELECT_EQUIPMENT",
       "start": 625,
       "end": 639,
       "loc": {
@@ -17329,7 +17329,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "SELECT_ALL_FRIDGES",
+      "value": "SELECT_ALL_EQUIPMENT",
       "start": 655,
       "end": 673,
       "loc": {
@@ -17511,7 +17511,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "/SELECT_ALL_FRIDGES",
+      "value": "/SELECT_ALL_EQUIPMENT",
       "start": 686,
       "end": 705,
       "loc": {
@@ -17959,7 +17959,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "SHOW_FRIDGE",
+      "value": "SHOW_EQUIPMENT",
       "start": 767,
       "end": 778,
       "loc": {
@@ -18141,7 +18141,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "/SHOW_FRIDGE",
+      "value": "/SHOW_EQUIPMENT",
       "start": 791,
       "end": 803,
       "loc": {
@@ -18274,7 +18274,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "EDIT_FRIDGE",
+      "value": "EDIT_EQUIPMENT",
       "start": 819,
       "end": 830,
       "loc": {
@@ -18456,7 +18456,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "/EDIT_FRIDGE",
+      "value": "/EDIT_EQUIPMENT",
       "start": 843,
       "end": 855,
       "loc": {
@@ -22192,7 +22192,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "LOAD_ALL_FRIDGES_START",
+      "value": "LOAD_ALL_EQUIPMENT_START",
       "start": 1487,
       "end": 1509,
       "loc": {
@@ -22535,7 +22535,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "LOAD_ALL_FRIDGES_SUCCESS",
+      "value": "LOAD_ALL_EQUIPMENT_SUCCESS",
       "start": 1564,
       "end": 1588,
       "loc": {
@@ -23059,7 +23059,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "SELECT_FRIDGE",
+      "value": "SELECT_EQUIPMENT",
       "start": 1674,
       "end": 1687,
       "loc": {
@@ -24696,7 +24696,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "SELECT_ALL_FRIDGES",
+      "value": "SELECT_ALL_EQUIPMENT",
       "start": 1913,
       "end": 1931,
       "loc": {
@@ -26699,7 +26699,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "DELETE_FRIDGES",
+      "value": "DELETE_EQUIPMENT",
       "start": 2221,
       "end": 2235,
       "loc": {
@@ -28129,7 +28129,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "SHOW_FRIDGE",
+      "value": "SHOW_EQUIPMENT",
       "start": 2473,
       "end": 2484,
       "loc": {
@@ -28209,7 +28209,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "EDIT_FRIDGE",
+      "value": "EDIT_EQUIPMENT",
       "start": 2495,
       "end": 2506,
       "loc": {
@@ -35294,7 +35294,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "DELETE_FRIDGES",
+      "value": "DELETE_EQUIPMENT",
       "start": 4016,
       "end": 4030,
       "loc": {
@@ -35806,7 +35806,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "SHOW_FRIDGE",
+      "value": "SHOW_EQUIPMENT",
       "start": 4224,
       "end": 4235,
       "loc": {
@@ -36318,7 +36318,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "EDIT_FRIDGE",
+      "value": "EDIT_EQUIPMENT",
       "start": 4424,
       "end": 4435,
       "loc": {
@@ -36830,7 +36830,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "SELECT_ALL_FRIDGES",
+      "value": "SELECT_ALL_EQUIPMENT",
       "start": 4630,
       "end": 4648,
       "loc": {
@@ -37368,7 +37368,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "SELECT_FRIDGE",
+      "value": "SELECT_EQUIPMENT",
       "start": 4898,
       "end": 4911,
       "loc": {
@@ -38034,7 +38034,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "LOAD_ALL_FRIDGES",
+      "value": "LOAD_ALL_EQUIPMENT",
       "start": 5122,
       "end": 5138,
       "loc": {
@@ -40193,7 +40193,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "LOAD_ALL_FRIDGES_START",
+      "value": "LOAD_ALL_EQUIPMENT_START",
       "start": 5702,
       "end": 5724,
       "loc": {
@@ -40669,7 +40669,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "LOAD_ALL_FRIDGES_SUCCESS",
+      "value": "LOAD_ALL_EQUIPMENT_SUCCESS",
       "start": 5802,
       "end": 5826,
       "loc": {

@@ -52,7 +52,7 @@ class App extends Component {
               <Route exact path="/" component={MainPage} />
               <Route path="/equipment" component={RetailEquipmentPageMain} />
               <Route
-                path="/equipment-view"
+                path="/equipment:id"
                 component={RetailEquipmentPageViewPage}
               />
             </Switch>

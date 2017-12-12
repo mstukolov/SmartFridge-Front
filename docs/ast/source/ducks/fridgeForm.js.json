@@ -660,9 +660,9 @@
                     "line": 11,
                     "column": 24
                   },
-                  "identifierName": "SHOW_FRIDGE"
+                  "identifierName": "SHOW_EQUIPMENT"
                 },
-                "name": "SHOW_FRIDGE"
+                "name": "SHOW_EQUIPMENT"
               },
               "init": {
                 "type": "TemplateLiteral",
@@ -733,8 +733,8 @@
                       }
                     },
                     "value": {
-                      "raw": "/SHOW_FRIDGE",
-                      "cooked": "/SHOW_FRIDGE"
+                      "raw": "/SHOW_EQUIPMENT",
+                      "cooked": "/SHOW_EQUIPMENT"
                     },
                     "tail": true
                   }
@@ -806,9 +806,9 @@
                     "line": 12,
                     "column": 24
                   },
-                  "identifierName": "EDIT_FRIDGE"
+                  "identifierName": "EDIT_EQUIPMENT"
                 },
-                "name": "EDIT_FRIDGE"
+                "name": "EDIT_EQUIPMENT"
               },
               "init": {
                 "type": "TemplateLiteral",
@@ -879,8 +879,8 @@
                       }
                     },
                     "value": {
-                      "raw": "/EDIT_FRIDGE",
-                      "cooked": "/EDIT_FRIDGE"
+                      "raw": "/EDIT_EQUIPMENT",
+                      "cooked": "/EDIT_EQUIPMENT"
                     },
                     "tail": true
                   }
@@ -952,9 +952,9 @@
                     "line": 13,
                     "column": 26
                   },
-                  "identifierName": "CANCEL_FRIDGE"
+                  "identifierName": "CANCEL_EQUIPMENT"
                 },
-                "name": "CANCEL_FRIDGE"
+                "name": "CANCEL_EQUIPMENT"
               },
               "init": {
                 "type": "TemplateLiteral",
@@ -1025,8 +1025,8 @@
                       }
                     },
                     "value": {
-                      "raw": "/CANCEL_FRIDGE",
-                      "cooked": "/CANCEL_FRIDGE"
+                      "raw": "/CANCEL_EQUIPMENT",
+                      "cooked": "/CANCEL_EQUIPMENT"
                     },
                     "tail": true
                   }
@@ -1850,9 +1850,9 @@
                           "line": 35,
                           "column": 20
                         },
-                        "identifierName": "SHOW_FRIDGE"
+                        "identifierName": "SHOW_EQUIPMENT"
                       },
-                      "name": "SHOW_FRIDGE"
+                      "name": "SHOW_EQUIPMENT"
                     }
                   },
                   {
@@ -2019,9 +2019,9 @@
                           "line": 38,
                           "column": 20
                         },
-                        "identifierName": "EDIT_FRIDGE"
+                        "identifierName": "EDIT_EQUIPMENT"
                       },
-                      "name": "EDIT_FRIDGE"
+                      "name": "EDIT_EQUIPMENT"
                     }
                   },
                   {
@@ -2329,9 +2329,9 @@
                           "line": 41,
                           "column": 22
                         },
-                        "identifierName": "CANCEL_FRIDGE"
+                        "identifierName": "CANCEL_EQUIPMENT"
                       },
-                      "name": "CANCEL_FRIDGE"
+                      "name": "CANCEL_EQUIPMENT"
                     }
                   },
                   {
@@ -2702,9 +2702,9 @@
                                 "line": 61,
                                 "column": 21
                               },
-                              "identifierName": "SHOW_FRIDGE"
+                              "identifierName": "SHOW_EQUIPMENT"
                             },
-                            "name": "SHOW_FRIDGE"
+                            "name": "SHOW_EQUIPMENT"
                           }
                         }
                       ]
@@ -3035,9 +3035,9 @@
                                 "line": 73,
                                 "column": 21
                               },
-                              "identifierName": "EDIT_FRIDGE"
+                              "identifierName": "EDIT_EQUIPMENT"
                             },
-                            "name": "EDIT_FRIDGE"
+                            "name": "EDIT_EQUIPMENT"
                           }
                         }
                       ]
@@ -3336,9 +3336,9 @@
                                 "line": 85,
                                 "column": 23
                               },
-                              "identifierName": "CANCEL_FRIDGE"
+                              "identifierName": "CANCEL_EQUIPMENT"
                             },
-                            "name": "CANCEL_FRIDGE"
+                            "name": "CANCEL_EQUIPMENT"
                           }
                         }
                       ]
@@ -4727,7 +4727,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "SHOW_FRIDGE",
+      "value": "SHOW_EQUIPMENT",
       "start": 261,
       "end": 272,
       "loc": {
@@ -4909,7 +4909,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "/SHOW_FRIDGE",
+      "value": "/SHOW_EQUIPMENT",
       "start": 285,
       "end": 297,
       "loc": {
@@ -5042,7 +5042,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "EDIT_FRIDGE",
+      "value": "EDIT_EQUIPMENT",
       "start": 313,
       "end": 324,
       "loc": {
@@ -5224,7 +5224,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "/EDIT_FRIDGE",
+      "value": "/EDIT_EQUIPMENT",
       "start": 337,
       "end": 349,
       "loc": {
@@ -5357,7 +5357,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "CANCEL_FRIDGE",
+      "value": "CANCEL_EQUIPMENT",
       "start": 365,
       "end": 378,
       "loc": {
@@ -5539,7 +5539,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "/CANCEL_FRIDGE",
+      "value": "/CANCEL_EQUIPMENT",
       "start": 391,
       "end": 405,
       "loc": {
@@ -7008,7 +7008,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "SHOW_FRIDGE",
+      "value": "SHOW_EQUIPMENT",
       "start": 973,
       "end": 984,
       "loc": {
@@ -7403,7 +7403,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "EDIT_FRIDGE",
+      "value": "EDIT_EQUIPMENT",
       "start": 1042,
       "end": 1053,
       "loc": {
@@ -7798,7 +7798,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "CANCEL_FRIDGE",
+      "value": "CANCEL_EQUIPMENT",
       "start": 1110,
       "end": 1123,
       "loc": {
@@ -8918,7 +8918,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "SHOW_FRIDGE",
+      "value": "SHOW_EQUIPMENT",
       "start": 1468,
       "end": 1479,
       "loc": {
@@ -9430,7 +9430,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "EDIT_FRIDGE",
+      "value": "EDIT_EQUIPMENT",
       "start": 1668,
       "end": 1679,
       "loc": {
@@ -9942,7 +9942,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "CANCEL_FRIDGE",
+      "value": "CANCEL_EQUIPMENT",
       "start": 1870,
       "end": 1883,
       "loc": {

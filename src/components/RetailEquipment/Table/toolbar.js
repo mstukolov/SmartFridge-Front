@@ -13,8 +13,8 @@ import FilterListIcon from "material-ui-icons/FilterList";
 import Typography from "material-ui/Typography";
 import Toolbar from "material-ui/Toolbar";
 import { connect } from "react-redux";
-import { deleteFridges } from "../../../ducks/mainTable";
-import { showFridge, editFridge } from "../../../ducks/fridgeForm";
+import { deleteFridges } from "../../../ducks/RetailEquipment/table";
+import { showFridge, editFridge } from "../../../ducks/RetailEquipment/form";
 import { NavLink } from "react-router-dom";
 const toolbarStyles = theme => ({
   root: {
@@ -63,11 +63,10 @@ class RetailEquipmentTableToolbar extends React.Component {
   };
   /**
    * Функция обработки редактирования списка выделленных элементов
-   * @param  {SynteticEvent} ev React событие
-   * @return {void}    [description]
+   * @return {String}    [description]
    */
-  handleEdit = ev => {
-    this.props.editFridge();
+  getItemUrl = () => {
+    return `/equipment:${this.props.selected.first()["id"]}`;
   };
 
   /**
@@ -106,22 +105,20 @@ class RetailEquipmentTableToolbar extends React.Component {
           {numSelected > 0 ? (
             <div className={classes.flex}>
               <Tooltip title="Просомотреть">
-                <NavLink to="/equipment-view" activeClassName="selected">
+                <NavLink to={this.getItemUrl()} activeClassName="selected">
                   <IconButton
                     disabled={numSelected > 1 ? true : false}
                     aria-label="Visibility"
-                    onClick={this.handleShow}
                   >
                     <VisibilityIcon />
                   </IconButton>
                 </NavLink>
               </Tooltip>
               <Tooltip title="Редактировать">
-                <NavLink to="/equipment-view" activeClassName="selected">
+                <NavLink to={this.getItemUrl()} activeClassName="selected">
                   <IconButton
                     aria-label="Edit"
                     disabled={numSelected > 1 ? true : false}
-                    onClick={this.handleEdit}
                   >
                     <EditIcon />
                   </IconButton>
@@ -155,8 +152,7 @@ export default connect(
     return {
       selected: state.fridges.selected,
       loading: state.fridges.isLoading,
-      numSelected: state.fridges.selected.size,
-      vocabulary: state.vocabulary
+      numSelected: state.fridges.selected.size
     };
   },
   {

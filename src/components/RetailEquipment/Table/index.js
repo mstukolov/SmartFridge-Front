@@ -21,7 +21,7 @@ import {
   selectAllFridges,
   sortOrderBy,
   orderedRowsSelector
-} from "../../../ducks/mainTable";
+} from "../../../ducks/RetailEquipment/table";
 import LinearQuery from "../../LinearQuery/index";
 import Moment from "react-moment";
 // import { orderedRowsSelector } from "../../redux/selectors";
@@ -128,6 +128,10 @@ class RetailEquipmentTable extends React.Component {
    */
   isSelected = id => this.props.selected.has(id);
 
+  /**
+   * Показывает нотификатор с текстом ошибки
+   * @returns {*}
+   */
   showError = () => {
     if (!this.props.error) return;
     return <SimpleSnackbar text={this.props.error.message} />;
