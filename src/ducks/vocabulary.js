@@ -32,7 +32,7 @@ let defaultVocabulary = new VocabularyModel();
  * @return {object}                          набор данных для расшифровки полей по id
  */
 export default (vocabulary = defaultVocabulary, action) => {
-  const { type, payload } = action;
+  const { type } = action;
   switch (type) {
     default:
       return vocabulary;

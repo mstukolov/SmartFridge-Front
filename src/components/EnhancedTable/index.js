@@ -97,13 +97,6 @@ class EnhancedTable extends React.Component {
   handleClick = (event, item) => {
     event.preventDefault();
     this.props.selectFridge(item);
-
-    //TODO: Подумать куда перенести эту логику и переделать костыль
-    // Сохраняем значение в сторедж для возможности просмотра записи
-    setTimeout(() => {
-      const activeItem = JSON.stringify(this.props.selected.first());
-      // TODO: Переделать организацию хранения данных в сторэджlocalStorage.setItem("activeItem", activeItem);
-    }, 100);
   };
 
   /**

@@ -3,7 +3,7 @@ import { Record, List, Map } from "immutable";
 import { createSelector } from "reselect";
 import { collection } from "../fakeData";
 
-import { all, takeEvery, take, put, apply, call } from "redux-saga/effects";
+import { all, takeEvery, put } from "redux-saga/effects";
 
 /**
  * Constants

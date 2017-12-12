@@ -1,5 +1,3 @@
-import { makeid, randomInteger } from "./utils";
-
 export const collection = [
   {
     id: "IlfDdh",

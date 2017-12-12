@@ -29,7 +29,7 @@ let defaultForm = new FridgeFormModel();
  * @return {object}                          параметры фильтрации
  */
 export default (formData = defaultForm, action) => {
-  const { type, payload } = action;
+  const { type } = action;
   switch (type) {
     case SHOW_FRIDGE:
       return formData.setIn(["edit"], false);
