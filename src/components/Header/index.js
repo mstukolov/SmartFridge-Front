@@ -18,6 +18,7 @@ import { ListItemIcon, ListItemText } from "material-ui/List";
 import DvrIcon from "material-ui-icons/Dvr";
 import HomeIcon from "material-ui-icons/Home";
 import logo from "../../logo_C2M_alternative_ru.svg";
+import { RouteEquipmentPage } from "../routes/constants";
 
 const styles = theme => ({
   list: {
@@ -166,7 +167,7 @@ class Header extends React.Component {
                 </MenuItem>
               </NavLink>
 
-              <NavLink to="/equipment" activeClassName="selected">
+              <NavLink to={RouteEquipmentPage} activeClassName="selected">
                 <MenuItem>
                   <ListItemIcon className={classes.icon}>
                     <DvrIcon />

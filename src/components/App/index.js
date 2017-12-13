@@ -8,6 +8,7 @@ import RetailEquipmentPageViewPage from "../routes/RetailEquipment/View";
 import injectSheet from "react-jss";
 import { ConnectedRouter } from "react-router-redux";
 import history from "../../redux/history";
+import { RouteEquipmentPage } from "../routes/constants";
 import moment from "moment/min/moment-with-locales";
 import Moment from "react-moment";
 // Sets the moment instance to use.
@@ -50,9 +51,12 @@ class App extends Component {
           <ConnectedRouter history={history}>
             <Switch>
               <Route exact path="/" component={MainPage} />
-              <Route path="/equipment" component={RetailEquipmentPageMain} />
               <Route
-                path="/equipment:id"
+                path={RouteEquipmentPage}
+                component={RetailEquipmentPageMain}
+              />
+              <Route
+                path={`${RouteEquipmentPage}:id`}
                 component={RetailEquipmentPageViewPage}
               />
             </Switch>

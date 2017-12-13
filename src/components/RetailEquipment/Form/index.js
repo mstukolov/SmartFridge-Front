@@ -17,11 +17,12 @@ import {
   loadEquipment,
   saveEditEquipment
 } from "../../../ducks/RetailEquipment/form";
-import Done from "material-ui-icons/Done";
 import ModeEditIcon from "material-ui-icons/ModeEdit";
 import { NavLink } from "react-router-dom";
 import SimpleSnackbar from "../../SimpleSnackbar";
 import LinearQuery from "../../LinearQuery/index";
+import { RouteEquipmentPage } from "../../routes/constants";
+import CircularSaveButton from "../../CircularSaveButton";
 
 const styles = theme => ({
   container: {
@@ -46,7 +47,9 @@ const styles = theme => ({
     marginLeft: theme.spacing.unit
   },
   buttonSet: {
-    textAlign: "right",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
     width: "100%"
   }
 });
@@ -166,29 +169,37 @@ class RetailEquipmentForm extends React.Component {
     if (this.props.error) return null;
     const { classes } = this.props;
     const btns = this.props.edit ? (
-      <Button
-        onClick={this.handleSubmit}
-        className={classes.button}
-        raised
-        color="primary"
-      >
-        Сохранить
-        <Done className={classes.rightIcon} />
-      </Button>
+      <div onClick={this.handleSubmit}>
+        <CircularSaveButton
+          isLoading={this.props.loading}
+          success={this.props.saved}
+        />
+      </div>
     ) : (
-      <Button
-        className={classes.button}
-        onClick={this.handleBtnEditClick}
-        raised
-        color="primary"
-      >
-        Редактировать
-        <ModeEditIcon className={classes.rightIcon} />
-      </Button>
+      <div onClick={this.handleBtnEditClick}>
+        <Button
+          fab
+          color="primary"
+          aria-label="edit"
+          className={classes.button}
+        >
+          <ModeEditIcon />
+        </Button>
+      </div>
+
+      // <Button
+      //   className={classes.button}
+      //   onClick={this.handleBtnEditClick}
+      //   raised
+      //   color="primary"
+      // >
+      //   Редактировать
+      // <ModeEditIcon className={classes.rightIcon} />
+      // </Button>
     );
     return (
       <div className={classes.buttonSet}>
-        <NavLink to="/equipment" activeClassName="selected">
+        <NavLink to={RouteEquipmentPage} activeClassName="selected">
           <Button className={classes.button} raised color="accent">
             Отменить
           </Button>
@@ -260,7 +271,7 @@ class RetailEquipmentForm extends React.Component {
   handleSubmit = ev => {
     ev.preventDefault();
     this.props.saveEditEquipment(this.state);
-    // this.props.showEquipment();
+    this.props.showEquipment();
     console.log("submit -->", this.state);
   };
 
@@ -271,6 +282,15 @@ class RetailEquipmentForm extends React.Component {
   showError = () => {
     if (!this.props.error) return;
     return <SimpleSnackbar text={this.props.error.message} />;
+  };
+
+  /**
+   * Показывает нотификатор успешной отправки данных на сервер
+   * @returns {*}
+   */
+  showSuccessSaved = () => {
+    if (!this.props.saved) return;
+    return <SimpleSnackbar text="Данные сохранены" />;
   };
 
   /**
@@ -288,6 +308,7 @@ class RetailEquipmentForm extends React.Component {
       >
         {this.showLoading()}
         {this.showError()}
+        {this.showSuccessSaved()}
         <FormControl
           disabled={this.isDisabledControl()}
           fullWidth
@@ -431,6 +452,7 @@ export default connect(
       fridge: state.fridgeForm.activeItem,
       error: state.fridgeForm.error,
       loading: state.fridgeForm.isLoading,
+      saved: state.fridgeForm.saved,
       models: state.vocabulary.get("models"),
       types: state.vocabulary.get("types"),
       front: state.vocabulary.get("front"),

@@ -18,7 +18,7 @@ import {
   showEquipment,
   editEquipment
 } from "../../../ducks/RetailEquipment/form";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 const toolbarStyles = theme => ({
   root: {
     paddingRight: 2
@@ -80,6 +80,18 @@ class RetailEquipmentTableToolbar extends React.Component {
   handleShow = ev => {
     this.props.showEquipment();
   };
+  /**
+   * Блокирует клик по кнопке просмотра/редактирования
+   * @param  {SynteticEvent} ev React событие
+   * @return {void}
+   */
+  handleLink = edit => ev => {
+    if (this.props.numSelected > 1) {
+      ev.preventDefault();
+      return;
+    }
+    if (edit) this.props.editEquipment();
+  };
 
   /**
    * render
@@ -108,24 +120,24 @@ class RetailEquipmentTableToolbar extends React.Component {
           {numSelected > 0 ? (
             <div className={classes.flex}>
               <Tooltip title="Просомотреть">
-                <NavLink to={this.getItemUrl()} activeClassName="selected">
+                <Link to={this.getItemUrl()} onClick={this.handleLink()}>
                   <IconButton
                     disabled={numSelected > 1 ? true : false}
                     aria-label="Visibility"
                   >
                     <VisibilityIcon />
                   </IconButton>
-                </NavLink>
+                </Link>
               </Tooltip>
               <Tooltip title="Редактировать">
-                <NavLink to={this.getItemUrl()} activeClassName="selected">
+                <Link to={this.getItemUrl()} onClick={this.handleLink(true)}>
                   <IconButton
                     aria-label="Edit"
                     disabled={numSelected > 1 ? true : false}
                   >
                     <EditIcon />
                   </IconButton>
-                </NavLink>
+                </Link>
               </Tooltip>
               <Tooltip title="Удалить">
                 <IconButton onClick={this.handleDelete} aria-label="Delete">

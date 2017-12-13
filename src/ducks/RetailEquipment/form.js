@@ -29,6 +29,7 @@ const EquipmentFormModel = new Record({
   location: null,
   edit: false,
   isLoading: false,
+  saved: false,
   error: null
 });
 
@@ -70,8 +71,7 @@ export default (state = defaultForm, action) => {
     case SAVE_EDIT_EQUIPMENT_START:
       return state.set("isLoading", true);
     case SAVE_EDIT_EQUIPMENT_SUCCESS:
-      return state.set("isLoading", false);
-    // .set("activeItem", payload.activeItem);
+      return state.set("isLoading", false).set("saved", true);
 
     default:
       return state;
