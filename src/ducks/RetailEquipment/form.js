@@ -180,18 +180,25 @@ export const loadSaga = function*(action) {
 
 export const saveEditSaga = function*(action) {
   const editItem = action.payload.editItem;
-  // const activeItem = collection.filter(item => {
-  //     return item.id === id;
-  // })[0];
 
   yield put({
     type: SAVE_EDIT_EQUIPMENT_START
   });
 
+  let promise = new Promise(function(resolve) {
+    setTimeout(() => {
+      resolve(editItem);
+    }, 2000);
+  });
+
   try {
     //TODO: Здесь сделать нормальную логику запроса данных
-    console.log("editItem", editItem);
+
     // throw new Error("Ошибка сохранения данных");
+
+    const editItem = yield promise.then(result => {
+      return result;
+    });
 
     yield put({
       type: SAVE_EDIT_EQUIPMENT_SUCCESS,

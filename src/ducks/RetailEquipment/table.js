@@ -244,10 +244,19 @@ export const loadAllSaga = function*(action) {
     type: LOAD_ALL_EQUIPMENT_START
   });
 
+  let promise = new Promise(function(resolve) {
+    setTimeout(() => {
+      resolve(collection);
+    }, 2000);
+  });
+
   try {
     //TODO: Здесь сделать нормальную логику запроса данных
 
     // throw new Error("Ошибка получения данных");
+    const newCollection = yield promise.then(result => {
+      return result;
+    });
 
     yield put({
       type: LOAD_ALL_EQUIPMENT_SUCCESS,
@@ -266,12 +275,22 @@ export const deleteSaga = function*(action) {
     type: DELETE_EQUIPMENT_START
   });
 
+  let asyncNewCollection = collection.filter(item => {
+    return !action.payload.deleted.includes(item);
+  });
+
+  let promise = new Promise(function(resolve) {
+    setTimeout(() => {
+      resolve(asyncNewCollection);
+    }, 2000);
+  });
+
   try {
     //TODO: Здесь сделать нормальную логику запроса данных
     // throw new Error("Ошибка отправки данных");
 
-    let newCollection = collection.filter(item => {
-      return !action.payload.deleted.includes(item);
+    const newCollection = yield promise.then(result => {
+      return result;
     });
 
     yield put({

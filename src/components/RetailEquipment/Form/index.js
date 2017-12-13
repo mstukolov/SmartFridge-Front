@@ -18,9 +18,8 @@ import {
   saveEditEquipment
 } from "../../../ducks/RetailEquipment/form";
 import ModeEditIcon from "material-ui-icons/ModeEdit";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import SimpleSnackbar from "../../SimpleSnackbar";
-import LinearQuery from "../../LinearQuery/index";
 import { RouteEquipmentPage } from "../../routes/constants";
 import CircularSaveButton from "../../CircularSaveButton";
 
@@ -40,6 +39,8 @@ const styles = theme => ({
   button: {
     margin: theme.spacing.unit
   },
+  buttonLink: { textDecoration: "none" },
+
   leftIcon: {
     marginRight: theme.spacing.unit
   },
@@ -146,14 +147,6 @@ class RetailEquipmentForm extends React.Component {
   };
 
   /**
-   * Индикация загрузки данных
-   * @return {ReactElement} разметка прелоадера
-   */
-  showLoading() {
-    return this.props.loading ? <LinearQuery /> : null;
-  }
-
-  /**
    * Проверяет блокировать ли контролы
    * @returns {boolean}
    */
@@ -168,42 +161,47 @@ class RetailEquipmentForm extends React.Component {
   getButtonSet = () => {
     if (this.props.error) return null;
     const { classes } = this.props;
-    const btns = this.props.edit ? (
-      <div onClick={this.handleSubmit}>
-        <CircularSaveButton
-          isLoading={this.props.loading}
-          success={this.props.saved}
-        />
-      </div>
-    ) : (
-      <div onClick={this.handleBtnEditClick}>
-        <Button
-          fab
-          color="primary"
-          aria-label="edit"
-          className={classes.button}
-        >
-          <ModeEditIcon />
-        </Button>
-      </div>
+    const btns =
+      this.props.edit || this.props.loading ? (
+        <div onClick={this.handleSubmit}>
+          <CircularSaveButton
+            isLoading={this.props.loading}
+            success={this.props.saved}
+          />
+        </div>
+      ) : (
+        <div onClick={this.handleBtnEditClick}>
+          <Button
+            fab
+            color="primary"
+            aria-label="edit"
+            className={classes.button}
+          >
+            <ModeEditIcon />
+          </Button>
+        </div>
 
-      // <Button
-      //   className={classes.button}
-      //   onClick={this.handleBtnEditClick}
-      //   raised
-      //   color="primary"
-      // >
-      //   Редактировать
-      // <ModeEditIcon className={classes.rightIcon} />
-      // </Button>
-    );
+        // <Button
+        //   className={classes.button}
+        //   onClick={this.handleBtnEditClick}
+        //   raised
+        //   color="primary"
+        // >
+        //   Редактировать
+        // <ModeEditIcon className={classes.rightIcon} />
+        // </Button>
+      );
     return (
       <div className={classes.buttonSet}>
-        <NavLink to={RouteEquipmentPage} activeClassName="selected">
+        <Link
+          className={classes.buttonLink}
+          to={RouteEquipmentPage}
+          activeClassName="selected"
+        >
           <Button className={classes.button} raised color="accent">
             Отменить
           </Button>
-        </NavLink>
+        </Link>
 
         {btns}
       </div>
@@ -306,7 +304,6 @@ class RetailEquipmentForm extends React.Component {
         noValidate
         autoComplete="off"
       >
-        {this.showLoading()}
         {this.showError()}
         {this.showSuccessSaved()}
         <FormControl
