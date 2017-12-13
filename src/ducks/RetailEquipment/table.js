@@ -88,9 +88,10 @@ export default function reducer(state = defaultState, action) {
       return state.set("isLoading", true);
 
     case DELETE_EQUIPMENT_SUCCESS:
+      localStorage.removeItem("RetailEquipmentSelected");
       return state
         .set("isLoading", false)
-        .set("collection", payload.collection)
+        .set("collection", new List(payload.collection))
         .setIn(["selected"], new Map({}));
 
       return state;

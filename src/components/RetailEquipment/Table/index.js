@@ -141,7 +141,7 @@ class RetailEquipmentTable extends React.Component {
    * @return {void}
    */
   componentDidMount() {
-    if (!this.props.data.length) this.props.callAllEquipment();
+    if (!this.props.data.size) this.props.callAllEquipment();
     // TODO: Переделать организацию хранения данных в сторэдж
     const rowsPerPage = localStorage.getItem("rowsPerPage");
     const page = localStorage.getItem("page");
