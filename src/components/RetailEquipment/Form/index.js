@@ -445,14 +445,17 @@ RetailEquipmentForm.propTypes = {
 
 export default connect(
   state => {
-    const edit = state.fridgeForm.get("edit");
-    console.log("state.fridgeForm.activeItem", state.fridgeForm.activeItem);
+    const edit = state.equipmentForm.get("edit");
+    console.log(
+      "state.equipmentForm.activeItem",
+      state.equipmentForm.activeItem
+    );
 
     return {
-      fridge: state.fridgeForm.activeItem,
-      error: state.fridgeForm.error,
-      loading: state.fridgeForm.isLoading,
-      saved: state.fridgeForm.saved,
+      fridge: state.equipmentForm.activeItem,
+      error: state.equipmentForm.error,
+      loading: state.equipmentForm.isLoading,
+      saved: state.equipmentForm.saved,
       models: state.vocabulary.get("models"),
       types: state.vocabulary.get("types"),
       front: state.vocabulary.get("front"),

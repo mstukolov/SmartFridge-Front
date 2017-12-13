@@ -7,7 +7,7 @@ import { collection } from "../../fakeData";
 /**
  * Constants
  * */
-export const moduleName = "fridgeForm";
+export const moduleName = "equipmentForm";
 const prefix = `${appName}/${moduleName}`;
 
 export const LOAD_EQUIPMENT_REQUEST = `${prefix}/LOAD_EQUIPMENT_REQUEST`;
