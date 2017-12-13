@@ -20,13 +20,15 @@ import {
 import ModeEditIcon from "material-ui-icons/ModeEdit";
 import { Link } from "react-router-dom";
 import SimpleSnackbar from "../../SimpleSnackbar";
+import LinearQuery from "../../LinearQuery/index";
 import { RouteEquipmentPage } from "../../routes/constants";
 import CircularSaveButton from "../../CircularSaveButton";
 
 const styles = theme => ({
   container: {
     display: "flex",
-    flexWrap: "wrap"
+    flexWrap: "wrap",
+    position: "relative"
   },
   textField: {
     marginLeft: theme.spacing.unit,
@@ -51,6 +53,12 @@ const styles = theme => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    width: "100%"
+  },
+  lineLoader: {
+    position: "absolute",
+    top: "-10px",
+    height: "5px",
     width: "100%"
   }
 });
@@ -147,6 +155,14 @@ class RetailEquipmentForm extends React.Component {
   };
 
   /**
+   * Индикация загрузки данных
+   * @return {ReactElement} разметка прелоадера
+   */
+  showLoading() {
+    return this.props.loading ? <LinearQuery /> : null;
+  }
+
+  /**
    * Проверяет блокировать ли контролы
    * @returns {boolean}
    */
@@ -159,14 +175,14 @@ class RetailEquipmentForm extends React.Component {
    * @returns {ReactElement}
    */
   getButtonSet = () => {
-    if (this.props.error) return null;
+    if (this.props.error || this.props.loading) return null;
     const { classes } = this.props;
     const btns =
-      this.props.edit || this.props.loading ? (
+      this.props.edit || this.props.saving ? (
         <div onClick={this.handleSubmit}>
           <CircularSaveButton
-            isLoading={this.props.loading}
-            success={this.props.saved}
+            isLoading={this.props.saving}
+            // success={this.props.saved}
           />
         </div>
       ) : (
@@ -180,24 +196,10 @@ class RetailEquipmentForm extends React.Component {
             <ModeEditIcon />
           </Button>
         </div>
-
-        // <Button
-        //   className={classes.button}
-        //   onClick={this.handleBtnEditClick}
-        //   raised
-        //   color="primary"
-        // >
-        //   Редактировать
-        // <ModeEditIcon className={classes.rightIcon} />
-        // </Button>
       );
     return (
       <div className={classes.buttonSet}>
-        <Link
-          className={classes.buttonLink}
-          to={RouteEquipmentPage}
-          activeClassName="selected"
-        >
+        <Link to={RouteEquipmentPage} className={classes.buttonLink}>
           <Button className={classes.button} raised color="accent">
             Отменить
           </Button>
@@ -304,6 +306,8 @@ class RetailEquipmentForm extends React.Component {
         noValidate
         autoComplete="off"
       >
+        <div className={classes.lineLoader}>{this.showLoading()}</div>
+
         {this.showError()}
         {this.showSuccessSaved()}
         <FormControl
@@ -452,6 +456,7 @@ export default connect(
       fridge: state.equipmentForm.activeItem,
       error: state.equipmentForm.error,
       loading: state.equipmentForm.isLoading,
+      saving: state.equipmentForm.isSaving,
       saved: state.equipmentForm.saved,
       models: state.vocabulary.get("models"),
       types: state.vocabulary.get("types"),

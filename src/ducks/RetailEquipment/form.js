@@ -29,6 +29,7 @@ const EquipmentFormModel = new Record({
   location: null,
   edit: false,
   isLoading: false,
+  isSaving: false,
   saved: false,
   error: null
 });
@@ -60,18 +61,19 @@ export default (state = defaultForm, action) => {
       return state.setIn(["error"], payload.error).set("isLoading", false);
 
     case SHOW_EQUIPMENT:
-      return state.setIn(["edit"], false);
+      return state.setIn(["edit"], false).set("saved", false);
 
     case EDIT_EQUIPMENT:
-      return state.setIn(["edit"], true);
+      return state.setIn(["edit"], true).set("saved", false);
 
     case CANCEL_EQUIPMENT:
-      return state.setIn(["edit"], false);
+      return state.setIn(["edit"], false).set("saved", false);
 
     case SAVE_EDIT_EQUIPMENT_START:
-      return state.set("isLoading", true);
+      return state.set("saved", false).set("isSaving", true);
     case SAVE_EDIT_EQUIPMENT_SUCCESS:
-      return state.set("isLoading", false).set("saved", true);
+      const { editedItem } = action.payload;
+      return state.set("saved", true).set("isSaving", false);
 
     default:
       return state;
@@ -161,10 +163,20 @@ export const loadSaga = function*(action) {
     type: LOAD_EQUIPMENT_START
   });
 
+  let promise = new Promise(function(resolve) {
+    setTimeout(() => {
+      resolve(activeItem);
+    }, 2000);
+  });
+
   try {
     //TODO: Здесь сделать нормальную логику запроса данных
 
     // throw new Error("Ошибка получения данных");
+
+    const activeItem = yield promise.then(result => {
+      return result;
+    });
 
     yield put({
       type: LOAD_EQUIPMENT_SUCCESS,
@@ -196,13 +208,13 @@ export const saveEditSaga = function*(action) {
 
     // throw new Error("Ошибка сохранения данных");
 
-    const editItem = yield promise.then(result => {
+    const editedItem = yield promise.then(result => {
       return result;
     });
 
     yield put({
       type: SAVE_EDIT_EQUIPMENT_SUCCESS,
-      payload: { editItem }
+      payload: { editedItem }
     });
   } catch (error) {
     yield put({
