@@ -54,7 +54,7 @@ export default function reducer(state = defaultState, action) {
     case LOAD_ALL_EQUIPMENT_SUCCESS:
       return state
         .set("isLoading", false)
-        .set("collection", payload.collection);
+        .set("collection", new List(payload.collection));
 
     case LOAD_ALL_EQUIPMENT_ERROR:
       return state.setIn(["error"], payload.error).set("isLoading", false);
@@ -66,10 +66,16 @@ export default function reducer(state = defaultState, action) {
         return state.setIn(["selected"], selected.delete(item.id));
       }
 
-      return state.setIn(["selected"], selected.set(item.id, item));
+      const newState = state.setIn(["selected"], selected.set(item.id, item));
+      // Сохраняем id выбранных в локальное хранилище
+      localStorage.setItem(
+        "RetailEquipmentSelected",
+        JSON.stringify(newState.selected.toJS())
+      );
+      return newState;
 
     case SELECT_ALL_EQUIPMENT:
-      if (state.collection.length === state.selected.size)
+      if (state.collection.size === state.selected.size)
         return state.setIn(["selected"], new Map({}));
       let result = {};
 
@@ -103,17 +109,33 @@ export default function reducer(state = defaultState, action) {
         order = "asc";
       }
 
-      const newstate = state
+      const orderedState = state
         .setIn(["orderData", "order"], order)
         .setIn(["orderData", "orderBy"], property);
 
       // TODO: Переделать организацию хранения данных в сторэдж
       localStorage.setItem(
-        "orderData",
-        JSON.stringify(newstate.get("orderData").toJS())
+        "RetailEquipmentTableOrderData",
+        JSON.stringify(orderedState.get("orderData").toJS())
       );
-      return newstate;
+      return orderedState;
+
     default:
+      const orderDataStorage = localStorage.getItem(
+        "RetailEquipmentTableOrderData"
+      );
+
+      const selectedItemsStorage = localStorage.getItem(
+        "RetailEquipmentSelected"
+      );
+
+      // Достаем данные сортировки из локального хранилища
+      if (orderDataStorage || selectedItemsStorage) {
+        return state
+          .setIn(["orderData"], new Map(JSON.parse(orderDataStorage)))
+          .setIn(["selected"], new Map(JSON.parse(selectedItemsStorage)));
+      }
+
       return state;
   }
 }
