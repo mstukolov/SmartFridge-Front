@@ -1,14 +1,22 @@
 import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import Header from "../Header";
 import Footer from "../Footer";
-import MainPage from "../routes/Main";
 import RetailEquipmentPageMain from "../routes/RetailEquipment/Main/index";
 import RetailEquipmentPageViewPage from "../routes/RetailEquipment/View";
+import NoMatch from "../routes/NoMatch";
+import MapPage from "../routes/Map";
+import ReportsPage from "../routes/Reports";
+// import Main from "../routes/Main";
 import injectSheet from "react-jss";
 import { ConnectedRouter } from "react-router-redux";
 import history from "../../redux/history";
-import { RouteEquipmentPage } from "../routes/constants";
+import {
+  RouteEquipmentPage,
+  RouteReportsPage,
+  RouteMapPage
+} from "../routes/constants";
+// import { CSSTransitionGroup } from 'react-transition-group'
 import moment from "moment/min/moment-with-locales";
 import Moment from "react-moment";
 // Sets the moment instance to use.
@@ -50,15 +58,21 @@ class App extends Component {
         <section className={classes.container}>
           <ConnectedRouter history={history}>
             <Switch>
-              <Route exact path="/" component={MainPage} />
               <Route
                 path={RouteEquipmentPage}
+                exact
                 component={RetailEquipmentPageMain}
               />
               <Route
                 path={`${RouteEquipmentPage}:id`}
                 component={RetailEquipmentPageViewPage}
               />
+
+              <Route path={RouteReportsPage} component={ReportsPage} />
+
+              <Route path={RouteMapPage} component={MapPage} />
+
+              <Route component={NoMatch} />
             </Switch>
           </ConnectedRouter>
         </section>

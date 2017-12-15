@@ -13,16 +13,26 @@ import AccountCircle from "material-ui-icons/AccountCircle";
 // import { FormControlLabel, FormGroup } from "material-ui/Form";
 import Menu, { MenuItem } from "material-ui/Menu";
 import Drawer from "material-ui/Drawer";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ListItemIcon, ListItemText } from "material-ui/List";
 import DvrIcon from "material-ui-icons/Dvr";
 import HomeIcon from "material-ui-icons/Home";
+import MapIcon from "material-ui-icons/Map";
+import InsertCahrtIcon from "material-ui-icons/InsertChart";
 import logo from "../../logo_C2M_alternative_ru.svg";
-import { RouteEquipmentPage } from "../routes/constants";
+import {
+  RouteEquipmentPage,
+  RouteMapPage,
+  RouteReportsPage
+} from "../routes/constants";
+import history from "../../redux/history";
 
 const styles = theme => ({
   list: {
     width: 250
+  },
+  link: {
+    textDecoration: "none"
   },
   listFull: {
     width: "auto"
@@ -96,6 +106,7 @@ class Header extends React.Component {
     const { classes } = this.props;
     const { auth, anchorEl } = this.state;
     const open = Boolean(anchorEl);
+    const pathname = history.location.pathname;
 
     return (
       <div className={classes.root}>
@@ -111,7 +122,7 @@ class Header extends React.Component {
             </IconButton>
             <img src={logo} className={classes.logo} alt="logo" />
             <Typography type="title" color="inherit" className={classes.flex}>
-              Smart Equipment
+              Smart Fridge
             </Typography>
             {auth && (
               <div>
@@ -154,21 +165,8 @@ class Header extends React.Component {
               onClick={this.toggleDrawer}
               onKeyDown={this.toggleDrawer}
             >
-              <NavLink to="/" activeClassName="selected">
-                <MenuItem>
-                  <ListItemIcon className={classes.icon}>
-                    <HomeIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    classes={{ text: classes.text }}
-                    inset
-                    primary="Главная"
-                  />
-                </MenuItem>
-              </NavLink>
-
-              <NavLink to={RouteEquipmentPage} activeClassName="selected">
-                <MenuItem>
+              <Link to={RouteEquipmentPage} className={classes.link}>
+                <MenuItem selected={pathname === RouteEquipmentPage}>
                   <ListItemIcon className={classes.icon}>
                     <DvrIcon />
                   </ListItemIcon>
@@ -178,20 +176,39 @@ class Header extends React.Component {
                     primary="Таблица устройств"
                   />
                 </MenuItem>
-              </NavLink>
+              </Link>
 
-              {/*<NavLink to="/RetailEquipmentPageView" activeClassName="selected">*/}
-              {/*<MenuItem>*/}
-              {/*<ListItemIcon className={classes.icon}>*/}
-              {/*<DvrIcon />*/}
-              {/*</ListItemIcon>*/}
-              {/*<ListItemText*/}
-              {/*classes={{ text: classes.text }}*/}
-              {/*inset*/}
-              {/*primary="Просмотр выбранного"*/}
-              {/*/>*/}
-              {/*</MenuItem>*/}
-              {/*</NavLink>*/}
+              <Link to={RouteMapPage} className={classes.link}>
+                <MenuItem selected={pathname === RouteMapPage}>
+                  <ListItemIcon className={classes.icon}>
+                    <MapIcon className={classes.icon}>
+                      <HomeIcon />
+                    </MapIcon>
+                  </ListItemIcon>
+                  <ListItemText
+                    classes={{ text: classes.text }}
+                    inset
+                    primary="Карта устройств"
+                  />
+                </MenuItem>
+              </Link>
+
+              <Link to={RouteReportsPage} className={classes.link}>
+                <MenuItem selected={pathname === RouteReportsPage}>
+                  <ListItemIcon className={classes.icon}>
+                    <InsertCahrtIcon className={classes.icon}>
+                      <DvrIcon />
+                    </InsertCahrtIcon>
+                  </ListItemIcon>
+                  <ListItemText
+                    classes={{ text: classes.text }}
+                    inset
+                    primary="Отчеты"
+                  />
+                </MenuItem>
+              </Link>
+
+              {this.props.location}
             </div>
           </Drawer>
         </AppBar>

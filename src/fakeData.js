@@ -7,6 +7,7 @@ export const collection = [
     front: "id_4",
     completeness: "1IZWva9",
     cost: 76056,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.348Z",
     additionalInformation:
@@ -20,6 +21,7 @@ export const collection = [
     front: "id_4",
     completeness: "tZ3QbzP",
     cost: 84362,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.348Z",
     additionalInformation:
@@ -33,6 +35,7 @@ export const collection = [
     front: "id_2",
     completeness: "J2ZModz",
     cost: 81797,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.348Z",
     additionalInformation:
@@ -46,6 +49,7 @@ export const collection = [
     front: "id_3",
     completeness: "zJpxQ4E",
     cost: 78988,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.348Z",
     additionalInformation:
@@ -59,6 +63,7 @@ export const collection = [
     front: "id_2",
     completeness: "RRCQCCi",
     cost: 80750,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.348Z",
     additionalInformation:
@@ -72,6 +77,7 @@ export const collection = [
     front: "id_2",
     completeness: "ThSa1Jl",
     cost: 21277,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.348Z",
     additionalInformation:
@@ -85,6 +91,7 @@ export const collection = [
     front: "id_1",
     completeness: "MJAL2Dd",
     cost: 97821,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.348Z",
     additionalInformation:
@@ -98,6 +105,7 @@ export const collection = [
     front: "id_4",
     completeness: "ipIHE3z",
     cost: 28951,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.348Z",
     additionalInformation:
@@ -111,6 +119,7 @@ export const collection = [
     front: "id_4",
     completeness: "DYb2ztx",
     cost: 18504,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.348Z",
     additionalInformation:
@@ -124,6 +133,7 @@ export const collection = [
     front: "id_3",
     completeness: "2j2gbPj",
     cost: 71734,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.348Z",
     additionalInformation:
@@ -137,6 +147,7 @@ export const collection = [
     front: "id_4",
     completeness: "RyqXNMg",
     cost: 99355,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -150,6 +161,7 @@ export const collection = [
     front: "id_1",
     completeness: "nZCAmIx",
     cost: 58755,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -163,6 +175,7 @@ export const collection = [
     front: "id_4",
     completeness: "ZVcadR5",
     cost: 52435,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -176,6 +189,7 @@ export const collection = [
     front: "id_1",
     completeness: "QW4dYlE",
     cost: 16707,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -189,6 +203,7 @@ export const collection = [
     front: "id_2",
     completeness: "c1q3ery",
     cost: 26990,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -202,6 +217,8 @@ export const collection = [
     front: "id_1",
     completeness: "7dTUer3",
     cost: 3560,
+
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -215,6 +232,7 @@ export const collection = [
     front: "id_3",
     completeness: "a0BnWBO",
     cost: 96425,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -228,6 +246,7 @@ export const collection = [
     front: "id_1",
     completeness: "s8ikWQE",
     cost: 74914,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -241,6 +260,7 @@ export const collection = [
     front: "id_4",
     completeness: "14hkKig",
     cost: 17554,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -254,6 +274,7 @@ export const collection = [
     front: "id_2",
     completeness: "BzuZjle",
     cost: 15185,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -267,6 +288,7 @@ export const collection = [
     front: "id_2",
     completeness: "S3JJYOq",
     cost: 70973,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -280,6 +302,7 @@ export const collection = [
     front: "id_3",
     completeness: "roudU1U",
     cost: 76310,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -293,6 +316,7 @@ export const collection = [
     front: "id_1",
     completeness: "Bd33vgN",
     cost: 51118,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -306,6 +330,8 @@ export const collection = [
     front: "id_4",
     completeness: "Bzdx5Nd",
     cost: 9949,
+
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -319,6 +345,7 @@ export const collection = [
     front: "id_1",
     completeness: "QZTZhyf",
     cost: 23341,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -332,6 +359,7 @@ export const collection = [
     front: "id_2",
     completeness: "QeUOz6T",
     cost: 69384,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -345,6 +373,8 @@ export const collection = [
     front: "id_1",
     completeness: "OuIszkS",
     cost: 3753,
+
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -358,6 +388,7 @@ export const collection = [
     front: "id_1",
     completeness: "5UFlCyR",
     cost: 89688,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -371,6 +402,7 @@ export const collection = [
     front: "id_2",
     completeness: "fFgMa34",
     cost: 17017,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -384,6 +416,8 @@ export const collection = [
     front: "id_2",
     completeness: "YE71Dzr",
     cost: 1227,
+
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -397,6 +431,7 @@ export const collection = [
     front: "id_3",
     completeness: "MYrKV7n",
     cost: 48979,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -410,6 +445,7 @@ export const collection = [
     front: "id_3",
     completeness: "JDWA03Y",
     cost: 34981,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -423,6 +459,7 @@ export const collection = [
     front: "id_3",
     completeness: "TgWgA4P",
     cost: 16709,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -436,6 +473,7 @@ export const collection = [
     front: "id_3",
     completeness: "S7T2hdT",
     cost: 39339,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -449,6 +487,7 @@ export const collection = [
     front: "id_4",
     completeness: "63yDF4I",
     cost: 93239,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -462,6 +501,7 @@ export const collection = [
     front: "id_4",
     completeness: "bocnCMO",
     cost: 84536,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -475,6 +515,7 @@ export const collection = [
     front: "id_2",
     completeness: "zGL7Ywd",
     cost: 16626,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -488,6 +529,7 @@ export const collection = [
     front: "id_4",
     completeness: "KosOEaf",
     cost: 56867,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -501,6 +543,7 @@ export const collection = [
     front: "id_1",
     completeness: "jqkIrdG",
     cost: 54959,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -514,6 +557,7 @@ export const collection = [
     front: "id_4",
     completeness: "McUuRWd",
     cost: 40315,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -527,6 +571,7 @@ export const collection = [
     front: "id_4",
     completeness: "9IcsBgF",
     cost: 59986,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -540,6 +585,7 @@ export const collection = [
     front: "id_1",
     completeness: "YpgE5uU",
     cost: 63309,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -553,6 +599,7 @@ export const collection = [
     front: "id_1",
     completeness: "6CBvpRf",
     cost: 18500,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -566,6 +613,7 @@ export const collection = [
     front: "id_4",
     completeness: "G2lQG0n",
     cost: 67245,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -579,6 +627,7 @@ export const collection = [
     front: "id_2",
     completeness: "Uryancb",
     cost: 47032,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -592,6 +641,8 @@ export const collection = [
     front: "id_1",
     completeness: "zvUcvvQ",
     cost: 2088,
+
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -605,6 +656,7 @@ export const collection = [
     front: "id_3",
     completeness: "szJdgij",
     cost: 82022,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -618,6 +670,8 @@ export const collection = [
     front: "id_3",
     completeness: "xrmJX0l",
     cost: 7973,
+
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -631,6 +685,7 @@ export const collection = [
     front: "id_3",
     completeness: "cihrf8m",
     cost: 80981,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -644,6 +699,7 @@ export const collection = [
     front: "id_1",
     completeness: "k6Lt7PY",
     cost: 39789,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -657,6 +713,7 @@ export const collection = [
     front: "id_1",
     completeness: "en6lbxd",
     cost: 61714,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -670,6 +727,7 @@ export const collection = [
     front: "id_3",
     completeness: "jLMfhW8",
     cost: 80910,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -683,6 +741,7 @@ export const collection = [
     front: "id_2",
     completeness: "zk8FAJU",
     cost: 63568,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -696,6 +755,7 @@ export const collection = [
     front: "id_3",
     completeness: "ffblZ5n",
     cost: 54709,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -709,6 +769,7 @@ export const collection = [
     front: "id_2",
     completeness: "Jm7rfr0",
     cost: 62030,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -722,6 +783,7 @@ export const collection = [
     front: "id_2",
     completeness: "ZfYPH2m",
     cost: 42008,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -735,6 +797,7 @@ export const collection = [
     front: "id_2",
     completeness: "zzO0VS3",
     cost: 59940,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -748,6 +811,8 @@ export const collection = [
     front: "id_4",
     completeness: "5TBJzyu",
     cost: 2597,
+
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -761,6 +826,7 @@ export const collection = [
     front: "id_3",
     completeness: "a3SoJSZ",
     cost: 26238,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -774,6 +840,7 @@ export const collection = [
     front: "id_2",
     completeness: "8sFf18E",
     cost: 58235,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -787,6 +854,7 @@ export const collection = [
     front: "id_1",
     completeness: "XswVeMF",
     cost: 30965,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -800,6 +868,7 @@ export const collection = [
     front: "id_2",
     completeness: "p3qPzea",
     cost: 20415,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -813,6 +882,7 @@ export const collection = [
     front: "id_2",
     completeness: "QT92PEG",
     cost: 77264,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -826,6 +896,7 @@ export const collection = [
     front: "id_1",
     completeness: "HtXjfcR",
     cost: 27493,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -839,6 +910,7 @@ export const collection = [
     front: "id_4",
     completeness: "Jw8wFfi",
     cost: 97460,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -852,6 +924,7 @@ export const collection = [
     front: "id_2",
     completeness: "Bl8ESnF",
     cost: 80895,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -865,6 +938,7 @@ export const collection = [
     front: "id_2",
     completeness: "fn9HK2h",
     cost: 95180,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -878,6 +952,7 @@ export const collection = [
     front: "id_1",
     completeness: "mUyJzxq",
     cost: 14585,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -891,6 +966,7 @@ export const collection = [
     front: "id_2",
     completeness: "q6I4CkM",
     cost: 33414,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -904,6 +980,7 @@ export const collection = [
     front: "id_4",
     completeness: "5p7kQPi",
     cost: 38492,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -917,6 +994,7 @@ export const collection = [
     front: "id_2",
     completeness: "glKyfUs",
     cost: 12952,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -930,6 +1008,7 @@ export const collection = [
     front: "id_2",
     completeness: "W4olZUd",
     cost: 11231,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -943,6 +1022,8 @@ export const collection = [
     front: "id_3",
     completeness: "UuJ6W3o",
     cost: 1489,
+
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -956,6 +1037,7 @@ export const collection = [
     front: "id_2",
     completeness: "7O61VlA",
     cost: 11310,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -969,6 +1051,7 @@ export const collection = [
     front: "id_3",
     completeness: "csPxt5B",
     cost: 50710,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -982,6 +1065,7 @@ export const collection = [
     front: "id_4",
     completeness: "sfJudPH",
     cost: 38668,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -995,6 +1079,7 @@ export const collection = [
     front: "id_4",
     completeness: "woAGb8C",
     cost: 49696,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -1008,6 +1093,7 @@ export const collection = [
     front: "id_1",
     completeness: "rCJ7VOf",
     cost: 41949,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -1021,6 +1107,7 @@ export const collection = [
     front: "id_1",
     completeness: "Leo1qZh",
     cost: 62951,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -1034,6 +1121,7 @@ export const collection = [
     front: "id_2",
     completeness: "i043KYo",
     cost: 19306,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -1047,6 +1135,7 @@ export const collection = [
     front: "id_2",
     completeness: "r3or9hr",
     cost: 75816,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -1060,6 +1149,7 @@ export const collection = [
     front: "id_2",
     completeness: "JJl2PIH",
     cost: 87395,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -1073,6 +1163,7 @@ export const collection = [
     front: "id_3",
     completeness: "haw7PED",
     cost: 93768,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -1086,6 +1177,7 @@ export const collection = [
     front: "id_1",
     completeness: "n1M3Ont",
     cost: 50070,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -1099,6 +1191,7 @@ export const collection = [
     front: "id_3",
     completeness: "LLRLFzJ",
     cost: 97105,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -1112,6 +1205,7 @@ export const collection = [
     front: "id_2",
     completeness: "RZCMBO7",
     cost: 75199,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -1125,6 +1219,7 @@ export const collection = [
     front: "id_4",
     completeness: "vJ3Ki15",
     cost: 98562,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -1138,6 +1233,7 @@ export const collection = [
     front: "id_2",
     completeness: "S9FgNbu",
     cost: 34481,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -1151,6 +1247,7 @@ export const collection = [
     front: "id_2",
     completeness: "ic80NZ1",
     cost: 58730,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -1164,6 +1261,7 @@ export const collection = [
     front: "id_2",
     completeness: "kFjaLuL",
     cost: 12383,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -1177,6 +1275,7 @@ export const collection = [
     front: "id_4",
     completeness: "kCSKqUX",
     cost: 55260,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -1190,6 +1289,7 @@ export const collection = [
     front: "id_4",
     completeness: "5EjgaNC",
     cost: 29212,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -1203,6 +1303,7 @@ export const collection = [
     front: "id_3",
     completeness: "LXO6FRk",
     cost: 52592,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -1216,6 +1317,7 @@ export const collection = [
     front: "id_4",
     completeness: "nZy9Ur4",
     cost: 64480,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -1229,6 +1331,7 @@ export const collection = [
     front: "id_2",
     completeness: "SVzNLF2",
     cost: 60842,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -1242,6 +1345,7 @@ export const collection = [
     front: "id_1",
     completeness: "EVlxF8z",
     cost: 90158,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -1255,6 +1359,7 @@ export const collection = [
     front: "id_4",
     completeness: "8eI2X8k",
     cost: 40270,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -1268,6 +1373,7 @@ export const collection = [
     front: "id_4",
     completeness: "RqBXI1I",
     cost: 35737,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -1281,6 +1387,7 @@ export const collection = [
     front: "id_2",
     completeness: "GngmcT3",
     cost: 83312,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:
@@ -1294,6 +1401,7 @@ export const collection = [
     front: "id_3",
     completeness: "VPWb8fw",
     cost: 79914,
+    remainder: "20%",
     location: "Москва",
     date: "2017-12-07T12:47:53.349Z",
     additionalInformation:

@@ -50,7 +50,7 @@ export default (state = defaultForm, action) => {
   const { type, payload } = action;
   switch (type) {
     case LOAD_EQUIPMENT_START:
-      return state.set("isLoading", true);
+      return state.set("isLoading", true).set("saved", false);
 
     case LOAD_EQUIPMENT_SUCCESS:
       return state

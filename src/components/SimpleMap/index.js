@@ -18,7 +18,7 @@ export default class SimpleMap extends Component {
         <AnyReactComponent
           lat={55.6329564}
           lng={37.3631287}
-          text={"Kreyser Avrora"}
+          text={"CocaCola"}
         />
       </GoogleMapReact>
     );
