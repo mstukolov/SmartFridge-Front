@@ -3,7 +3,7 @@ import Paper from "material-ui/Paper";
 import Grid from "material-ui/Grid";
 import Typography from "material-ui/Typography";
 import { withStyles } from "material-ui/styles";
-import AuthForm from "../../AuthForm/index";
+import GlobalMap from "../../GlobalMap";
 
 const styles = theme => ({
   root: {
@@ -15,9 +15,8 @@ const styles = theme => ({
     height: "100%",
     color: theme.palette.text.secondary
   },
-  mapp: {
-    padding: 16,
-    height: "300px"
+  map: {
+    height: "600px"
   }
 });
 
@@ -43,7 +42,11 @@ class MapPage extends Component {
         </Grid>
 
         <Grid item xs={12}>
-          <Paper className={classes.paper} />
+          <Paper className={classes.paper}>
+            <div className={classes.map}>
+              <GlobalMap />
+            </div>
+          </Paper>
         </Grid>
       </Grid>
     );

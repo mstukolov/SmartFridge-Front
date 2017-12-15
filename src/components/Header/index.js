@@ -42,7 +42,7 @@ const styles = theme => ({
     width: "100%",
     position: "fixed",
     top: 0,
-    zIndex: 1
+    zIndex: 1001
   },
   flex: {
     flex: 1

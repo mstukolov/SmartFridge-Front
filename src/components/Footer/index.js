@@ -10,7 +10,8 @@ const styles = theme => ({
   root: {
     width: "100%",
     position: "fixed",
-    bottom: 0
+    bottom: 0,
+    zIndex: 1001
   },
   flex: {
     flex: 1
