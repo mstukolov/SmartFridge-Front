@@ -30,11 +30,13 @@ import SimpleSnackbar from "../../SimpleSnackbar/index";
 
 const styles = theme => ({
   root: {
-    width: "100%"
-    // marginTop: theme.spacing.unit * 3
+    minWidth: 600,
+    maxWidth: 800,
+    margin: "auto"
   },
   table: {
-    minWidth: 800
+    // minWidth: 600,
+    //   maxWidth: 800
   },
   tableWrapper: {
     overflowX: "auto"
@@ -220,19 +222,13 @@ class RetailEquipmentTable extends React.Component {
                       <TableCell padding="checkbox">
                         <Checkbox checked={isSelected} />
                       </TableCell>
-                      <TableCell padding="none">
-                        {this.getVocabularyNameById("models", n.model)}
-                      </TableCell>
-                      <TableCell numeric>{n.serial}</TableCell>
-                      <TableCell numeric>
-                        {this.getVocabularyNameById("types", n.type)}
-                      </TableCell>
-                      <TableCell numeric>
-                        {this.getVocabularyNameById("front", n.front)}
-                      </TableCell>
-                      <TableCell numeric>{n.completeness}</TableCell>
-                      <TableCell numeric>{n.cost}</TableCell>
-                      <TableCell numeric>{n.location}</TableCell>
+
+                      <TableCell padding="none">{n.sn}</TableCell>
+
+                      <TableCell numeric>{n.remain}</TableCell>
+
+                      <TableCell>Москва</TableCell>
+
                       <TableCell numeric>
                         <Moment>{n.date}</Moment>
                       </TableCell>

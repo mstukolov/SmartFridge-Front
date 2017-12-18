@@ -1,7 +1,7 @@
 import { appName } from "../../config";
 import { Record, List, Map } from "immutable";
 import { createSelector } from "reselect";
-import { collection } from "../../fakeData";
+import { equipment as collection } from "../../fakeData";
 import history from "../../redux/history";
 import { all, takeEvery, put } from "redux-saga/effects";
 import { RouteEquipmentPage } from "../../components/routes/constants";

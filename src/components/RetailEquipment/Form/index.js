@@ -71,12 +71,8 @@ class RetailEquipmentForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      model: "Данные отсутствуют",
-      serial: "Данные отсутствуют",
-      type: "Данные отсутствуют",
-      front: "Данные отсутствуют",
-      completeness: "Данные отсутствуют",
-      cost: "Данные отсутствуют",
+      sn: "Данные отсутствуют",
+      remain: "Данные отсутствуют",
       location: "Данные отсутствуют",
       date: "Данные отсутствуют",
       additionalInformation: "Данные отсутствуют"
@@ -92,66 +88,6 @@ class RetailEquipmentForm extends React.Component {
     this.setState({
       [name]: event.target.value
     });
-  };
-
-  /**
-   * Создает список пунктов для селекта выбора модели устройства
-   * @returns {ReactElement}
-   */
-  getModels = () => {
-    if (this.props.models) {
-      const items = [];
-      for (const [key, item] of this.props.models) {
-        items.push(
-          <MenuItem key={key} value={key}>
-            {item}
-          </MenuItem>
-        );
-      }
-      return items;
-    }
-
-    return null;
-  };
-
-  /**
-   * Создает список пунктов для селекта выбора типа устройства
-   * @returns {ReactElement}
-   */
-  getTypes = () => {
-    if (this.props.types) {
-      const items = [];
-      for (const [key, item] of this.props.types) {
-        items.push(
-          <MenuItem key={key} value={key}>
-            {item}
-          </MenuItem>
-        );
-      }
-      return items;
-    }
-
-    return null;
-  };
-
-  /**
-   * Создает список пунктов для селекта выбора фронта устройства
-   * @returns {ReactElement}
-   */
-  getFront = () => {
-    if (this.props.front) {
-      const items = [];
-      for (const [key, item] of this.props.front) {
-        items.push(
-          <MenuItem key={key} value={key}>
-            {item}
-          </MenuItem>
-        );
-      }
-      return items;
-    }
-
-    return null;
   };
 
   /**
@@ -239,24 +175,16 @@ class RetailEquipmentForm extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.fridge) {
       const {
-        model,
-        serial,
-        type,
-        front,
-        completeness,
-        cost,
+        sn,
+        remain,
         location,
         date,
         additionalInformation
       } = nextProps.fridge;
 
       this.setState({
-        model,
-        serial,
-        type,
-        front,
-        completeness,
-        cost,
+        sn,
+        remain,
         location,
         date,
         additionalInformation
@@ -310,83 +238,18 @@ class RetailEquipmentForm extends React.Component {
 
         {this.showError()}
         {this.showSuccessSaved()}
-        <FormControl
-          disabled={this.isDisabledControl()}
-          fullWidth
-          className={classes.formControl}
-        >
-          <InputLabel htmlFor="model">Модель</InputLabel>
-          <Select
-            value={this.state.model}
-            onChange={this.handleChange("model")}
-            input={<Input name="model" id="model" />}
-            autoWidth
-          >
-            {this.getModels()}
-          </Select>
-          <FormHelperText>5 символов</FormHelperText>
-        </FormControl>
 
         <TextField
           id="full-width"
           label="Серийный номер"
-          onChange={this.handleChange("serial")}
+          onChange={this.handleChange("sn")}
           name={"serial"}
-          value={this.state.serial}
+          value={this.state.sn}
           disabled={this.isDisabledControl()}
           InputLabelProps={{
             shrink: true
           }}
-          placeholder="Cерийный номер"
-          helperText="15 символов"
-          fullWidth
-          margin="normal"
-        />
-
-        <FormControl
-          disabled={this.isDisabledControl()}
-          fullWidth
-          className={classes.formControl}
-        >
-          <InputLabel htmlFor="type">Тип</InputLabel>
-          <Select
-            value={this.state.type}
-            onChange={this.handleChange("type")}
-            input={<Input name="type" id="type" />}
-            autoWidth
-          >
-            {this.getTypes()}
-          </Select>
-          <FormHelperText>5 символов</FormHelperText>
-        </FormControl>
-
-        <FormControl
-          disabled={this.isDisabledControl()}
-          fullWidth
-          className={classes.formControl}
-        >
-          <InputLabel htmlFor="front">Тип фронтальной части</InputLabel>
-          <Select
-            value={this.state.front}
-            onChange={this.handleChange("front")}
-            input={<Input name="front" id="front" />}
-            autoWidth
-          >
-            {this.getFront()}
-          </Select>
-          <FormHelperText>5 символов</FormHelperText>
-        </FormControl>
-
-        <TextField
-          id="full-width"
-          label="Комплектность"
-          value={this.state.completeness}
-          onChange={this.handleChange("completeness")}
-          disabled={this.isDisabledControl()}
-          InputLabelProps={{
-            shrink: true
-          }}
-          placeholder="Комплектность"
+          placeholder=""
           helperText="15 символов"
           fullWidth
           margin="normal"
@@ -394,15 +257,15 @@ class RetailEquipmentForm extends React.Component {
 
         <TextField
           id="full-width"
-          label="Стоимость"
-          value={this.state.cost}
-          onChange={this.handleChange("cost")}
+          label="Процент наполнения"
+          value={this.state.remain}
+          onChange={this.handleChange("remain")}
           disabled={this.isDisabledControl()}
           InputLabelProps={{
             shrink: true
           }}
-          placeholder="Стоимость"
-          helperText="15 символов"
+          placeholder=""
+          helperText="%"
           fullWidth
           margin="normal"
         />
@@ -410,14 +273,14 @@ class RetailEquipmentForm extends React.Component {
         <TextField
           id="full-width"
           label="Локация"
-          onChange={this.handleChange("location")}
           value={this.state.location}
+          onChange={this.handleChange("location")}
           disabled={this.isDisabledControl()}
           InputLabelProps={{
             shrink: true
           }}
-          placeholder="Локация"
-          helperText="10 символов"
+          placeholder=""
+          helperText="Место расопложения"
           fullWidth
           margin="normal"
         />
@@ -458,9 +321,7 @@ export default connect(
       loading: state.equipmentForm.isLoading,
       saving: state.equipmentForm.isSaving,
       saved: state.equipmentForm.saved,
-      models: state.vocabulary.get("models"),
-      types: state.vocabulary.get("types"),
-      front: state.vocabulary.get("front"),
+
       edit
     };
   },

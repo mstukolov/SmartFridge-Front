@@ -18,39 +18,21 @@ import Tooltip from "material-ui/Tooltip";
  */
 const columnData = [
   {
-    id: "model",
+    id: "sn",
     numeric: false,
     disablePadding: true,
-    label: "Модель"
-  },
-  {
-    id: "serial",
-    numeric: true,
-    disablePadding: false,
     label: "Серийный номер"
   },
-  { id: "type", numeric: true, disablePadding: false, label: "Тип" },
   {
-    id: "front",
+    id: "remain",
     numeric: true,
     disablePadding: false,
-    label: "Тип фронтальной панели"
+    label: "Процент наполнения"
   },
-  {
-    id: "completeness",
-    numeric: true,
-    disablePadding: false,
-    label: "Комплектность"
-  },
-  {
-    id: "cost",
-    numeric: true,
-    disablePadding: false,
-    label: "Стоимость"
-  },
+
   {
     id: "location",
-    numeric: true,
+    numeric: false,
     disablePadding: false,
     label: "Локация"
   },

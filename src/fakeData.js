@@ -1,1457 +1,1005 @@
-export const collection = [
-  {
-    id: "IlfDdh",
-    model: "id_2",
-    serial: "Ait2qBExFxelsyo",
-    type: "id_1",
-    front: "id_4",
-    completeness: "1IZWva9",
-    cost: 76056,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.348Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "2g8rdS",
-    model: "id_1",
-    serial: "mfwVSnqNV8mwdmf",
-    type: "id_3",
-    front: "id_4",
-    completeness: "tZ3QbzP",
-    cost: 84362,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.348Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "mhhPfP",
-    model: "id_4",
-    serial: "czBfrnSj0DQPCRb",
-    type: "id_1",
-    front: "id_2",
-    completeness: "J2ZModz",
-    cost: 81797,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.348Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "IId9kl",
-    model: "id_2",
-    serial: "RNnT57yMIPm79BG",
-    type: "id_1",
-    front: "id_3",
-    completeness: "zJpxQ4E",
-    cost: 78988,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.348Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "j6xaUh",
-    model: "id_2",
-    serial: "vo3wXthptcKQm3a",
-    type: "id_2",
-    front: "id_2",
-    completeness: "RRCQCCi",
-    cost: 80750,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.348Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "OdcFqp",
-    model: "id_2",
-    serial: "SV7EdjMNgUiUR0O",
-    type: "id_4",
-    front: "id_2",
-    completeness: "ThSa1Jl",
-    cost: 21277,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.348Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "oyzRi4",
-    model: "id_2",
-    serial: "WS9ln1zmmM3KDK6",
-    type: "id_1",
-    front: "id_1",
-    completeness: "MJAL2Dd",
-    cost: 97821,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.348Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "Zbem0i",
-    model: "id_1",
-    serial: "lCjMytA8d3FaNNE",
-    type: "id_1",
-    front: "id_4",
-    completeness: "ipIHE3z",
-    cost: 28951,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.348Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "KacFh6",
-    model: "id_3",
-    serial: "sUo6k0Lsy8AFTSa",
-    type: "id_3",
-    front: "id_4",
-    completeness: "DYb2ztx",
-    cost: 18504,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.348Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "hTLSjU",
-    model: "id_2",
-    serial: "qvFszGYXQbfLznC",
-    type: "id_1",
-    front: "id_3",
-    completeness: "2j2gbPj",
-    cost: 71734,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.348Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "NA7DnR",
-    model: "id_1",
-    serial: "VrMU2z10MZax239",
-    type: "id_2",
-    front: "id_4",
-    completeness: "RyqXNMg",
-    cost: 99355,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "dqAL2C",
-    model: "id_2",
-    serial: "Op39dpwwfSd6RLA",
-    type: "id_2",
-    front: "id_1",
-    completeness: "nZCAmIx",
-    cost: 58755,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "PRAP58",
-    model: "id_3",
-    serial: "cT3DJNlksczLpve",
-    type: "id_4",
-    front: "id_4",
-    completeness: "ZVcadR5",
-    cost: 52435,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "DPZeJH",
-    model: "id_3",
-    serial: "tEDLdd6fbgbhpeL",
-    type: "id_1",
-    front: "id_1",
-    completeness: "QW4dYlE",
-    cost: 16707,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "oHYlbT",
-    model: "id_1",
-    serial: "UaFIt0Ip8WHCe1O",
-    type: "id_3",
-    front: "id_2",
-    completeness: "c1q3ery",
-    cost: 26990,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "rPl8Mt",
-    model: "id_2",
-    serial: "RxAaaxrv5rsj7gV",
-    type: "id_4",
-    front: "id_1",
-    completeness: "7dTUer3",
-    cost: 3560,
-
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "TXYYSw",
-    model: "id_4",
-    serial: "9hJB5lxrquzdWEn",
-    type: "id_3",
-    front: "id_3",
-    completeness: "a0BnWBO",
-    cost: 96425,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "fgTlEU",
-    model: "id_1",
-    serial: "KcGmXN9R1QpevfJ",
-    type: "id_3",
-    front: "id_1",
-    completeness: "s8ikWQE",
-    cost: 74914,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "fgElC8",
-    model: "id_3",
-    serial: "1N0T7zKF6HvRA3S",
-    type: "id_4",
-    front: "id_4",
-    completeness: "14hkKig",
-    cost: 17554,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "gO5DNm",
-    model: "id_1",
-    serial: "1ZyIlO0vz9PR829",
-    type: "id_1",
-    front: "id_2",
-    completeness: "BzuZjle",
-    cost: 15185,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "qGJzla",
-    model: "id_4",
-    serial: "jrCnigFSWkWBjr2",
-    type: "id_1",
-    front: "id_2",
-    completeness: "S3JJYOq",
-    cost: 70973,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "A9YTBn",
-    model: "id_4",
-    serial: "qcJmy3qoyuwYMhJ",
-    type: "id_2",
-    front: "id_3",
-    completeness: "roudU1U",
-    cost: 76310,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "DTDfM5",
-    model: "id_3",
-    serial: "hcH7Gl970GxbgEX",
-    type: "id_4",
-    front: "id_1",
-    completeness: "Bd33vgN",
-    cost: 51118,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "91Ku4h",
-    model: "id_1",
-    serial: "ggte3AzWnulp3MQ",
-    type: "id_3",
-    front: "id_4",
-    completeness: "Bzdx5Nd",
-    cost: 9949,
-
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "tl3lUd",
-    model: "id_2",
-    serial: "HX7rJu55F7VRKke",
-    type: "id_1",
-    front: "id_1",
-    completeness: "QZTZhyf",
-    cost: 23341,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "WtLyeU",
-    model: "id_1",
-    serial: "yHJZgfn1g3GJMXB",
-    type: "id_3",
-    front: "id_2",
-    completeness: "QeUOz6T",
-    cost: 69384,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "Jii6ku",
-    model: "id_4",
-    serial: "3e26YgI2RVF0VGu",
-    type: "id_1",
-    front: "id_1",
-    completeness: "OuIszkS",
-    cost: 3753,
-
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "kSxHUc",
-    model: "id_1",
-    serial: "G1pTkxp6nWQwSn5",
-    type: "id_1",
-    front: "id_1",
-    completeness: "5UFlCyR",
-    cost: 89688,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "NcsHOe",
-    model: "id_1",
-    serial: "i9aL5YiHvrbYkkj",
-    type: "id_2",
-    front: "id_2",
-    completeness: "fFgMa34",
-    cost: 17017,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "dGuggE",
-    model: "id_2",
-    serial: "8KOy71J3ONtGAjz",
-    type: "id_4",
-    front: "id_2",
-    completeness: "YE71Dzr",
-    cost: 1227,
-
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "I3Hed8",
-    model: "id_4",
-    serial: "Z9q5BXcKVYg1RxE",
-    type: "id_1",
-    front: "id_3",
-    completeness: "MYrKV7n",
-    cost: 48979,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "noI8Qs",
-    model: "id_1",
-    serial: "9mUjyRXNUrnt3UC",
-    type: "id_3",
-    front: "id_3",
-    completeness: "JDWA03Y",
-    cost: 34981,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "KcQ8c0",
-    model: "id_1",
-    serial: "TUqXZl4KHDM8CZZ",
-    type: "id_4",
-    front: "id_3",
-    completeness: "TgWgA4P",
-    cost: 16709,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "6KY7sH",
-    model: "id_4",
-    serial: "I2CBSmudNX6EbsW",
-    type: "id_4",
-    front: "id_3",
-    completeness: "S7T2hdT",
-    cost: 39339,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "6wG2nF",
-    model: "id_3",
-    serial: "kTTWCbVcQxzJ1m2",
-    type: "id_1",
-    front: "id_4",
-    completeness: "63yDF4I",
-    cost: 93239,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "WGRpJ3",
-    model: "id_4",
-    serial: "8EWMaXigTGnGXpH",
-    type: "id_4",
-    front: "id_4",
-    completeness: "bocnCMO",
-    cost: 84536,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "lSyv4L",
-    model: "id_4",
-    serial: "9CFpRlyN03MMGoE",
-    type: "id_1",
-    front: "id_2",
-    completeness: "zGL7Ywd",
-    cost: 16626,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "7tbfya",
-    model: "id_2",
-    serial: "nvO0A6oNcOh4Zpy",
-    type: "id_2",
-    front: "id_4",
-    completeness: "KosOEaf",
-    cost: 56867,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "3yIDWD",
-    model: "id_4",
-    serial: "H5nZ728cOfnAiXc",
-    type: "id_3",
-    front: "id_1",
-    completeness: "jqkIrdG",
-    cost: 54959,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "X9AKSj",
-    model: "id_4",
-    serial: "03PL1WFRRW74aAy",
-    type: "id_4",
-    front: "id_4",
-    completeness: "McUuRWd",
-    cost: 40315,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "eNqpEx",
-    model: "id_2",
-    serial: "TsQ7rdtHtZL76xq",
-    type: "id_2",
-    front: "id_4",
-    completeness: "9IcsBgF",
-    cost: 59986,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "8jowlD",
-    model: "id_4",
-    serial: "fiiOsWraaw3iXiM",
-    type: "id_4",
-    front: "id_1",
-    completeness: "YpgE5uU",
-    cost: 63309,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "CJnX4B",
-    model: "id_4",
-    serial: "KBUuJV6m45fmAfs",
-    type: "id_2",
-    front: "id_1",
-    completeness: "6CBvpRf",
-    cost: 18500,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "n86qp9",
-    model: "id_4",
-    serial: "8cDBNLsJ3OJxi9P",
-    type: "id_4",
-    front: "id_4",
-    completeness: "G2lQG0n",
-    cost: 67245,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "sYHkIF",
-    model: "id_2",
-    serial: "rqFlZsthDtE8Yel",
-    type: "id_4",
-    front: "id_2",
-    completeness: "Uryancb",
-    cost: 47032,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "azrun7",
-    model: "id_2",
-    serial: "DhU8jnLv1OCjM9S",
-    type: "id_2",
-    front: "id_1",
-    completeness: "zvUcvvQ",
-    cost: 2088,
-
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "LoVtQZ",
-    model: "id_3",
-    serial: "TK9dYjvqbObTGkO",
-    type: "id_1",
-    front: "id_3",
-    completeness: "szJdgij",
-    cost: 82022,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "KdvNMW",
-    model: "id_2",
-    serial: "7t2jZMK15xqbR4T",
-    type: "id_4",
-    front: "id_3",
-    completeness: "xrmJX0l",
-    cost: 7973,
-
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "kX6w5t",
-    model: "id_4",
-    serial: "MCChPlIgiFgPmGg",
-    type: "id_4",
-    front: "id_3",
-    completeness: "cihrf8m",
-    cost: 80981,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "Ihpr8b",
-    model: "id_2",
-    serial: "1e1g9CohMR7o3j4",
-    type: "id_3",
-    front: "id_1",
-    completeness: "k6Lt7PY",
-    cost: 39789,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "m91Hg8",
-    model: "id_4",
-    serial: "I10YyDDQ5s0UXVo",
-    type: "id_3",
-    front: "id_1",
-    completeness: "en6lbxd",
-    cost: 61714,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "qjYgyr",
-    model: "id_4",
-    serial: "mXanvcgCTWCYy4m",
-    type: "id_2",
-    front: "id_3",
-    completeness: "jLMfhW8",
-    cost: 80910,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "dEHtxp",
-    model: "id_4",
-    serial: "X7KWyfhyI0wmNuZ",
-    type: "id_1",
-    front: "id_2",
-    completeness: "zk8FAJU",
-    cost: 63568,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "QaBfsT",
-    model: "id_1",
-    serial: "gqVCiu7L3Gf87fj",
-    type: "id_3",
-    front: "id_3",
-    completeness: "ffblZ5n",
-    cost: 54709,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "nYTWMH",
-    model: "id_4",
-    serial: "YzQtdfINglh4uxr",
-    type: "id_4",
-    front: "id_2",
-    completeness: "Jm7rfr0",
-    cost: 62030,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "L1hDRY",
-    model: "id_4",
-    serial: "rU6cHEvHpPa18Bs",
-    type: "id_3",
-    front: "id_2",
-    completeness: "ZfYPH2m",
-    cost: 42008,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "9hRafb",
-    model: "id_2",
-    serial: "ATpob5yKrezjDgN",
-    type: "id_3",
-    front: "id_2",
-    completeness: "zzO0VS3",
-    cost: 59940,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "zurJie",
-    model: "id_2",
-    serial: "n92WseRYsM3yjIj",
-    type: "id_4",
-    front: "id_4",
-    completeness: "5TBJzyu",
-    cost: 2597,
-
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "IbcupJ",
-    model: "id_2",
-    serial: "mKhEgwNI71Q2Fmw",
-    type: "id_3",
-    front: "id_3",
-    completeness: "a3SoJSZ",
-    cost: 26238,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "816aP1",
-    model: "id_3",
-    serial: "Lh2nghqgTkjHa52",
-    type: "id_1",
-    front: "id_2",
-    completeness: "8sFf18E",
-    cost: 58235,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "rX8sUM",
-    model: "id_2",
-    serial: "dmveiCxiQTsZW7D",
-    type: "id_4",
-    front: "id_1",
-    completeness: "XswVeMF",
-    cost: 30965,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "YXipzy",
-    model: "id_3",
-    serial: "pMoslR3SZ5gue6Z",
-    type: "id_1",
-    front: "id_2",
-    completeness: "p3qPzea",
-    cost: 20415,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "xjcSb9",
-    model: "id_2",
-    serial: "yGNXr6m7zvG8k4k",
-    type: "id_2",
-    front: "id_2",
-    completeness: "QT92PEG",
-    cost: 77264,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "mtkKVp",
-    model: "id_3",
-    serial: "QJeErWNTlP7yGxp",
-    type: "id_4",
-    front: "id_1",
-    completeness: "HtXjfcR",
-    cost: 27493,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "2kfPui",
-    model: "id_2",
-    serial: "ordWXD1axB1h4p1",
-    type: "id_2",
-    front: "id_4",
-    completeness: "Jw8wFfi",
-    cost: 97460,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "pgSiOK",
-    model: "id_2",
-    serial: "cdvxXySyyMFfdTk",
-    type: "id_2",
-    front: "id_2",
-    completeness: "Bl8ESnF",
-    cost: 80895,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "8Pubcy",
-    model: "id_2",
-    serial: "2TKZR6NXZRGQH4m",
-    type: "id_3",
-    front: "id_2",
-    completeness: "fn9HK2h",
-    cost: 95180,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "DgR0nH",
-    model: "id_4",
-    serial: "YsqjpN6x6vHiWP3",
-    type: "id_4",
-    front: "id_1",
-    completeness: "mUyJzxq",
-    cost: 14585,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "B5Y4NU",
-    model: "id_1",
-    serial: "a5RsTkwfdgCFgX6",
-    type: "id_2",
-    front: "id_2",
-    completeness: "q6I4CkM",
-    cost: 33414,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "ZjFz68",
-    model: "id_3",
-    serial: "Pq2XWeG0wlTEGxj",
-    type: "id_4",
-    front: "id_4",
-    completeness: "5p7kQPi",
-    cost: 38492,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "x44AbD",
-    model: "id_2",
-    serial: "L0xeoLQ4duojfp7",
-    type: "id_2",
-    front: "id_2",
-    completeness: "glKyfUs",
-    cost: 12952,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "bK1Sdx",
-    model: "id_2",
-    serial: "0YNjcXfPh5OvzPC",
-    type: "id_2",
-    front: "id_2",
-    completeness: "W4olZUd",
-    cost: 11231,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "A2mZcD",
-    model: "id_3",
-    serial: "U8laOK2N61Np5uF",
-    type: "id_2",
-    front: "id_3",
-    completeness: "UuJ6W3o",
-    cost: 1489,
-
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "4bXmur",
-    model: "id_2",
-    serial: "yLvHx8MeP0kjKYO",
-    type: "id_1",
-    front: "id_2",
-    completeness: "7O61VlA",
-    cost: 11310,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "cBWo5N",
-    model: "id_1",
-    serial: "KcvvJp8N2yo29Tz",
-    type: "id_3",
-    front: "id_3",
-    completeness: "csPxt5B",
-    cost: 50710,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "Lug1Hv",
-    model: "id_4",
-    serial: "3J3v0rU56pjeJR6",
-    type: "id_2",
-    front: "id_4",
-    completeness: "sfJudPH",
-    cost: 38668,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "vPnCmI",
-    model: "id_3",
-    serial: "RwUzQdFqPTZIzpG",
-    type: "id_4",
-    front: "id_4",
-    completeness: "woAGb8C",
-    cost: 49696,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "8VZGqr",
-    model: "id_1",
-    serial: "L5kz4ZEat5yUGCS",
-    type: "id_4",
-    front: "id_1",
-    completeness: "rCJ7VOf",
-    cost: 41949,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "6zneSA",
-    model: "id_3",
-    serial: "HWFL2mrZ25ySa55",
-    type: "id_3",
-    front: "id_1",
-    completeness: "Leo1qZh",
-    cost: 62951,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "99Dc1x",
-    model: "id_3",
-    serial: "SDXkWqAJnaLhceu",
-    type: "id_1",
-    front: "id_2",
-    completeness: "i043KYo",
-    cost: 19306,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "VUQONv",
-    model: "id_4",
-    serial: "O0XBZ7iMjBMefHh",
-    type: "id_4",
-    front: "id_2",
-    completeness: "r3or9hr",
-    cost: 75816,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "9mEYDU",
-    model: "id_3",
-    serial: "ONKLSeV8F4Uwis1",
-    type: "id_1",
-    front: "id_2",
-    completeness: "JJl2PIH",
-    cost: 87395,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "tG5Sst",
-    model: "id_2",
-    serial: "jGD8KSoNEPO1iaK",
-    type: "id_3",
-    front: "id_3",
-    completeness: "haw7PED",
-    cost: 93768,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "853a6v",
-    model: "id_3",
-    serial: "FLlVvOah0ybrkT4",
-    type: "id_2",
-    front: "id_1",
-    completeness: "n1M3Ont",
-    cost: 50070,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "8JNygr",
-    model: "id_1",
-    serial: "fKHY426doCDDFz6",
-    type: "id_3",
-    front: "id_3",
-    completeness: "LLRLFzJ",
-    cost: 97105,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "sa8cFo",
-    model: "id_3",
-    serial: "MLapMlfb3HPh7zE",
-    type: "id_3",
-    front: "id_2",
-    completeness: "RZCMBO7",
-    cost: 75199,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "gNXAQw",
-    model: "id_2",
-    serial: "kxknNuMtC0qCJ24",
-    type: "id_3",
-    front: "id_4",
-    completeness: "vJ3Ki15",
-    cost: 98562,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "40ayfr",
-    model: "id_4",
-    serial: "dqyyHAF8A298HKI",
-    type: "id_4",
-    front: "id_2",
-    completeness: "S9FgNbu",
-    cost: 34481,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "TUO8h3",
-    model: "id_4",
-    serial: "SkaIv2VYNb1iAnz",
-    type: "id_3",
-    front: "id_2",
-    completeness: "ic80NZ1",
-    cost: 58730,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "ysH49Y",
-    model: "id_2",
-    serial: "4Pw7T6IqHfLiGWC",
-    type: "id_1",
-    front: "id_2",
-    completeness: "kFjaLuL",
-    cost: 12383,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "gBMFfP",
-    model: "id_1",
-    serial: "tn281sG4MF9mJN7",
-    type: "id_1",
-    front: "id_4",
-    completeness: "kCSKqUX",
-    cost: 55260,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "qEbztG",
-    model: "id_1",
-    serial: "QbW9vkFZ2zAiXBj",
-    type: "id_1",
-    front: "id_4",
-    completeness: "5EjgaNC",
-    cost: 29212,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "gT7bnY",
-    model: "id_4",
-    serial: "oOFa6tldJVkMZZx",
-    type: "id_3",
-    front: "id_3",
-    completeness: "LXO6FRk",
-    cost: 52592,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "CYn8uC",
-    model: "id_4",
-    serial: "pLLZcSzJ77xKT0z",
-    type: "id_2",
-    front: "id_4",
-    completeness: "nZy9Ur4",
-    cost: 64480,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "pWOBrm",
-    model: "id_4",
-    serial: "Z1SYYQqFBO6GEoD",
-    type: "id_3",
-    front: "id_2",
-    completeness: "SVzNLF2",
-    cost: 60842,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "cwEzM2",
-    model: "id_3",
-    serial: "Sa2HCEB3w2yDGY6",
-    type: "id_1",
-    front: "id_1",
-    completeness: "EVlxF8z",
-    cost: 90158,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "fRQCgq",
-    model: "id_4",
-    serial: "ndT0MlGbvJW6fxN",
-    type: "id_2",
-    front: "id_4",
-    completeness: "8eI2X8k",
-    cost: 40270,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "dM3mC8",
-    model: "id_2",
-    serial: "DUZect130oTXPPX",
-    type: "id_3",
-    front: "id_4",
-    completeness: "RqBXI1I",
-    cost: 35737,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "Btjoua",
-    model: "id_1",
-    serial: "NnP2eCkBbi3wMCQ",
-    type: "id_3",
-    front: "id_2",
-    completeness: "GngmcT3",
-    cost: 83312,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "9qo5zf",
-    model: "id_1",
-    serial: "tt7w6eceDXaVqG5",
-    type: "id_3",
-    front: "id_3",
-    completeness: "VPWb8fw",
-    cost: 79914,
-    remainder: "20%",
-    location: "Москва",
-    date: "2017-12-07T12:47:53.349Z",
-    additionalInformation:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+export const equipment = [
+  {
+    id: "5499b724-c331-4f29-b25f-55583c0ece34",
+    remain: 38,
+    sn: "461010892-5"
+  },
+  {
+    id: "175d63ab-c33f-414c-b921-d8ba3f04fec0",
+    remain: 3,
+    sn: "449926092-2"
+  },
+  {
+    id: "58521d81-37c5-4073-8d32-d2539b1860bd",
+    remain: 31,
+    sn: "380860314-3"
+  },
+  {
+    id: "8bacebb5-9a8c-49ff-aab8-7d4134d385a0",
+    remain: 57,
+    sn: "848424591-8"
+  },
+  {
+    id: "68b68f49-ba03-4092-ac74-f70175082d8c",
+    remain: 21,
+    sn: "012179295-1"
+  },
+  {
+    id: "9df646ef-f206-4b3d-8029-a2927141ca3e",
+    remain: 56,
+    sn: "714690531-4"
+  },
+  {
+    id: "61c44c95-a3b0-4e99-b2d4-475835f6e2f3",
+    remain: 34,
+    sn: "565636142-X"
+  },
+  {
+    id: "49303e9a-c1be-47a1-8320-1a08a8e8a3eb",
+    remain: 6,
+    sn: "820492672-3"
+  },
+  {
+    id: "e4bb3a30-04aa-42fa-a83f-188042b7923e",
+    remain: 73,
+    sn: "625299759-5"
+  },
+  {
+    id: "0bd85e47-b859-46d7-93f8-eff6fbd0d71c",
+    remain: 8,
+    sn: "337299392-6"
+  },
+  {
+    id: "cc174183-8825-48a7-81a2-18cabcea2baa",
+    remain: 20,
+    sn: "797807368-8"
+  },
+  {
+    id: "2385cabc-cafd-4f41-a171-747285b9c540",
+    remain: 47,
+    sn: "359293071-0"
+  },
+  {
+    id: "4ea44a7c-622d-4c31-8bc1-89de5eceaa23",
+    remain: 91,
+    sn: "402520646-3"
+  },
+  {
+    id: "453f72ff-6f3a-4ec4-86de-5284f8dce435",
+    remain: 24,
+    sn: "051297382-2"
+  },
+  {
+    id: "4353895b-2b42-4129-acd1-455bcca23ba5",
+    remain: 78,
+    sn: "265183934-5"
+  },
+  {
+    id: "b8e5a9cb-eff7-4b90-b64b-8775497e9e4f",
+    remain: 78,
+    sn: "651586860-X"
+  },
+  {
+    id: "82d782fb-ee1a-4d08-9c70-9fb329e3058d",
+    remain: 16,
+    sn: "956806916-X"
+  },
+  {
+    id: "9b2f49a6-d18f-4efa-a452-9b04d17a1267",
+    remain: 80,
+    sn: "557976179-1"
+  },
+  {
+    id: "77f1159a-c888-42d3-942f-48beadad0854",
+    remain: 30,
+    sn: "471334242-4"
+  },
+  {
+    id: "8f2430c8-eaca-4570-9a75-646bcb3c1fef",
+    remain: 93,
+    sn: "277502076-3"
+  },
+  {
+    id: "e02c3e0f-51fe-40aa-a546-4c1bebce9289",
+    remain: 85,
+    sn: "132118500-6"
+  },
+  {
+    id: "518d7dab-3d2a-49f7-924f-d7d5676bbe37",
+    remain: 83,
+    sn: "350782029-3"
+  },
+  {
+    id: "41b40a74-4cce-4f9d-9db4-e877ee40302a",
+    remain: 33,
+    sn: "429642226-X"
+  },
+  {
+    id: "0c4fc74a-f3c2-4791-be15-644583c4271f",
+    remain: 16,
+    sn: "261072898-0"
+  },
+  {
+    id: "5ffc48b9-4d76-4be8-81db-f2a5c8f19d20",
+    remain: 56,
+    sn: "293621778-4"
+  },
+  {
+    id: "50b1d9fc-4fed-41c0-b28b-1909f932f3d7",
+    remain: 34,
+    sn: "825100211-7"
+  },
+  {
+    id: "c221cb7d-c2a8-4990-b88e-4a9e3bf723cd",
+    remain: 65,
+    sn: "203149104-0"
+  },
+  {
+    id: "3ad9bec4-5b08-40a5-97f8-ec09e9ba8953",
+    remain: 33,
+    sn: "459198388-9"
+  },
+  {
+    id: "d309535b-3165-4ee7-ac66-aaa9c5625145",
+    remain: 44,
+    sn: "992607653-X"
+  },
+  {
+    id: "560bd852-7055-4dd2-ad70-bff3fea0bd66",
+    remain: 3,
+    sn: "607372101-3"
+  },
+  {
+    id: "dc27f6f1-d071-4c74-bad2-e51e1eefe6c0",
+    remain: 64,
+    sn: "319233205-0"
+  },
+  {
+    id: "5cec465a-fbea-4ba9-91a2-46ab899add14",
+    remain: 47,
+    sn: "925805713-9"
+  },
+  {
+    id: "0998c21d-ceed-4a95-bf0f-f6275603e591",
+    remain: 56,
+    sn: "467115596-6"
+  },
+  {
+    id: "85983733-5c0a-40c2-b414-819f274b39c8",
+    remain: 33,
+    sn: "589946828-9"
+  },
+  {
+    id: "7a7a2a54-d007-45f5-9fbe-28887bd9555f",
+    remain: 26,
+    sn: "003703355-7"
+  },
+  {
+    id: "4eb50c27-d281-4d9b-852d-5e98adc84355",
+    remain: 92,
+    sn: "061168302-4"
+  },
+  {
+    id: "0863083d-df8a-47e1-9cd9-c683e1700b91",
+    remain: 64,
+    sn: "986404822-8"
+  },
+  {
+    id: "a29facd7-3307-4a6d-8d74-8409d849b438",
+    remain: 52,
+    sn: "324324451-X"
+  },
+  {
+    id: "be9b9fc9-b441-46db-ba03-fc9e07bcc4c7",
+    remain: 43,
+    sn: "871499922-6"
+  },
+  {
+    id: "d2919b2a-e293-45bd-9153-563e0c3952c2",
+    remain: 67,
+    sn: "059713121-X"
+  },
+  {
+    id: "61b5e406-c570-4469-8ed5-2a1a031d5bd6",
+    remain: 76,
+    sn: "609498152-9"
+  },
+  {
+    id: "19ca7eab-4462-4220-bbb4-3686bed8e9be",
+    remain: 46,
+    sn: "131854535-8"
+  },
+  {
+    id: "0097d859-6bd1-4e26-adb4-eb82096665f6",
+    remain: 91,
+    sn: "452846781-X"
+  },
+  {
+    id: "97670215-17ae-49ca-856c-8e39983359e5",
+    remain: 96,
+    sn: "677504107-1"
+  },
+  {
+    id: "9ab253f5-43e7-46ac-a199-4290444bca55",
+    remain: 45,
+    sn: "658641242-0"
+  },
+  {
+    id: "23d82f62-f426-42f2-90c2-5207a18cb9a5",
+    remain: 75,
+    sn: "527809189-4"
+  },
+  {
+    id: "e18963bc-2ec1-4874-824c-a9e71770a1b3",
+    remain: 49,
+    sn: "688267100-1"
+  },
+  {
+    id: "b20b188c-5711-4e51-b8d2-51103dab95eb",
+    remain: 60,
+    sn: "857770085-2"
+  },
+  {
+    id: "1731f0d4-c036-4514-b856-bd1ef45c15b5",
+    remain: 99,
+    sn: "917349094-6"
+  },
+  {
+    id: "b929477a-01f5-400f-bd7b-e0bace3e3b47",
+    remain: 34,
+    sn: "838077885-5"
+  },
+  {
+    id: "76c7dd9d-72f8-47e0-9528-60b8e4793f31",
+    remain: 11,
+    sn: "456515377-7"
+  },
+  {
+    id: "2da4a521-973d-479e-91a6-75150434f1e4",
+    remain: 51,
+    sn: "963049879-0"
+  },
+  {
+    id: "4101f9a6-cd20-4fc7-8c5c-e9a05569bb6d",
+    remain: 78,
+    sn: "748572875-X"
+  },
+  {
+    id: "ca18cc7c-1c75-4a60-927b-a667d5ac9311",
+    remain: 38,
+    sn: "080953419-3"
+  },
+  {
+    id: "1c08dbb8-85fc-43a0-b43f-4075306a67f0",
+    remain: 82,
+    sn: "065196830-5"
+  },
+  {
+    id: "38a02586-501b-44bc-b476-939a91fe963e",
+    remain: 14,
+    sn: "042804072-1"
+  },
+  {
+    id: "7c2fd605-75c6-480f-9633-88c489ede2cb",
+    remain: 9,
+    sn: "888372710-X"
+  },
+  {
+    id: "64c5501a-7450-4d3c-b0ac-04935b88a213",
+    remain: 59,
+    sn: "885631994-2"
+  },
+  {
+    id: "cd703f21-874f-42ac-8b28-32f06639bf32",
+    remain: 75,
+    sn: "128226399-4"
+  },
+  {
+    id: "1be03dc5-431d-4a91-bd1b-a588ee226652",
+    remain: 68,
+    sn: "022903992-8"
+  },
+  {
+    id: "75029a6b-2c08-4ac1-8747-c336caa2c20a",
+    remain: 85,
+    sn: "826818356-X"
+  },
+  {
+    id: "fbcf2296-3fc7-431e-bebf-b5b3a6764a5d",
+    remain: 39,
+    sn: "756660935-1"
+  },
+  {
+    id: "035c1f31-4642-4c94-b2e6-654055b64182",
+    remain: 24,
+    sn: "895199230-6"
+  },
+  {
+    id: "d5421d19-7a7d-428e-a9e2-0d3bfe98494a",
+    remain: 68,
+    sn: "805659524-4"
+  },
+  {
+    id: "39769fab-27c7-41b8-a4e6-c85f6bfcffea",
+    remain: 83,
+    sn: "184967007-2"
+  },
+  {
+    id: "a77f833c-6ec3-48c6-a59c-10c6865f2051",
+    remain: 85,
+    sn: "968813704-9"
+  },
+  {
+    id: "faab20b3-5d74-4b95-b189-0455925cb888",
+    remain: 51,
+    sn: "975380276-5"
+  },
+  {
+    id: "28e375dc-45e3-4f83-a71a-e7bb52c65f0c",
+    remain: 33,
+    sn: "744983563-0"
+  },
+  {
+    id: "e525c367-a98c-4650-932a-92f6e33c1b0d",
+    remain: 85,
+    sn: "419588192-7"
+  },
+  {
+    id: "6ed7937e-f1c8-466b-814e-0f40f6cde472",
+    remain: 100,
+    sn: "521700587-4"
+  },
+  {
+    id: "e014b37d-2dde-4573-809e-0e30669b2017",
+    remain: 70,
+    sn: "886754595-7"
+  },
+  {
+    id: "84b8dc0d-5deb-42d9-addc-c1f4c9bf7647",
+    remain: 73,
+    sn: "821391350-7"
+  },
+  {
+    id: "36e45f97-94bc-4e41-913e-4612041a1bfb",
+    remain: 32,
+    sn: "745574710-1"
+  },
+  {
+    id: "b88de840-ab75-483c-a509-3ca3c85d2e7b",
+    remain: 65,
+    sn: "488019475-1"
+  },
+  {
+    id: "278faf2c-ee3f-4ddf-943d-7a8242121180",
+    remain: 47,
+    sn: "129385872-2"
+  },
+  {
+    id: "53caace0-93ac-426a-8174-cd7b67da6edc",
+    remain: 25,
+    sn: "136628631-6"
+  },
+  {
+    id: "62aa9332-406d-4a20-9caa-a189409d0f0b",
+    remain: 42,
+    sn: "509714779-0"
+  },
+  {
+    id: "1cdbd057-cbc7-4976-b782-4c52c976d778",
+    remain: 13,
+    sn: "910868622-X"
+  },
+  {
+    id: "03615c49-211f-45c1-a566-4d08a64c73d1",
+    remain: 54,
+    sn: "136675616-9"
+  },
+  {
+    id: "91272a3a-4e11-4d31-8372-1c33416af2c2",
+    remain: 8,
+    sn: "674231068-5"
+  },
+  {
+    id: "a5a7eb88-6dae-42a7-8dd6-ee4d58248e70",
+    remain: 98,
+    sn: "282197836-7"
+  },
+  {
+    id: "e5e8c58e-3840-40f9-aff7-30a9bef4d3d0",
+    remain: 79,
+    sn: "708159470-0"
+  },
+  {
+    id: "b1a0a923-38ba-401a-a6b1-cdf37774e9f2",
+    remain: 8,
+    sn: "887029914-7"
+  },
+  {
+    id: "8c887b71-4297-4fe7-b83c-a5395365409d",
+    remain: 33,
+    sn: "515428556-5"
+  },
+  {
+    id: "760b1dac-d091-4d58-ba23-996bc1c7ac84",
+    remain: 71,
+    sn: "949257461-6"
+  },
+  {
+    id: "b50be7f2-46e2-417f-9ed4-cbb5f63e51d9",
+    remain: 34,
+    sn: "951627500-1"
+  },
+  {
+    id: "3ac9a86a-938b-44fc-b536-f14d742baf5c",
+    remain: 7,
+    sn: "721684317-7"
+  },
+  {
+    id: "08aac02a-76de-4d84-84d0-eda3399ef6d2",
+    remain: 2,
+    sn: "727357394-9"
+  },
+  {
+    id: "84772bd7-656a-4df1-bb17-ffc9cc1c3854",
+    remain: 53,
+    sn: "251915408-X"
+  },
+  {
+    id: "1645e1aa-29c7-457b-9eb4-bda2f8c60652",
+    remain: 56,
+    sn: "509545133-6"
+  },
+  {
+    id: "a18ac885-a387-4178-bfa5-6d14a1fee919",
+    remain: 85,
+    sn: "065723341-2"
+  },
+  {
+    id: "021c590d-bfa9-4c80-ad8f-1051008bcd3c",
+    remain: 62,
+    sn: "215777035-6"
+  },
+  {
+    id: "70e83e7b-7ae7-46b4-91b5-9fa5544facdf",
+    remain: 35,
+    sn: "324834740-6"
+  },
+  {
+    id: "334446b5-4398-4526-955f-bf3c28285589",
+    remain: 77,
+    sn: "478810513-6"
+  },
+  {
+    id: "914d6951-597b-4844-a0c3-2ef236e8d76c",
+    remain: 86,
+    sn: "708875415-0"
+  },
+  {
+    id: "7a1837ad-d7e4-4ff4-a6bc-291d8181487c",
+    remain: 4,
+    sn: "971229777-2"
+  },
+  {
+    id: "abfb36c5-fbd9-4b75-a078-ec632926cc5e",
+    remain: 37,
+    sn: "733350507-3"
+  },
+  {
+    id: "bee214aa-9c8b-4064-9b73-a317c4019510",
+    remain: 69,
+    sn: "139471466-1"
+  },
+  {
+    id: "cfc79a86-40c2-4d27-8dac-490494798d13",
+    remain: 33,
+    sn: "799075748-6"
+  },
+  {
+    id: "aa33d2dd-5b00-4ad4-9f64-61742be90635",
+    remain: 95,
+    sn: "182682545-2"
   }
 ];
-// import { makeid, randomInteger } from "../utils";
-// for (var i = 0; i < 100; i++) {
-//     collection.push(
-//         createFakeData(
-//             randomInteger(0, 3),
-//             makeid(15),
-//             randomInteger(0, 3),
-//             randomInteger(0, 3),
-//             makeid(7),
-//             Math.floor(Math.random() * 100000),
-//         ),
-//     );
-// }
-/**
- * Создает экземпляр оборудования для таблицы
- * @param  {String} model                   модель
- * @param  {String} serial                  серийный номер
- * @param  {String} type                    тип
- * @param  {String} front                   тип фронтальной плоскости
- * @param  {String} [completeness="Полная"] комплектность
- * @param  {Number} [cost=999999]           стоимость
- * @param  {String} [location="Москва"]     расположение
- * @param  {Date}   [date=new               Date(]        Дата
- * @return {Object}                         [description]
- */
-// function createFakeData(
-//     model,
-//     serial,
-//     type,
-//     front,
-//     completeness,
-//     cost,
-//     location = 'Москва',
-//     date = new Date(),
-// ) {
-//     return {
-//         id: makeid(6),
-//         model,
-//         serial,
-//         type,
-//         front,
-//         completeness,
-//         cost,
-//         location,
-//         date,
-//     };
-// }
+
+export const location = [
+  {
+    id: "5499b724-c331-4f29-b25f-55583c0ece34",
+    lat: 47.9370871,
+    lng: 29.6288401
+  },
+  {
+    id: "175d63ab-c33f-414c-b921-d8ba3f04fec0",
+    lat: -4.4898263,
+    lng: 104.6412925
+  },
+  {
+    id: "58521d81-37c5-4073-8d32-d2539b1860bd",
+    lat: 5.9353459,
+    lng: 7.0794263
+  },
+  {
+    id: "8bacebb5-9a8c-49ff-aab8-7d4134d385a0",
+    lat: 35.4755834,
+    lng: 44.4075911
+  },
+  {
+    id: "68b68f49-ba03-4092-ac74-f70175082d8c",
+    lat: -3.2191864,
+    lng: 40.1168906
+  },
+  {
+    id: "9df646ef-f206-4b3d-8029-a2927141ca3e",
+    lat: 41.76,
+    lng: -72.69
+  },
+  {
+    id: "61c44c95-a3b0-4e99-b2d4-475835f6e2f3",
+    lat: -9.8867238,
+    lng: 124.2477171
+  },
+  {
+    id: "49303e9a-c1be-47a1-8320-1a08a8e8a3eb",
+    lat: 17.424274,
+    lng: 121.779585
+  },
+  {
+    id: "e4bb3a30-04aa-42fa-a83f-188042b7923e",
+    lat: 11.7367016,
+    lng: 122.0389128
+  },
+  {
+    id: "0bd85e47-b859-46d7-93f8-eff6fbd0d71c",
+    lat: 43.505478,
+    lng: 18.7772645
+  },
+  {
+    id: "cc174183-8825-48a7-81a2-18cabcea2baa",
+    lat: 51.0026948,
+    lng: 22.314478
+  },
+  {
+    id: "2385cabc-cafd-4f41-a171-747285b9c540",
+    lat: 33.844582,
+    lng: 115.778676
+  },
+  {
+    id: "4ea44a7c-622d-4c31-8bc1-89de5eceaa23",
+    lat: 50.4251949,
+    lng: 19.300593
+  },
+  {
+    id: "453f72ff-6f3a-4ec4-86de-5284f8dce435",
+    lat: 23.320477,
+    lng: 111.2138
+  },
+  {
+    id: "4353895b-2b42-4129-acd1-455bcca23ba5",
+    lat: -20.0859007,
+    lng: -45.2957103
+  },
+  {
+    id: "b8e5a9cb-eff7-4b90-b64b-8775497e9e4f",
+    lat: 22.8564518,
+    lng: -82.4211025
+  },
+  {
+    id: "82d782fb-ee1a-4d08-9c70-9fb329e3058d",
+    lat: 34.751868,
+    lng: 107.035769
+  },
+  {
+    id: "9b2f49a6-d18f-4efa-a452-9b04d17a1267",
+    lat: 34.041367,
+    lng: 110.827862
+  },
+  {
+    id: "77f1159a-c888-42d3-942f-48beadad0854",
+    lat: 16.4498,
+    lng: 107.5623501
+  },
+  {
+    id: "8f2430c8-eaca-4570-9a75-646bcb3c1fef",
+    lat: 38.052038,
+    lng: 114.466022
+  },
+  {
+    id: "e02c3e0f-51fe-40aa-a546-4c1bebce9289",
+    lat: 38.7025085,
+    lng: -9.3381698
+  },
+  {
+    id: "518d7dab-3d2a-49f7-924f-d7d5676bbe37",
+    lat: "-6.936",
+    lng: "112.8633"
+  },
+  {
+    id: "41b40a74-4cce-4f9d-9db4-e877ee40302a",
+    lat: 41.6704519,
+    lng: -4.7135268
+  },
+  {
+    id: "0c4fc74a-f3c2-4791-be15-644583c4271f",
+    lat: 35.3740182,
+    lng: 36.6012942
+  },
+  {
+    id: "5ffc48b9-4d76-4be8-81db-f2a5c8f19d20",
+    lat: 14.8704596,
+    lng: 101.8322677
+  },
+  {
+    id: "50b1d9fc-4fed-41c0-b28b-1909f932f3d7",
+    lat: 43.6445087,
+    lng: 25.1246359
+  },
+  {
+    id: "c221cb7d-c2a8-4990-b88e-4a9e3bf723cd",
+    lat: 59.7714743,
+    lng: 14.5276579
+  },
+  {
+    id: "3ad9bec4-5b08-40a5-97f8-ec09e9ba8953",
+    lat: -2.886385,
+    lng: -78.7759559
+  },
+  {
+    id: "d309535b-3165-4ee7-ac66-aaa9c5625145",
+    lat: 40.9903208,
+    lng: -7.3943499
+  },
+  {
+    id: "560bd852-7055-4dd2-ad70-bff3fea0bd66",
+    lat: -6.4525359,
+    lng: -37.4894776
+  },
+  {
+    id: "dc27f6f1-d071-4c74-bad2-e51e1eefe6c0",
+    lat: 31.306136,
+    lng: 120.6240412
+  },
+  {
+    id: "5cec465a-fbea-4ba9-91a2-46ab899add14",
+    lat: 34.4345947,
+    lng: 35.8361633
+  },
+  {
+    id: "0998c21d-ceed-4a95-bf0f-f6275603e591",
+    lat: 50.444953,
+    lng: -104.3624353
+  },
+  {
+    id: "85983733-5c0a-40c2-b414-819f274b39c8",
+    lat: -10.5440373,
+    lng: -37.5960704
+  },
+  {
+    id: "7a7a2a54-d007-45f5-9fbe-28887bd9555f",
+    lat: 22.556499,
+    lng: 114.236875
+  },
+  {
+    id: "4eb50c27-d281-4d9b-852d-5e98adc84355",
+    lat: 53.0815746,
+    lng: 15.4900234
+  },
+  {
+    id: "0863083d-df8a-47e1-9cd9-c683e1700b91",
+    lat: 34.4198488,
+    lng: 70.4729434
+  },
+  {
+    id: "a29facd7-3307-4a6d-8d74-8409d849b438",
+    lat: 36.696506,
+    lng: 114.203697
+  },
+  {
+    id: "be9b9fc9-b441-46db-ba03-fc9e07bcc4c7",
+    lat: 48.081286,
+    lng: 20.7644305
+  },
+  {
+    id: "d2919b2a-e293-45bd-9153-563e0c3952c2",
+    lat: -10.1670956,
+    lng: 123.5787505
+  },
+  {
+    id: "61b5e406-c570-4469-8ed5-2a1a031d5bd6",
+    lat: 35.519548,
+    lng: 102.015248
+  },
+  {
+    id: "19ca7eab-4462-4220-bbb4-3686bed8e9be",
+    lat: 9.9298167,
+    lng: -73.9590333
+  },
+  {
+    id: "0097d859-6bd1-4e26-adb4-eb82096665f6",
+    lat: -26.5325948,
+    lng: 29.0706468
+  },
+  {
+    id: "97670215-17ae-49ca-856c-8e39983359e5",
+    lat: 13.8093174,
+    lng: -87.2593454
+  },
+  {
+    id: "9ab253f5-43e7-46ac-a199-4290444bca55",
+    lat: 38.430793,
+    lng: 100.812859
+  },
+  {
+    id: "23d82f62-f426-42f2-90c2-5207a18cb9a5",
+    lat: -4.203165,
+    lng: -69.935907
+  },
+  {
+    id: "e18963bc-2ec1-4874-824c-a9e71770a1b3",
+    lat: 39.5835818,
+    lng: -8.6717798
+  },
+  {
+    id: "b20b188c-5711-4e51-b8d2-51103dab95eb",
+    lat: 25.386379,
+    lng: 114.922922
+  },
+  {
+    id: "1731f0d4-c036-4514-b856-bd1ef45c15b5",
+    lat: 52.6886817,
+    lng: 115.1891675
+  },
+  {
+    id: "b929477a-01f5-400f-bd7b-e0bace3e3b47",
+    lat: 13.1984059,
+    lng: -88.0534236
+  },
+  {
+    id: "76c7dd9d-72f8-47e0-9528-60b8e4793f31",
+    lat: 48.7997482,
+    lng: 2.4699259
+  },
+  {
+    id: "2da4a521-973d-479e-91a6-75150434f1e4",
+    lat: 34.888685,
+    lng: 111.607282
+  },
+  {
+    id: "4101f9a6-cd20-4fc7-8c5c-e9a05569bb6d",
+    lat: 24.9372186,
+    lng: 118.6422409
+  },
+  {
+    id: "ca18cc7c-1c75-4a60-927b-a667d5ac9311",
+    lat: -7.3453791,
+    lng: 108.8941596
+  },
+  {
+    id: "1c08dbb8-85fc-43a0-b43f-4075306a67f0",
+    lat: 11.5521428,
+    lng: 123.1156361
+  },
+  {
+    id: "38a02586-501b-44bc-b476-939a91fe963e",
+    lat: 34.477861,
+    lng: 110.084789
+  },
+  {
+    id: "7c2fd605-75c6-480f-9633-88c489ede2cb",
+    lat: 61.8879727,
+    lng: 22.0502411
+  },
+  {
+    id: "64c5501a-7450-4d3c-b0ac-04935b88a213",
+    lat: 45.5825837,
+    lng: 17.9517519
+  },
+  {
+    id: "cd703f21-874f-42ac-8b28-32f06639bf32",
+    lat: 52.6915552,
+    lng: 1.6993747
+  },
+  {
+    id: "1be03dc5-431d-4a91-bd1b-a588ee226652",
+    lat: -4.8531154,
+    lng: 21.5587544
+  },
+  {
+    id: "75029a6b-2c08-4ac1-8747-c336caa2c20a",
+    lat: 63.1454739,
+    lng: 22.7948195
+  },
+  {
+    id: "fbcf2296-3fc7-431e-bebf-b5b3a6764a5d",
+    lat: 31.1206637,
+    lng: 120.9061578
+  },
+  {
+    id: "035c1f31-4642-4c94-b2e6-654055b64182",
+    lat: 53.8595684,
+    lng: 21.3130974
+  },
+  {
+    id: "d5421d19-7a7d-428e-a9e2-0d3bfe98494a",
+    lat: -21.7972251,
+    lng: -50.879763
+  },
+  {
+    id: "39769fab-27c7-41b8-a4e6-c85f6bfcffea",
+    lat: -8.2216521,
+    lng: 113.804931
+  },
+  {
+    id: "a77f833c-6ec3-48c6-a59c-10c6865f2051",
+    lat: 12.1235658,
+    lng: 37.7795618
+  },
+  {
+    id: "faab20b3-5d74-4b95-b189-0455925cb888",
+    lat: 60.7865441,
+    lng: 14.1928243
+  },
+  {
+    id: "28e375dc-45e3-4f83-a71a-e7bb52c65f0c",
+    lat: 2.6131897,
+    lng: -75.3915037
+  },
+  {
+    id: "e525c367-a98c-4650-932a-92f6e33c1b0d",
+    lat: 41.9339521,
+    lng: 74.5404694
+  },
+  {
+    id: "6ed7937e-f1c8-466b-814e-0f40f6cde472",
+    lat: 8.5131518,
+    lng: 124.7568082
+  },
+  {
+    id: "e014b37d-2dde-4573-809e-0e30669b2017",
+    lat: 44.9544161,
+    lng: 42.0328581
+  },
+  {
+    id: "84b8dc0d-5deb-42d9-addc-c1f4c9bf7647",
+    lat: -14.9061237,
+    lng: 50.2785486
+  },
+  {
+    id: "36e45f97-94bc-4e41-913e-4612041a1bfb",
+    lat: 55.8930684,
+    lng: 37.585677
+  },
+  {
+    id: "b88de840-ab75-483c-a509-3ca3c85d2e7b",
+    lat: 14.434698,
+    lng: 120.878011
+  },
+  {
+    id: "278faf2c-ee3f-4ddf-943d-7a8242121180",
+    lat: 22.801624,
+    lng: 113.525165
+  },
+  {
+    id: "53caace0-93ac-426a-8174-cd7b67da6edc",
+    lat: 43.5661719,
+    lng: 43.4895256
+  },
+  {
+    id: "62aa9332-406d-4a20-9caa-a189409d0f0b",
+    lat: 29.237137,
+    lng: 91.773134
+  },
+  {
+    id: "1cdbd057-cbc7-4976-b782-4c52c976d778",
+    lat: 3.6135482,
+    lng: 98.5025286
+  },
+  {
+    id: "03615c49-211f-45c1-a566-4d08a64c73d1",
+    lat: 22.3908295,
+    lng: 113.9725126
+  },
+  {
+    id: "91272a3a-4e11-4d31-8372-1c33416af2c2",
+    lat: 18.0435607,
+    lng: 100.1031202
+  },
+  {
+    id: "a5a7eb88-6dae-42a7-8dd6-ee4d58248e70",
+    lat: 46.6523173,
+    lng: 16.2030722
+  },
+  {
+    id: "e5e8c58e-3840-40f9-aff7-30a9bef4d3d0",
+    lat: 33.0517157,
+    lng: 68.0149609
+  },
+  {
+    id: "b1a0a923-38ba-401a-a6b1-cdf37774e9f2",
+    lat: 31.26179,
+    lng: 121.423664
+  },
+  {
+    id: "8c887b71-4297-4fe7-b83c-a5395365409d",
+    lat: 48.3228384,
+    lng: 29.1521095
+  },
+  {
+    id: "760b1dac-d091-4d58-ba23-996bc1c7ac84",
+    lat: 1.148102,
+    lng: 104.011505
+  },
+  {
+    id: "b50be7f2-46e2-417f-9ed4-cbb5f63e51d9",
+    lat: 43.8234396,
+    lng: 17.5393153
+  },
+  {
+    id: "3ac9a86a-938b-44fc-b536-f14d742baf5c",
+    lat: -22.65053,
+    lng: -60.129002
+  },
+  {
+    id: "08aac02a-76de-4d84-84d0-eda3399ef6d2",
+    lat: 56.290878,
+    lng: 26.721958
+  },
+  {
+    id: "84772bd7-656a-4df1-bb17-ffc9cc1c3854",
+    lat: 45.2029369,
+    lng: 141.7366591
+  },
+  {
+    id: "1645e1aa-29c7-457b-9eb4-bda2f8c60652",
+    lat: -28.5757953,
+    lng: -70.7571009
+  },
+  {
+    id: "a18ac885-a387-4178-bfa5-6d14a1fee919",
+    lat: 25.015105,
+    lng: 102.743811
+  },
+  {
+    id: "021c590d-bfa9-4c80-ad8f-1051008bcd3c",
+    lat: 39.6532428,
+    lng: -8.8604748
+  },
+  {
+    id: "70e83e7b-7ae7-46b4-91b5-9fa5544facdf",
+    lat: "-8.8816",
+    lng: "121.2125"
+  },
+  {
+    id: "334446b5-4398-4526-955f-bf3c28285589",
+    lat: -33.7974423,
+    lng: 151.2502275
+  },
+  {
+    id: "914d6951-597b-4844-a0c3-2ef236e8d76c",
+    lat: -17.5872806,
+    lng: 48.2219395
+  },
+  {
+    id: "7a1837ad-d7e4-4ff4-a6bc-291d8181487c",
+    lat: -6.4712737,
+    lng: 110.8171082
+  },
+  {
+    id: "abfb36c5-fbd9-4b75-a078-ec632926cc5e",
+    lat: 57.2992579,
+    lng: 39.8548496
+  },
+  {
+    id: "bee214aa-9c8b-4064-9b73-a317c4019510",
+    lat: -7.9794517,
+    lng: 112.0416754
+  },
+  {
+    id: "cfc79a86-40c2-4d27-8dac-490494798d13",
+    lat: 53.0210495,
+    lng: 27.554013
+  },
+  {
+    id: "aa33d2dd-5b00-4ad4-9f64-61742be90635",
+    lat: 49.7123742,
+    lng: 17.9032009
+  }
+];

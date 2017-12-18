@@ -2,7 +2,7 @@
 import { Record } from "immutable";
 import { appName } from "../../config";
 import { all, put, takeEvery } from "redux-saga/effects";
-import { collection } from "../../fakeData";
+import { equipment } from "../../fakeData";
 
 /**
  * Constants
@@ -159,7 +159,7 @@ export function cancelEquipment() {
 
 export const loadSaga = function*(action) {
   const id = action.payload.location.split(":")[1];
-  const activeItem = collection.filter(item => {
+  const activeItem = equipment.filter(item => {
     return item.id === id;
   })[0];
 
