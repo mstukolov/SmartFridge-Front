@@ -4,6 +4,7 @@ import Header from "../Header";
 import Footer from "../Footer";
 import RetailEquipmentPageMain from "../routes/RetailEquipment/Main/index";
 import RetailEquipmentPageViewPage from "../routes/RetailEquipment/View";
+import MainPage from "../routes/Main";
 import NoMatch from "../routes/NoMatch";
 import MapPage from "../routes/Map";
 import ReportsPage from "../routes/Reports";
@@ -58,6 +59,7 @@ class App extends Component {
         <section className={classes.container}>
           <ConnectedRouter history={history}>
             <Switch>
+              <Route path="/" exact component={MainPage} />
               <Route
                 path={RouteEquipmentPage}
                 exact

@@ -165,6 +165,18 @@ class Header extends React.Component {
               onClick={this.toggleDrawer}
               onKeyDown={this.toggleDrawer}
             >
+              <Link to="/" className={classes.link}>
+                <MenuItem selected={pathname === "/"}>
+                  <ListItemIcon className={classes.icon}>
+                    <HomeIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    classes={{ text: classes.text }}
+                    inset
+                    primary="Главная"
+                  />
+                </MenuItem>
+              </Link>
               <Link to={RouteEquipmentPage} className={classes.link}>
                 <MenuItem selected={pathname === RouteEquipmentPage}>
                   <ListItemIcon className={classes.icon}>
