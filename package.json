@@ -9,7 +9,7 @@
     "jss": "^9.3.3",
     "jss-preset-default": "^4.0.1",
     "leaflet": "^1.2.0",
-
+    "leaflet.markercluster": "^1.2.0",
     "lint-staged": "^6.0.0",
     "material-ui": "^1.0.0-beta.21",
     "material-ui-icons": "^1.0.0-beta.17",
@@ -20,7 +20,7 @@
     "react-dom": "^16.1.1",
     "react-jss": "^8.1.0",
     "react-leaflet": "^1.7.8",
-
+    "react-leaflet-markercluster": "^1.1.7",
     "react-moment": "^0.6.8",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
