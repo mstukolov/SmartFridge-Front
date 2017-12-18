@@ -5,10 +5,6 @@ import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
 import { connect } from "react-redux";
 import TextField from "material-ui/TextField";
-import Input, { InputLabel } from "material-ui/Input";
-import { MenuItem } from "material-ui/Menu";
-import { FormControl, FormHelperText } from "material-ui/Form";
-import Select from "material-ui/Select";
 import Button from "material-ui/Button";
 import {
   cancelEquipment,
