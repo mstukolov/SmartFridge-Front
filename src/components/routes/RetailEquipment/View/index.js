@@ -3,7 +3,7 @@ import React from "react";
 import { withStyles } from "material-ui/styles";
 import Paper from "material-ui/Paper";
 import Grid from "material-ui/Grid";
-import SimpleMap from "../../../SimpleMap/index";
+import GlobalMap from "../../../GlobalMap";
 import Typography from "material-ui/Typography";
 import RetailEquipmentForm from "../../../RetailEquipment/Form/index";
 
@@ -52,7 +52,7 @@ function RetailEquipmentPageView(props: Props) {
         <Grid item xs={12} sm={6}>
           <Paper>
             <div className={classes.map}>
-              <SimpleMap />
+              <GlobalMap />
             </div>
           </Paper>
         </Grid>
