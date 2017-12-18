@@ -13,12 +13,11 @@ import FilterListIcon from "material-ui-icons/FilterList";
 import Typography from "material-ui/Typography";
 import Toolbar from "material-ui/Toolbar";
 import { connect } from "react-redux";
-import { deleteEquipment } from "../../../ducks/RetailEquipment/table";
 import {
-  showEquipment,
-  editEquipment
-} from "../../../ducks/RetailEquipment/form";
-import { Link } from "react-router-dom";
+  deleteEquipment,
+  showEquipment
+} from "../../../ducks/RetailEquipment/table";
+
 const toolbarStyles = theme => ({
   root: {
     paddingRight: 2
@@ -64,13 +63,6 @@ class RetailEquipmentTableToolbar extends React.Component {
     ev.preventDefault();
     this.props.deleteEquipment(this.props.selected);
   };
-  /**
-   * Функция обработки редактирования списка выделленных элементов
-   * @return {String}    [description]
-   */
-  getItemUrl = () => {
-    return `/equipment:${this.props.selected.first()["id"]}`;
-  };
 
   /**
    * Функция обработки просмотра списка выделленных элементов
@@ -78,20 +70,16 @@ class RetailEquipmentTableToolbar extends React.Component {
    * @return {void}    [description]
    */
   handleShow = ev => {
-    this.props.showEquipment();
+    this.props.showEquipment(this.props.selected.first()["id"]);
   };
   /**
    * Блокирует клик по кнопке просмотра/редактирования
    * @param  {SynteticEvent} ev React событие
    * @return {void}
    */
-  handleLink = edit => ev => {
-    if (this.props.numSelected > 1) {
-      ev.preventDefault();
-      return;
-    }
-    if (edit) this.props.editEquipment();
-  };
+  // handleEdit = ev => {
+  //   this.props.editEquipment(this.props.selected.first()["id"]);
+  // };
 
   /**
    * render
@@ -120,25 +108,23 @@ class RetailEquipmentTableToolbar extends React.Component {
           {numSelected > 0 ? (
             <div className={classes.flex}>
               <Tooltip title="Просомотреть">
-                <Link to={this.getItemUrl()} onClick={this.handleLink()}>
-                  <IconButton
-                    disabled={numSelected > 1 ? true : false}
-                    aria-label="Visibility"
-                  >
-                    <VisibilityIcon />
-                  </IconButton>
-                </Link>
+                <IconButton
+                  onClick={this.handleShow}
+                  disabled={numSelected > 1 ? true : false}
+                  aria-label="Visibility"
+                >
+                  <VisibilityIcon />
+                </IconButton>
               </Tooltip>
-              <Tooltip title="Редактировать">
-                <Link to={this.getItemUrl()} onClick={this.handleLink(true)}>
-                  <IconButton
-                    aria-label="Edit"
-                    disabled={numSelected > 1 ? true : false}
-                  >
-                    <EditIcon />
-                  </IconButton>
-                </Link>
-              </Tooltip>
+              {/*<Tooltip title="Редактировать">*/}
+              {/*<IconButton*/}
+              {/*aria-label="Edit"*/}
+              {/*onClick={this.handleEdit}*/}
+              {/*disabled={numSelected > 1 ? true : false}*/}
+              {/*>*/}
+              {/*<EditIcon />*/}
+              {/*</IconButton>*/}
+              {/*</Tooltip>*/}
               <Tooltip title="Удалить">
                 <IconButton onClick={this.handleDelete} aria-label="Delete">
                   <DeleteIcon />
@@ -172,8 +158,7 @@ export default connect(
   },
   {
     deleteEquipment,
-    showEquipment,
-    editEquipment
+    showEquipment
   }
 )(
   (RetailEquipmentTableToolbar = withStyles(toolbarStyles)(

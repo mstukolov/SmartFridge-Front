@@ -2,8 +2,9 @@ import { appName } from "../../config";
 import { Record, List, Map } from "immutable";
 import { createSelector } from "reselect";
 import { collection } from "../../fakeData";
-
+import history from "../../redux/history";
 import { all, takeEvery, put } from "redux-saga/effects";
+import { RouteEquipmentPage } from "../../components/routes/constants";
 
 /**
  * Constants
@@ -11,7 +12,7 @@ import { all, takeEvery, put } from "redux-saga/effects";
 export const moduleName = "mainTable";
 const prefix = `${appName}/${moduleName}`;
 
-// export const LOAD_ALL_EQUIPMENT = `${prefix}/LOAD_ALL_EQUIPMENT`;
+export const SHOW_EQUIPMENT_REQUEST = `${prefix}/SHOW_EQUIPMENT_REQUEST`;
 export const LOAD_ALL_EQUIPMENT_REQUEST = `${prefix}/LOAD_ALL_EQUIPMENT_REQUEST`;
 export const LOAD_ALL_EQUIPMENT_START = `${prefix}/LOAD_ALL_EQUIPMENT_START`;
 export const LOAD_ALL_EQUIPMENT_SUCCESS = `${prefix}/LOAD_ALL_EQUIPMENT_SUCCESS`;
@@ -59,14 +60,19 @@ export default function reducer(state = defaultState, action) {
     case LOAD_ALL_EQUIPMENT_ERROR:
       return state.setIn(["error"], payload.error).set("isLoading", false);
 
+    case SHOW_EQUIPMENT_REQUEST:
+      return state;
     case SELECT_EQUIPMENT:
       const { item } = payload;
+      let newState = null;
 
       if (selected.has(item.id)) {
-        return state.setIn(["selected"], selected.delete(item.id));
+        newState = state.setIn(["selected"], selected.delete(item.id));
+      } else {
+        newState = state.setIn(["selected"], selected.set(item.id, item));
       }
 
-      const newState = state.setIn(["selected"], selected.set(item.id, item));
+      localStorage.removeItem("RetailEquipmentSelected");
       // Сохраняем id выбранных в локальное хранилище
       localStorage.setItem(
         "RetailEquipmentSelected",
@@ -234,6 +240,19 @@ export function sortOrderBy(property) {
 }
 
 /**
+ * Создает экшн для включения режима редактирования оборудования
+ * @return {Object} объект экшена
+ */
+export function showEquipment(id) {
+  const action = {
+    type: SHOW_EQUIPMENT_REQUEST,
+    payload: { id }
+  };
+
+  return action;
+}
+
+/**
  * Sagas
  */
 
@@ -305,8 +324,13 @@ export const deleteSaga = function*(action) {
   }
 };
 
+export const showSaga = function(action) {
+  history.push(RouteEquipmentPage + ":" + action.payload.id);
+};
+
 export const saga = function*() {
   yield all([
+    takeEvery(SHOW_EQUIPMENT_REQUEST, showSaga),
     takeEvery(LOAD_ALL_EQUIPMENT_REQUEST, loadAllSaga),
     takeEvery(DELETE_EQUIPMENT_REQUEST, deleteSaga)
   ]);

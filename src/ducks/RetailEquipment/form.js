@@ -61,9 +61,11 @@ export default (state = defaultForm, action) => {
       return state.setIn(["error"], payload.error).set("isLoading", false);
 
     case SHOW_EQUIPMENT:
+      console.log(payload.id);
       return state.setIn(["edit"], false).set("saved", false);
 
     case EDIT_EQUIPMENT:
+      console.log(payload.id);
       return state.setIn(["edit"], true).set("saved", false);
 
     case CANCEL_EQUIPMENT:
@@ -102,9 +104,10 @@ export function loadEquipment(location) {
  * Создает экшн для включения режима редактирования оборудования
  * @return {Object} объект экшена
  */
-export function showEquipment() {
+export function showEquipment(id) {
   const action = {
-    type: SHOW_EQUIPMENT
+    type: SHOW_EQUIPMENT,
+    payload: { id }
   };
 
   return action;
@@ -114,9 +117,10 @@ export function showEquipment() {
  * Создает экшн для включения режима просмотра оборудования
  * @return {Object} объект экшена
  */
-export function editEquipment() {
+export function editEquipment(id) {
   const action = {
-    type: EDIT_EQUIPMENT
+    type: EDIT_EQUIPMENT,
+    payload: { id }
   };
 
   return action;
