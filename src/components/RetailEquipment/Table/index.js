@@ -30,7 +30,6 @@ import SimpleSnackbar from "../../SimpleSnackbar/index";
 
 const styles = theme => ({
   root: {
-    minWidth: 600,
     maxWidth: 800,
     margin: "auto"
   },

@@ -281,16 +281,16 @@ class RetailEquipmentForm extends React.Component {
           margin="normal"
         />
 
-        <TextField
-          fullWidth
-          id="multiline-flexible"
-          label="Дополниельная информация"
-          disabled={this.isDisabledControl()}
-          multiline
-          rowsMax="4"
-          value={this.state.additionalInformation}
-          onChange={this.handleChange("additionalInformation")}
-        />
+        {/*<TextField*/}
+        {/*fullWidth*/}
+        {/*id="multiline-flexible"*/}
+        {/*label="Дополниельная информация"*/}
+        {/*disabled={this.isDisabledControl()}*/}
+        {/*multiline*/}
+        {/*rowsMax="4"*/}
+        {/*value={this.state.additionalInformation}*/}
+        {/*onChange={this.handleChange("additionalInformation")}*/}
+        {/*/>*/}
 
         {this.getButtonSet()}
       </form>
@@ -306,10 +306,6 @@ RetailEquipmentForm.propTypes = {
 export default connect(
   state => {
     const edit = state.equipmentForm.get("edit");
-    console.log(
-      "state.equipmentForm.activeItem",
-      state.equipmentForm.activeItem
-    );
 
     return {
       fridge: state.equipmentForm.activeItem,
@@ -317,7 +313,6 @@ export default connect(
       loading: state.equipmentForm.isLoading,
       saving: state.equipmentForm.isSaving,
       saved: state.equipmentForm.saved,
-
       edit
     };
   },

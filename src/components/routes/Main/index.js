@@ -33,7 +33,7 @@ class MainPage extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <Grid container spacing={24} alignItems="stretch">
+      <Grid container spacing={24}>
         <Grid item xs={12}>
           <Paper className={classes.paper}>
             <Typography type="title" gutterBottom>

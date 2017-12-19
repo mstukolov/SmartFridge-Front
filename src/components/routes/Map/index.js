@@ -16,7 +16,7 @@ const styles = theme => ({
     color: theme.palette.text.secondary
   },
   map: {
-    height: "600px"
+    height: "calc(100vh - 271px)"
   }
 });
 

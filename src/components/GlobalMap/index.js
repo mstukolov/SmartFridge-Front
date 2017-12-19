@@ -4,38 +4,25 @@ import { Map, TileLayer } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import { connect } from "react-redux";
 import { loadAll } from "../../ducks/RetailEquipment/location";
+import redMarker from "./redMarker";
+import getStringPopup from "./popup";
 
 class GlobalMap extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   state = {
-    itmes: []
+    mapCenterCoordinates: [55.6331614, 37.362987],
+    mapZoom: 4,
+    mapMaxZoom: 18
   };
 
   render() {
-    const MAP_CENTER_COORDINATES = [51.0, 19.0];
-    const MAP_ZOOM = 4;
-    const MAP_MAX_ZOOM = 18;
-    // const markers = [
-    //   { position: [50.4501, 30.5234] },
-    //   {
-    //     position: [52.2297, 21.0122],
-    //     options: { title: "Warszawa title on hover" },
-    //   },
-    //   { position: [50.0647, 19.945] },
-    //   {
-    //     position: [48.9226, 24.7111],
-    //     options: { title: "San Frankivsko title on hover" },
-    //   },
-    //   { position: [48.7164, 21.2611] },
-    // ];
+    const { mapCenterCoordinates, mapZoom, mapMaxZoom } = this.state;
+
     return (
       <Map
         className="markercluster-map"
-        center={MAP_CENTER_COORDINATES}
-        zoom={MAP_ZOOM}
-        maxZoom={MAP_MAX_ZOOM}
+        center={mapCenterCoordinates}
+        zoom={mapZoom}
+        maxZoom={mapMaxZoom}
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -54,16 +41,47 @@ class GlobalMap extends React.Component {
   componentDidMount() {
     this.props.loadAll();
   }
+
+  componentWillReceiveProps(nextProps) {
+    const { activeMapItem } = nextProps;
+
+    if (activeMapItem) {
+      console.log("nex props aa ==========================>", activeMapItem);
+      this.setState({
+        mapCenterCoordinates: [activeMapItem.lat, activeMapItem.lng],
+        zoom: 1
+      });
+    }
+  }
 }
 
 export default connect(
   state => {
-    const items = state.equipmentLocation.collection.map(item => {
-      return { position: [item.lat, item.lng] };
+    // Наносим маркеры на карту
+    const items = state.equipmentLocation.collection.toJS().map(item => {
+      let element = {
+        position: [item.lat, item.lng],
+        popup: getStringPopup(item.id)
+      };
+      // Если в списке выбранных точек есть данная, выделяем ее красным маркером
+      if (state.equipment.selected.get(item.id)) {
+        element.options = { icon: redMarker };
+      }
+      return element;
     });
-    console.log(items.toJS());
+
+    let activeMapItem = null;
+
+    if (state.equipment.selected.size) {
+      console.log(
+        "state.equipment.selected.first() ===> ",
+        state.equipment.selected.first().id
+      );
+    }
+
     return {
-      items: items.toJS()
+      items,
+      activeMapItem
     };
   },
   { loadAll }

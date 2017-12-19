@@ -37,7 +37,8 @@ const styles = {
     boxSizing: "border-box",
     padding: "76px 12px",
     overflowY: "auto",
-    overflowX: "hidden"
+    overflowX: "hidden",
+    minHeight: "calc(100vh)"
   }
 };
 
@@ -54,7 +55,7 @@ class App extends Component {
     const { classes } = this.props;
 
     return (
-      <div className="App">
+      <div>
         <Header />
         <section className={classes.container}>
           <ConnectedRouter history={history}>
