@@ -142,7 +142,7 @@ class RetailEquipmentTable extends React.Component {
    * @return {void}
    */
   componentDidMount() {
-    if (!this.props.data.size) this.props.callAllEquipment();
+    if (!this.props.data.length) this.props.callAllEquipment();
     // TODO: Переделать организацию хранения данных в сторэдж
     const rowsPerPage = localStorage.getItem("rowsPerPage");
     const page = localStorage.getItem("page");
@@ -183,6 +183,7 @@ class RetailEquipmentTable extends React.Component {
    */
   render() {
     const { order, orderBy, data, classes } = this.props;
+
     const { rowsPerPage, page } = this.state;
 
     return (
@@ -199,7 +200,7 @@ class RetailEquipmentTable extends React.Component {
               orderBy={orderBy}
               onSelectAllClick={this.handleSelectAllClick}
               onRequestSort={this.handleRequestSort}
-              rowCount={data.size}
+              rowCount={data.length}
             />
 
             <TableBody>
@@ -243,7 +244,7 @@ class RetailEquipmentTable extends React.Component {
                     labelDisplayedRows={({ from, to, count }) =>
                       `${from}-${to} из ${count}`
                     }
-                    count={data.size}
+                    count={data.length}
                     rowsPerPage={rowsPerPage}
                     page={page}
                     onChangePage={this.handleChangePage}

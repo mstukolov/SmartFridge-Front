@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-import { Record } from "immutable";
+import { Record, OrderedMap } from "immutable";
 import { appName } from "../../config";
 import { all, put, takeEvery } from "redux-saga/effects";
 import { equipment } from "../../fakeData";
@@ -159,9 +159,7 @@ export function cancelEquipment() {
 
 export const loadSaga = function*(action) {
   const id = action.payload.location.split(":")[1];
-  const activeItem = equipment.filter(item => {
-    return item.id === id;
-  })[0];
+  const activeItem = new OrderedMap(equipment).get(id);
 
   yield put({
     type: LOAD_EQUIPMENT_START

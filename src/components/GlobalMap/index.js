@@ -44,9 +44,8 @@ class GlobalMap extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const { activeMapItem } = nextProps;
-
+    console.log("nex props aa ==========================>", activeMapItem);
     if (activeMapItem) {
-      console.log("nex props aa ==========================>", activeMapItem);
       this.setState({
         mapCenterCoordinates: [activeMapItem.lat, activeMapItem.lng],
         zoom: 1

@@ -73,7 +73,7 @@ class RetailEquipmentTableToolbar extends React.Component {
    * @return {void}    [description]
    */
   handleShow = ev => {
-    this.props.showEquipment(this.props.selected.first()["id"]);
+    this.props.showEquipment(this.props.selected.keySeq().first());
   };
   /**
    * Блокирует клик по кнопке просмотра/редактирования
@@ -110,7 +110,7 @@ class RetailEquipmentTableToolbar extends React.Component {
         <div className={classes.actions}>
           {numSelected > 0 ? (
             <div className={classes.flex}>
-              <Tooltip title="Просомотреть">
+              <Tooltip title="Просомотреть подробную информацию">
                 <div>
                   <IconButton
                     onClick={this.handleShow}

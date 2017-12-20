@@ -1,5 +1,5 @@
 import { appName } from "../../config";
-import { Record, List, Map } from "immutable";
+import { Record, List, Map, OrderedMap } from "immutable";
 import { createSelector } from "reselect";
 import { equipment as collection } from "../../fakeData";
 import history from "../../redux/history";
@@ -33,7 +33,7 @@ export const ORDER_BY = `${prefix}/ORDER_BY`;
  * */
 let DefaulrReducerState = new Record({
   isLoading: false,
-  collection: new List([]),
+  collection: new OrderedMap({}),
   selected: new Map({}),
   orderData: new Map({
     order: "asc",
@@ -55,7 +55,7 @@ export default function reducer(state = defaultState, action) {
     case LOAD_ALL_EQUIPMENT_SUCCESS:
       return state
         .set("isLoading", false)
-        .set("collection", new List(payload.collection));
+        .set("collection", new OrderedMap(payload.collection));
 
     case LOAD_ALL_EQUIPMENT_ERROR:
       return state.setIn(["error"], payload.error).set("isLoading", false);
@@ -69,7 +69,7 @@ export default function reducer(state = defaultState, action) {
       if (selected.has(item.id)) {
         newState = state.setIn(["selected"], selected.delete(item.id));
       } else {
-        newState = state.setIn(["selected"], selected.set(item.id, item));
+        newState = state.setIn(["selected"], selected.set(item.id, true));
       }
 
       localStorage.removeItem("RetailEquipmentSelected");
@@ -86,8 +86,11 @@ export default function reducer(state = defaultState, action) {
       let result = {};
 
       state.collection.forEach(item => {
-        result[item.id] = item;
+        result[item.id] = true;
       });
+
+      localStorage.removeItem("RetailEquipmentSelected");
+      localStorage.setItem("RetailEquipmentSelected", JSON.stringify(result));
       return state.setIn(["selected"], new Map(result));
 
     case DELETE_EQUIPMENT_START:
@@ -95,12 +98,12 @@ export default function reducer(state = defaultState, action) {
 
     case DELETE_EQUIPMENT_SUCCESS:
       localStorage.removeItem("RetailEquipmentSelected");
+
       return state
         .set("isLoading", false)
-        .set("collection", new List(payload.collection))
+        .set("collection", new OrderedMap(payload.collection))
         .setIn(["selected"], new Map({}));
 
-      return state;
     case DELETE_EQUIPMENT_ERROR:
       return state.setIn(["error"], payload.error).set("isLoading", false);
 
@@ -158,13 +161,18 @@ export const orderedRowsSelector = createSelector(
   orderstateGetter,
   (collection, orderData) => {
     const orderBy = orderData.get("orderBy");
+    let sortedCollection = collection.toArray();
 
     if (orderData.get("order") === "desc") {
-      return collection.sort((a, b) => (b[orderBy] < a[orderBy] ? -1 : 1));
+      return sortedCollection.sort(
+        (a, b) => (b[orderBy] < a[orderBy] ? -1 : 1)
+      );
     } else {
-      return collection.sort((a, b) => (a[orderBy] < b[orderBy] ? -1 : 1));
+      return sortedCollection.sort(
+        (a, b) => (a[orderBy] < b[orderBy] ? -1 : 1)
+      );
     } // eslint-disable-next-line
-    return collection;
+    return sortedCollection;
   }
 );
 
@@ -177,6 +185,7 @@ export const orderedRowsSelector = createSelector(
  * @return {Object}    объект экшена
  */
 export function deleteEquipment(deleted) {
+  console.log("deleted ()-->", deleted);
   const action = {
     type: DELETE_EQUIPMENT_REQUEST,
     payload: { deleted }
@@ -266,7 +275,7 @@ export const loadAllSaga = function*(action) {
   let promise = new Promise(function(resolve) {
     setTimeout(() => {
       resolve(collection);
-    }, 2000);
+    }, 1000);
   });
 
   try {
@@ -294,14 +303,14 @@ export const deleteSaga = function*(action) {
     type: DELETE_EQUIPMENT_START
   });
 
-  let asyncNewCollection = collection.filter(item => {
-    return !action.payload.deleted.includes(item);
+  let asyncNewCollection = new OrderedMap(collection).filter(item => {
+    return !action.payload.deleted.get(item.id);
   });
 
   let promise = new Promise(function(resolve) {
     setTimeout(() => {
       resolve(asyncNewCollection);
-    }, 2000);
+    }, 1000);
   });
 
   try {
