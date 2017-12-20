@@ -69,7 +69,7 @@ class RetailEquipmentForm extends React.Component {
     this.state = {
       sn: "Данные отсутствуют",
       remain: "Данные отсутствуют",
-      location: "Данные отсутствуют",
+      location: "Москва" + "",
       date: "Данные отсутствуют",
       additionalInformation: "Данные отсутствуют"
     };
@@ -269,7 +269,6 @@ class RetailEquipmentForm extends React.Component {
         <TextField
           id="full-width"
           label="Локация"
-          value={this.state.location}
           onChange={this.handleChange("location")}
           disabled={this.isDisabledControl()}
           InputLabelProps={{
@@ -281,16 +280,15 @@ class RetailEquipmentForm extends React.Component {
           margin="normal"
         />
 
-        {/*<TextField*/}
-        {/*fullWidth*/}
-        {/*id="multiline-flexible"*/}
-        {/*label="Дополниельная информация"*/}
-        {/*disabled={this.isDisabledControl()}*/}
-        {/*multiline*/}
-        {/*rowsMax="4"*/}
-        {/*value={this.state.additionalInformation}*/}
-        {/*onChange={this.handleChange("additionalInformation")}*/}
-        {/*/>*/}
+        <TextField
+          fullWidth
+          id="multiline-flexible"
+          label="Дополниельная информация"
+          disabled={this.isDisabledControl()}
+          multiline
+          rowsMax="4"
+          onChange={this.handleChange("additionalInformation")}
+        />
 
         {this.getButtonSet()}
       </form>
