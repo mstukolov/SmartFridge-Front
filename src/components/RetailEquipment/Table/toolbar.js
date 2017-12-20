@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
 import DeleteIcon from "material-ui-icons/Delete";
 import EditIcon from "material-ui-icons/Edit";
+import MapIcon from "material-ui-icons/Map";
 import VisibilityIcon from "material-ui-icons/Visibility";
 import IconButton from "material-ui/IconButton";
 import Tooltip from "material-ui/Tooltip";
@@ -17,6 +18,8 @@ import {
   deleteEquipment,
   showEquipment
 } from "../../../ducks/RetailEquipment/table";
+import { Link } from "react-router-dom";
+import { RouteMapPage } from "../../routes/constants";
 
 const toolbarStyles = theme => ({
   root: {
@@ -108,13 +111,15 @@ class RetailEquipmentTableToolbar extends React.Component {
           {numSelected > 0 ? (
             <div className={classes.flex}>
               <Tooltip title="Просомотреть">
-                <IconButton
-                  onClick={this.handleShow}
-                  disabled={numSelected > 1 ? true : false}
-                  aria-label="Visibility"
-                >
-                  <VisibilityIcon />
-                </IconButton>
+                <div>
+                  <IconButton
+                    onClick={this.handleShow}
+                    disabled={numSelected > 1 ? true : false}
+                    aria-label="Visibility"
+                  >
+                    <VisibilityIcon />
+                  </IconButton>
+                </div>
               </Tooltip>
               {/*<Tooltip title="Редактировать">*/}
               {/*<IconButton*/}
@@ -125,6 +130,13 @@ class RetailEquipmentTableToolbar extends React.Component {
               {/*<EditIcon />*/}
               {/*</IconButton>*/}
               {/*</Tooltip>*/}
+              <Tooltip title="Просомотреть на карте">
+                <Link to={RouteMapPage}>
+                  <IconButton aria-label="Visibility on map">
+                    <MapIcon />
+                  </IconButton>
+                </Link>
+              </Tooltip>
               <Tooltip title="Удалить">
                 <IconButton onClick={this.handleDelete} aria-label="Delete">
                   <DeleteIcon />
