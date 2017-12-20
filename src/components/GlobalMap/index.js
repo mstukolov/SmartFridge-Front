@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import { loadAll } from "../../ducks/RetailEquipment/location";
 import redMarker from "./redMarker";
 import getStringPopup from "./popup";
+import history from "../../redux/history";
 
 class GlobalMap extends React.Component {
   state = {
@@ -72,9 +73,8 @@ export default connect(
 
     // Получаем активный маркер по id
     let activeMapItemId = null;
-
     if (state.equipment.selected.size) {
-      activeMapItemId = state.equipment.selected.keySeq().first();
+      activeMapItemId = history.location.pathname.split(":")[1];
     }
 
     return {
