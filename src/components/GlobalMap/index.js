@@ -29,7 +29,7 @@ class GlobalMap extends React.Component {
           attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
         />
 
-        <MarkerClusterGroup markers={this.props.items} />
+        <MarkerClusterGroup markers={this.props.items.toArray()} />
       </Map>
     );
   }
@@ -43,11 +43,13 @@ class GlobalMap extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { activeMapItem } = nextProps;
-    if (activeMapItem) {
+    const { activeMapItemId } = nextProps;
+    if (activeMapItemId) {
+      const item = nextProps.items.get(activeMapItemId);
+
       this.setState({
-        mapCenterCoordinates: [activeMapItem.lat, activeMapItem.lng],
-        zoom: 1
+        mapCenterCoordinates: [item.position[0], item.position[1]],
+        mapZoom: 8
       });
     }
   }
@@ -56,34 +58,28 @@ class GlobalMap extends React.Component {
 export default connect(
   state => {
     // Наносим маркеры на карту
-    const items = state.equipmentLocation
-      .get("collection")
-      .toArray()
-      .map(item => {
-        console.log(item);
-        let element = {
-          position: [item.lat, item.lng],
-          popup: getStringPopup(item.id)
-        };
-        // Если в списке выбранных точек есть данная, выделяем ее красным маркером
-        if (state.equipment.selected.get(item.id)) {
-          element.options = { icon: redMarker };
-        }
-        return element;
-      });
+    const items = state.equipmentLocation.get("collection").map(item => {
+      let element = {
+        position: [item.lat, item.lng],
+        popup: getStringPopup(item.id)
+      };
+      // Если в списке выбранных точек есть данная, выделяем ее красным маркером
+      if (state.equipment.selected.get(item.id)) {
+        element.options = { icon: redMarker };
+      }
+      return element;
+    });
 
-    let activeMapItem = null;
+    // Получаем активный маркер по id
+    let activeMapItemId = null;
 
     if (state.equipment.selected.size) {
-      console.log(
-        "state.equipment.selected.first() ===> ",
-        state.equipment.selected.first().id
-      );
+      activeMapItemId = state.equipment.selected.keySeq().first();
     }
 
     return {
       items,
-      activeMapItem
+      activeMapItemId
     };
   },
   { loadAll }
