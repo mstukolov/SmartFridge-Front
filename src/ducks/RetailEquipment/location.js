@@ -1,6 +1,6 @@
 import { all, takeEvery, put } from "redux-saga/effects";
 import { appName } from "../../config";
-import { List, Record } from "immutable";
+import { Map, Record } from "immutable";
 import { location as collection } from "../../fakeData";
 
 /**
@@ -18,7 +18,7 @@ export const LOAD_LOCATION_ERROR = `${prefix}/LOAD_LOCATION_ERROR`;
  * Reducer
  * */
 export const ReducerRecord = Record({
-  collection: new List([]),
+  collection: new Map({}),
   isLoading: false
 });
 
@@ -31,7 +31,7 @@ export default function reducer(state = new ReducerRecord(), action) {
     case LOAD_LOCATION_SUCCESS:
       return state
         .set("isLoading", false)
-        .set("collection", new List(payload.collection));
+        .setIn(["collection"], new Map(payload.collection));
 
     case LOAD_LOCATION_ERROR:
       return state.setIn(["error"], payload.error).set("isLoading", false);
@@ -86,7 +86,7 @@ export const loadLocationSaga = function*(action) {
 
     yield put({
       type: LOAD_LOCATION_SUCCESS,
-      payload: { collection }
+      payload: { collection: newCollection }
     });
   } catch (error) {
     yield put({

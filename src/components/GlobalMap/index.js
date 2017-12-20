@@ -44,7 +44,6 @@ class GlobalMap extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const { activeMapItem } = nextProps;
-    console.log("nex props aa ==========================>", activeMapItem);
     if (activeMapItem) {
       this.setState({
         mapCenterCoordinates: [activeMapItem.lat, activeMapItem.lng],
@@ -57,17 +56,21 @@ class GlobalMap extends React.Component {
 export default connect(
   state => {
     // Наносим маркеры на карту
-    const items = state.equipmentLocation.collection.toJS().map(item => {
-      let element = {
-        position: [item.lat, item.lng],
-        popup: getStringPopup(item.id)
-      };
-      // Если в списке выбранных точек есть данная, выделяем ее красным маркером
-      if (state.equipment.selected.get(item.id)) {
-        element.options = { icon: redMarker };
-      }
-      return element;
-    });
+    const items = state.equipmentLocation
+      .get("collection")
+      .toArray()
+      .map(item => {
+        console.log(item);
+        let element = {
+          position: [item.lat, item.lng],
+          popup: getStringPopup(item.id)
+        };
+        // Если в списке выбранных точек есть данная, выделяем ее красным маркером
+        if (state.equipment.selected.get(item.id)) {
+          element.options = { icon: redMarker };
+        }
+        return element;
+      });
 
     let activeMapItem = null;
 

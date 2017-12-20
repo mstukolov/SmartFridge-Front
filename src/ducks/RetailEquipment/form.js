@@ -61,11 +61,9 @@ export default (state = defaultForm, action) => {
       return state.setIn(["error"], payload.error).set("isLoading", false);
 
     case SHOW_EQUIPMENT:
-      console.log(payload.id);
       return state.setIn(["edit"], false).set("saved", false);
 
     case EDIT_EQUIPMENT:
-      console.log(payload.id);
       return state.setIn(["edit"], true).set("saved", false);
 
     case CANCEL_EQUIPMENT:
