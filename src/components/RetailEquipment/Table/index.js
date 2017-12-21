@@ -27,6 +27,10 @@ import Moment from "react-moment";
 import RetailEquipmentTableHead from "./head";
 import RetailEquipmentTableToolbar from "./toolbar";
 import SimpleSnackbar from "../../SimpleSnackbar/index";
+import TrendingUpIcon from "material-ui-icons/TrendingUp";
+import TrendingDownIcon from "material-ui-icons/TrendingDown";
+import red from "material-ui/colors/red";
+import green from "material-ui/colors/green";
 
 const styles = theme => ({
   root: {
@@ -42,6 +46,12 @@ const styles = theme => ({
   },
   preloader: {
     height: "5px"
+  },
+  refillIconUp: {
+    color: green[500]
+  },
+  refillIconDown: {
+    color: red[500]
   }
 });
 
@@ -225,12 +235,24 @@ class RetailEquipmentTable extends React.Component {
 
                       <TableCell padding="none">{n.sn}</TableCell>
 
-                      <TableCell numeric>{n.remain}</TableCell>
+                      <TableCell>{n.commercialNetwork}</TableCell>
 
-                      <TableCell>Москва</TableCell>
+                      <TableCell numeric>{n.remain}%</TableCell>
+
+                      <TableCell padding="checkbox">
+                        {n.refill ? (
+                          <TrendingUpIcon className={classes.refillIconUp} />
+                        ) : (
+                          <TrendingDownIcon
+                            className={classes.refillIconDown}
+                          />
+                        )}
+                      </TableCell>
 
                       <TableCell numeric>
-                        <Moment>{n.date}</Moment>
+                        <Moment format="DD/MM/YYYY HH:MM">
+                          {n.dateUpdate}
+                        </Moment>
                       </TableCell>
                     </TableRow>
                   );
