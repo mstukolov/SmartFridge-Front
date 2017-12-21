@@ -39,7 +39,7 @@ const columnData = [
 
   {
     id: "refill",
-    numeric: true,
+    numeric: false,
     disablePadding: true,
     label: "Пополнение"
   },
@@ -47,7 +47,7 @@ const columnData = [
     id: "dateUpdate",
     numeric: true,
     disablePadding: false,
-    label: "Время изменения"
+    label: "Время изменерения"
   }
 ];
 

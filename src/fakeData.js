@@ -11,27 +11,29 @@ function randomDate(start, end) {
 }
 
 function randomCommercialNetwork() {
-  return commercialNetworks[randomInteger(0, 3)];
+  return commercialNetworks[
+    Object.keys(commercialNetworks)[randomInteger(0, 3)]
+  ];
 }
 
-export const commercialNetworks = [
-  {
+export const commercialNetworks = {
+  Aschan_ID: {
     id: "Aschan_ID",
     name: "Ашан"
   },
-  {
+  OK_ID: {
     id: "OK_ID",
     name: "ОК"
   },
-  {
+  "5_ID": {
     id: "5_ID",
     name: "Пятерочка"
   },
-  {
+  Perekrestok_ID: {
     id: "Perekrestok_ID",
     name: "Перекресток"
   }
-];
+};
 
 export const tradePoints = {};
 

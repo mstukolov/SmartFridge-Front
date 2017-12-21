@@ -19,6 +19,12 @@ import SimpleSnackbar from "../../SimpleSnackbar";
 import LinearQuery from "../../LinearQuery/index";
 import { RouteEquipmentPage } from "../../routes/constants";
 import CircularSaveButton from "../../CircularSaveButton";
+import moment from "moment";
+import TrendingUpIcon from "material-ui-icons/TrendingUp";
+import TrendingDownIcon from "material-ui-icons/TrendingDown";
+import red from "material-ui/colors/red";
+import green from "material-ui/colors/green";
+import Tooltip from "material-ui/Tooltip";
 
 const styles = theme => ({
   container: {
@@ -56,6 +62,12 @@ const styles = theme => ({
     top: "-10px",
     height: "5px",
     width: "100%"
+  },
+  refillIconUp: {
+    color: green[500]
+  },
+  refillIconDown: {
+    color: red[500]
   }
 });
 
@@ -172,17 +184,21 @@ class RetailEquipmentForm extends React.Component {
     if (nextProps.fridge) {
       const {
         sn,
+        commercialNetwork,
         remain,
+        refill,
         location,
-        date,
+        dateUpdate,
         additionalInformation
       } = nextProps.fridge;
 
       this.setState({
         sn,
+        commercialNetwork,
         remain,
+        refill,
         location,
-        date,
+        dateUpdate,
         additionalInformation
       });
     }
@@ -253,6 +269,38 @@ class RetailEquipmentForm extends React.Component {
 
         <TextField
           id="full-width"
+          label="Торговая сеть"
+          onChange={this.handleChange("commercialNetwork")}
+          name={"serial"}
+          value={this.state.commercialNetwork}
+          disabled={this.isDisabledControl()}
+          InputLabelProps={{
+            shrink: true
+          }}
+          placeholder=""
+          helperText="15 символов"
+          fullWidth
+          margin="normal"
+        />
+
+        <TextField
+          id="full-width"
+          label="Торговая точка"
+          // onChange={this.handleChange("commercialNetwork")}
+          // name={"serial"}
+          // value={this.state.commercialNetwork}
+          disabled={this.isDisabledControl()}
+          InputLabelProps={{
+            shrink: true
+          }}
+          placeholder=""
+          helperText="15 символов"
+          fullWidth
+          margin="normal"
+        />
+
+        <TextField
+          id="full-width"
           label="Процент наполнения"
           value={this.state.remain}
           onChange={this.handleChange("remain")}
@@ -265,6 +313,49 @@ class RetailEquipmentForm extends React.Component {
           fullWidth
           margin="normal"
         />
+
+        <TextField
+          id="datetime-local"
+          label="Последнее измерение"
+          type="datetime-local"
+          defaultValue={moment(this.state.dateUpdate).format(
+            "YYYY-MM-DDThh:mm"
+          )}
+          disabled={this.isDisabledControl()}
+          InputLabelProps={{
+            shrink: true
+          }}
+        />
+
+        {this.state.refill ? (
+          <Tooltip
+            id="tooltip-icon"
+            title="Остаток пополнился"
+            placement="bottom"
+          >
+            <TrendingUpIcon
+              style={{
+                width: 48,
+                height: 48
+              }}
+              className={classes.refillIconUp}
+            />
+          </Tooltip>
+        ) : (
+          <Tooltip
+            id="tooltip-icon"
+            title="Остаток уменьшился"
+            placement="bottom"
+          >
+            <TrendingDownIcon
+              style={{
+                width: 48,
+                height: 48
+              }}
+              className={classes.refillIconDown}
+            />
+          </Tooltip>
+        )}
 
         <TextField
           id="full-width"

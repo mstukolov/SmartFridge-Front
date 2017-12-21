@@ -1,5 +1,5 @@
 import { appName } from "../../config";
-import { Record, List, Map, OrderedMap } from "immutable";
+import { Record, Map, OrderedMap } from "immutable";
 import { createSelector } from "reselect";
 import { equipment as collection } from "../../fakeData";
 import history from "../../redux/history";
