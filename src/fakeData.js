@@ -37,6 +37,14 @@ export const commercialNetworks = {
 
 export const tradePoints = {};
 
+for (let i = 0; i < 20; i++) {
+  tradePoints[`point_${i}_ID`] = {
+    id: `point_${i}_ID`,
+    name: `Торговая точка № ${i}`
+  };
+}
+console.log("tradePoints", tradePoints);
+
 export const equipment = {
   "5499b724-c331-4f29-b25f-55583c0ece34": {
     id: "5499b724-c331-4f29-b25f-55583c0ece34",

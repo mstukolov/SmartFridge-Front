@@ -20,6 +20,7 @@ import {
 } from "../../../ducks/RetailEquipment/table";
 import { Link } from "react-router-dom";
 import { RouteMapPage } from "../../routes/constants";
+import RetailEquipmentTableFilters from "./filters";
 
 const toolbarStyles = theme => ({
   root: {
@@ -46,7 +47,8 @@ const toolbarStyles = theme => ({
   },
 
   flex: {
-    display: "flex"
+    display: "flex",
+    alignItems: "center"
   }
 });
 
@@ -57,6 +59,9 @@ const toolbarStyles = theme => ({
  */
 
 class RetailEquipmentTableToolbar extends React.Component {
+  state = {
+    showFilters: false
+  };
   /**
    * Функция обработки удаления списка выделленных элементов
    * @param  {SynteticEvent} ev React событие
@@ -83,7 +88,15 @@ class RetailEquipmentTableToolbar extends React.Component {
   // handleEdit = ev => {
   //   this.props.editEquipment(this.props.selected.first()["id"]);
   // };
-
+  /**
+   * Блокирует клик по кнопке просмотра/редактирования
+   * @param  {SynteticEvent} ev React событие
+   * @return {void}
+   */
+  toggleFilters = ev => {
+    ev.preventDefault();
+    this.setState({ showFilters: !this.state.showFilters });
+  };
   /**
    * render
    * @return {ReactElement} разметка React
@@ -144,11 +157,14 @@ class RetailEquipmentTableToolbar extends React.Component {
               </Tooltip>
             </div>
           ) : (
-            <Tooltip title="Фильтры">
-              <IconButton aria-label="Фильтры">
-                <FilterListIcon />
-              </IconButton>
-            </Tooltip>
+            <div className={classes.flex}>
+              {this.state.showFilters ? <RetailEquipmentTableFilters /> : null}
+              <Tooltip title="Фильтры">
+                <IconButton onClick={this.toggleFilters} aria-label="Фильтры">
+                  <FilterListIcon />
+                </IconButton>
+              </Tooltip>
+            </div>
           )}
         </div>
       </Toolbar>

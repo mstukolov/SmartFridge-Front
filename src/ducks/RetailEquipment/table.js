@@ -1,7 +1,11 @@
 import { appName } from "../../config";
 import { Record, Map, OrderedMap } from "immutable";
 import { createSelector } from "reselect";
-import { equipment as collection } from "../../fakeData";
+import {
+  equipment as collection,
+  tradePoints,
+  commercialNetworks
+} from "../../fakeData";
 import history from "../../redux/history";
 import { all, takeEvery, put } from "redux-saga/effects";
 import { RouteEquipmentPage } from "../../components/routes/constants";
@@ -27,6 +31,7 @@ export const SELECT_EQUIPMENT = `${prefix}/SELECT_EQUIPMENT`;
 export const SELECT_ALL_EQUIPMENT = `${prefix}/SELECT_ALL_EQUIPMENT`;
 
 export const ORDER_BY = `${prefix}/ORDER_BY`;
+export const FILTER_BY = `${prefix}/FILTER_BY`;
 
 /**
  * Reducer
@@ -34,10 +39,16 @@ export const ORDER_BY = `${prefix}/ORDER_BY`;
 let DefaulrReducerState = new Record({
   isLoading: false,
   collection: new OrderedMap({}),
+  commercialNetworks: null,
+  tradePoints: null,
   selected: new Map({}),
   orderData: new Map({
     order: "asc",
     orderBy: "model"
+  }),
+  filters: new Map({
+    commercialNetworks: "",
+    tradePoints: ""
   }),
   error: null
 });
@@ -55,7 +66,9 @@ export default function reducer(state = defaultState, action) {
     case LOAD_ALL_EQUIPMENT_SUCCESS:
       return state
         .set("isLoading", false)
-        .set("collection", new OrderedMap(payload.collection));
+        .set("collection", new OrderedMap(payload.collection))
+        .set("commercialNetworks", new Map(commercialNetworks))
+        .set("tradePoints", new Map(tradePoints));
 
     case LOAD_ALL_EQUIPMENT_ERROR:
       return state.setIn(["error"], payload.error).set("isLoading", false);
@@ -130,6 +143,16 @@ export default function reducer(state = defaultState, action) {
       );
       return orderedState;
 
+    case FILTER_BY:
+      const { filter } = payload;
+      let newFilter = {
+        commercialNetworks: filter.commercialNetworks || "",
+        tradePoints: filter.tradePoints || ""
+      };
+      return state
+        .setIn(["filters"], newFilter)
+        .set("collection", new OrderedMap([]));
+
     default:
       const orderDataStorage = localStorage.getItem(
         "RetailEquipmentTableOrderData"
@@ -185,7 +208,6 @@ export const orderedRowsSelector = createSelector(
  * @return {Object}    объект экшена
  */
 export function deleteEquipment(deleted) {
-  console.log("deleted ()-->", deleted);
   const action = {
     type: DELETE_EQUIPMENT_REQUEST,
     payload: { deleted }
@@ -242,6 +264,22 @@ export function sortOrderBy(property) {
     type: ORDER_BY,
     payload: {
       property
+    }
+  };
+
+  return action;
+}
+
+/**
+ * Создает сортировки по полю
+ * @param  {String} id удаляемой статьи
+ * @return {Object}    объект экшена
+ */
+export function filterEquipment(filter) {
+  const action = {
+    type: FILTER_BY,
+    payload: {
+      filter
     }
   };
 
