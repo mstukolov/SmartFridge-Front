@@ -102,7 +102,7 @@ class RetailEquipmentTableToolbar extends React.Component {
    * @return {ReactElement} разметка React
    */
   render() {
-    const { numSelected, classes } = this.props;
+    const { numSelected, classes, loading } = this.props;
 
     return (
       <Toolbar
@@ -160,7 +160,11 @@ class RetailEquipmentTableToolbar extends React.Component {
             <div className={classes.flex}>
               {this.state.showFilters ? <RetailEquipmentTableFilters /> : null}
               <Tooltip title="Фильтры">
-                <IconButton onClick={this.toggleFilters} aria-label="Фильтры">
+                <IconButton
+                  disabled={loading}
+                  onClick={this.toggleFilters}
+                  aria-label="Фильтры"
+                >
                   <FilterListIcon />
                 </IconButton>
               </Tooltip>

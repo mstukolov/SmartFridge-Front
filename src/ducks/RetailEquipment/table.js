@@ -3,11 +3,12 @@ import { Record, Map, OrderedMap } from "immutable";
 import { createSelector } from "reselect";
 import {
   equipment as collection,
-  tradePoints,
-  commercialNetworks
+  tradePoint,
+  commercialNetwork
 } from "../../fakeData";
 import history from "../../redux/history";
 import { all, takeEvery, put } from "redux-saga/effects";
+import { delay } from "redux-saga";
 import { RouteEquipmentPage } from "../../components/routes/constants";
 
 /**
@@ -39,16 +40,16 @@ export const FILTER_BY = `${prefix}/FILTER_BY`;
 let DefaulrReducerState = new Record({
   isLoading: false,
   collection: new OrderedMap({}),
-  commercialNetworks: null,
-  tradePoints: null,
+  commercialNetwork: null,
+  tradePoint: null,
   selected: new Map({}),
   orderData: new Map({
     order: "asc",
     orderBy: "model"
   }),
   filters: new Map({
-    commercialNetworks: "",
-    tradePoints: ""
+    commercialNetwork: "",
+    tradePoint: ""
   }),
   error: null
 });
@@ -67,8 +68,8 @@ export default function reducer(state = defaultState, action) {
       return state
         .set("isLoading", false)
         .set("collection", new OrderedMap(payload.collection))
-        .set("commercialNetworks", new Map(commercialNetworks))
-        .set("tradePoints", new Map(tradePoints));
+        .set("commercialNetwork", new Map(commercialNetwork))
+        .set("tradePoint", new Map(tradePoint));
 
     case LOAD_ALL_EQUIPMENT_ERROR:
       return state.setIn(["error"], payload.error).set("isLoading", false);
@@ -146,12 +147,10 @@ export default function reducer(state = defaultState, action) {
     case FILTER_BY:
       const { filter } = payload;
       let newFilter = {
-        commercialNetworks: filter.commercialNetworks || "",
-        tradePoints: filter.tradePoints || ""
+        commercialNetwork: filter.commercialNetwork || "",
+        tradePoint: filter.tradePoint || ""
       };
-      return state
-        .setIn(["filters"], newFilter)
-        .set("collection", new OrderedMap([]));
+      return state.setIn(["filters"], new Map(newFilter));
 
     default:
       const orderDataStorage = localStorage.getItem(
@@ -176,15 +175,41 @@ export default function reducer(state = defaultState, action) {
 /**
  * Selectors
  * */
+
+const filtersStateGetter = state => state.equipment.get("filters");
 const rowsGetter = state => state.equipment.get("collection");
-const orderstateGetter = state => state.equipment.get("orderData");
+
+export const filteredRowsSelector = createSelector(
+  [filtersStateGetter, rowsGetter],
+  (filters, collection) => {
+    let filteredCollection = collection.toArray();
+    const { commercialNetwork, tradePoint } = filters.toJS();
+
+    if (commercialNetwork) {
+      return filteredCollection.filter(item => {
+        return item.commercialNetwork === commercialNetwork;
+      });
+    }
+
+    if (tradePoint) {
+      return filteredCollection.filter(item => {
+        return item.tradePoint === tradePoint;
+      });
+    }
+
+    return filteredCollection;
+  }
+);
+
+const orderStateGetter = state => state.equipment.get("orderData");
 
 export const orderedRowsSelector = createSelector(
-  rowsGetter,
-  orderstateGetter,
+  filteredRowsSelector,
+  orderStateGetter,
   (collection, orderData) => {
+    console.log(collection);
     const orderBy = orderData.get("orderBy");
-    let sortedCollection = collection.toArray();
+    let sortedCollection = collection;
 
     if (orderData.get("order") === "desc") {
       return sortedCollection.sort(
@@ -311,11 +336,10 @@ export const loadAllSaga = function*(action) {
   });
 
   let promise = new Promise(function(resolve) {
-    setTimeout(() => {
-      resolve(collection);
-      console.log(collection);
-    }, 1000);
+    resolve(collection);
   });
+
+  yield delay(3000);
 
   try {
     //TODO: Здесь сделать нормальную логику запроса данных
@@ -347,10 +371,10 @@ export const deleteSaga = function*(action) {
   });
 
   let promise = new Promise(function(resolve) {
-    setTimeout(() => {
-      resolve(asyncNewCollection);
-    }, 1000);
+    resolve(asyncNewCollection);
   });
+
+  yield delay(1000);
 
   try {
     //TODO: Здесь сделать нормальную логику запроса данных

@@ -2,6 +2,7 @@
 import { Record, OrderedMap } from "immutable";
 import { appName } from "../../config";
 import { all, put, takeEvery } from "redux-saga/effects";
+import { delay } from "redux-saga";
 import { equipment } from "../../fakeData";
 
 /**
@@ -164,10 +165,10 @@ export const loadSaga = function*(action) {
   });
 
   let promise = new Promise(function(resolve) {
-    setTimeout(() => {
-      resolve(activeItem);
-    }, 2000);
+    resolve(activeItem);
   });
+
+  yield delay(1000);
 
   try {
     //TODO: Здесь сделать нормальную логику запроса данных
@@ -198,10 +199,9 @@ export const saveEditSaga = function*(action) {
   });
 
   let promise = new Promise(function(resolve) {
-    setTimeout(() => {
-      resolve(editItem);
-    }, 2000);
+    resolve(editItem);
   });
+  yield delay(1000);
 
   try {
     //TODO: Здесь сделать нормальную логику запроса данных

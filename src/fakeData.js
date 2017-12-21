@@ -11,12 +11,10 @@ function randomDate(start, end) {
 }
 
 function randomCommercialNetwork() {
-  return commercialNetworks[
-    Object.keys(commercialNetworks)[randomInteger(0, 3)]
-  ];
+  return commercialNetwork[Object.keys(commercialNetwork)[randomInteger(0, 3)]];
 }
 
-export const commercialNetworks = {
+export const commercialNetwork = {
   Aschan_ID: {
     id: "Aschan_ID",
     name: "Ашан"
@@ -35,15 +33,15 @@ export const commercialNetworks = {
   }
 };
 
-export const tradePoints = {};
+export const tradePoint = {};
 
 for (let i = 0; i < 20; i++) {
-  tradePoints[`point_${i}_ID`] = {
+  tradePoint[`point_${i}_ID`] = {
     id: `point_${i}_ID`,
     name: `Торговая точка № ${i}`
   };
 }
-console.log("tradePoints", tradePoints);
+console.log("tradePoint", tradePoint);
 
 export const equipment = {
   "5499b724-c331-4f29-b25f-55583c0ece34": {

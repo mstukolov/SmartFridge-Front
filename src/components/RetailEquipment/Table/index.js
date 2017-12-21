@@ -20,7 +20,8 @@ import {
   selectEquipment,
   selectAllEquipment,
   sortOrderBy,
-  orderedRowsSelector
+  orderedRowsSelector,
+  filteredRowsSelector
 } from "../../../ducks/RetailEquipment/table";
 import LinearQuery from "../../LinearQuery/index";
 import Moment from "react-moment";
