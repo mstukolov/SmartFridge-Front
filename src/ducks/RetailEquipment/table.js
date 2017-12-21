@@ -275,6 +275,7 @@ export const loadAllSaga = function*(action) {
   let promise = new Promise(function(resolve) {
     setTimeout(() => {
       resolve(collection);
+      console.log(collection);
     }, 1000);
   });
 
