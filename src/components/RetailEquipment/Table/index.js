@@ -20,8 +20,9 @@ import {
   selectEquipment,
   selectAllEquipment,
   sortOrderBy,
-  orderedRowsSelector,
-  filteredRowsSelector
+  commercialNetworkSelector,
+  tradePointSelector,
+  orderedFilterRowsSelector
 } from "../../../ducks/RetailEquipment/table";
 import LinearQuery from "../../LinearQuery/index";
 import Moment from "react-moment";
@@ -32,10 +33,11 @@ import TrendingUpIcon from "material-ui-icons/TrendingUp";
 import TrendingDownIcon from "material-ui-icons/TrendingDown";
 import red from "material-ui/colors/red";
 import green from "material-ui/colors/green";
+import { getName } from "../../../utils";
 
 const styles = theme => ({
   root: {
-    maxWidth: 800,
+    maxWidth: 900,
     margin: "auto"
   },
   table: {
@@ -236,8 +238,6 @@ class RetailEquipmentTable extends React.Component {
 
                       <TableCell padding="none">{n.sn}</TableCell>
 
-                      <TableCell>{n.commercialNetwork}</TableCell>
-
                       <TableCell numeric>{n.remain}%</TableCell>
 
                       <TableCell padding="checkbox">
@@ -248,6 +248,14 @@ class RetailEquipmentTable extends React.Component {
                             className={classes.refillIconDown}
                           />
                         )}
+                      </TableCell>
+
+                      <TableCell>
+                        {getName(n.commercialNetwork, this.props.networks)}
+                      </TableCell>
+
+                      <TableCell padding="none">
+                        {getName(n.tradePoint, this.props.points)}
                       </TableCell>
 
                       <TableCell numeric>
@@ -289,13 +297,15 @@ RetailEquipmentTable.propTypes = {
 
 export default connect(
   state => {
+    console.log("tradePointSelector(state)", orderedFilterRowsSelector(state));
     return {
-      data: orderedRowsSelector(state),
+      data: orderedFilterRowsSelector(state),
+      networks: commercialNetworkSelector(state),
+      points: tradePointSelector(state),
       selected: state.equipment.selected,
       loading: state.equipment.isLoading,
       order: state.equipment.orderData.get("order"),
       orderBy: state.equipment.orderData.get("orderBy"),
-      vocabulary: state.vocabulary,
       error: state.equipment.error
     };
   },

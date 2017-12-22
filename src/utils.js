@@ -52,3 +52,19 @@ export function randomInteger(min, max) {
   rand = Math.floor(rand);
   return rand;
 }
+
+/**
+ * Получаем имя по id
+ * @param  {String} id идентификатор
+ * @param  {Array} arr массив объектов с полями name, id
+ * @return {String} имя по id
+ */
+export function getName(id, arr) {
+  let name = "";
+  try {
+    name = arr.find(item => item.id === id).name;
+  } catch (e) {
+    name = "Нет данных";
+  }
+  return name;
+}

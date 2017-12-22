@@ -10,6 +10,7 @@ import history from "../../redux/history";
 import { all, takeEvery, put } from "redux-saga/effects";
 import { delay } from "redux-saga";
 import { RouteEquipmentPage } from "../../components/routes/constants";
+import { getName } from "../../utils";
 
 /**
  * Constants
@@ -40,8 +41,8 @@ export const FILTER_BY = `${prefix}/FILTER_BY`;
 let DefaulrReducerState = new Record({
   isLoading: false,
   collection: new OrderedMap({}),
-  commercialNetwork: null,
-  tradePoint: null,
+  commercialNetwork: new Map({}),
+  tradePoint: new Map({}),
   selected: new Map({}),
   orderData: new Map({
     order: "asc",
@@ -146,11 +147,9 @@ export default function reducer(state = defaultState, action) {
 
     case FILTER_BY:
       const { filter } = payload;
-      let newFilter = {
-        commercialNetwork: filter.commercialNetwork || "",
-        tradePoint: filter.tradePoint || ""
-      };
-      return state.setIn(["filters"], new Map(newFilter));
+      console.log("fiter  ", filter);
+
+      return state.mergeIn(["filters"], new Map(filter));
 
     default:
       const orderDataStorage = localStorage.getItem(
@@ -176,6 +175,31 @@ export default function reducer(state = defaultState, action) {
  * Selectors
  * */
 
+//Селектор данных торговых сетей
+const commercialNetworkGetter = state =>
+  state.equipment.get("commercialNetwork");
+
+export const commercialNetworkSelector = createSelector(
+  commercialNetworkGetter,
+  networks => networks.toArray()
+);
+
+//Селектор данных торговых точек
+const tradePointGetter = state => state.equipment.get("tradePoint");
+
+export const tradePointSelector = createSelector(tradePointGetter, points =>
+  points.toArray()
+);
+
+//Селектор данных торговых точек
+const filtersDataGetter = state => state.equipment.get("filters");
+
+export const filtersDataSelector = createSelector(
+  filtersDataGetter,
+  filtersData => filtersData.toJS()
+);
+
+// Селектор фильтров
 const filtersStateGetter = state => state.equipment.get("filters");
 const rowsGetter = state => state.equipment.get("collection");
 
@@ -201,26 +225,48 @@ export const filteredRowsSelector = createSelector(
   }
 );
 
+// Селектор сортировки в комбинации с фильтрами
 const orderStateGetter = state => state.equipment.get("orderData");
 
-export const orderedRowsSelector = createSelector(
+export const orderedFilterRowsSelector = createSelector(
   filteredRowsSelector,
+  commercialNetworkSelector,
   orderStateGetter,
-  (collection, orderData) => {
-    console.log(collection);
+  (collection, networks, orderData) => {
     const orderBy = orderData.get("orderBy");
     let sortedCollection = collection;
 
-    if (orderData.get("order") === "desc") {
-      return sortedCollection.sort(
-        (a, b) => (b[orderBy] < a[orderBy] ? -1 : 1)
-      );
-    } else {
-      return sortedCollection.sort(
-        (a, b) => (a[orderBy] < b[orderBy] ? -1 : 1)
-      );
-    } // eslint-disable-next-line
-    return sortedCollection;
+    switch (orderBy) {
+      case "sn":
+        orderData.get("order") === "desc"
+          ? sortedCollection.sort().reverse()
+          : sortedCollection.sort();
+        return sortedCollection;
+
+      case "tradePoint":
+      case "commercialNetwork":
+        return orderData.get("order") === "desc"
+          ? sortedCollection.sort(
+              (a, b) =>
+                getName(b[orderBy], networks) < getName(a[orderBy], networks)
+                  ? -1
+                  : 1
+            )
+          : sortedCollection.sort(
+              (a, b) =>
+                getName(a[orderBy], networks) < getName(b[orderBy], networks)
+                  ? -1
+                  : 1
+            );
+      case "remain":
+      case "refill":
+      case "dateUpdate":
+      default:
+        orderData.get("order") === "asc"
+          ? sortedCollection.sort((a, b) => b[orderBy] - a[orderBy])
+          : sortedCollection.sort((a, b) => a[orderBy] - b[orderBy]);
+        return sortedCollection;
+    }
   }
 );
 

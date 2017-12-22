@@ -23,13 +23,6 @@ const columnData = [
     disablePadding: true,
     label: "Серийный номер"
   },
-
-  {
-    id: "commercialNetwork",
-    numeric: false,
-    disablePadding: false,
-    label: "Торговая сеть"
-  },
   {
     id: "remain",
     numeric: true,
@@ -43,6 +36,21 @@ const columnData = [
     disablePadding: true,
     label: "Пополнение"
   },
+
+  {
+    id: "commercialNetwork",
+    numeric: false,
+    disablePadding: false,
+    label: "Торговая сеть"
+  },
+
+  {
+    id: "tradePoint",
+    numeric: false,
+    disablePadding: true,
+    label: "Торговая точка"
+  },
+
   {
     id: "dateUpdate",
     numeric: true,

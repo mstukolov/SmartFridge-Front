@@ -1152,9 +1152,9 @@
                   "line": 23,
                   "column": 21
                 },
-                "identifierName": "orderedRowsSelector"
+                "identifierName": "orderedFilterRowsSelector"
               },
-              "name": "orderedRowsSelector"
+              "name": "orderedFilterRowsSelector"
             },
             "importKind": null,
             "local": {
@@ -1170,9 +1170,9 @@
                   "line": 23,
                   "column": 21
                 },
-                "identifierName": "orderedRowsSelector"
+                "identifierName": "orderedFilterRowsSelector"
               },
-              "name": "orderedRowsSelector"
+              "name": "orderedFilterRowsSelector"
             }
           }
         ],
@@ -1340,7 +1340,7 @@
         "trailingComments": [
           {
             "type": "CommentLine",
-            "value": " import { orderedRowsSelector } from \"../../redux/selectors\";",
+            "value": " import { orderedFilterRowsSelector } from \"../../redux/selectors\";",
             "start": 692,
             "end": 755,
             "loc": {
@@ -1430,7 +1430,7 @@
         "leadingComments": [
           {
             "type": "CommentLine",
-            "value": " import { orderedRowsSelector } from \"../../redux/selectors\";",
+            "value": " import { orderedFilterRowsSelector } from \"../../redux/selectors\";",
             "start": 692,
             "end": 755,
             "loc": {
@@ -15223,9 +15223,9 @@
                                     "line": 269,
                                     "column": 31
                                   },
-                                  "identifierName": "orderedRowsSelector"
+                                  "identifierName": "orderedFilterRowsSelector"
                                 },
-                                "name": "orderedRowsSelector"
+                                "name": "orderedFilterRowsSelector"
                               },
                               "arguments": [
                                 {
@@ -16320,7 +16320,7 @@
     },
     {
       "type": "CommentLine",
-      "value": " import { orderedRowsSelector } from \"../../redux/selectors\";",
+      "value": " import { orderedFilterRowsSelector } from \"../../redux/selectors\";",
       "start": 692,
       "end": 755,
       "loc": {
@@ -18419,7 +18419,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "orderedRowsSelector",
+      "value": "orderedFilterRowsSelector",
       "start": 563,
       "end": 582,
       "loc": {
@@ -18805,7 +18805,7 @@
     },
     {
       "type": "CommentLine",
-      "value": " import { orderedRowsSelector } from \"../../redux/selectors\";",
+      "value": " import { orderedFilterRowsSelector } from \"../../redux/selectors\";",
       "start": 692,
       "end": 755,
       "loc": {
@@ -44827,7 +44827,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "orderedRowsSelector",
+      "value": "orderedFilterRowsSelector",
       "start": 8049,
       "end": 8068,
       "loc": {

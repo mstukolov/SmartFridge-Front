@@ -1,5 +1,5 @@
 function randomInteger(min, max) {
-  var rand = min + Math.random() * (max + 1 - min);
+  let rand = min + Math.random() * (max + 1 - min);
   rand = Math.floor(rand);
   return rand;
 }
@@ -17,31 +17,42 @@ function randomCommercialNetwork() {
 export const commercialNetwork = {
   Aschan_ID: {
     id: "Aschan_ID",
-    name: "Ашан"
+    name: "Ашан",
+    tradePoints: []
   },
   OK_ID: {
     id: "OK_ID",
-    name: "ОК"
+    name: "ОК",
+    tradePoints: []
   },
   "5_ID": {
     id: "5_ID",
-    name: "Пятерочка"
+    name: "Пятерочка",
+    tradePoints: []
   },
   Perekrestok_ID: {
     id: "Perekrestok_ID",
-    name: "Перекресток"
+    name: "Перекресток",
+    tradePoints: []
   }
 };
 
 export const tradePoint = {};
 
 for (let i = 0; i < 20; i++) {
-  tradePoint[`point_${i}_ID`] = {
+  let pointId = `point_${i}_ID`;
+  let point = {
     id: `point_${i}_ID`,
     name: `Торговая точка № ${i}`
   };
+  if (i < 5) commercialNetwork["Aschan_ID"].tradePoints.push(pointId);
+  if (i > 4 && i <= 9) commercialNetwork["OK_ID"].tradePoints.push(pointId);
+  if (i > 9 && i <= 14) commercialNetwork["5_ID"].tradePoints.push(pointId);
+  if (i > 14 && i <= 19)
+    commercialNetwork["Perekrestok_ID"].tradePoints.push(pointId);
+
+  tradePoint[pointId] = point;
 }
-console.log("tradePoint", tradePoint);
 
 export const equipment = {
   "5499b724-c331-4f29-b25f-55583c0ece34": {
@@ -945,6 +956,43 @@ export const equipment = {
     commercialNetwork: randomCommercialNetwork().id
   }
 };
+
+// for (let key in equipment) {
+//   switch (equipment[key].commercialNetwork) {
+//     case "Aschan_ID":
+//       equipment[key].tradePoint = `point_${randomInteger(0, 4)}_ID`;
+//       break;
+//
+//     case "OK_ID":
+//       equipment[key].tradePoint = `point_${randomInteger(5, 9)}_ID`;
+//       break;
+//
+//     case "5_ID":
+//       equipment[key].tradePoint = `point_${randomInteger(10, 14)}_ID`;
+//       break;
+//
+//     case "Perekrestok_ID":
+//       equipment[key].tradePoint = `point_${randomInteger(15, 19)}_ID`;
+//       break;
+//   }
+// }
+//
+// Aschan_ID: {
+//     id: "Aschan_ID",
+//         name: "Ашан"
+// },
+// OK_ID: {
+//     id: "OK_ID",
+//         name: "ОК"
+// },
+// "5_ID": {
+//     id: "5_ID",
+//         name: "Пятерочка"
+// },
+// Perekrestok_ID: {
+//     id: "Perekrestok_ID",
+//         name: "Перекресток"
+// }
 
 export const location = {
   "5499b724-c331-4f29-b25f-55583c0ece34": {

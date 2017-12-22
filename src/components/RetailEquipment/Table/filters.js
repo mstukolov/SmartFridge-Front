@@ -3,7 +3,11 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { filterEquipment } from "../../../ducks/RetailEquipment/table";
 import { withStyles } from "material-ui/styles";
-
+import {
+  commercialNetworkSelector,
+  tradePointSelector,
+  filtersDataSelector
+} from "../../../ducks/RetailEquipment/table";
 import Input, { InputLabel } from "material-ui/Input";
 import { MenuItem } from "material-ui/Menu";
 import { FormControl } from "material-ui/Form";
@@ -22,18 +26,30 @@ const styles = theme => ({
   }
 });
 
+/**
+ * Компонент фильтров для таблицы
+ * @extends React
+ */
 class RetailEquipmentTableFilters extends Component {
   state = {
     commercialNetwork: "",
     tradePoint: ""
   };
 
+  /**
+   * Обработка изменения значений выпадающего списка
+   * @param {SytheticEvent} event    событие react
+   * @return {void}
+   */
   handleChange = event => {
-    console.log({ [event.target.name]: event.target.value });
     this.setState({ [event.target.name]: event.target.value });
+    // отправляем изменения параметров фильтрации в стор
     this.props.filterEquipment({ [event.target.name]: event.target.value });
   };
-
+  /**
+   * Получаем значения селектов торговых сетей из стора
+   * @return {ReactElement} разметка React
+   */
   getNetworkItems = () => {
     return this.props.commercialNetwork.map(item => {
       return (
@@ -43,17 +59,33 @@ class RetailEquipmentTableFilters extends Component {
       );
     });
   };
-
+  /**
+   * Получаем значения селектов торговых точек из стора
+   * @return {ReactElement} разметка React
+   */
   getTradePoints = () => {
-    return this.props.tradePoint.map(item => {
-      return (
-        <MenuItem key={item.id} value={item.id}>
-          {item.name}
-        </MenuItem>
+    try {
+      const networkId = this.props.filters.commercialNetwork;
+      const commercialNetworks = this.props.commercialNetwork;
+      const commercialNetwork = commercialNetworks.find(
+        item => item.id === networkId
       );
-    });
-  };
 
+      return commercialNetwork.tradePoints.map(item => {
+        const point = this.props.tradePoint.find(point => point.id === item);
+
+        return (
+          <MenuItem key={point.id} value={point.id}>
+            {point.name}
+          </MenuItem>
+        );
+      });
+    } catch (e) {}
+  };
+  /**
+   * render
+   * @return {ReactElement} разметка React
+   */
   render() {
     const { classes } = this.props;
     return (
@@ -103,8 +135,9 @@ RetailEquipmentTableFilters.defaultProps = {};
 export default connect(
   state => {
     return {
-      commercialNetwork: state.equipment.commercialNetwork.toArray(),
-      tradePoint: state.equipment.tradePoint.toArray()
+      filters: filtersDataSelector(state),
+      commercialNetwork: commercialNetworkSelector(state),
+      tradePoint: tradePointSelector(state)
     };
   },
   {
