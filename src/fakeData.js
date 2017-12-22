@@ -39,12 +39,14 @@ export const commercialNetwork = {
 
 export const tradePoint = {};
 
+// создаем фэйковые торговые точки
 for (let i = 0; i < 20; i++) {
   let pointId = `point_${i}_ID`;
   let point = {
     id: `point_${i}_ID`,
     name: `Торговая точка № ${i}`
   };
+
   if (i < 5) commercialNetwork["Aschan_ID"].tradePoints.push(pointId);
   if (i > 4 && i <= 9) commercialNetwork["OK_ID"].tradePoints.push(pointId);
   if (i > 9 && i <= 14) commercialNetwork["5_ID"].tradePoints.push(pointId);
@@ -957,42 +959,25 @@ export const equipment = {
   }
 };
 
-// for (let key in equipment) {
-//   switch (equipment[key].commercialNetwork) {
-//     case "Aschan_ID":
-//       equipment[key].tradePoint = `point_${randomInteger(0, 4)}_ID`;
-//       break;
-//
-//     case "OK_ID":
-//       equipment[key].tradePoint = `point_${randomInteger(5, 9)}_ID`;
-//       break;
-//
-//     case "5_ID":
-//       equipment[key].tradePoint = `point_${randomInteger(10, 14)}_ID`;
-//       break;
-//
-//     case "Perekrestok_ID":
-//       equipment[key].tradePoint = `point_${randomInteger(15, 19)}_ID`;
-//       break;
-//   }
-// }
-//
-// Aschan_ID: {
-//     id: "Aschan_ID",
-//         name: "Ашан"
-// },
-// OK_ID: {
-//     id: "OK_ID",
-//         name: "ОК"
-// },
-// "5_ID": {
-//     id: "5_ID",
-//         name: "Пятерочка"
-// },
-// Perekrestok_ID: {
-//     id: "Perekrestok_ID",
-//         name: "Перекресток"
-// }
+for (let key in equipment) {
+  switch (equipment[key].commercialNetwork) {
+    case "Aschan_ID":
+      equipment[key].tradePoint = `point_${randomInteger(0, 4)}_ID`;
+      break;
+
+    case "OK_ID":
+      equipment[key].tradePoint = `point_${randomInteger(5, 9)}_ID`;
+      break;
+
+    case "5_ID":
+      equipment[key].tradePoint = `point_${randomInteger(10, 14)}_ID`;
+      break;
+
+    case "Perekrestok_ID":
+      equipment[key].tradePoint = `point_${randomInteger(15, 19)}_ID`;
+      break;
+  }
+}
 
 export const location = {
   "5499b724-c331-4f29-b25f-55583c0ece34": {

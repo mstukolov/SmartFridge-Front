@@ -297,7 +297,6 @@ RetailEquipmentTable.propTypes = {
 
 export default connect(
   state => {
-    console.log("tradePointSelector(state)", tradePointSelector(state));
     return {
       data: orderedFilterRowsSelector(state),
       networks: commercialNetworkSelector(state),
