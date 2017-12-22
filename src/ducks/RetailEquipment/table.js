@@ -33,7 +33,9 @@ export const SELECT_EQUIPMENT = `${prefix}/SELECT_EQUIPMENT`;
 export const SELECT_ALL_EQUIPMENT = `${prefix}/SELECT_ALL_EQUIPMENT`;
 
 export const ORDER_BY = `${prefix}/ORDER_BY`;
-export const FILTER_BY = `${prefix}/FILTER_BY`;
+
+export const FILTER_BY_COMMERCIAL_NETWORK = `${prefix}/FILTER_BY_COMMERCIAL_NETWORK`;
+export const FILTER_BY_TRADE_POINT = `${prefix}/FILTER_BY_TRADE_POINT`;
 
 /**
  * Reducer
@@ -145,11 +147,15 @@ export default function reducer(state = defaultState, action) {
       );
       return orderedState;
 
-    case FILTER_BY:
-      const { filter } = payload;
-      console.log("fiter  ", filter);
+    case FILTER_BY_COMMERCIAL_NETWORK:
+      const { fieldName } = payload;
+      return state
+        .setIn(["filters", "commercialNetwork"], fieldName)
+        .setIn(["filters", "tradePoint"], "");
 
-      return state.mergeIn(["filters"], new Map(filter));
+    case FILTER_BY_TRADE_POINT:
+      const { byField } = payload;
+      return state.setIn(["filters", "tradePoint"], byField);
 
     default:
       const orderDataStorage = localStorage.getItem(
@@ -209,13 +215,13 @@ export const filteredRowsSelector = createSelector(
     let filteredCollection = collection.toArray();
     const { commercialNetwork, tradePoint } = filters.toJS();
 
-    if (commercialNetwork) {
+    if (commercialNetwork.length && !tradePoint.length) {
       return filteredCollection.filter(item => {
         return item.commercialNetwork === commercialNetwork;
       });
     }
 
-    if (tradePoint) {
+    if (commercialNetwork.length && tradePoint.length) {
       return filteredCollection.filter(item => {
         return item.tradePoint === tradePoint;
       });
@@ -342,15 +348,31 @@ export function sortOrderBy(property) {
 }
 
 /**
- * Создает сортировки по полю
- * @param  {String} id удаляемой статьи
+ * Создает сортировки по торговым сетям
+ * @param  {String} значение фильтра
  * @return {Object}    объект экшена
  */
-export function filterEquipment(filter) {
+export function filterEquipmentByNetwork(fieldName) {
   const action = {
-    type: FILTER_BY,
+    type: FILTER_BY_COMMERCIAL_NETWORK,
     payload: {
-      filter
+      fieldName
+    }
+  };
+
+  return action;
+}
+
+/**
+ * Создает сортировки по торговым точкам
+ * @param  {String} значение фильтра
+ * @return {Object}    объект экшена
+ */
+export function filterEquipmentByPoint(fieldName) {
+  const action = {
+    type: FILTER_BY_TRADE_POINT,
+    payload: {
+      byField: fieldName
     }
   };
 

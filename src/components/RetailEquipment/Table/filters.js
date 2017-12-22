@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { filterEquipment } from "../../../ducks/RetailEquipment/table";
+import {
+  filterEquipmentByNetwork,
+  filterEquipmentByPoint
+} from "../../../ducks/RetailEquipment/table";
 import { withStyles } from "material-ui/styles";
 import {
   commercialNetworkSelector,
@@ -41,10 +44,21 @@ class RetailEquipmentTableFilters extends Component {
    * @param {SytheticEvent} event    событие react
    * @return {void}
    */
-  handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
+  handleChangeNetwork = event => {
+    this.setState({ commercialNetwork: event.target.value });
     // отправляем изменения параметров фильтрации в стор
-    this.props.filterEquipment({ [event.target.name]: event.target.value });
+    this.props.filterEquipmentByNetwork(event.target.value);
+  };
+
+  /**
+   * Обработка изменения значений выпадающего списка
+   * @param {SytheticEvent} event    событие react
+   * @return {void}
+   */
+  handleChangePoint = event => {
+    this.setState({ tradePoint: event.target.value });
+    // отправляем изменения параметров фильтрации в стор
+    this.props.filterEquipmentByPoint(event.target.value);
   };
   /**
    * Получаем значения селектов торговых сетей из стора
@@ -96,7 +110,7 @@ class RetailEquipmentTableFilters extends Component {
           </InputLabel>
           <Select
             value={this.state.commercialNetwork}
-            onChange={this.handleChange}
+            onChange={this.handleChangeNetwork}
             input={
               <Input name="commercialNetwork" id="commercialNetwork-simple" />
             }
@@ -115,7 +129,7 @@ class RetailEquipmentTableFilters extends Component {
           <InputLabel htmlFor="tradePoint-simple">Торговая точка</InputLabel>
           <Select
             value={this.state.tradePoint}
-            onChange={this.handleChange}
+            onChange={this.handleChangePoint}
             input={<Input name="tradePoint" id="tradePoint-simple" />}
           >
             <MenuItem value="">
@@ -141,7 +155,8 @@ export default connect(
     };
   },
   {
-    filterEquipment
+    filterEquipmentByNetwork,
+    filterEquipmentByPoint
   }
 )(
   (RetailEquipmentTableFilters = withStyles(styles)(
