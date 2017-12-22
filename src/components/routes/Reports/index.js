@@ -3,7 +3,7 @@ import Paper from "material-ui/Paper";
 import Grid from "material-ui/Grid";
 import Typography from "material-ui/Typography";
 import { withStyles } from "material-ui/styles";
-import AuthForm from "../../AuthForm/index";
+import CustomChart from "../../CustomChart";
 
 const styles = theme => ({
   root: {
@@ -43,7 +43,9 @@ class ReportsPage extends Component {
         </Grid>
 
         <Grid item xs={12}>
-          <Paper className={classes.paper} />
+          <Paper className={classes.paper}>
+            <CustomChart />
+          </Paper>
         </Grid>
       </Grid>
     );

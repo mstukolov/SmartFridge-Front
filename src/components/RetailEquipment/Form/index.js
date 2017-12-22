@@ -13,6 +13,10 @@ import {
   loadEquipment,
   saveEditEquipment
 } from "../../../ducks/RetailEquipment/form";
+import {
+  commercialNetworkSelector,
+  tradePointSelector
+} from "../../../ducks/RetailEquipment/table";
 import ModeEditIcon from "material-ui-icons/ModeEdit";
 import { Link } from "react-router-dom";
 import SimpleSnackbar from "../../SimpleSnackbar";
@@ -25,6 +29,7 @@ import TrendingDownIcon from "material-ui-icons/TrendingDown";
 import red from "material-ui/colors/red";
 import green from "material-ui/colors/green";
 import Tooltip from "material-ui/Tooltip";
+import { getName } from "../../../utils";
 
 const styles = theme => ({
   container: {
@@ -185,6 +190,7 @@ class RetailEquipmentForm extends React.Component {
       const {
         sn,
         commercialNetwork,
+        tradePoint,
         remain,
         refill,
         location,
@@ -195,6 +201,7 @@ class RetailEquipmentForm extends React.Component {
       this.setState({
         sn,
         commercialNetwork,
+        tradePoint,
         remain,
         refill,
         location,
@@ -288,7 +295,7 @@ class RetailEquipmentForm extends React.Component {
           label="Торговая точка"
           // onChange={this.handleChange("commercialNetwork")}
           // name={"serial"}
-          // value={this.state.commercialNetwork}
+          value={this.state.tradePoint}
           disabled={this.isDisabledControl()}
           InputLabelProps={{
             shrink: true
@@ -358,20 +365,6 @@ class RetailEquipmentForm extends React.Component {
         )}
 
         <TextField
-          id="full-width"
-          label="Локация"
-          onChange={this.handleChange("location")}
-          disabled={this.isDisabledControl()}
-          InputLabelProps={{
-            shrink: true
-          }}
-          placeholder=""
-          helperText="Место расопложения"
-          fullWidth
-          margin="normal"
-        />
-
-        <TextField
           fullWidth
           id="multiline-flexible"
           label="Дополниельная информация"
@@ -397,6 +390,8 @@ export default connect(
     const edit = state.equipmentForm.get("edit");
 
     return {
+      networks: commercialNetworkSelector(state),
+      points: tradePointSelector(state),
       fridge: state.equipmentForm.activeItem,
       error: state.equipmentForm.error,
       loading: state.equipmentForm.isLoading,

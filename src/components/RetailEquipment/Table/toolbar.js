@@ -7,6 +7,7 @@ import { withStyles } from "material-ui/styles";
 import DeleteIcon from "material-ui-icons/Delete";
 import EditIcon from "material-ui-icons/Edit";
 import MapIcon from "material-ui-icons/Map";
+import MultilineChart from "material-ui-icons/MultilineChart";
 import VisibilityIcon from "material-ui-icons/Visibility";
 import IconButton from "material-ui/IconButton";
 import Tooltip from "material-ui/Tooltip";
@@ -19,7 +20,7 @@ import {
   showEquipment
 } from "../../../ducks/RetailEquipment/table";
 import { Link } from "react-router-dom";
-import { RouteMapPage } from "../../routes/constants";
+import { RouteMapPage, RouteReportsPage } from "../../routes/constants";
 import RetailEquipmentTableFilters from "./filters";
 
 const toolbarStyles = theme => ({
@@ -143,6 +144,13 @@ class RetailEquipmentTableToolbar extends React.Component {
               {/*<EditIcon />*/}
               {/*</IconButton>*/}
               {/*</Tooltip>*/}
+              <Tooltip title="Построить графики">
+                <Link to={RouteReportsPage}>
+                  <IconButton aria-label="Visibility on map">
+                    <MultilineChart />
+                  </IconButton>
+                </Link>
+              </Tooltip>
               <Tooltip title="Просомотреть на карте">
                 <Link to={RouteMapPage}>
                   <IconButton aria-label="Visibility on map">
