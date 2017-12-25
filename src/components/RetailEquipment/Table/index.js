@@ -37,7 +37,7 @@ import { getName } from "../../../utils";
 
 const styles = theme => ({
   root: {
-    maxWidth: 900,
+    // maxWidth: 900,
     margin: "auto"
   },
   table: {

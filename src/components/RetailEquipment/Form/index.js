@@ -308,6 +308,35 @@ class RetailEquipmentForm extends React.Component {
 
         <TextField
           id="full-width"
+          label="Максимальный вес"
+          value={this.state.remain}
+          onChange={this.handleChange("remain")}
+          disabled={this.isDisabledControl()}
+          InputLabelProps={{
+            shrink: true
+          }}
+          placeholder=""
+          helperText="%"
+          fullWidth
+          margin="normal"
+        />
+        <TextField
+          id="full-width"
+          label="Текущий вес"
+          value={this.state.remain}
+          onChange={this.handleChange("remain")}
+          disabled={this.isDisabledControl()}
+          InputLabelProps={{
+            shrink: true
+          }}
+          placeholder=""
+          helperText="%"
+          fullWidth
+          margin="normal"
+        />
+
+        <TextField
+          id="full-width"
           label="Процент наполнения"
           value={this.state.remain}
           onChange={this.handleChange("remain")}

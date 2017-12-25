@@ -1,15 +1,20 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { loadData } from "../../ducks/RetailEquipment/report";
 
 import {
   VictoryChart,
-  VictoryZoomContainer,
+  createContainer,
   VictoryLine,
   VictoryBrushContainer,
-  VictoryAxis
+  VictoryAxis,
+  VictoryTheme,
+  VictoryTooltip
 } from "victory";
 import PropTypes from "prop-types";
 
-class CustomChart extends Component {
+const VictoryZoomVoronoiContainer = createContainer("zoom", "voronoi");
+class ReportChart extends Component {
   constructor() {
     super();
     this.state = {};
@@ -23,18 +28,25 @@ class CustomChart extends Component {
     this.setState({ zoomDomain: domain });
   }
 
+  componentDidMount() {
+    this.props.loadData();
+  }
+
   render() {
     return (
       <div>
         <VictoryChart
           width={600}
           height={350}
+          theme={VictoryTheme.material}
           scale={{ x: "time" }}
           containerComponent={
-            <VictoryZoomContainer
+            <VictoryZoomVoronoiContainer
               responsive={false}
+              zoom={4}
               zoomDimension="x"
               zoomDomain={this.state.zoomDomain}
+              labels={d => `Y: ${d.y}`}
               onZoomDomainChange={this.handleZoom.bind(this)}
             />
           }
@@ -43,20 +55,19 @@ class CustomChart extends Component {
             style={{
               data: { stroke: "tomato" }
             }}
-            data={[
-              { x: new Date(1982, 1, 1), y: 125 },
-              { x: new Date(1987, 1, 1), y: 257 },
-              { x: new Date(1993, 1, 1), y: 345 },
-              { x: new Date(1997, 1, 1), y: 515 },
-              { x: new Date(2001, 1, 1), y: 132 },
-              { x: new Date(2005, 1, 1), y: 305 },
-              { x: new Date(2011, 1, 1), y: 270 },
-              { x: new Date(2015, 1, 1), y: 470 }
-            ]}
+            data={this.props.valueout}
+          />
+
+          <VictoryLine
+            style={{
+              data: { stroke: "navy" }
+            }}
+            data={this.props.valuein}
           />
         </VictoryChart>
 
         <VictoryChart
+          theme={VictoryTheme.material}
           padding={{ top: 0, left: 50, right: 50, bottom: 30 }}
           width={600}
           height={90}
@@ -70,31 +81,19 @@ class CustomChart extends Component {
             />
           }
         >
-          <VictoryAxis
-            tickValues={[
-              new Date(1985, 1, 1),
-              new Date(1990, 1, 1),
-              new Date(1995, 1, 1),
-              new Date(2000, 1, 1),
-              new Date(2005, 1, 1),
-              new Date(2010, 1, 1)
-            ]}
-            tickFormat={x => new Date(x).getFullYear()}
-          />
+          <VictoryAxis tickFormat={x => new Date(x).getFullYear()} />
           <VictoryLine
             style={{
               data: { stroke: "tomato" }
             }}
-            data={[
-              { x: new Date(1982, 1, 1), y: 125 },
-              { x: new Date(1987, 1, 1), y: 257 },
-              { x: new Date(1993, 1, 1), y: 345 },
-              { x: new Date(1997, 1, 1), y: 515 },
-              { x: new Date(2001, 1, 1), y: 132 },
-              { x: new Date(2005, 1, 1), y: 305 },
-              { x: new Date(2011, 1, 1), y: 270 },
-              { x: new Date(2015, 1, 1), y: 470 }
-            ]}
+            data={this.props.valueout}
+          />
+
+          <VictoryLine
+            style={{
+              data: { stroke: "navy" }
+            }}
+            data={this.props.valuein}
           />
         </VictoryChart>
       </div>
@@ -102,7 +101,25 @@ class CustomChart extends Component {
   }
 }
 
-CustomChart.propTypes = {};
-CustomChart.defaultProps = {};
+ReportChart.propTypes = {};
+ReportChart.defaultProps = {};
 
-export default CustomChart;
+export default connect(
+  state => {
+    // { x: new Date(1982, 1, 1), y: 125 }
+
+    const valueout = state.equipmentReport.reportData.map(item => {
+      return { x: item.recdate, y: item.valueout };
+    });
+
+    const valuein = state.equipmentReport.reportData.map(item => {
+      return { x: item.recdate, y: item.valuein };
+    });
+
+    return {
+      valueout,
+      valuein
+    };
+  },
+  { loadData }
+)(ReportChart);

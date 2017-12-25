@@ -29,7 +29,7 @@ import history from "../../redux/history";
 
 const styles = theme => ({
   list: {
-    width: 250
+    width: 300
   },
   link: {
     textDecoration: "none"
@@ -185,7 +185,7 @@ class Header extends React.Component {
                   <ListItemText
                     classes={{ text: classes.text }}
                     inset
-                    primary="Таблица устройств"
+                    primary="Торговое оборудование"
                   />
                 </MenuItem>
               </Link>
