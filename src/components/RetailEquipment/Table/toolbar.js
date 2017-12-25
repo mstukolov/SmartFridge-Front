@@ -7,7 +7,7 @@ import { withStyles } from "material-ui/styles";
 import DeleteIcon from "material-ui-icons/Delete";
 import EditIcon from "material-ui-icons/Edit";
 import MapIcon from "material-ui-icons/Map";
-import MultilineChart from "material-ui-icons/MultilineChart";
+import InsertCahrtIcon from "material-ui-icons/InsertChart";
 import VisibilityIcon from "material-ui-icons/Visibility";
 import IconButton from "material-ui/IconButton";
 import Tooltip from "material-ui/Tooltip";
@@ -147,7 +147,7 @@ class RetailEquipmentTableToolbar extends React.Component {
               <Tooltip title="Построить графики">
                 <Link to={RouteReportsPage}>
                   <IconButton aria-label="Visibility on map">
-                    <MultilineChart />
+                    <InsertCahrtIcon />
                   </IconButton>
                 </Link>
               </Tooltip>
