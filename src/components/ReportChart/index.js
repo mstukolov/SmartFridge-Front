@@ -21,10 +21,12 @@ class ReportChart extends Component {
   }
 
   handleZoom(domain) {
+    console.log("handleZoom", domain);
     this.setState({ selectedDomain: domain });
   }
 
   handleBrush(domain) {
+    console.log("handleBrush", domain);
     this.setState({ zoomDomain: domain });
   }
 
@@ -32,8 +34,22 @@ class ReportChart extends Component {
     this.props.loadData();
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.valueout.last()) {
+      const lastX = nextProps.valueout.last().x;
+      let weekAgo = new Date().setDate(lastX.getDate() - 7);
+
+      this.setState({
+        zoomDomain: { x: [new Date(weekAgo), lastX] },
+        selectedDomain: { x: [new Date(weekAgo), lastX] }
+      });
+      console.log("nextProps", new Date(weekAgo), lastX);
+    }
+  }
+
   render() {
-    return (
+    const { isLoading, loaded } = this.props;
+    return !loaded ? null : (
       <div>
         <VictoryChart
           width={600}
@@ -42,8 +58,7 @@ class ReportChart extends Component {
           scale={{ x: "time" }}
           containerComponent={
             <VictoryZoomVoronoiContainer
-              responsive={false}
-              zoom={4}
+              responsive={true}
               zoomDimension="x"
               zoomDomain={this.state.zoomDomain}
               labels={d => `Y: ${d.y}`}
@@ -74,7 +89,7 @@ class ReportChart extends Component {
           scale={{ x: "time" }}
           containerComponent={
             <VictoryBrushContainer
-              responsive={false}
+              responsive={true}
               brushDimension="x"
               brushDomain={this.state.selectedDomain}
               onBrushDomainChange={this.handleBrush.bind(this)}
@@ -116,9 +131,14 @@ export default connect(
       return { x: item.recdate, y: item.valuein };
     });
 
+    const isLoading = state.equipmentReport.isLoading;
+    const loaded = state.equipmentReport.loaded;
+
     return {
       valueout,
-      valuein
+      valuein,
+      isLoading,
+      loaded
     };
   },
   { loadData }

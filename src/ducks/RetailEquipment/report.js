@@ -19,15 +19,24 @@ export const LOAD_REPORT_DATA_ERROR = `${prefix}/LOAD_REPORT_DATA_ERROR`;
  * Reducer
  * */
 export const ReducerRecord = Record({
-  reportData: new List([])
+  reportData: new List([]),
+  isLoading: false,
+  loaded: false
 });
 
 export default function reducer(state = new ReducerRecord(), action) {
   const { type, payload } = action;
 
   switch (type) {
+    case LOAD_REPORT_DATA_START:
+      return state.setIn(["isLoading"], true);
     case LOAD_REPORT_DATA_SUCCESS:
-      return state.setIn(["reportData"], new List(payload.reportData));
+      return state
+        .setIn(["reportData"], new List(payload.reportData))
+        .setIn(["isLoading"], false)
+        .setIn(["loaded"], true);
+    case LOAD_REPORT_DATA_ERROR:
+      return state.setIn(["isLoading"], false).setIn(["loaded"], false);
     default:
       return state;
   }
