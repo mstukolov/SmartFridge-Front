@@ -70,6 +70,7 @@ class App extends Component {
               />
 
               <Route path={RouteReportsPage} component={ReportsPage} />
+              <Route path={`${RouteReportsPage}:id`} component={ReportsPage} />
 
               <Route path={RouteMapPage} component={MapPage} />
 

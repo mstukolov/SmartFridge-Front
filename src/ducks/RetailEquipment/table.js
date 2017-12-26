@@ -9,7 +9,10 @@ import {
 import history from "../../redux/history";
 import { all, takeEvery, put } from "redux-saga/effects";
 import { delay } from "redux-saga";
-import { RouteEquipmentPage } from "../../components/routes/constants";
+import {
+  RouteEquipmentPage,
+  RouteReportsPage
+} from "../../components/routes/constants";
 import { getName } from "../../utils";
 
 /**
@@ -19,6 +22,7 @@ export const moduleName = "mainTable";
 const prefix = `${appName}/${moduleName}`;
 
 export const SHOW_EQUIPMENT_REQUEST = `${prefix}/SHOW_EQUIPMENT_REQUEST`;
+export const SHOW_REPORT_REQUEST = `${prefix}/SHOW_REPORT_REQUEST`;
 export const LOAD_ALL_EQUIPMENT_REQUEST = `${prefix}/LOAD_ALL_EQUIPMENT_REQUEST`;
 export const LOAD_ALL_EQUIPMENT_START = `${prefix}/LOAD_ALL_EQUIPMENT_START`;
 export const LOAD_ALL_EQUIPMENT_SUCCESS = `${prefix}/LOAD_ALL_EQUIPMENT_SUCCESS`;
@@ -393,6 +397,19 @@ export function showEquipment(id) {
 }
 
 /**
+ * Создает экшн для перехода в режим просмотра аналитики
+ * @return {Object} объект экшена
+ */
+export function showReport(id) {
+  const action = {
+    type: SHOW_REPORT_REQUEST,
+    payload: { id }
+  };
+
+  return action;
+}
+
+/**
  * Sagas
  */
 
@@ -468,10 +485,15 @@ export const showSaga = function(action) {
   history.push(RouteEquipmentPage + ":" + action.payload.id);
 };
 
+export const showReportSaga = function(action) {
+  history.push(RouteReportsPage + ":" + action.payload.id);
+};
+
 export const saga = function*() {
   yield all([
     takeEvery(SHOW_EQUIPMENT_REQUEST, showSaga),
     takeEvery(LOAD_ALL_EQUIPMENT_REQUEST, loadAllSaga),
-    takeEvery(DELETE_EQUIPMENT_REQUEST, deleteSaga)
+    takeEvery(DELETE_EQUIPMENT_REQUEST, deleteSaga),
+    takeEvery(SHOW_REPORT_REQUEST, showReportSaga)
   ]);
 };

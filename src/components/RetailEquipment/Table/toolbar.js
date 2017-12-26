@@ -5,7 +5,6 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
 import DeleteIcon from "material-ui-icons/Delete";
-import EditIcon from "material-ui-icons/Edit";
 import MapIcon from "material-ui-icons/Map";
 import InsertCahrtIcon from "material-ui-icons/InsertChart";
 import VisibilityIcon from "material-ui-icons/Visibility";
@@ -17,7 +16,8 @@ import Toolbar from "material-ui/Toolbar";
 import { connect } from "react-redux";
 import {
   deleteEquipment,
-  showEquipment
+  showEquipment,
+  showReport
 } from "../../../ducks/RetailEquipment/table";
 import { Link } from "react-router-dom";
 import { RouteMapPage, RouteReportsPage } from "../../routes/constants";
@@ -74,12 +74,21 @@ class RetailEquipmentTableToolbar extends React.Component {
   };
 
   /**
-   * Функция обработки просмотра списка выделленных элементов
+   * Функция просмотра выделенного элемента
    * @param  {SynteticEvent} ev React событие
    * @return {void}    [description]
    */
-  handleShow = ev => {
+  handleShowFullInfo = ev => {
     this.props.showEquipment(this.props.selected.keySeq().first());
+  };
+
+  /**
+   * Функция построения графика для выделленного элемента
+   * @param  {SynteticEvent} ev React событие
+   * @return {void}    [description]
+   */
+  handleShowReport = ev => {
+    this.props.showReport(this.props.selected.keySeq().first());
   };
   /**
    * Блокирует клик по кнопке просмотра/редактирования
@@ -127,29 +136,22 @@ class RetailEquipmentTableToolbar extends React.Component {
               <Tooltip title="Просомотреть подробную информацию">
                 <div>
                   <IconButton
-                    onClick={this.handleShow}
-                    disabled={numSelected > 1 ? true : false}
+                    onClick={this.handleShowFullInfo}
+                    disabled={numSelected > 1}
                     aria-label="Visibility"
                   >
                     <VisibilityIcon />
                   </IconButton>
                 </div>
               </Tooltip>
-              {/*<Tooltip title="Редактировать">*/}
-              {/*<IconButton*/}
-              {/*aria-label="Edit"*/}
-              {/*onClick={this.handleEdit}*/}
-              {/*disabled={numSelected > 1 ? true : false}*/}
-              {/*>*/}
-              {/*<EditIcon />*/}
-              {/*</IconButton>*/}
-              {/*</Tooltip>*/}
               <Tooltip title="Построить графики">
-                <Link to={RouteReportsPage}>
-                  <IconButton aria-label="Visibility on map">
-                    <InsertCahrtIcon />
-                  </IconButton>
-                </Link>
+                <IconButton
+                  onClick={this.handleShowReport}
+                  disabled={numSelected > 1}
+                  aria-label="Show report"
+                >
+                  <InsertCahrtIcon />
+                </IconButton>
               </Tooltip>
               <Tooltip title="Просомотреть на карте">
                 <Link to={RouteMapPage}>
@@ -198,7 +200,8 @@ export default connect(
   },
   {
     deleteEquipment,
-    showEquipment
+    showEquipment,
+    showReport
   }
 )(
   (RetailEquipmentTableToolbar = withStyles(toolbarStyles)(

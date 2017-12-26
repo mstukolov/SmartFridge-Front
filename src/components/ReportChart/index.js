@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { loadData } from "../../ducks/RetailEquipment/report";
 import injectSheet from "react-jss";
+import LinearQuery from "../LinearQuery";
 
 import {
   VictoryChart,
@@ -9,10 +10,8 @@ import {
   VictoryLine,
   VictoryBrushContainer,
   VictoryAxis,
-  VictoryTheme,
-  VictoryTooltip
+  VictoryTheme
 } from "victory";
-import PropTypes from "prop-types";
 
 const styles = {
   container: {
@@ -21,42 +20,61 @@ const styles = {
 };
 
 const VictoryZoomVoronoiContainer = createContainer("zoom", "voronoi");
+
+/**
+ * Компонент линейного графика заполненности холодильника
+ * @extends Component
+ */
 class ReportChart extends Component {
   constructor() {
     super();
     this.state = {};
   }
 
+  /**
+   * Обработчик зумма на графике
+   * @param domain
+   */
   handleZoom(domain) {
     this.setState({ selectedDomain: domain });
   }
 
+  /**
+   * Обработчик зумма на превью
+   * @param domain
+   */
   handleBrush(domain) {
     this.setState({ zoomDomain: domain });
   }
 
+  /**
+   * Делает запрос на сервер
+   */
   componentDidMount() {
     this.props.loadData();
   }
 
+  /**
+   * После получения данных с сервера масштабируем график и показываем данные за последнюю неделю
+   * @param nextProps
+   */
   componentWillReceiveProps(nextProps) {
     if (nextProps.valueout.last()) {
       const last = new Date();
       const weekAgo = new Date().setDate(last.getDate() - 7);
       this.handleBrush({ x: [new Date(weekAgo), last] });
       this.handleZoom({ x: [new Date(weekAgo), last] });
-
-      // this.setState({
-      //   // zoomDomain: { x: [new Date(weekAgo), last] },
-      //   selectedDomain: { x: [new Date(weekAgo), last] },
-      // });
-      // console.log("nextProps", new Date(weekAgo), last);
     }
   }
-
+  /**
+   * render
+   * @return {ReactElement} разметка React
+   */
   render() {
-    const { isLoading, loaded, classes } = this.props;
-    return !loaded ? null : (
+    const { loaded, classes } = this.props;
+    return !loaded ? (
+      <LinearQuery />
+    ) : (
       <div className={classes.container}>
         <VictoryChart
           width={600}
@@ -106,14 +124,14 @@ class ReportChart extends Component {
           <VictoryAxis tickFormat={x => new Date(x).getFullYear()} />
           <VictoryLine
             style={{
-              data: { stroke: "tomato" }
+              data: { stroke: "tomato", strokeWidth: 1 }
             }}
             data={this.props.valueout}
           />
 
           <VictoryLine
             style={{
-              data: { stroke: "navy" }
+              data: { stroke: "navy", strokeWidth: 1 }
             }}
             data={this.props.valuein}
           />
@@ -123,13 +141,8 @@ class ReportChart extends Component {
   }
 }
 
-ReportChart.propTypes = {};
-ReportChart.defaultProps = {};
-
 export default connect(
   state => {
-    // { x: new Date(1982, 1, 1), y: 125 }
-
     const valueout = state.equipmentReport.reportData.map(item => {
       return { x: item.recdate, y: item.valueout };
     });
