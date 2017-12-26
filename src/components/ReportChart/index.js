@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { loadData } from "../../ducks/RetailEquipment/report";
+import injectSheet from "react-jss";
 
 import {
   VictoryChart,
@@ -13,6 +14,12 @@ import {
 } from "victory";
 import PropTypes from "prop-types";
 
+const styles = {
+  container: {
+    maxWidth: "965px"
+  }
+};
+
 const VictoryZoomVoronoiContainer = createContainer("zoom", "voronoi");
 class ReportChart extends Component {
   constructor() {
@@ -21,12 +28,10 @@ class ReportChart extends Component {
   }
 
   handleZoom(domain) {
-    console.log("handleZoom", domain);
     this.setState({ selectedDomain: domain });
   }
 
   handleBrush(domain) {
-    console.log("handleBrush", domain);
     this.setState({ zoomDomain: domain });
   }
 
@@ -36,21 +41,23 @@ class ReportChart extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.valueout.last()) {
-      const lastX = nextProps.valueout.last().x;
-      let weekAgo = new Date().setDate(lastX.getDate() - 7);
+      const last = new Date();
+      const weekAgo = new Date().setDate(last.getDate() - 7);
+      this.handleBrush({ x: [new Date(weekAgo), last] });
+      this.handleZoom({ x: [new Date(weekAgo), last] });
 
-      this.setState({
-        zoomDomain: { x: [new Date(weekAgo), lastX] },
-        selectedDomain: { x: [new Date(weekAgo), lastX] }
-      });
-      console.log("nextProps", new Date(weekAgo), lastX);
+      // this.setState({
+      //   // zoomDomain: { x: [new Date(weekAgo), last] },
+      //   selectedDomain: { x: [new Date(weekAgo), last] },
+      // });
+      // console.log("nextProps", new Date(weekAgo), last);
     }
   }
 
   render() {
-    const { isLoading, loaded } = this.props;
+    const { isLoading, loaded, classes } = this.props;
     return !loaded ? null : (
-      <div>
+      <div className={classes.container}>
         <VictoryChart
           width={600}
           height={350}
@@ -142,4 +149,4 @@ export default connect(
     };
   },
   { loadData }
-)(ReportChart);
+)(injectSheet(styles)(ReportChart));
