@@ -19,7 +19,7 @@ export const LOAD_LOCATION_ERROR = `${prefix}/LOAD_LOCATION_ERROR`;
  * */
 export const ReducerRecord = Record({
   collection: new OrderedMap({}),
-  isLoading: false
+  loading: false
 });
 
 export default function reducer(state = new ReducerRecord(), action) {
@@ -27,14 +27,14 @@ export default function reducer(state = new ReducerRecord(), action) {
 
   switch (type) {
     case LOAD_LOCATION_START:
-      return state.set("isLoading", true);
+      return state.set("loading", true);
     case LOAD_LOCATION_SUCCESS:
       return state
-        .set("isLoading", false)
+        .set("loading", false)
         .setIn(["collection"], new OrderedMap(payload.collection));
 
     case LOAD_LOCATION_ERROR:
-      return state.setIn(["error"], payload.error).set("isLoading", false);
+      return state.setIn(["error"], payload.error).set("loading", false);
 
     default:
       return state;

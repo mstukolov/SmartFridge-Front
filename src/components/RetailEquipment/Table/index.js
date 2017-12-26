@@ -302,7 +302,7 @@ export default connect(
       networks: commercialNetworkSelector(state),
       points: tradePointSelector(state),
       selected: state.equipment.selected,
-      loading: state.equipment.isLoading,
+      loading: state.equipment.loading,
       order: state.equipment.orderData.get("order"),
       orderBy: state.equipment.orderData.get("orderBy"),
       error: state.equipment.error

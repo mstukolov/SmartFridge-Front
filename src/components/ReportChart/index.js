@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { loadData } from "../../ducks/RetailEquipment/report";
+import {
+  loadData,
+  loadedSelector,
+  loadingSelector,
+  moduleName
+} from "../../ducks/RetailEquipment/report";
 import injectSheet from "react-jss";
 import LinearQuery from "../LinearQuery";
 
@@ -143,22 +148,21 @@ class ReportChart extends Component {
 
 export default connect(
   state => {
-    const valueout = state.equipmentReport.reportData.map(item => {
+    const valueout = state[moduleName].data.map(item => {
       return { x: item.recdate, y: item.valueout };
     });
 
-    const valuein = state.equipmentReport.reportData.map(item => {
+    const valuein = state[moduleName].data.map(item => {
       return { x: item.recdate, y: item.valuein };
     });
 
-    const isLoading = state.equipmentReport.isLoading;
-    const loaded = state.equipmentReport.loaded;
+    // const fridge = state.equipmentForm.activeItem;
 
     return {
       valueout,
       valuein,
-      isLoading,
-      loaded
+      loading: loadingSelector(state),
+      loaded: loadedSelector(state)
     };
   },
   { loadData }

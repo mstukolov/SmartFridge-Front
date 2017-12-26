@@ -130,7 +130,7 @@ class RetailEquipmentForm extends React.Component {
       this.props.edit || this.props.saving ? (
         <div onClick={this.handleSubmit}>
           <CircularSaveButton
-            isLoading={this.props.saving}
+            loading={this.props.saving}
             // success={this.props.saved}
           />
         </div>
@@ -417,13 +417,14 @@ RetailEquipmentForm.propTypes = {
 export default connect(
   state => {
     const edit = state.equipmentForm.get("edit");
+    console.log(state.equipmentForm.activeItem);
 
     return {
       networks: commercialNetworkSelector(state),
       points: tradePointSelector(state),
       fridge: state.equipmentForm.activeItem,
       error: state.equipmentForm.error,
-      loading: state.equipmentForm.isLoading,
+      loading: state.equipmentForm.loading,
       saving: state.equipmentForm.isSaving,
       saved: state.equipmentForm.saved,
       edit

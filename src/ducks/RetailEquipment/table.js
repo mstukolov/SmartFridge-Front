@@ -45,7 +45,7 @@ export const FILTER_BY_TRADE_POINT = `${prefix}/FILTER_BY_TRADE_POINT`;
  * Reducer
  * */
 let DefaulrReducerState = new Record({
-  isLoading: false,
+  loading: false,
   collection: new OrderedMap({}),
   commercialNetwork: new Map({}),
   tradePoint: new Map({}),
@@ -69,17 +69,17 @@ export default function reducer(state = defaultState, action) {
 
   switch (type) {
     case LOAD_ALL_EQUIPMENT_START:
-      return state.set("isLoading", true);
+      return state.set("loading", true);
 
     case LOAD_ALL_EQUIPMENT_SUCCESS:
       return state
-        .set("isLoading", false)
+        .set("loading", false)
         .set("collection", new OrderedMap(payload.collection))
         .set("commercialNetwork", new Map(commercialNetwork))
         .set("tradePoint", new Map(tradePoint));
 
     case LOAD_ALL_EQUIPMENT_ERROR:
-      return state.setIn(["error"], payload.error).set("isLoading", false);
+      return state.setIn(["error"], payload.error).set("loading", false);
 
     case SHOW_EQUIPMENT_REQUEST:
       return state;
@@ -115,18 +115,18 @@ export default function reducer(state = defaultState, action) {
       return state.setIn(["selected"], new Map(result));
 
     case DELETE_EQUIPMENT_START:
-      return state.set("isLoading", true);
+      return state.set("loading", true);
 
     case DELETE_EQUIPMENT_SUCCESS:
       localStorage.removeItem("RetailEquipmentSelected");
 
       return state
-        .set("isLoading", false)
+        .set("loading", false)
         .set("collection", new OrderedMap(payload.collection))
         .setIn(["selected"], new Map({}));
 
     case DELETE_EQUIPMENT_ERROR:
-      return state.setIn(["error"], payload.error).set("isLoading", false);
+      return state.setIn(["error"], payload.error).set("loading", false);
 
     case ORDER_BY:
       const { property } = payload;

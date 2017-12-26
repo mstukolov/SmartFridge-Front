@@ -194,7 +194,7 @@ export default connect(
   state => {
     return {
       selected: state.equipment.selected,
-      loading: state.equipment.isLoading,
+      loading: state.equipment.loading,
       numSelected: state.equipment.selected.size
     };
   },

@@ -8596,9 +8596,9 @@
                                     "line": 154,
                                     "column": 38
                                   },
-                                  "identifierName": "isLoading"
+                                  "identifierName": "loading"
                                 },
-                                "name": "isLoading"
+                                "name": "loading"
                               },
                               "computed": false
                             }
@@ -25438,7 +25438,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "isLoading",
+      "value": "loading",
       "start": 4250,
       "end": 4259,
       "loc": {

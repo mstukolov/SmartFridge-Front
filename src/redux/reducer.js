@@ -3,7 +3,7 @@ import { routerReducer } from "react-router-redux";
 import equipment from "../ducks/RetailEquipment/table";
 import equipmentForm from "../ducks/RetailEquipment/form";
 import equipmentLocation from "../ducks/RetailEquipment/location";
-import equipmentReport from "../ducks/RetailEquipment/report";
+import equipmentReport, { moduleName } from "../ducks/RetailEquipment/report";
 
 /**
  * Подключение редьюсеров
@@ -13,5 +13,5 @@ export default combineReducers({
   equipment,
   equipmentForm,
   equipmentLocation,
-  equipmentReport
+  [moduleName]: equipmentReport
 });

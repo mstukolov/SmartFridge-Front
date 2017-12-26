@@ -2331,9 +2331,9 @@
                             "line": 26,
                             "column": 11
                           },
-                          "identifierName": "isLoading"
+                          "identifierName": "loading"
                         },
-                        "name": "isLoading"
+                        "name": "loading"
                       },
                       "value": {
                         "type": "BooleanLiteral",
@@ -4055,10 +4055,10 @@
                                 }
                               },
                               "extra": {
-                                "rawValue": "isLoading",
-                                "raw": "\"isLoading\""
+                                "rawValue": "loading",
+                                "raw": "\"loading\""
                               },
-                              "value": "isLoading"
+                              "value": "loading"
                             },
                             {
                               "type": "BooleanLiteral",
@@ -4235,10 +4235,10 @@
                                     }
                                   },
                                   "extra": {
-                                    "rawValue": "isLoading",
-                                    "raw": "\"isLoading\""
+                                    "rawValue": "loading",
+                                    "raw": "\"loading\""
                                   },
-                                  "value": "isLoading"
+                                  "value": "loading"
                                 },
                                 {
                                   "type": "BooleanLiteral",
@@ -18734,7 +18734,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "isLoading",
+      "value": "loading",
       "start": 921,
       "end": 930,
       "loc": {
@@ -22376,7 +22376,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "isLoading",
+      "value": "loading",
       "start": 1534,
       "end": 1545,
       "loc": {
@@ -22719,7 +22719,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "isLoading",
+      "value": "loading",
       "start": 1613,
       "end": 1624,
       "loc": {

@@ -29,7 +29,7 @@ const EquipmentFormModel = new Record({
   activeItem: null,
   location: null,
   edit: false,
-  isLoading: false,
+  loading: false,
   isSaving: false,
   saved: false,
   error: null
@@ -51,15 +51,13 @@ export default (state = defaultForm, action) => {
   const { type, payload } = action;
   switch (type) {
     case LOAD_EQUIPMENT_START:
-      return state.set("isLoading", true).set("saved", false);
+      return state.set("loading", true).set("saved", false);
 
     case LOAD_EQUIPMENT_SUCCESS:
-      return state
-        .set("isLoading", false)
-        .set("activeItem", payload.activeItem);
+      return state.set("loading", false).set("activeItem", payload.activeItem);
     case SAVE_EDIT_EQUIPMENT_ERROR:
     case LOAD_EQUIPMENT_ERROR:
-      return state.setIn(["error"], payload.error).set("isLoading", false);
+      return state.setIn(["error"], payload.error).set("loading", false);
 
     case SHOW_EQUIPMENT:
       return state.setIn(["edit"], false).set("saved", false);

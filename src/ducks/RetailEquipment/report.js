@@ -2,6 +2,7 @@ import { all, put, takeEvery } from "redux-saga/effects";
 import { appName } from "../../config";
 import { Record, List } from "immutable";
 import { schedule as report } from "../../fakeData";
+import { createSelector } from "reselect";
 import moment from "moment";
 
 /**
@@ -19,8 +20,8 @@ export const LOAD_REPORT_DATA_ERROR = `${prefix}/LOAD_REPORT_DATA_ERROR`;
  * Reducer
  * */
 export const ReducerRecord = Record({
-  reportData: new List([]),
-  isLoading: false,
+  data: new List([]),
+  loading: false,
   loaded: false
 });
 
@@ -29,14 +30,14 @@ export default function reducer(state = new ReducerRecord(), action) {
 
   switch (type) {
     case LOAD_REPORT_DATA_START:
-      return state.setIn(["isLoading"], true);
+      return state.setIn(["loading"], true);
     case LOAD_REPORT_DATA_SUCCESS:
       return state
-        .setIn(["reportData"], new List(payload.reportData))
-        .setIn(["isLoading"], false)
+        .setIn(["data"], new List(payload.data))
+        .setIn(["loading"], false)
         .setIn(["loaded"], true);
     case LOAD_REPORT_DATA_ERROR:
-      return state.setIn(["isLoading"], false).setIn(["loaded"], false);
+      return state.setIn(["loading"], false).setIn(["loaded"], false);
     default:
       return state;
   }
@@ -45,6 +46,23 @@ export default function reducer(state = new ReducerRecord(), action) {
 /**
  * Selectors
  * */
+export const stateSelector = state => state[moduleName];
+export const loadingSelector = createSelector(
+  stateSelector,
+  state => state.loading
+);
+export const loadedSelector = createSelector(
+  stateSelector,
+  state => state.loaded
+);
+
+// const valueout = state[moduleName].data.map(item => {
+//     return { x: item.recdate, y: item.valueout };
+// });
+//
+// const valuein = state[moduleName].data.map(item => {
+//     return { x: item.recdate, y: item.valuein };
+// });
 
 /**
  * Action Creators
@@ -89,7 +107,7 @@ export const loadReportSaga = function*(action) {
     yield put({
       type: LOAD_REPORT_DATA_SUCCESS,
       payload: {
-        reportData: JSON.parse(newReport, (key, value) => {
+        data: JSON.parse(newReport, (key, value) => {
           if (key === "recdate") return new Date(value);
           return value;
         })

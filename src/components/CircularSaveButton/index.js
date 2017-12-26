@@ -58,7 +58,7 @@ class CircularSaveButton extends React.Component {
           <Button fab color="primary" className={buttonClassname}>
             {this.props.success ? <CheckIcon /> : <SaveIcon />}
           </Button>
-          {this.props.isLoading && (
+          {this.props.loading && (
             <CircularProgress size={68} className={classes.fabProgress} />
           )}
         </div>
@@ -69,7 +69,7 @@ class CircularSaveButton extends React.Component {
 
 CircularSaveButton.propTypes = {
   classes: PropTypes.object.isRequired,
-  isLoading: PropTypes.bool.isRequired,
+  loading: PropTypes.bool.isRequired,
   success: PropTypes.bool
 };
 
