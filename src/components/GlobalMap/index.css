@@ -67,3 +67,12 @@
 .marker-cluster-group {
   display: none;
 }
+
+.fullScreenLeaflet {
+  position: fixed !important;
+  z-index: 10000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
