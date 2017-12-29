@@ -7,6 +7,7 @@ import RetailEquipmentPageViewPage from "../routes/RetailEquipment/View";
 import MainPage from "../routes/Main";
 import NoMatch from "../routes/NoMatch";
 import MapPage from "../routes/Map";
+import FullScreenMapPage from "../routes/Map/fullscreenMap";
 import ReportsPage from "../routes/Reports";
 import injectSheet from "react-jss";
 import { ConnectedRouter } from "react-router-redux";
@@ -14,7 +15,8 @@ import history from "../../redux/history";
 import {
   RouteEquipmentPage,
   RouteReportsPage,
-  RouteMapPage
+  RouteMapPage,
+  RouteFullScreenMapPage
 } from "../routes/constants";
 import moment from "moment/min/moment-with-locales";
 import Moment from "react-moment";
@@ -73,6 +75,10 @@ class App extends Component {
               <Route path={`${RouteReportsPage}:id`} component={ReportsPage} />
 
               <Route path={RouteMapPage} component={MapPage} />
+              <Route
+                path={RouteFullScreenMapPage}
+                component={FullScreenMapPage}
+              />
 
               <Route component={NoMatch} />
             </Switch>

@@ -18,8 +18,8 @@ const styles = theme => ({
     color: theme.palette.text.secondary
   },
   map: {
-    padding: 16,
-    height: "300px"
+    width: "100%",
+    height: "100%"
   }
 });
 
@@ -50,10 +50,8 @@ function RetailEquipmentPageView(props: Props) {
           </Paper>
         </Grid>
         <Grid item xs={12} sm={6}>
-          <Paper>
-            <div className={classes.map}>
-              <GlobalMap />
-            </div>
+          <Paper className={classes.map}>
+            <GlobalMap />
           </Paper>
         </Grid>
       </Grid>
