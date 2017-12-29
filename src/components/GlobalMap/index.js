@@ -4,9 +4,7 @@ import PropTypes from "prop-types";
 import { Map, TileLayer } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import { connect } from "react-redux";
-import { loadAll } from "../../ducks/RetailEquipment/location";
-import redMarker from "./redMarker";
-import getStringPopup from "./popup";
+import { loadAll, markerSelector } from "../../ducks/RetailEquipment/location";
 import history from "../../redux/history";
 import classNames from "classnames";
 import { withStyles } from "material-ui/styles";
@@ -125,20 +123,11 @@ class GlobalMap extends React.Component {
 GlobalMap.propTypes = {
   classes: PropTypes.object.isRequired
 };
+
 export default connect(
   state => {
     // Наносим маркеры на карту
-    const items = state.equipmentLocation.get("collection").map(item => {
-      let element = {
-        position: [item.lat, item.lng],
-        popup: getStringPopup(item.id)
-      };
-      // Если в списке выбранных точек есть данная, выделяем ее красным маркером
-      if (state.equipment.selected.get(item.id)) {
-        element.options = { icon: redMarker };
-      }
-      return element;
-    });
+    // const items = state.equipmentLocation.get("collection")
 
     // Получаем активный маркер по id
     let activeMapItemId = null;
@@ -147,7 +136,7 @@ export default connect(
     }
 
     return {
-      items,
+      items: markerSelector(state),
       activeMapItemId
     };
   },
