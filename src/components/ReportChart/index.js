@@ -156,7 +156,7 @@ export default connect(
       return { x: item.recdate, y: item.valuein };
     });
 
-    // const fridge = state.equipmentForm.activeItem;
+    // const fridge = state.moreInfo.activeItem;
 
     return {
       valueout,

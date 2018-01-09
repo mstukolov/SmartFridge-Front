@@ -9,13 +9,13 @@ import redMarker from "../../components/GlobalMap/redMarker";
 /**
  * Constants
  * */
-export const moduleName = "equipmentLocation";
+export const moduleName = "location";
 const prefix = `${appName}/${moduleName}`;
 
-export const LOAD_LOCATION_REQUEST = `${prefix}/LOAD_LOCATION_REQUEST`;
-export const LOAD_LOCATION_START = `${prefix}/LOAD_LOCATION_START`;
-export const LOAD_LOCATION_SUCCESS = `${prefix}/LOAD_LOCATION_SUCCESS`;
-export const LOAD_LOCATION_ERROR = `${prefix}/LOAD_LOCATION_ERROR`;
+export const LOAD_REQUEST = `${prefix}/LOAD_REQUEST`;
+export const LOAD_START = `${prefix}/LOAD_START`;
+export const LOAD_SUCCESS = `${prefix}/LOAD_SUCCESS`;
+export const LOAD_ERROR = `${prefix}/LOAD_ERROR`;
 export const SHOW_FULLSCREEN = `${prefix}/SHOW_FULLSCREEN`;
 
 /**
@@ -31,14 +31,14 @@ export default function reducer(state = new ReducerRecord(), action) {
   const { type, payload } = action;
 
   switch (type) {
-    case LOAD_LOCATION_START:
+    case LOAD_START:
       return state.set("loading", true);
-    case LOAD_LOCATION_SUCCESS:
+    case LOAD_SUCCESS:
       return state
         .set("loading", false)
         .setIn(["collection"], new OrderedMap(payload.collection));
 
-    case LOAD_LOCATION_ERROR:
+    case LOAD_ERROR:
       return state.setIn(["error"], payload.error).set("loading", false);
 
     case SHOW_FULLSCREEN:
@@ -63,15 +63,17 @@ export const loadingSelector = createSelector(
 // селектор точек для карты
 const markerSelectorGetter = state => state[moduleName].get("collection");
 const selectedItemsGetter = state => state.equipment.get("selected");
-
+const fridgesGetter = state => state.equipment.get("collection");
 export const markerSelector = createSelector(
   markerSelectorGetter,
   selectedItemsGetter,
-  (markers, selectedItems) => {
+  fridgesGetter,
+  (markers, selectedItems, fridges) => {
+    console.log("asdfasdfadsf dafsdf sd df", markers, fridges);
     return markers.map(item => {
       let element = {
         position: [item.lat, item.lng],
-        popup: getStringPopup(item.id)
+        popup: getStringPopup(item)
       };
       // Если в списке выбранных точек есть данная, выделяем ее красным маркером
       if (selectedItems.get(item.id)) {
@@ -92,7 +94,7 @@ export const markerSelector = createSelector(
  */
 export function loadAll() {
   const action = {
-    type: LOAD_LOCATION_REQUEST
+    type: LOAD_REQUEST
   };
 
   return action;
@@ -118,7 +120,7 @@ export const loadLocationSaga = function*(action) {
   // const { collection } = action.payload;
 
   yield put({
-    type: LOAD_LOCATION_START
+    type: LOAD_START
   });
 
   let promise = new Promise(function(resolve) {
@@ -136,17 +138,17 @@ export const loadLocationSaga = function*(action) {
     });
 
     yield put({
-      type: LOAD_LOCATION_SUCCESS,
+      type: LOAD_SUCCESS,
       payload: { collection: newCollection }
     });
   } catch (error) {
     yield put({
-      type: LOAD_LOCATION_ERROR,
+      type: LOAD_ERROR,
       payload: { error }
     });
   }
 };
 
 export function* saga() {
-  yield all([takeEvery(LOAD_LOCATION_REQUEST, loadLocationSaga)]);
+  yield all([takeEvery(LOAD_REQUEST, loadLocationSaga)]);
 }

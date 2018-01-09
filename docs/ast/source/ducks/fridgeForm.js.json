@@ -1082,9 +1082,9 @@
                   "line": 15,
                   "column": 21
                 },
-                "identifierName": "EquipmentFormModel"
+                "identifierName": "MoreInfoModel"
               },
-              "name": "EquipmentFormModel"
+              "name": "MoreInfoModel"
             },
             "init": {
               "type": "NewExpression",
@@ -1316,9 +1316,9 @@
                     "line": 20,
                     "column": 37
                   },
-                  "identifierName": "EquipmentFormModel"
+                  "identifierName": "MoreInfoModel"
                 },
-                "name": "EquipmentFormModel"
+                "name": "MoreInfoModel"
               },
               "arguments": []
             }
@@ -5644,7 +5644,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "EquipmentFormModel",
+      "value": "MoreInfoModel",
       "start": 415,
       "end": 430,
       "loc": {
@@ -6194,7 +6194,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "EquipmentFormModel",
+      "value": "MoreInfoModel",
       "start": 505,
       "end": 520,
       "loc": {

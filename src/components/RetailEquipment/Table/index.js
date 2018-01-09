@@ -23,7 +23,7 @@ import {
   commercialNetworkSelector,
   tradePointSelector,
   orderedFilterRowsSelector
-} from "../../../ducks/RetailEquipment/table";
+} from "../../../ducks/RetailEquipment/equipment";
 import LinearQuery from "../../LinearQuery/index";
 import Moment from "react-moment";
 import RetailEquipmentTableHead from "./head";
@@ -236,7 +236,7 @@ class RetailEquipmentTable extends React.Component {
                         <Checkbox checked={isSelected} />
                       </TableCell>
 
-                      <TableCell padding="none">{n.sn}</TableCell>
+                      <TableCell padding="none">{n.serialNumber}</TableCell>
 
                       <TableCell numeric>{n.remain}%</TableCell>
 

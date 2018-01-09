@@ -60,7 +60,7 @@ export const equipment = {
   "5499b724-c331-4f29-b25f-55583c0ece34": {
     id: "5499b724-c331-4f29-b25f-55583c0ece34",
     remain: 38,
-    sn: "461010892-5",
+    serialNumber: "461010892-5",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -69,7 +69,7 @@ export const equipment = {
   "175d63ab-c33f-414c-b921-d8ba3f04fec0": {
     id: "175d63ab-c33f-414c-b921-d8ba3f04fec0",
     remain: 3,
-    sn: "449926092-2",
+    serialNumber: "449926092-2",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -78,7 +78,7 @@ export const equipment = {
   "58521d81-37c5-4073-8d32-d2539b1860bd": {
     id: "58521d81-37c5-4073-8d32-d2539b1860bd",
     remain: 31,
-    sn: "380860314-3",
+    serialNumber: "380860314-3",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -87,7 +87,7 @@ export const equipment = {
   "8bacebb5-9a8c-49ff-aab8-7d4134d385a0": {
     id: "8bacebb5-9a8c-49ff-aab8-7d4134d385a0",
     remain: 57,
-    sn: "848424591-8",
+    serialNumber: "848424591-8",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -96,7 +96,7 @@ export const equipment = {
   "68b68f49-ba03-4092-ac74-f70175082d8c": {
     id: "68b68f49-ba03-4092-ac74-f70175082d8c",
     remain: 21,
-    sn: "012179295-1",
+    serialNumber: "012179295-1",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -105,7 +105,7 @@ export const equipment = {
   "9df646ef-f206-4b3d-8029-a2927141ca3e": {
     id: "9df646ef-f206-4b3d-8029-a2927141ca3e",
     remain: 56,
-    sn: "714690531-4",
+    serialNumber: "714690531-4",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -114,7 +114,7 @@ export const equipment = {
   "61c44c95-a3b0-4e99-b2d4-475835f6e2f3": {
     id: "61c44c95-a3b0-4e99-b2d4-475835f6e2f3",
     remain: 34,
-    sn: "565636142-X",
+    serialNumber: "565636142-X",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -123,7 +123,7 @@ export const equipment = {
   "49303e9a-c1be-47a1-8320-1a08a8e8a3eb": {
     id: "49303e9a-c1be-47a1-8320-1a08a8e8a3eb",
     remain: 6,
-    sn: "820492672-3",
+    serialNumber: "820492672-3",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -132,7 +132,7 @@ export const equipment = {
   "e4bb3a30-04aa-42fa-a83f-188042b7923e": {
     id: "e4bb3a30-04aa-42fa-a83f-188042b7923e",
     remain: 73,
-    sn: "625299759-5",
+    serialNumber: "625299759-5",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -141,7 +141,7 @@ export const equipment = {
   "0bd85e47-b859-46d7-93f8-eff6fbd0d71c": {
     id: "0bd85e47-b859-46d7-93f8-eff6fbd0d71c",
     remain: 8,
-    sn: "337299392-6",
+    serialNumber: "337299392-6",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -150,7 +150,7 @@ export const equipment = {
   "cc174183-8825-48a7-81a2-18cabcea2baa": {
     id: "cc174183-8825-48a7-81a2-18cabcea2baa",
     remain: 20,
-    sn: "797807368-8",
+    serialNumber: "797807368-8",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -159,7 +159,7 @@ export const equipment = {
   "2385cabc-cafd-4f41-a171-747285b9c540": {
     id: "2385cabc-cafd-4f41-a171-747285b9c540",
     remain: 47,
-    sn: "359293071-0",
+    serialNumber: "359293071-0",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -168,7 +168,7 @@ export const equipment = {
   "4ea44a7c-622d-4c31-8bc1-89de5eceaa23": {
     id: "4ea44a7c-622d-4c31-8bc1-89de5eceaa23",
     remain: 91,
-    sn: "402520646-3",
+    serialNumber: "402520646-3",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -177,7 +177,7 @@ export const equipment = {
   "453f72ff-6f3a-4ec4-86de-5284f8dce435": {
     id: "453f72ff-6f3a-4ec4-86de-5284f8dce435",
     remain: 24,
-    sn: "051297382-2",
+    serialNumber: "051297382-2",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -186,7 +186,7 @@ export const equipment = {
   "4353895b-2b42-4129-acd1-455bcca23ba5": {
     id: "4353895b-2b42-4129-acd1-455bcca23ba5",
     remain: 78,
-    sn: "265183934-5",
+    serialNumber: "265183934-5",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -195,7 +195,7 @@ export const equipment = {
   "b8e5a9cb-eff7-4b90-b64b-8775497e9e4f": {
     id: "b8e5a9cb-eff7-4b90-b64b-8775497e9e4f",
     remain: 78,
-    sn: "651586860-X",
+    serialNumber: "651586860-X",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -204,7 +204,7 @@ export const equipment = {
   "82d782fb-ee1a-4d08-9c70-9fb329e3058d": {
     id: "82d782fb-ee1a-4d08-9c70-9fb329e3058d",
     remain: 16,
-    sn: "956806916-X",
+    serialNumber: "956806916-X",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -213,7 +213,7 @@ export const equipment = {
   "9b2f49a6-d18f-4efa-a452-9b04d17a1267": {
     id: "9b2f49a6-d18f-4efa-a452-9b04d17a1267",
     remain: 80,
-    sn: "557976179-1",
+    serialNumber: "557976179-1",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -222,7 +222,7 @@ export const equipment = {
   "77f1159a-c888-42d3-942f-48beadad0854": {
     id: "77f1159a-c888-42d3-942f-48beadad0854",
     remain: 30,
-    sn: "471334242-4",
+    serialNumber: "471334242-4",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -231,7 +231,7 @@ export const equipment = {
   "8f2430c8-eaca-4570-9a75-646bcb3c1fef": {
     id: "8f2430c8-eaca-4570-9a75-646bcb3c1fef",
     remain: 93,
-    sn: "277502076-3",
+    serialNumber: "277502076-3",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -240,7 +240,7 @@ export const equipment = {
   "e02c3e0f-51fe-40aa-a546-4c1bebce9289": {
     id: "e02c3e0f-51fe-40aa-a546-4c1bebce9289",
     remain: 85,
-    sn: "132118500-6",
+    serialNumber: "132118500-6",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -249,7 +249,7 @@ export const equipment = {
   "518d7dab-3d2a-49f7-924f-d7d5676bbe37": {
     id: "518d7dab-3d2a-49f7-924f-d7d5676bbe37",
     remain: 83,
-    sn: "350782029-3",
+    serialNumber: "350782029-3",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -258,7 +258,7 @@ export const equipment = {
   "41b40a74-4cce-4f9d-9db4-e877ee40302a": {
     id: "41b40a74-4cce-4f9d-9db4-e877ee40302a",
     remain: 33,
-    sn: "429642226-X",
+    serialNumber: "429642226-X",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -267,7 +267,7 @@ export const equipment = {
   "0c4fc74a-f3c2-4791-be15-644583c4271f": {
     id: "0c4fc74a-f3c2-4791-be15-644583c4271f",
     remain: 16,
-    sn: "261072898-0",
+    serialNumber: "261072898-0",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -276,7 +276,7 @@ export const equipment = {
   "5ffc48b9-4d76-4be8-81db-f2a5c8f19d20": {
     id: "5ffc48b9-4d76-4be8-81db-f2a5c8f19d20",
     remain: 56,
-    sn: "293621778-4",
+    serialNumber: "293621778-4",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -285,7 +285,7 @@ export const equipment = {
   "50b1d9fc-4fed-41c0-b28b-1909f932f3d7": {
     id: "50b1d9fc-4fed-41c0-b28b-1909f932f3d7",
     remain: 34,
-    sn: "825100211-7",
+    serialNumber: "825100211-7",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -294,7 +294,7 @@ export const equipment = {
   "c221cb7d-c2a8-4990-b88e-4a9e3bf723cd": {
     id: "c221cb7d-c2a8-4990-b88e-4a9e3bf723cd",
     remain: 65,
-    sn: "203149104-0",
+    serialNumber: "203149104-0",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -303,7 +303,7 @@ export const equipment = {
   "3ad9bec4-5b08-40a5-97f8-ec09e9ba8953": {
     id: "3ad9bec4-5b08-40a5-97f8-ec09e9ba8953",
     remain: 33,
-    sn: "459198388-9",
+    serialNumber: "459198388-9",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -312,7 +312,7 @@ export const equipment = {
   "d309535b-3165-4ee7-ac66-aaa9c5625145": {
     id: "d309535b-3165-4ee7-ac66-aaa9c5625145",
     remain: 44,
-    sn: "992607653-X",
+    serialNumber: "992607653-X",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -321,7 +321,7 @@ export const equipment = {
   "560bd852-7055-4dd2-ad70-bff3fea0bd66": {
     id: "560bd852-7055-4dd2-ad70-bff3fea0bd66",
     remain: 3,
-    sn: "607372101-3",
+    serialNumber: "607372101-3",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -330,7 +330,7 @@ export const equipment = {
   "dc27f6f1-d071-4c74-bad2-e51e1eefe6c0": {
     id: "dc27f6f1-d071-4c74-bad2-e51e1eefe6c0",
     remain: 64,
-    sn: "319233205-0",
+    serialNumber: "319233205-0",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -339,7 +339,7 @@ export const equipment = {
   "5cec465a-fbea-4ba9-91a2-46ab899add14": {
     id: "5cec465a-fbea-4ba9-91a2-46ab899add14",
     remain: 47,
-    sn: "925805713-9",
+    serialNumber: "925805713-9",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -348,7 +348,7 @@ export const equipment = {
   "0998c21d-ceed-4a95-bf0f-f6275603e591": {
     id: "0998c21d-ceed-4a95-bf0f-f6275603e591",
     remain: 56,
-    sn: "467115596-6",
+    serialNumber: "467115596-6",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -357,7 +357,7 @@ export const equipment = {
   "85983733-5c0a-40c2-b414-819f274b39c8": {
     id: "85983733-5c0a-40c2-b414-819f274b39c8",
     remain: 33,
-    sn: "589946828-9",
+    serialNumber: "589946828-9",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -366,7 +366,7 @@ export const equipment = {
   "7a7a2a54-d007-45f5-9fbe-28887bd9555f": {
     id: "7a7a2a54-d007-45f5-9fbe-28887bd9555f",
     remain: 26,
-    sn: "003703355-7",
+    serialNumber: "003703355-7",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -375,7 +375,7 @@ export const equipment = {
   "4eb50c27-d281-4d9b-852d-5e98adc84355": {
     id: "4eb50c27-d281-4d9b-852d-5e98adc84355",
     remain: 92,
-    sn: "061168302-4",
+    serialNumber: "061168302-4",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -384,7 +384,7 @@ export const equipment = {
   "0863083d-df8a-47e1-9cd9-c683e1700b91": {
     id: "0863083d-df8a-47e1-9cd9-c683e1700b91",
     remain: 64,
-    sn: "986404822-8",
+    serialNumber: "986404822-8",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -393,7 +393,7 @@ export const equipment = {
   "a29facd7-3307-4a6d-8d74-8409d849b438": {
     id: "a29facd7-3307-4a6d-8d74-8409d849b438",
     remain: 52,
-    sn: "324324451-X",
+    serialNumber: "324324451-X",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -402,7 +402,7 @@ export const equipment = {
   "be9b9fc9-b441-46db-ba03-fc9e07bcc4c7": {
     id: "be9b9fc9-b441-46db-ba03-fc9e07bcc4c7",
     remain: 43,
-    sn: "871499922-6",
+    serialNumber: "871499922-6",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -411,7 +411,7 @@ export const equipment = {
   "d2919b2a-e293-45bd-9153-563e0c3952c2": {
     id: "d2919b2a-e293-45bd-9153-563e0c3952c2",
     remain: 67,
-    sn: "059713121-X",
+    serialNumber: "059713121-X",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -420,7 +420,7 @@ export const equipment = {
   "61b5e406-c570-4469-8ed5-2a1a031d5bd6": {
     id: "61b5e406-c570-4469-8ed5-2a1a031d5bd6",
     remain: 76,
-    sn: "609498152-9",
+    serialNumber: "609498152-9",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -429,7 +429,7 @@ export const equipment = {
   "19ca7eab-4462-4220-bbb4-3686bed8e9be": {
     id: "19ca7eab-4462-4220-bbb4-3686bed8e9be",
     remain: 46,
-    sn: "131854535-8",
+    serialNumber: "131854535-8",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -438,7 +438,7 @@ export const equipment = {
   "0097d859-6bd1-4e26-adb4-eb82096665f6": {
     id: "0097d859-6bd1-4e26-adb4-eb82096665f6",
     remain: 91,
-    sn: "452846781-X",
+    serialNumber: "452846781-X",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -447,7 +447,7 @@ export const equipment = {
   "97670215-17ae-49ca-856c-8e39983359e5": {
     id: "97670215-17ae-49ca-856c-8e39983359e5",
     remain: 96,
-    sn: "677504107-1",
+    serialNumber: "677504107-1",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -456,7 +456,7 @@ export const equipment = {
   "9ab253f5-43e7-46ac-a199-4290444bca55": {
     id: "9ab253f5-43e7-46ac-a199-4290444bca55",
     remain: 45,
-    sn: "658641242-0",
+    serialNumber: "658641242-0",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -465,7 +465,7 @@ export const equipment = {
   "23d82f62-f426-42f2-90c2-5207a18cb9a5": {
     id: "23d82f62-f426-42f2-90c2-5207a18cb9a5",
     remain: 75,
-    sn: "527809189-4",
+    serialNumber: "527809189-4",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -474,7 +474,7 @@ export const equipment = {
   "e18963bc-2ec1-4874-824c-a9e71770a1b3": {
     id: "e18963bc-2ec1-4874-824c-a9e71770a1b3",
     remain: 49,
-    sn: "688267100-1",
+    serialNumber: "688267100-1",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -483,7 +483,7 @@ export const equipment = {
   "b20b188c-5711-4e51-b8d2-51103dab95eb": {
     id: "b20b188c-5711-4e51-b8d2-51103dab95eb",
     remain: 60,
-    sn: "857770085-2",
+    serialNumber: "857770085-2",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -492,7 +492,7 @@ export const equipment = {
   "1731f0d4-c036-4514-b856-bd1ef45c15b5": {
     id: "1731f0d4-c036-4514-b856-bd1ef45c15b5",
     remain: 99,
-    sn: "917349094-6",
+    serialNumber: "917349094-6",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -501,7 +501,7 @@ export const equipment = {
   "b929477a-01f5-400f-bd7b-e0bace3e3b47": {
     id: "b929477a-01f5-400f-bd7b-e0bace3e3b47",
     remain: 34,
-    sn: "838077885-5",
+    serialNumber: "838077885-5",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -510,7 +510,7 @@ export const equipment = {
   "76c7dd9d-72f8-47e0-9528-60b8e4793f31": {
     id: "76c7dd9d-72f8-47e0-9528-60b8e4793f31",
     remain: 11,
-    sn: "456515377-7",
+    serialNumber: "456515377-7",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -519,7 +519,7 @@ export const equipment = {
   "2da4a521-973d-479e-91a6-75150434f1e4": {
     id: "2da4a521-973d-479e-91a6-75150434f1e4",
     remain: 51,
-    sn: "963049879-0",
+    serialNumber: "963049879-0",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -528,7 +528,7 @@ export const equipment = {
   "4101f9a6-cd20-4fc7-8c5c-e9a05569bb6d": {
     id: "4101f9a6-cd20-4fc7-8c5c-e9a05569bb6d",
     remain: 78,
-    sn: "748572875-X",
+    serialNumber: "748572875-X",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -537,7 +537,7 @@ export const equipment = {
   "ca18cc7c-1c75-4a60-927b-a667d5ac9311": {
     id: "ca18cc7c-1c75-4a60-927b-a667d5ac9311",
     remain: 38,
-    sn: "080953419-3",
+    serialNumber: "080953419-3",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -546,7 +546,7 @@ export const equipment = {
   "1c08dbb8-85fc-43a0-b43f-4075306a67f0": {
     id: "1c08dbb8-85fc-43a0-b43f-4075306a67f0",
     remain: 82,
-    sn: "065196830-5",
+    serialNumber: "065196830-5",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -555,7 +555,7 @@ export const equipment = {
   "38a02586-501b-44bc-b476-939a91fe963e": {
     id: "38a02586-501b-44bc-b476-939a91fe963e",
     remain: 14,
-    sn: "042804072-1",
+    serialNumber: "042804072-1",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -564,7 +564,7 @@ export const equipment = {
   "7c2fd605-75c6-480f-9633-88c489ede2cb": {
     id: "7c2fd605-75c6-480f-9633-88c489ede2cb",
     remain: 9,
-    sn: "888372710-X",
+    serialNumber: "888372710-X",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -573,7 +573,7 @@ export const equipment = {
   "64c5501a-7450-4d3c-b0ac-04935b88a213": {
     id: "64c5501a-7450-4d3c-b0ac-04935b88a213",
     remain: 59,
-    sn: "885631994-2",
+    serialNumber: "885631994-2",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -582,7 +582,7 @@ export const equipment = {
   "cd703f21-874f-42ac-8b28-32f06639bf32": {
     id: "cd703f21-874f-42ac-8b28-32f06639bf32",
     remain: 75,
-    sn: "128226399-4",
+    serialNumber: "128226399-4",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -591,7 +591,7 @@ export const equipment = {
   "1be03dc5-431d-4a91-bd1b-a588ee226652": {
     id: "1be03dc5-431d-4a91-bd1b-a588ee226652",
     remain: 68,
-    sn: "022903992-8",
+    serialNumber: "022903992-8",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -600,7 +600,7 @@ export const equipment = {
   "75029a6b-2c08-4ac1-8747-c336caa2c20a": {
     id: "75029a6b-2c08-4ac1-8747-c336caa2c20a",
     remain: 85,
-    sn: "826818356-X",
+    serialNumber: "826818356-X",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -609,7 +609,7 @@ export const equipment = {
   "fbcf2296-3fc7-431e-bebf-b5b3a6764a5d": {
     id: "fbcf2296-3fc7-431e-bebf-b5b3a6764a5d",
     remain: 39,
-    sn: "756660935-1",
+    serialNumber: "756660935-1",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -618,7 +618,7 @@ export const equipment = {
   "035c1f31-4642-4c94-b2e6-654055b64182": {
     id: "035c1f31-4642-4c94-b2e6-654055b64182",
     remain: 24,
-    sn: "895199230-6",
+    serialNumber: "895199230-6",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -627,7 +627,7 @@ export const equipment = {
   "d5421d19-7a7d-428e-a9e2-0d3bfe98494a": {
     id: "d5421d19-7a7d-428e-a9e2-0d3bfe98494a",
     remain: 68,
-    sn: "805659524-4",
+    serialNumber: "805659524-4",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -636,7 +636,7 @@ export const equipment = {
   "39769fab-27c7-41b8-a4e6-c85f6bfcffea": {
     id: "39769fab-27c7-41b8-a4e6-c85f6bfcffea",
     remain: 83,
-    sn: "184967007-2",
+    serialNumber: "184967007-2",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -645,7 +645,7 @@ export const equipment = {
   "a77f833c-6ec3-48c6-a59c-10c6865f2051": {
     id: "a77f833c-6ec3-48c6-a59c-10c6865f2051",
     remain: 85,
-    sn: "968813704-9",
+    serialNumber: "968813704-9",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -654,7 +654,7 @@ export const equipment = {
   "faab20b3-5d74-4b95-b189-0455925cb888": {
     id: "faab20b3-5d74-4b95-b189-0455925cb888",
     remain: 51,
-    sn: "975380276-5",
+    serialNumber: "975380276-5",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -663,7 +663,7 @@ export const equipment = {
   "28e375dc-45e3-4f83-a71a-e7bb52c65f0c": {
     id: "28e375dc-45e3-4f83-a71a-e7bb52c65f0c",
     remain: 33,
-    sn: "744983563-0",
+    serialNumber: "744983563-0",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -672,7 +672,7 @@ export const equipment = {
   "e525c367-a98c-4650-932a-92f6e33c1b0d": {
     id: "e525c367-a98c-4650-932a-92f6e33c1b0d",
     remain: 85,
-    sn: "419588192-7",
+    serialNumber: "419588192-7",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -681,7 +681,7 @@ export const equipment = {
   "6ed7937e-f1c8-466b-814e-0f40f6cde472": {
     id: "6ed7937e-f1c8-466b-814e-0f40f6cde472",
     remain: 100,
-    sn: "521700587-4",
+    serialNumber: "521700587-4",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -690,7 +690,7 @@ export const equipment = {
   "e014b37d-2dde-4573-809e-0e30669b2017": {
     id: "e014b37d-2dde-4573-809e-0e30669b2017",
     remain: 70,
-    sn: "886754595-7",
+    serialNumber: "886754595-7",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -699,7 +699,7 @@ export const equipment = {
   "84b8dc0d-5deb-42d9-addc-c1f4c9bf7647": {
     id: "84b8dc0d-5deb-42d9-addc-c1f4c9bf7647",
     remain: 73,
-    sn: "821391350-7",
+    serialNumber: "821391350-7",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -708,7 +708,7 @@ export const equipment = {
   "36e45f97-94bc-4e41-913e-4612041a1bfb": {
     id: "36e45f97-94bc-4e41-913e-4612041a1bfb",
     remain: 32,
-    sn: "745574710-1",
+    serialNumber: "745574710-1",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -717,7 +717,7 @@ export const equipment = {
   "b88de840-ab75-483c-a509-3ca3c85d2e7b": {
     id: "b88de840-ab75-483c-a509-3ca3c85d2e7b",
     remain: 65,
-    sn: "488019475-1",
+    serialNumber: "488019475-1",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -726,7 +726,7 @@ export const equipment = {
   "278faf2c-ee3f-4ddf-943d-7a8242121180": {
     id: "278faf2c-ee3f-4ddf-943d-7a8242121180",
     remain: 47,
-    sn: "129385872-2",
+    serialNumber: "129385872-2",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -735,7 +735,7 @@ export const equipment = {
   "53caace0-93ac-426a-8174-cd7b67da6edc": {
     id: "53caace0-93ac-426a-8174-cd7b67da6edc",
     remain: 25,
-    sn: "136628631-6",
+    serialNumber: "136628631-6",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -744,7 +744,7 @@ export const equipment = {
   "62aa9332-406d-4a20-9caa-a189409d0f0b": {
     id: "62aa9332-406d-4a20-9caa-a189409d0f0b",
     remain: 42,
-    sn: "509714779-0",
+    serialNumber: "509714779-0",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -753,7 +753,7 @@ export const equipment = {
   "1cdbd057-cbc7-4976-b782-4c52c976d778": {
     id: "1cdbd057-cbc7-4976-b782-4c52c976d778",
     remain: 13,
-    sn: "910868622-X",
+    serialNumber: "910868622-X",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -762,7 +762,7 @@ export const equipment = {
   "03615c49-211f-45c1-a566-4d08a64c73d1": {
     id: "03615c49-211f-45c1-a566-4d08a64c73d1",
     remain: 54,
-    sn: "136675616-9",
+    serialNumber: "136675616-9",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -771,7 +771,7 @@ export const equipment = {
   "91272a3a-4e11-4d31-8372-1c33416af2c2": {
     id: "91272a3a-4e11-4d31-8372-1c33416af2c2",
     remain: 8,
-    sn: "674231068-5",
+    serialNumber: "674231068-5",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -780,7 +780,7 @@ export const equipment = {
   "a5a7eb88-6dae-42a7-8dd6-ee4d58248e70": {
     id: "a5a7eb88-6dae-42a7-8dd6-ee4d58248e70",
     remain: 98,
-    sn: "282197836-7",
+    serialNumber: "282197836-7",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -789,7 +789,7 @@ export const equipment = {
   "e5e8c58e-3840-40f9-aff7-30a9bef4d3d0": {
     id: "e5e8c58e-3840-40f9-aff7-30a9bef4d3d0",
     remain: 79,
-    sn: "708159470-0",
+    serialNumber: "708159470-0",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -798,7 +798,7 @@ export const equipment = {
   "b1a0a923-38ba-401a-a6b1-cdf37774e9f2": {
     id: "b1a0a923-38ba-401a-a6b1-cdf37774e9f2",
     remain: 8,
-    sn: "887029914-7",
+    serialNumber: "887029914-7",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -807,7 +807,7 @@ export const equipment = {
   "8c887b71-4297-4fe7-b83c-a5395365409d": {
     id: "8c887b71-4297-4fe7-b83c-a5395365409d",
     remain: 33,
-    sn: "515428556-5",
+    serialNumber: "515428556-5",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -816,7 +816,7 @@ export const equipment = {
   "760b1dac-d091-4d58-ba23-996bc1c7ac84": {
     id: "760b1dac-d091-4d58-ba23-996bc1c7ac84",
     remain: 71,
-    sn: "949257461-6",
+    serialNumber: "949257461-6",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -825,7 +825,7 @@ export const equipment = {
   "b50be7f2-46e2-417f-9ed4-cbb5f63e51d9": {
     id: "b50be7f2-46e2-417f-9ed4-cbb5f63e51d9",
     remain: 34,
-    sn: "951627500-1",
+    serialNumber: "951627500-1",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -834,7 +834,7 @@ export const equipment = {
   "3ac9a86a-938b-44fc-b536-f14d742baf5c": {
     id: "3ac9a86a-938b-44fc-b536-f14d742baf5c",
     remain: 7,
-    sn: "721684317-7",
+    serialNumber: "721684317-7",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -843,7 +843,7 @@ export const equipment = {
   "08aac02a-76de-4d84-84d0-eda3399ef6d2": {
     id: "08aac02a-76de-4d84-84d0-eda3399ef6d2",
     remain: 2,
-    sn: "727357394-9",
+    serialNumber: "727357394-9",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -852,7 +852,7 @@ export const equipment = {
   "84772bd7-656a-4df1-bb17-ffc9cc1c3854": {
     id: "84772bd7-656a-4df1-bb17-ffc9cc1c3854",
     remain: 53,
-    sn: "251915408-X",
+    serialNumber: "251915408-X",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -861,7 +861,7 @@ export const equipment = {
   "1645e1aa-29c7-457b-9eb4-bda2f8c60652": {
     id: "1645e1aa-29c7-457b-9eb4-bda2f8c60652",
     remain: 56,
-    sn: "509545133-6",
+    serialNumber: "509545133-6",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",
@@ -870,7 +870,7 @@ export const equipment = {
   "a18ac885-a387-4178-bfa5-6d14a1fee919": {
     id: "a18ac885-a387-4178-bfa5-6d14a1fee919",
     remain: 85,
-    sn: "065723341-2",
+    serialNumber: "065723341-2",
     dateUpdate: randomDate(new Date(2017, 11, 20), new Date()),
     refill: !!randomInteger(0, 1),
     tradePoint: "",

@@ -5,7 +5,7 @@ import Paper from "material-ui/Paper";
 import Grid from "material-ui/Grid";
 import GlobalMap from "../../../GlobalMap";
 import Typography from "material-ui/Typography";
-import RetailEquipmentForm from "../../../RetailEquipment/Form/index";
+import RetailMoreInfo from "../../../RetailEquipment/Form/index";
 
 const styles = theme => ({
   root: {
@@ -46,7 +46,7 @@ function RetailEquipmentPageView(props: Props) {
         </Grid>
         <Grid item xs={12} sm={6}>
           <Paper className={classes.paper}>
-            <RetailEquipmentForm location={props.location.pathname} />
+            <RetailMoreInfo location={props.location.pathname} />
           </Paper>
         </Grid>
         <Grid item xs={12} sm={6}>

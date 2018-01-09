@@ -6,7 +6,7 @@ import Paper from "material-ui/Paper";
 import Grid from "material-ui/Grid";
 import GlobalMap from "../../../GlobalMap";
 import Typography from "material-ui/Typography";
-import RetailEquipmentForm from "../../../RetailEquipment/Form/index";
+import RetailMoreInfo from "../../../RetailEquipment/Form/index";
 
 const styles = theme => ({
   root: {

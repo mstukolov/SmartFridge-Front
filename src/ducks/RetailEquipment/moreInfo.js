@@ -8,24 +8,24 @@ import { equipment } from "../../fakeData";
 /**
  * Constants
  * */
-export const moduleName = "equipmentForm";
+export const moduleName = "moreInfo";
 const prefix = `${appName}/${moduleName}`;
 
-export const LOAD_EQUIPMENT_REQUEST = `${prefix}/LOAD_EQUIPMENT_REQUEST`;
-export const LOAD_EQUIPMENT_START = `${prefix}/LOAD_EQUIPMENT_START`;
-export const LOAD_EQUIPMENT_SUCCESS = `${prefix}/LOAD_EQUIPMENT_SUCCESS`;
-export const LOAD_EQUIPMENT_ERROR = `${prefix}/LOAD_EQUIPMENT_ERROR`;
+export const LOAD_REQUEST = `${prefix}/LOAD_REQUEST`;
+export const LOAD_START = `${prefix}/LOAD_START`;
+export const LOAD_SUCCESS = `${prefix}/LOAD_SUCCESS`;
+export const LOAD_ERROR = `${prefix}/LOAD_ERROR`;
 
-export const SAVE_EDIT_EQUIPMENT_REQUEST = `${prefix}/SAVE_EDIT_EQUIPMENT_REQUEST`;
-export const SAVE_EDIT_EQUIPMENT_START = `${prefix}/SAVE_EDIT_EQUIPMENT_START`;
-export const SAVE_EDIT_EQUIPMENT_SUCCESS = `${prefix}/SAVE_EDIT_EQUIPMENT_SUCCESS`;
-export const SAVE_EDIT_EQUIPMENT_ERROR = `${prefix}/SAVE_EDIT_EQUIPMENT_ERROR`;
+export const SAVE_EDIT_REQUEST = `${prefix}/SAVE_EDIT_REQUEST`;
+export const SAVE_EDIT_START = `${prefix}/SAVE_EDIT_START`;
+export const SAVE_EDIT_SUCCESS = `${prefix}/SAVE_EDIT_SUCCESS`;
+export const SAVE_EDIT_ERROR = `${prefix}/SAVE_EDIT_ERROR`;
 
-export const SHOW_EQUIPMENT = `${prefix}/SHOW_EQUIPMENT`;
-export const EDIT_EQUIPMENT = `${prefix}/EDIT_EQUIPMENT`;
-export const CANCEL_EQUIPMENT = `${prefix}/CANCEL_EQUIPMENT`;
+export const SHOW = `${prefix}/SHOW`;
+export const EDIT = `${prefix}/EDIT`;
+export const CANCEL = `${prefix}/CANCEL`;
 
-const EquipmentFormModel = new Record({
+const MoreInfoModel = new Record({
   activeItem: null,
   location: null,
   edit: false,
@@ -35,7 +35,7 @@ const EquipmentFormModel = new Record({
   error: null
 });
 
-let defaultForm = new EquipmentFormModel();
+let defaultForm = new MoreInfoModel();
 
 /**
  * Reducer
@@ -50,27 +50,27 @@ let defaultForm = new EquipmentFormModel();
 export default (state = defaultForm, action) => {
   const { type, payload } = action;
   switch (type) {
-    case LOAD_EQUIPMENT_START:
+    case LOAD_START:
       return state.set("loading", true).set("saved", false);
 
-    case LOAD_EQUIPMENT_SUCCESS:
+    case LOAD_SUCCESS:
       return state.set("loading", false).set("activeItem", payload.activeItem);
-    case SAVE_EDIT_EQUIPMENT_ERROR:
-    case LOAD_EQUIPMENT_ERROR:
+    case SAVE_EDIT_ERROR:
+    case LOAD_ERROR:
       return state.setIn(["error"], payload.error).set("loading", false);
 
-    case SHOW_EQUIPMENT:
+    case SHOW:
       return state.setIn(["edit"], false).set("saved", false);
 
-    case EDIT_EQUIPMENT:
+    case EDIT:
       return state.setIn(["edit"], true).set("saved", false);
 
-    case CANCEL_EQUIPMENT:
+    case CANCEL:
       return state.setIn(["edit"], false).set("saved", false);
 
-    case SAVE_EDIT_EQUIPMENT_START:
+    case SAVE_EDIT_START:
       return state.set("saved", false).set("isSaving", true);
-    case SAVE_EDIT_EQUIPMENT_SUCCESS:
+    case SAVE_EDIT_SUCCESS:
       const { editedItem } = action.payload;
       return state.set("saved", true).set("isSaving", false);
 
@@ -89,7 +89,7 @@ export default (state = defaultForm, action) => {
  */
 export function loadEquipment(location) {
   const action = {
-    type: LOAD_EQUIPMENT_REQUEST,
+    type: LOAD_REQUEST,
     payload: {
       location
     }
@@ -103,7 +103,7 @@ export function loadEquipment(location) {
  */
 export function showEquipment(id) {
   const action = {
-    type: SHOW_EQUIPMENT,
+    type: SHOW,
     payload: { id }
   };
 
@@ -116,7 +116,7 @@ export function showEquipment(id) {
  */
 export function editEquipment(id) {
   const action = {
-    type: EDIT_EQUIPMENT,
+    type: EDIT,
     payload: { id }
   };
 
@@ -129,7 +129,7 @@ export function editEquipment(id) {
  */
 export function saveEditEquipment(editItem) {
   const action = {
-    type: SAVE_EDIT_EQUIPMENT_REQUEST,
+    type: SAVE_EDIT_REQUEST,
     payload: {
       editItem
     }
@@ -144,7 +144,7 @@ export function saveEditEquipment(editItem) {
  */
 export function cancelEquipment() {
   const action = {
-    type: CANCEL_EQUIPMENT
+    type: CANCEL
   };
 
   return action;
@@ -159,7 +159,7 @@ export const loadSaga = function*(action) {
   const activeItem = new OrderedMap(equipment).get(id);
 
   yield put({
-    type: LOAD_EQUIPMENT_START
+    type: LOAD_START
   });
 
   let promise = new Promise(function(resolve) {
@@ -178,12 +178,12 @@ export const loadSaga = function*(action) {
     });
 
     yield put({
-      type: LOAD_EQUIPMENT_SUCCESS,
+      type: LOAD_SUCCESS,
       payload: { activeItem }
     });
   } catch (error) {
     yield put({
-      type: LOAD_EQUIPMENT_ERROR,
+      type: LOAD_ERROR,
       payload: { error }
     });
   }
@@ -193,7 +193,7 @@ export const saveEditSaga = function*(action) {
   const editItem = action.payload.editItem;
 
   yield put({
-    type: SAVE_EDIT_EQUIPMENT_START
+    type: SAVE_EDIT_START
   });
 
   let promise = new Promise(function(resolve) {
@@ -211,12 +211,12 @@ export const saveEditSaga = function*(action) {
     });
 
     yield put({
-      type: SAVE_EDIT_EQUIPMENT_SUCCESS,
+      type: SAVE_EDIT_SUCCESS,
       payload: { editedItem }
     });
   } catch (error) {
     yield put({
-      type: SAVE_EDIT_EQUIPMENT_ERROR,
+      type: SAVE_EDIT_ERROR,
       payload: { error }
     });
   }
@@ -224,7 +224,7 @@ export const saveEditSaga = function*(action) {
 
 export const saga = function*() {
   yield all([
-    takeEvery(LOAD_EQUIPMENT_REQUEST, loadSaga),
-    takeEvery(SAVE_EDIT_EQUIPMENT_REQUEST, saveEditSaga)
+    takeEvery(LOAD_REQUEST, loadSaga),
+    takeEvery(SAVE_EDIT_REQUEST, saveEditSaga)
   ]);
 };

@@ -528,9 +528,9 @@
                   "line": 8,
                   "column": 17
                 },
-                "identifierName": "RetailEquipmentForm"
+                "identifierName": "RetailMoreInfo"
               },
-              "name": "RetailEquipmentForm"
+              "name": "RetailMoreInfo"
             }
           }
         ],
@@ -550,10 +550,10 @@
             }
           },
           "extra": {
-            "rawValue": "../../RetailEquipmentForm/index",
-            "raw": "\"../../RetailEquipmentForm/index\""
+            "rawValue": "../../RetailMoreInfo/index",
+            "raw": "\"../../RetailMoreInfo/index\""
           },
-          "value": "../../RetailEquipmentForm/index"
+          "value": "../../RetailMoreInfo/index"
         }
       },
       {
@@ -3403,7 +3403,7 @@
                                         "column": 23
                                       }
                                     },
-                                    "name": "RetailEquipmentForm"
+                                    "name": "RetailMoreInfo"
                                   },
                                   "selfClosing": true
                                 },
@@ -5238,7 +5238,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "RetailEquipmentForm",
+      "value": "RetailMoreInfo",
       "start": 269,
       "end": 279,
       "loc": {
@@ -5291,7 +5291,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "../../RetailEquipmentForm/index",
+      "value": "../../RetailMoreInfo/index",
       "start": 285,
       "end": 309,
       "loc": {
@@ -10260,7 +10260,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "RetailEquipmentForm",
+      "value": "RetailMoreInfo",
       "start": 1143,
       "end": 1153,
       "loc": {

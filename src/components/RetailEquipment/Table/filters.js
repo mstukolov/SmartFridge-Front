@@ -4,13 +4,13 @@ import { connect } from "react-redux";
 import {
   filterEquipmentByNetwork,
   filterEquipmentByPoint
-} from "../../../ducks/RetailEquipment/table";
+} from "../../../ducks/RetailEquipment/equipment";
 import { withStyles } from "material-ui/styles";
 import {
   commercialNetworkSelector,
   tradePointSelector,
   filtersDataSelector
-} from "../../../ducks/RetailEquipment/table";
+} from "../../../ducks/RetailEquipment/equipment";
 import Input, { InputLabel } from "material-ui/Input";
 import { MenuItem } from "material-ui/Menu";
 import { FormControl } from "material-ui/Form";

@@ -18,23 +18,23 @@ import { getName } from "../../utils";
 /**
  * Constants
  * */
-export const moduleName = "mainTable";
+export const moduleName = "equipment";
 const prefix = `${appName}/${moduleName}`;
 
-export const SHOW_EQUIPMENT_REQUEST = `${prefix}/SHOW_EQUIPMENT_REQUEST`;
+export const SHOW_REQUEST = `${prefix}/SHOW_REQUEST`;
 export const SHOW_REPORT_REQUEST = `${prefix}/SHOW_REPORT_REQUEST`;
-export const LOAD_ALL_EQUIPMENT_REQUEST = `${prefix}/LOAD_ALL_EQUIPMENT_REQUEST`;
-export const LOAD_ALL_EQUIPMENT_START = `${prefix}/LOAD_ALL_EQUIPMENT_START`;
-export const LOAD_ALL_EQUIPMENT_SUCCESS = `${prefix}/LOAD_ALL_EQUIPMENT_SUCCESS`;
-export const LOAD_ALL_EQUIPMENT_ERROR = `${prefix}/LOAD_ALL_EQUIPMENT_ERROR`;
+export const LOAD_ALL_REQUEST = `${prefix}/LOAD_ALL_REQUEST`;
+export const LOAD_ALL_START = `${prefix}/LOAD_ALL_START`;
+export const LOAD_ALL_SUCCESS = `${prefix}/LOAD_ALL_SUCCESS`;
+export const LOAD_ALL_ERROR = `${prefix}/LOAD_ALL_ERROR`;
 
-export const DELETE_EQUIPMENT_REQUEST = `${prefix}/DELETE_EQUIPMENT_REQUEST`;
-export const DELETE_EQUIPMENT_START = `${prefix}/DELETE_EQUIPMENT_START`;
-export const DELETE_EQUIPMENT_SUCCESS = `${prefix}/DELETE_EQUIPMENT_SUCCESS`;
-export const DELETE_EQUIPMENT_ERROR = `${prefix}/DELETE_EQUIPMENT_ERROR`;
+export const DELETE_REQUEST = `${prefix}/DELETE_REQUEST`;
+export const DELETE_START = `${prefix}/DELETE_START`;
+export const DELETE_SUCCESS = `${prefix}/DELETE_SUCCESS`;
+export const DELETE_ERROR = `${prefix}/DELETE_ERROR`;
 
-export const SELECT_EQUIPMENT = `${prefix}/SELECT_EQUIPMENT`;
-export const SELECT_ALL_EQUIPMENT = `${prefix}/SELECT_ALL_EQUIPMENT`;
+export const SELECT = `${prefix}/SELECT`;
+export const SELECT_ALL = `${prefix}/SELECT_ALL`;
 
 export const ORDER_BY = `${prefix}/ORDER_BY`;
 
@@ -68,22 +68,22 @@ export default function reducer(state = defaultState, action) {
   const { selected } = state;
 
   switch (type) {
-    case LOAD_ALL_EQUIPMENT_START:
+    case LOAD_ALL_START:
       return state.set("loading", true);
 
-    case LOAD_ALL_EQUIPMENT_SUCCESS:
+    case LOAD_ALL_SUCCESS:
       return state
         .set("loading", false)
         .set("collection", new OrderedMap(payload.collection))
         .set("commercialNetwork", new Map(commercialNetwork))
         .set("tradePoint", new Map(tradePoint));
 
-    case LOAD_ALL_EQUIPMENT_ERROR:
+    case LOAD_ALL_ERROR:
       return state.setIn(["error"], payload.error).set("loading", false);
 
-    case SHOW_EQUIPMENT_REQUEST:
+    case SHOW_REQUEST:
       return state;
-    case SELECT_EQUIPMENT:
+    case SELECT:
       const { item } = payload;
       let newState = null;
 
@@ -101,7 +101,7 @@ export default function reducer(state = defaultState, action) {
       );
       return newState;
 
-    case SELECT_ALL_EQUIPMENT:
+    case SELECT_ALL:
       if (state.collection.size === state.selected.size)
         return state.setIn(["selected"], new Map({}));
       let result = {};
@@ -114,10 +114,10 @@ export default function reducer(state = defaultState, action) {
       localStorage.setItem("RetailEquipmentSelected", JSON.stringify(result));
       return state.setIn(["selected"], new Map(result));
 
-    case DELETE_EQUIPMENT_START:
+    case DELETE_START:
       return state.set("loading", true);
 
-    case DELETE_EQUIPMENT_SUCCESS:
+    case DELETE_SUCCESS:
       localStorage.removeItem("RetailEquipmentSelected");
 
       return state
@@ -125,7 +125,7 @@ export default function reducer(state = defaultState, action) {
         .set("collection", new OrderedMap(payload.collection))
         .setIn(["selected"], new Map({}));
 
-    case DELETE_EQUIPMENT_ERROR:
+    case DELETE_ERROR:
       return state.setIn(["error"], payload.error).set("loading", false);
 
     case ORDER_BY:
@@ -201,7 +201,7 @@ export const tradePointSelector = createSelector(tradePointGetter, points =>
   points.toArray()
 );
 
-//Селектор данных торговых точек
+//Селектор данных фильтров
 const filtersDataGetter = state => state.equipment.get("filters");
 
 export const filtersDataSelector = createSelector(
@@ -290,7 +290,7 @@ export const orderedFilterRowsSelector = createSelector(
  */
 export function deleteEquipment(deleted) {
   const action = {
-    type: DELETE_EQUIPMENT_REQUEST,
+    type: DELETE_REQUEST,
     payload: { deleted }
   };
 
@@ -303,7 +303,7 @@ export function deleteEquipment(deleted) {
  */
 export function selectAllEquipment() {
   const action = {
-    type: SELECT_ALL_EQUIPMENT
+    type: SELECT_ALL
   };
 
   return action;
@@ -316,7 +316,7 @@ export function selectAllEquipment() {
  */
 export function selectEquipment(item) {
   const action = {
-    type: SELECT_EQUIPMENT,
+    type: SELECT,
     payload: {
       item
     }
@@ -329,7 +329,7 @@ export function selectEquipment(item) {
  */
 export function callAllEquipment() {
   const action = {
-    type: LOAD_ALL_EQUIPMENT_REQUEST
+    type: LOAD_ALL_REQUEST
   };
 
   return action;
@@ -389,7 +389,7 @@ export function filterEquipmentByPoint(fieldName) {
  */
 export function showEquipment(id) {
   const action = {
-    type: SHOW_EQUIPMENT_REQUEST,
+    type: SHOW_REQUEST,
     payload: { id }
   };
 
@@ -417,7 +417,7 @@ export const loadAllSaga = function*(action) {
   // const { collection } = action.payload;
 
   yield put({
-    type: LOAD_ALL_EQUIPMENT_START
+    type: LOAD_ALL_START
   });
 
   let promise = new Promise(function(resolve) {
@@ -435,12 +435,12 @@ export const loadAllSaga = function*(action) {
     });
 
     yield put({
-      type: LOAD_ALL_EQUIPMENT_SUCCESS,
+      type: LOAD_ALL_SUCCESS,
       payload: { collection }
     });
   } catch (error) {
     yield put({
-      type: LOAD_ALL_EQUIPMENT_ERROR,
+      type: LOAD_ALL_ERROR,
       payload: { error }
     });
   }
@@ -448,7 +448,7 @@ export const loadAllSaga = function*(action) {
 
 export const deleteSaga = function*(action) {
   yield put({
-    type: DELETE_EQUIPMENT_START
+    type: DELETE_START
   });
 
   let asyncNewCollection = new OrderedMap(collection).filter(item => {
@@ -470,12 +470,12 @@ export const deleteSaga = function*(action) {
     });
 
     yield put({
-      type: DELETE_EQUIPMENT_SUCCESS,
+      type: DELETE_SUCCESS,
       payload: { collection: newCollection }
     });
   } catch (error) {
     yield put({
-      type: DELETE_EQUIPMENT_ERROR,
+      type: DELETE_ERROR,
       payload: { error }
     });
   }
@@ -491,9 +491,9 @@ export const showReportSaga = function(action) {
 
 export const saga = function*() {
   yield all([
-    takeEvery(SHOW_EQUIPMENT_REQUEST, showSaga),
-    takeEvery(LOAD_ALL_EQUIPMENT_REQUEST, loadAllSaga),
-    takeEvery(DELETE_EQUIPMENT_REQUEST, deleteSaga),
+    takeEvery(SHOW_REQUEST, showSaga),
+    takeEvery(LOAD_ALL_REQUEST, loadAllSaga),
+    takeEvery(DELETE_REQUEST, deleteSaga),
     takeEvery(SHOW_REPORT_REQUEST, showReportSaga)
   ]);
 };

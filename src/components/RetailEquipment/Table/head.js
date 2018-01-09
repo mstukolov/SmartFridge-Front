@@ -18,7 +18,7 @@ import Tooltip from "material-ui/Tooltip";
  */
 const columnData = [
   {
-    id: "sn",
+    id: "serialNumber",
     numeric: false,
     disablePadding: true,
     label: "Серийный номер"

@@ -18,7 +18,7 @@ import {
   deleteEquipment,
   showEquipment,
   showReport
-} from "../../../ducks/RetailEquipment/table";
+} from "../../../ducks/RetailEquipment/equipment";
 import { Link } from "react-router-dom";
 import { RouteMapPage, RouteReportsPage } from "../../routes/constants";
 import RetailEquipmentTableFilters from "./filters";

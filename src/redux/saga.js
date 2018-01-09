@@ -1,14 +1,9 @@
 import { all } from "redux-saga/effects";
-import { saga as equipmentTableSaga } from "../ducks/RetailEquipment/table";
-import { saga as equipmentFormSaga } from "../ducks/RetailEquipment/form";
+import { saga as equipmentSaga } from "../ducks/RetailEquipment/equipment";
+import { saga as moreInfoSaga } from "../ducks/RetailEquipment/moreInfo";
 import { saga as locationSaga } from "../ducks/RetailEquipment/location";
 import { saga as reportsSaga } from "../ducks/RetailEquipment/report";
 
 export default function* rootSaga() {
-  yield all([
-    equipmentTableSaga(),
-    equipmentFormSaga(),
-    locationSaga(),
-    reportsSaga()
-  ]);
+  yield all([equipmentSaga(), moreInfoSaga(), locationSaga(), reportsSaga()]);
 }

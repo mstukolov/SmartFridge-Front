@@ -12,11 +12,11 @@ import {
   showEquipment,
   loadEquipment,
   saveEditEquipment
-} from "../../../ducks/RetailEquipment/form";
+} from "../../../ducks/RetailEquipment/moreInfo";
 import {
   commercialNetworkSelector,
   tradePointSelector
-} from "../../../ducks/RetailEquipment/table";
+} from "../../../ducks/RetailEquipment/equipment";
 import ModeEditIcon from "material-ui-icons/ModeEdit";
 import { Link } from "react-router-dom";
 import SimpleSnackbar from "../../SimpleSnackbar";
@@ -80,11 +80,11 @@ const styles = theme => ({
  * Компонент формы просмотра/редактирования оборудования
  * @extends React
  */
-class RetailEquipmentForm extends React.Component {
+class RetailMoreInfo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sn: "Данные отсутствуют",
+      serialNumber: "Данные отсутствуют",
       remain: "Данные отсутствуют",
       location: "Москва" + "",
       date: "Данные отсутствуют",
@@ -188,7 +188,7 @@ class RetailEquipmentForm extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.fridge) {
       const {
-        sn,
+        serialNumber,
         commercialNetwork,
         tradePoint,
         remain,
@@ -199,7 +199,7 @@ class RetailEquipmentForm extends React.Component {
       } = nextProps.fridge;
 
       this.setState({
-        sn,
+        serialNumber,
         commercialNetwork,
         tradePoint,
         remain,
@@ -261,9 +261,9 @@ class RetailEquipmentForm extends React.Component {
         <TextField
           id="full-width"
           label="Серийный номер"
-          onChange={this.handleChange("sn")}
+          onChange={this.handleChange("serialNumber")}
           name={"serial"}
-          value={this.state.sn}
+          value={this.state.serialNumber}
           disabled={this.isDisabledControl()}
           InputLabelProps={{
             shrink: true
@@ -409,24 +409,24 @@ class RetailEquipmentForm extends React.Component {
   }
 }
 
-RetailEquipmentForm.propTypes = {
+RetailMoreInfo.propTypes = {
   classes: PropTypes.object.isRequired,
   location: PropTypes.string.isRequired
 };
 
 export default connect(
   state => {
-    const edit = state.equipmentForm.get("edit");
-    console.log(state.equipmentForm.activeItem);
+    const edit = state.moreInfo.get("edit");
+    console.log(state.moreInfo.activeItem);
 
     return {
       networks: commercialNetworkSelector(state),
       points: tradePointSelector(state),
-      fridge: state.equipmentForm.activeItem,
-      error: state.equipmentForm.error,
-      loading: state.equipmentForm.loading,
-      saving: state.equipmentForm.isSaving,
-      saved: state.equipmentForm.saved,
+      fridge: state.moreInfo.activeItem,
+      error: state.moreInfo.error,
+      loading: state.moreInfo.loading,
+      saving: state.moreInfo.isSaving,
+      saved: state.moreInfo.saved,
       edit
     };
   },
@@ -437,4 +437,4 @@ export default connect(
     loadEquipment,
     saveEditEquipment
   }
-)(withStyles(styles)(RetailEquipmentForm));
+)(withStyles(styles)(RetailMoreInfo));
