@@ -4,7 +4,11 @@ import PropTypes from "prop-types";
 import { Map, TileLayer } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import { connect } from "react-redux";
-import { loadAll, markerSelector } from "../../ducks/RetailEquipment/location";
+import {
+  loadAll as loadLocation,
+  markerSelector
+} from "../../ducks/RetailEquipment/location";
+import { callAll as loadEquipment } from "../../ducks/RetailEquipment/equipment";
 import history from "../../redux/history";
 import classNames from "classnames";
 import { withStyles } from "material-ui/styles";
@@ -109,7 +113,8 @@ class GlobalMap extends React.Component {
    * @return {void}
    */
   componentDidMount() {
-    this.props.loadAll();
+    this.props.loadLocation();
+    this.props.loadEquipment();
   }
   /**
    * При наличии активной точки, устанавливает ее параметры в состояние
@@ -146,5 +151,5 @@ export default connect(
       activeMapItemId
     };
   },
-  { loadAll }
+  { loadLocation, loadEquipment }
 )(withStyles(styles)(GlobalMap));

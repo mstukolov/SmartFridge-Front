@@ -101,7 +101,7 @@ export function loadEquipment(location) {
  * Создает экшн для включения режима редактирования оборудования
  * @return {Object} объект экшена
  */
-export function showEquipment(id) {
+export function showMoreInfo(id) {
   const action = {
     type: SHOW,
     payload: { id }

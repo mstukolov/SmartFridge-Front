@@ -952,9 +952,9 @@
                   "line": 19,
                   "column": 16
                 },
-                "identifierName": "callAllEquipment"
+                "identifierName": "callAll"
               },
-              "name": "callAllEquipment"
+              "name": "callAll"
             },
             "importKind": null,
             "local": {
@@ -970,9 +970,9 @@
                   "line": 19,
                   "column": 16
                 },
-                "identifierName": "callAllEquipment"
+                "identifierName": "callAll"
               },
-              "name": "callAllEquipment"
+              "name": "callAll"
             }
           },
           {
@@ -6000,9 +6000,9 @@
                                 "line": 142,
                                 "column": 58
                               },
-                              "identifierName": "callAllEquipment"
+                              "identifierName": "callAll"
                             },
-                            "name": "callAllEquipment"
+                            "name": "callAll"
                           },
                           "computed": false
                         },
@@ -15997,9 +15997,9 @@
                           "line": 278,
                           "column": 18
                         },
-                        "identifierName": "callAllEquipment"
+                        "identifierName": "callAll"
                       },
-                      "name": "callAllEquipment"
+                      "name": "callAll"
                     },
                     "value": {
                       "type": "Identifier",
@@ -16014,9 +16014,9 @@
                           "line": 278,
                           "column": 18
                         },
-                        "identifierName": "callAllEquipment"
+                        "identifierName": "callAll"
                       },
-                      "name": "callAllEquipment"
+                      "name": "callAll"
                     },
                     "extra": {
                       "shorthand": true
@@ -18211,7 +18211,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "callAllEquipment",
+      "value": "callAll",
       "start": 494,
       "end": 508,
       "loc": {
@@ -27288,7 +27288,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "callAllEquipment",
+      "value": "callAll",
       "start": 3888,
       "end": 3902,
       "loc": {
@@ -46302,7 +46302,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "callAllEquipment",
+      "value": "callAll",
       "start": 8318,
       "end": 8332,
       "loc": {

@@ -1,7 +1,7 @@
 import { all, takeEvery, put } from "redux-saga/effects";
 import { appName } from "../../config";
 import { OrderedMap, Record } from "immutable";
-import { location as collection } from "../../fakeData";
+import { location as items } from "../../fakeData";
 import { createSelector } from "reselect";
 import getStringPopup from "../../components/GlobalMap/popup";
 import redMarker from "../../components/GlobalMap/redMarker";
@@ -22,7 +22,7 @@ export const SHOW_FULLSCREEN = `${prefix}/SHOW_FULLSCREEN`;
  * Reducer
  * */
 export const ReducerRecord = Record({
-  collection: new OrderedMap({}),
+  items: new OrderedMap({}),
   fullscreen: false,
   loading: false
 });
@@ -36,7 +36,7 @@ export default function reducer(state = new ReducerRecord(), action) {
     case LOAD_SUCCESS:
       return state
         .set("loading", false)
-        .setIn(["collection"], new OrderedMap(payload.collection));
+        .setIn(["items"], new OrderedMap(payload.items));
 
     case LOAD_ERROR:
       return state.setIn(["error"], payload.error).set("loading", false);
@@ -61,9 +61,9 @@ export const loadingSelector = createSelector(
 );
 
 // селектор точек для карты
-const markerSelectorGetter = state => state[moduleName].get("collection");
+const markerSelectorGetter = state => state[moduleName].get("items");
 const selectedItemsGetter = state => state.equipment.get("selected");
-const fridgesGetter = state => state.equipment.get("collection");
+const fridgesGetter = state => state.equipment.get("items");
 export const markerSelector = createSelector(
   markerSelectorGetter,
   selectedItemsGetter,
@@ -117,7 +117,7 @@ export function showFullScreen(isVisible) {
  * Sagas
  * */
 export const loadLocationSaga = function*(action) {
-  // const { collection } = action.payload;
+  // const { items } = action.payload;
 
   yield put({
     type: LOAD_START
@@ -125,7 +125,7 @@ export const loadLocationSaga = function*(action) {
 
   let promise = new Promise(function(resolve) {
     setTimeout(() => {
-      resolve(collection);
+      resolve(items);
     }, 2000);
   });
 
@@ -139,7 +139,7 @@ export const loadLocationSaga = function*(action) {
 
     yield put({
       type: LOAD_SUCCESS,
-      payload: { collection: locations }
+      payload: { items: locations }
     });
   } catch (error) {
     yield put({

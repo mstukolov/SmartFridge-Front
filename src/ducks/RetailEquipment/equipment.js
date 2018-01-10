@@ -2,7 +2,7 @@ import { appName } from "../../config";
 import { Record, Map, OrderedMap } from "immutable";
 import { createSelector } from "reselect";
 import {
-  equipment as collection,
+  equipment as items,
   tradePoint,
   commercialNetwork
 } from "../../fakeData";
@@ -43,7 +43,7 @@ export const FILTER_BY_TRADE_POINT = `${prefix}/FILTER_BY_TRADE_POINT`;
  * */
 let DefaulrReducerState = new Record({
   loading: false,
-  collection: new OrderedMap({}),
+  items: new OrderedMap({}),
   commercialNetwork: new Map({}),
   tradePoint: new Map({}),
   selected: new Map({}),
@@ -71,7 +71,7 @@ export default function reducer(state = defaultState, action) {
     case LOAD_ALL_SUCCESS:
       return state
         .set("loading", false)
-        .set("collection", new OrderedMap(payload.collection))
+        .set("items", new OrderedMap(payload.items))
         .set("commercialNetwork", new Map(commercialNetwork))
         .set("tradePoint", new Map(tradePoint));
 
@@ -99,11 +99,11 @@ export default function reducer(state = defaultState, action) {
       return newState;
 
     case SELECT_ALL:
-      if (state.collection.size === state.selected.size)
+      if (state.items.size === state.selected.size)
         return state.setIn(["selected"], new Map({}));
       let result = {};
 
-      state.collection.forEach(item => {
+      state.items.forEach(item => {
         result[item.id] = true;
       });
 
@@ -119,7 +119,7 @@ export default function reducer(state = defaultState, action) {
 
       return state
         .set("loading", false)
-        .set("collection", new OrderedMap(payload.collection))
+        .set("items", new OrderedMap(payload.items))
         .setIn(["selected"], new Map({}));
 
     case DELETE_ERROR:
@@ -208,12 +208,12 @@ export const filtersDataSelector = createSelector(
 
 // Селектор фильтров
 const filtersStateGetter = state => state.equipment.get("filters");
-const rowsGetter = state => state.equipment.get("collection");
+const rowsGetter = state => state.equipment.get("items");
 
 export const filteredRowsSelector = createSelector(
   [filtersStateGetter, rowsGetter],
-  (filters, collection) => {
-    let filteredCollection = collection.toArray();
+  (filters, items) => {
+    let filteredCollection = items.toArray();
     const { commercialNetwork, tradePoint } = filters.toJS();
 
     if (commercialNetwork.length && !tradePoint.length) {
@@ -239,9 +239,9 @@ export const orderedFilterRowsSelector = createSelector(
   filteredRowsSelector,
   commercialNetworkSelector,
   orderStateGetter,
-  (collection, networks, orderData) => {
+  (items, networks, orderData) => {
     const orderBy = orderData.get("orderBy");
-    let sortedCollection = collection;
+    let sortedCollection = items;
 
     switch (orderBy) {
       case "sn":
@@ -324,7 +324,7 @@ export function selectEquipment(item) {
  * Создает экшн для запроса всех холодильников
  * @return {Object} объект экшена
  */
-export function callAllEquipment() {
+export function callAll() {
   const action = {
     type: LOAD_ALL_REQUEST
   };
@@ -353,7 +353,7 @@ export function sortOrderBy(property) {
  * @param  {String} значение фильтра
  * @return {Object}    объект экшена
  */
-export function filterEquipmentByNetwork(fieldName) {
+export function filterByNetwork(fieldName) {
   const action = {
     type: FILTER_BY_COMMERCIAL_NETWORK,
     payload: {
@@ -369,7 +369,7 @@ export function filterEquipmentByNetwork(fieldName) {
  * @param  {String} значение фильтра
  * @return {Object}    объект экшена
  */
-export function filterEquipmentByPoint(fieldName) {
+export function filterByPoint(fieldName) {
   const action = {
     type: FILTER_BY_TRADE_POINT,
     payload: {
@@ -384,7 +384,7 @@ export function filterEquipmentByPoint(fieldName) {
  * Создает экшн для включения режима редактирования оборудования
  * @return {Object} объект экшена
  */
-export function showEquipment(id) {
+export function showMoreInfo(id) {
   const action = {
     type: SHOW_REQUEST,
     payload: { id }
@@ -411,14 +411,14 @@ export function showReport(id) {
  */
 
 export const loadAllSaga = function*(action) {
-  // const { collection } = action.payload;
+  // const { items } = action.payload;
 
   yield put({
     type: LOAD_ALL_START
   });
 
   let promise = new Promise(function(resolve) {
-    resolve(collection);
+    resolve(items);
   });
 
   yield delay(3000);
@@ -433,7 +433,7 @@ export const loadAllSaga = function*(action) {
 
     yield put({
       type: LOAD_ALL_SUCCESS,
-      payload: { collection }
+      payload: { items }
     });
   } catch (error) {
     yield put({
@@ -448,7 +448,7 @@ export const deleteSaga = function*(action) {
     type: DELETE_START
   });
 
-  let asyncNewCollection = new OrderedMap(collection).filter(item => {
+  let asyncNewCollection = new OrderedMap(items).filter(item => {
     return !action.payload.deleted.get(item.id);
   });
 
@@ -468,7 +468,7 @@ export const deleteSaga = function*(action) {
 
     yield put({
       type: DELETE_SUCCESS,
-      payload: { collection: newCollection }
+      payload: { items: newCollection }
     });
   } catch (error) {
     yield put({

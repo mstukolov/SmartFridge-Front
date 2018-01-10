@@ -1062,9 +1062,9 @@
                   "line": 13,
                   "column": 45
                 },
-                "identifierName": "showEquipment"
+                "identifierName": "showMoreInfo"
               },
-              "name": "showEquipment"
+              "name": "showMoreInfo"
             },
             "importKind": null,
             "local": {
@@ -1080,9 +1080,9 @@
                   "line": 13,
                   "column": 45
                 },
-                "identifierName": "showEquipment"
+                "identifierName": "showMoreInfo"
               },
-              "name": "showEquipment"
+              "name": "showMoreInfo"
             }
           }
         ],
@@ -9716,9 +9716,9 @@
                                 "line": 200,
                                 "column": 25
                               },
-                              "identifierName": "showEquipment"
+                              "identifierName": "showMoreInfo"
                             },
-                            "name": "showEquipment"
+                            "name": "showMoreInfo"
                           },
                           "computed": false
                         },
@@ -21823,9 +21823,9 @@
                           "line": 382,
                           "column": 14
                         },
-                        "identifierName": "showEquipment"
+                        "identifierName": "showMoreInfo"
                       },
-                      "name": "showEquipment"
+                      "name": "showMoreInfo"
                     },
                     "value": {
                       "type": "Identifier",
@@ -21840,9 +21840,9 @@
                           "line": 382,
                           "column": 14
                         },
-                        "identifierName": "showEquipment"
+                        "identifierName": "showMoreInfo"
                       },
-                      "name": "showEquipment"
+                      "name": "showMoreInfo"
                     },
                     "extra": {
                       "shorthand": true
@@ -24026,7 +24026,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "showEquipment",
+      "value": "showMoreInfo",
       "start": 540,
       "end": 550,
       "loc": {
@@ -40688,7 +40688,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "showEquipment",
+      "value": "showMoreInfo",
       "start": 4565,
       "end": 4575,
       "loc": {
@@ -62840,7 +62840,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "showEquipment",
+      "value": "showMoreInfo",
       "start": 9614,
       "end": 9624,
       "loc": {

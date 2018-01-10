@@ -9,7 +9,7 @@ import Button from "material-ui/Button";
 import {
   cancelEquipment,
   editEquipment,
-  showEquipment,
+  showMoreInfo,
   loadEquipment,
   saveEditEquipment
 } from "../../../ducks/RetailEquipment/moreInfo";
@@ -218,7 +218,7 @@ class RetailMoreInfo extends React.Component {
   handleSubmit = ev => {
     ev.preventDefault();
     this.props.saveEditEquipment(this.state);
-    this.props.showEquipment();
+    this.props.showMoreInfo();
     console.log("submit -->", this.state);
   };
 
@@ -433,7 +433,7 @@ export default connect(
   {
     cancelEquipment,
     editEquipment,
-    showEquipment,
+    showMoreInfo,
     loadEquipment,
     saveEditEquipment
   }

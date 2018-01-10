@@ -16,7 +16,7 @@ import Paper from "material-ui/Paper";
 import Checkbox from "material-ui/Checkbox";
 import { connect } from "react-redux";
 import {
-  callAllEquipment,
+  callAll,
   selectEquipment,
   selectAllEquipment,
   sortOrderBy,
@@ -155,7 +155,7 @@ class RetailEquipmentTable extends React.Component {
    * @return {void}
    */
   componentDidMount() {
-    if (!this.props.data.length) this.props.callAllEquipment();
+    if (!this.props.data.length) this.props.callAll();
     // TODO: Переделать организацию хранения данных в сторэдж
     const rowsPerPage = localStorage.getItem("rowsPerPage");
     const page = localStorage.getItem("page");
@@ -309,7 +309,7 @@ export default connect(
     };
   },
   {
-    callAllEquipment,
+    callAll,
     selectEquipment,
     selectAllEquipment,
     sortOrderBy

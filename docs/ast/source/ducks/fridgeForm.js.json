@@ -2570,9 +2570,9 @@
                 "line": 59,
                 "column": 26
               },
-              "identifierName": "showEquipment"
+              "identifierName": "showMoreInfo"
             },
-            "name": "showEquipment",
+            "name": "showMoreInfo",
             "leadingComments": null
           },
           "generator": false,
@@ -8659,7 +8659,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "showEquipment",
+      "value": "showMoreInfo",
       "start": 1424,
       "end": 1434,
       "loc": {

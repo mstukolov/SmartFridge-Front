@@ -16,7 +16,7 @@ import Toolbar from "material-ui/Toolbar";
 import { connect } from "react-redux";
 import {
   deleteEquipment,
-  showEquipment,
+  showMoreInfo,
   showReport
 } from "../../../ducks/RetailEquipment/equipment";
 import { Link } from "react-router-dom";
@@ -79,7 +79,7 @@ class RetailEquipmentTableToolbar extends React.Component {
    * @return {void}    [description]
    */
   handleShowFullInfo = ev => {
-    this.props.showEquipment(this.props.selected.keySeq().first());
+    this.props.showMoreInfo(this.props.selected.keySeq().first());
   };
 
   /**
@@ -200,7 +200,7 @@ export default connect(
   },
   {
     deleteEquipment,
-    showEquipment,
+    showMoreInfo,
     showReport
   }
 )(

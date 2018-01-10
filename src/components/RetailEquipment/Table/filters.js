@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import {
-  filterEquipmentByNetwork,
-  filterEquipmentByPoint
+  filterByNetwork,
+  filterByPoint
 } from "../../../ducks/RetailEquipment/equipment";
 import { withStyles } from "material-ui/styles";
 import {
@@ -47,7 +47,7 @@ class RetailEquipmentTableFilters extends Component {
   handleChangeNetwork = event => {
     this.setState({ commercialNetwork: event.target.value });
     // отправляем изменения параметров фильтрации в стор
-    this.props.filterEquipmentByNetwork(event.target.value);
+    this.props.filterByNetwork(event.target.value);
   };
 
   /**
@@ -58,7 +58,7 @@ class RetailEquipmentTableFilters extends Component {
   handleChangePoint = event => {
     this.setState({ tradePoint: event.target.value });
     // отправляем изменения параметров фильтрации в стор
-    this.props.filterEquipmentByPoint(event.target.value);
+    this.props.filterByPoint(event.target.value);
   };
   /**
    * Получаем значения селектов торговых сетей из стора
@@ -155,8 +155,8 @@ export default connect(
     };
   },
   {
-    filterEquipmentByNetwork,
-    filterEquipmentByPoint
+    filterByNetwork,
+    filterByPoint
   }
 )(
   (RetailEquipmentTableFilters = withStyles(styles)(
