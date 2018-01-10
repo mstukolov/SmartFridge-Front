@@ -133,13 +133,13 @@ export const loadLocationSaga = function*(action) {
     //TODO: Здесь сделать нормальную логику запроса данных
 
     // throw new Error("Ошибка получения данных");
-    const newCollection = yield promise.then(result => {
+    const locations = yield promise.then(result => {
       return result;
     });
 
     yield put({
       type: LOAD_SUCCESS,
-      payload: { collection: newCollection }
+      payload: { collection: locations }
     });
   } catch (error) {
     yield put({
