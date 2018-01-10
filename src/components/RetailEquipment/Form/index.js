@@ -21,7 +21,7 @@ import ModeEditIcon from "material-ui-icons/ModeEdit";
 import { Link } from "react-router-dom";
 import SimpleSnackbar from "../../SimpleSnackbar";
 import LinearQuery from "../../LinearQuery/index";
-import { RouteEquipmentPage } from "../../routes/constants";
+import { RouteEquipmentPage } from "../../../routes/constants";
 import CircularSaveButton from "../../CircularSaveButton";
 import moment from "moment";
 import TrendingUpIcon from "material-ui-icons/TrendingUp";

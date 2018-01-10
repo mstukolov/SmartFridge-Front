@@ -20,7 +20,7 @@ import {
   showReport
 } from "../../../ducks/RetailEquipment/equipment";
 import { Link } from "react-router-dom";
-import { RouteMapPage, RouteReportsPage } from "../../routes/constants";
+import { RouteMapPage, RouteReportsPage } from "../../../routes/constants";
 import RetailEquipmentTableFilters from "./filters";
 
 const toolbarStyles = theme => ({

@@ -3,7 +3,7 @@ import Paper from "material-ui/Paper";
 import Grid from "material-ui/Grid";
 import Typography from "material-ui/Typography";
 import { withStyles } from "material-ui/styles";
-import GlobalMap from "../../GlobalMap";
+import GlobalMap from "../../components/GlobalMap/index";
 
 const styles = theme => ({
   root: {
@@ -44,7 +44,7 @@ class MapPage extends Component {
         <Grid item xs={12}>
           <Paper className={classes.paper}>
             <div className={classes.map}>
-              <GlobalMap />
+              <GlobalMap fullScreen={false} />
             </div>
           </Paper>
         </Grid>

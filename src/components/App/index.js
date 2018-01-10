@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import Header from "../Header";
 import Footer from "../Footer";
-import RetailEquipmentPageMain from "../routes/RetailEquipment/Main/index";
-import RetailEquipmentPageViewPage from "../routes/RetailEquipment/View";
-import MainPage from "../routes/Main";
-import NoMatch from "../routes/NoMatch";
-import MapPage from "../routes/Map";
-import FullScreenMapPage from "../routes/Map/fullscreenMap";
-import ReportsPage from "../routes/Reports";
+import RetailEquipmentPageMain from "../../routes/RetailEquipment/Main/index";
+import RetailEquipmentPageViewPage from "../../routes/RetailEquipment/View";
+import MainPage from "../../routes/Main";
+import NoMatch from "../../routes/NoMatch";
+import MapPage from "../../routes/Map";
+import FullScreenMapPage from "../../routes/Map/fullscreenMap";
+import ReportsPage from "../../routes/Reports";
 import injectSheet from "react-jss";
 import { ConnectedRouter } from "react-router-redux";
 import history from "../../redux/history";
@@ -17,7 +17,7 @@ import {
   RouteReportsPage,
   RouteMapPage,
   RouteFullScreenMapPage
-} from "../routes/constants";
+} from "../../routes/constants";
 import moment from "moment/min/moment-with-locales";
 import Moment from "react-moment";
 // Sets the moment instance to use.

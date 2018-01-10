@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withStyles } from "material-ui/styles";
-import GlobalMap from "../../GlobalMap";
+import GlobalMap from "../../components/GlobalMap/index";
 
 const styles = theme => ({
   map: {
@@ -26,7 +26,7 @@ class FullScreenMapPage extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.map}>
-        <GlobalMap />
+        <GlobalMap fullScreen={true} />
       </div>
     );
   }

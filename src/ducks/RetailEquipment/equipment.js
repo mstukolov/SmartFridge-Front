@@ -9,10 +9,7 @@ import {
 import history from "../../redux/history";
 import { all, takeEvery, put } from "redux-saga/effects";
 import { delay } from "redux-saga";
-import {
-  RouteEquipmentPage,
-  RouteReportsPage
-} from "../../components/routes/constants";
+import { RouteEquipmentPage, RouteReportsPage } from "../../routes/constants";
 import { getName } from "../../utils";
 
 /**

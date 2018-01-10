@@ -11,6 +11,7 @@ import { withStyles } from "material-ui/styles";
 import Button from "material-ui/Button";
 import FullScreenIcon from "material-ui-icons/Fullscreen";
 import FullScreenExitIcon from "material-ui-icons/FullscreenExit";
+import { RouteFullScreenMapPage, RouteMapPage } from "../../routes/constants";
 
 const styles = theme => ({
   button: {
@@ -61,7 +62,7 @@ class GlobalMap extends React.Component {
           onClick={this.toGgleFullScreen}
           className={classes.button}
         >
-          {this.state.fullScreen ? <FullScreenExitIcon /> : <FullScreenIcon />}
+          {this.props.fullScreen ? <FullScreenExitIcon /> : <FullScreenIcon />}
         </Button>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -80,6 +81,11 @@ class GlobalMap extends React.Component {
    */
   toGgleFullScreen = ev => {
     ev.preventDefault();
+    if (this.props.fullScreen) {
+      history.push(RouteMapPage);
+    } else {
+      history.push(RouteFullScreenMapPage);
+    }
 
     this.setState({ fullScreen: !this.state.fullScreen });
   };

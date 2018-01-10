@@ -1,4 +1,4 @@
-import { RouteEquipmentPage } from "../routes/constants";
+import { RouteEquipmentPage } from "../../routes/constants";
 
 // that function returns Leaflet.Popup
 export default function getStringPopup(item) {

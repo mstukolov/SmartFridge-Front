@@ -24,7 +24,7 @@ import {
   RouteEquipmentPage,
   RouteMapPage,
   RouteReportsPage
-} from "../routes/constants";
+} from "../../routes/constants";
 import history from "../../redux/history";
 
 const styles = theme => ({

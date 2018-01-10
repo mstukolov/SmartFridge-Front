@@ -1,12 +1,12 @@
 // @flow weak
 import React, { Component } from "react";
-import RetailEquipmentTable from "../../../RetailEquipment/Table/index";
+import RetailEquipmentTable from "../../../components/RetailEquipment/Table/index";
 import { withStyles } from "material-ui/styles";
 import Paper from "material-ui/Paper";
 import Grid from "material-ui/Grid";
-import GlobalMap from "../../../GlobalMap";
+import GlobalMap from "../../../components/GlobalMap/index";
 import Typography from "material-ui/Typography";
-import RetailMoreInfo from "../../../RetailEquipment/Form/index";
+import RetailMoreInfo from "../../../components/RetailEquipment/Form/index";
 
 const styles = theme => ({
   root: {
