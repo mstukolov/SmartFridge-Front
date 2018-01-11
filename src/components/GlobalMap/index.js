@@ -145,10 +145,14 @@ export default connect(
   state => {
     // Получаем активный маркер по id
     let activeMapItemId = null;
+    const locationItemId = history.location.pathname.split(":")[1];
+    const firstSelectedItemId = state.equipment.selected.keySeq().first();
 
     // Если есть активное сутройство
-    if (state.equipment.selected.size) {
-      activeMapItemId = state.equipment.selected.keySeq().first();
+    if (locationItemId) {
+      activeMapItemId = locationItemId;
+    } else {
+      activeMapItemId = firstSelectedItemId;
     }
 
     return {
