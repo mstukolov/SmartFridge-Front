@@ -5,6 +5,7 @@ import { location as items } from "../../fakeData";
 import { createSelector } from "reselect";
 import getStringPopup from "../../components/GlobalMap/popup";
 import redMarker from "../../components/GlobalMap/redMarker";
+import blueMarker from "../../components/GlobalMap/blueMarker";
 
 /**
  * Constants
@@ -71,13 +72,21 @@ export const markerSelector = createSelector(
   (markers, selectedItems, fridges) => {
     console.log("asdfasdfadsf dafsdf sd df", markers, fridges);
     return markers.map(item => {
+      const fridge = fridges.get(item.id);
+      console.log("------------>", fridges.get(item.id));
       let element = {
-        position: [item.lat, item.lng],
-        popup: getStringPopup(item)
+        position: [item.lat, item.lng]
       };
+
+      if (fridge) {
+        element.popup = getStringPopup(fridge);
+      }
+
       // Если в списке выбранных точек есть данная, выделяем ее красным маркером
       if (selectedItems.get(item.id)) {
         element.options = { icon: redMarker };
+      } else {
+        element.options = { icon: blueMarker };
       }
       return element;
     });

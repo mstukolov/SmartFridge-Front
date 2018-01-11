@@ -1,5 +1,8 @@
 import React from "react";
 import "./index.css";
+import "leaflet/dist/leaflet.css";
+import "leaflet.markercluster/dist/MarkerCluster.Default.css";
+import "leaflet.markercluster/dist/MarkerCluster.css";
 import PropTypes from "prop-types";
 import { Map, TileLayer } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
