@@ -4,6 +4,7 @@ import { appName } from "../../config";
 import { all, put, takeEvery } from "redux-saga/effects";
 import { delay } from "redux-saga";
 import { equipment } from "../../fakeData";
+import history from "../../redux/history";
 
 /**
  * Constants
@@ -66,6 +67,7 @@ export default (state = defaultForm, action) => {
       return state.setIn(["edit"], true).set("saved", false);
 
     case CANCEL:
+      history.goBack();
       return state.setIn(["edit"], false).set("saved", false);
 
     case SAVE_EDIT_START:

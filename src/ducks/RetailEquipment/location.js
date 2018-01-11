@@ -70,14 +70,14 @@ export const markerSelector = createSelector(
   selectedItemsGetter,
   fridgesGetter,
   (markers, selectedItems, fridges) => {
-    console.log("asdfasdfadsf dafsdf sd df", markers, fridges);
     return markers.map(item => {
       const fridge = fridges.get(item.id);
-      console.log("------------>", fridges.get(item.id));
+
       let element = {
         position: [item.lat, item.lng]
       };
 
+      // Создаем попап, если есть полная информация об устройстве
       if (fridge) {
         element.popup = getStringPopup(fridge);
       }

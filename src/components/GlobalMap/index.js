@@ -1,5 +1,4 @@
 import React from "react";
-import "./index.css";
 import "leaflet/dist/leaflet.css";
 import "leaflet.markercluster/dist/MarkerCluster.Default.css";
 import "leaflet.markercluster/dist/MarkerCluster.css";
@@ -21,10 +20,13 @@ import FullScreenExitIcon from "material-ui-icons/FullscreenExit";
 import { RouteFullScreenMapPage, RouteMapPage } from "../../routes/constants";
 
 const styles = theme => ({
+  main: {
+    height: "100%"
+  },
   button: {
-    position: "absolute",
-    left: theme.spacing.unit,
     bottom: theme.spacing.unit,
+    left: theme.spacing.unit,
+    position: "absolute",
     zIndex: 1000
   }
 });
@@ -53,6 +55,7 @@ class GlobalMap extends React.Component {
     const { mapCenterCoordinates, mapZoom, mapMaxZoom } = this.state;
     let cls = classNames({
       "markercluster-map": true,
+      [classes.main]: true,
       fullScreenLeaflet: this.state.fullScreen
     });
     return (
@@ -140,13 +143,12 @@ GlobalMap.propTypes = {
 
 export default connect(
   state => {
-    // Наносим маркеры на карту
-    // const items = state.equipmentLocation.get("collection")
-
     // Получаем активный маркер по id
     let activeMapItemId = null;
+
+    // Если есть активное сутройство
     if (state.equipment.selected.size) {
-      activeMapItemId = history.location.pathname.split(":")[1];
+      activeMapItemId = state.equipment.selected.keySeq().first();
     }
 
     return {

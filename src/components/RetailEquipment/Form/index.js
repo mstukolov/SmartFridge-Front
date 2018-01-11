@@ -48,7 +48,6 @@ const styles = theme => ({
   button: {
     margin: theme.spacing.unit
   },
-  buttonLink: { textDecoration: "none" },
 
   leftIcon: {
     marginRight: theme.spacing.unit
@@ -120,6 +119,15 @@ class RetailMoreInfo extends React.Component {
   };
 
   /**
+   * Обработка клика по кнопке отмены
+   * {SynteticEvent} ev событие react
+   */
+  handleBtnBackClick = ev => {
+    ev.preventDefault();
+    this.props.cancelEquipment();
+  };
+
+  /**
    * Создает набор кнопок для управления формой
    * @returns {ReactElement}
    */
@@ -148,24 +156,18 @@ class RetailMoreInfo extends React.Component {
       );
     return (
       <div className={classes.buttonSet}>
-        <Link to={RouteEquipmentPage} className={classes.buttonLink}>
-          <Button className={classes.button} raised color="accent">
-            Отменить
-          </Button>
-        </Link>
+        <Button
+          onClick={this.handleBtnBackClick}
+          className={classes.button}
+          raised
+          color="accent"
+        >
+          Вернуться назад
+        </Button>
 
         {btns}
       </div>
     );
-  };
-
-  /**
-   * Обработка клика по кнопке отмены
-   * {SynteticEvent} ev событие react
-   */
-  handleBtnCancelClick = ev => {
-    ev.preventDefault();
-    this.props.cancelEquipment();
   };
 
   /**
