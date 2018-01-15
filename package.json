@@ -22,6 +22,7 @@
     "react-leaflet": "^1.7.8",
     "react-leaflet-markercluster": "^1.1.7",
     "react-moment": "^0.6.8",
+    "react-qr-reader": "^2.0.1",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.8",
