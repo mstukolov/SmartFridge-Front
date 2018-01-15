@@ -3,7 +3,7 @@ import Paper from "material-ui/Paper";
 import Grid from "material-ui/Grid";
 import Typography from "material-ui/Typography";
 import { withStyles } from "material-ui/styles";
-import ReportChart from "../../components/ReportChart/index";
+import Planagramm from "../../components/Planagramm/index";
 
 const styles = theme => ({
   root: {
@@ -43,7 +43,9 @@ class PlanagrammPage extends Component {
         </Grid>
 
         <Grid item xs={12}>
-          <Paper className={classes.paper}>lorem</Paper>
+          <Paper className={classes.paper}>
+            <Planagramm />
+          </Paper>
         </Grid>
       </Grid>
     );
