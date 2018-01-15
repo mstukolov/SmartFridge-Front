@@ -960,22 +960,27 @@ export const equipment = {
 };
 
 for (let key in equipment) {
-  switch (equipment[key].commercialNetwork) {
+  const network = equipment[key].commercialNetwork;
+  let tradePoint = equipment[key].tradePoint;
+  switch (network) {
     case "Aschan_ID":
-      equipment[key].tradePoint = `point_${randomInteger(0, 4)}_ID`;
+      tradePoint = `point_${randomInteger(0, 4)}_ID`;
       break;
 
     case "OK_ID":
-      equipment[key].tradePoint = `point_${randomInteger(5, 9)}_ID`;
+      tradePoint = `point_${randomInteger(5, 9)}_ID`;
       break;
 
     case "5_ID":
-      equipment[key].tradePoint = `point_${randomInteger(10, 14)}_ID`;
+      tradePoint = `point_${randomInteger(10, 14)}_ID`;
       break;
 
     case "Perekrestok_ID":
-      equipment[key].tradePoint = `point_${randomInteger(15, 19)}_ID`;
+      tradePoint = `point_${randomInteger(15, 19)}_ID`;
       break;
+
+    default:
+      tradePoint = null;
   }
 }
 

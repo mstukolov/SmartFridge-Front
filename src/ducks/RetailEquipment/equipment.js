@@ -427,7 +427,7 @@ export const loadAllSaga = function*(action) {
     //TODO: Здесь сделать нормальную логику запроса данных
 
     // throw new Error("Ошибка получения данных");
-    const newCollection = yield promise.then(result => {
+    yield promise.then(result => {
       return result;
     });
 

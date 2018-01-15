@@ -4,9 +4,7 @@ import RetailEquipmentTable from "../../../components/RetailEquipment/Table/inde
 import { withStyles } from "material-ui/styles";
 import Paper from "material-ui/Paper";
 import Grid from "material-ui/Grid";
-import GlobalMap from "../../../components/GlobalMap/index";
 import Typography from "material-ui/Typography";
-import RetailMoreInfo from "../../../components/RetailEquipment/Form/index";
 
 const styles = theme => ({
   root: {
@@ -23,14 +21,6 @@ const styles = theme => ({
     height: "300px"
   }
 });
-
-type Props = {
-  classes: {
-    root: string,
-    paper: string,
-    map: string
-  }
-};
 
 /**
  * Страница с табличным представление данных

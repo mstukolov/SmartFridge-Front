@@ -7,6 +7,7 @@ import RetailEquipmentPageViewPage from "../../routes/RetailEquipment/View";
 import MainPage from "../../routes/Main";
 import NoMatch from "../../routes/NoMatch";
 import MapPage from "../../routes/Map";
+import PlanagrammPage from "../../routes/Planagramm";
 import FullScreenMapPage from "../../routes/Map/fullscreenMap";
 import ReportsPage from "../../routes/Reports";
 import injectSheet from "react-jss";
@@ -16,7 +17,8 @@ import {
   RouteEquipmentPage,
   RouteReportsPage,
   RouteMapPage,
-  RouteFullScreenMapPage
+  RouteFullScreenMapPage,
+  RoutePlanagrammPage
 } from "../../routes/constants";
 import moment from "moment/min/moment-with-locales";
 import Moment from "react-moment";
@@ -79,6 +81,8 @@ class App extends Component {
                 path={RouteFullScreenMapPage}
                 component={FullScreenMapPage}
               />
+
+              <Route path={RoutePlanagrammPage} component={PlanagrammPage} />
 
               <Route component={NoMatch} />
             </Switch>

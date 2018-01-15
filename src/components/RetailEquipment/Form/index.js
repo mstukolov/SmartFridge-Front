@@ -18,10 +18,8 @@ import {
   tradePointSelector
 } from "../../../ducks/RetailEquipment/equipment";
 import ModeEditIcon from "material-ui-icons/ModeEdit";
-import { Link } from "react-router-dom";
 import SimpleSnackbar from "../../SimpleSnackbar";
 import LinearQuery from "../../LinearQuery/index";
-import { RouteEquipmentPage } from "../../../routes/constants";
 import CircularSaveButton from "../../CircularSaveButton";
 import moment from "moment";
 import TrendingUpIcon from "material-ui-icons/TrendingUp";
@@ -29,7 +27,6 @@ import TrendingDownIcon from "material-ui-icons/TrendingDown";
 import red from "material-ui/colors/red";
 import green from "material-ui/colors/green";
 import Tooltip from "material-ui/Tooltip";
-import { getName } from "../../../utils";
 
 const styles = theme => ({
   container: {

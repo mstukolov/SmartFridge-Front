@@ -18,12 +18,12 @@ import { ListItemIcon, ListItemText } from "material-ui/List";
 import DvrIcon from "material-ui-icons/Dvr";
 import HomeIcon from "material-ui-icons/Home";
 import MapIcon from "material-ui-icons/Map";
-import InsertCahrtIcon from "material-ui-icons/InsertChart";
+import ViewComfyIcon from "material-ui-icons/ViewComfy";
 import logo from "../../logo_C2M_alternative_ru.svg";
 import {
   RouteEquipmentPage,
   RouteMapPage,
-  RouteReportsPage
+  RoutePlanagrammPage
 } from "../../routes/constants";
 import history from "../../redux/history";
 
@@ -193,9 +193,7 @@ class Header extends React.Component {
               <Link to={RouteMapPage} className={classes.link}>
                 <MenuItem selected={pathname === RouteMapPage}>
                   <ListItemIcon className={classes.icon}>
-                    <MapIcon className={classes.icon}>
-                      <HomeIcon />
-                    </MapIcon>
+                    <MapIcon className={classes.icon} />
                   </ListItemIcon>
                   <ListItemText
                     classes={{ text: classes.text }}
@@ -205,17 +203,15 @@ class Header extends React.Component {
                 </MenuItem>
               </Link>
 
-              <Link to={RouteReportsPage} className={classes.link}>
-                <MenuItem selected={pathname === RouteReportsPage}>
+              <Link to={RoutePlanagrammPage} className={classes.link}>
+                <MenuItem selected={pathname === RoutePlanagrammPage}>
                   <ListItemIcon className={classes.icon}>
-                    <InsertCahrtIcon className={classes.icon}>
-                      <DvrIcon />
-                    </InsertCahrtIcon>
+                    <ViewComfyIcon className={classes.icon} />
                   </ListItemIcon>
                   <ListItemText
                     classes={{ text: classes.text }}
                     inset
-                    primary="Отчеты"
+                    primary="Контроль планаграммы"
                   />
                 </MenuItem>
               </Link>
