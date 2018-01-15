@@ -25,14 +25,14 @@ function getSteps() {
 function getStepContent(stepIndex) {
   switch (stepIndex) {
     case 0:
-      return "Идентификация устройства";
+      return <h1>"Идентификация устройства"</h1>;
     case 1:
-      return "Снимок планограммы";
+      return <h1>"Снимок планограммы"</h1>;
     case 2:
-      return "Отчет";
+      return <h1>"Отчет"</h1>;
 
     default:
-      return "Неизвестный шаг";
+      return <h1>"Неизвестный шаг"</h1>;
   }
 }
 
@@ -81,9 +81,9 @@ class HorizontalStepper extends React.Component {
           {this.state.activeStep === steps.length ? (
             <div>
               <Typography className={classes.instructions}>
-                All steps completed - you&quot;re finished
+                Все шаги пройдены, вы можете начать сначала
               </Typography>
-              <Button onClick={this.handleReset}>Reset</Button>
+              <Button onClick={this.handleReset}>Сбросить</Button>
             </div>
           ) : (
             <div>
@@ -96,10 +96,10 @@ class HorizontalStepper extends React.Component {
                   onClick={this.handleBack}
                   className={classes.backButton}
                 >
-                  Back
+                  Назад
                 </Button>
                 <Button raised color="primary" onClick={this.handleNext}>
-                  {activeStep === steps.length - 1 ? "Finish" : "Next"}
+                  {activeStep === steps.length - 1 ? "Финал" : "Далее"}
                 </Button>
               </div>
             </div>

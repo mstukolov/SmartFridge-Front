@@ -7,7 +7,6 @@ class Planagramm extends Component {
     return (
       <section>
         <HorizontalStepper />
-        Planagramm
       </section>
     );
   }
