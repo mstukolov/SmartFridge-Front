@@ -4359,9 +4359,9 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
-"jsqr@git+https://github.com/cozmo/jsQR.git":
+"jsqr@https://github.com/cozmo/jsQR.git":
   version "1.0.0"
-  resolved "git+https://github.com/cozmo/jsQR.git#5d6e0f3d7e9417957435afff4e4d5a3c49f43aa3"
+  resolved "https://github.com/cozmo/jsQR.git#5d6e0f3d7e9417957435afff4e4d5a3c49f43aa3"
 
 jss-camel-case@^6.0.0:
   version "6.0.0"
@@ -6225,6 +6225,12 @@ react-transition-group@^2.2.1:
     loose-envify "^1.3.1"
     prop-types "^15.5.8"
     warning "^3.0.0"
+
+react-webcam@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/react-webcam/-/react-webcam-0.2.0.tgz#03f8ce6811ae73e9d3158cbd17345a6832b23353"
+  dependencies:
+    prop-types "^15.5.8"
 
 react@^16.1.1:
   version "16.2.0"
