@@ -4,6 +4,7 @@ import equipment from "../ducks/RetailEquipment/equipment";
 import moreInfo from "../ducks/RetailEquipment/moreInfo";
 import location from "../ducks/RetailEquipment/location";
 import report, { moduleName } from "../ducks/RetailEquipment/report";
+import planagramm from "../ducks/Planagramm";
 
 /**
  * Подключение редьюсеров
@@ -13,5 +14,6 @@ export default combineReducers({
   equipment,
   moreInfo,
   location,
-  [moduleName]: report
+  [moduleName]: report,
+  planagramm
 });

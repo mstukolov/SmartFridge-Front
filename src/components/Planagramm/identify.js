@@ -1,37 +1,54 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import QrReader from "react-qr-reader";
+import injectSheet from "react-jss";
+import { connect } from "react-redux";
+import { saveId } from "../../ducks/Planagramm";
+import SimpleSnackbar from "../SimpleSnackbar";
+
+const styles = {
+  container: {
+    maxWidth: "600px",
+    margin: "auto"
+  }
+};
 
 class Identify extends Component {
   constructor(props) {
     super(props);
     this.state = {
       delay: 300,
-      result: "No result"
+      result: null
     };
     this.handleScan = this.handleScan.bind(this);
   }
-  handleScan(data) {
-    if (data) {
-      console.log(data);
+  handleScan(serialNumber) {
+    if (serialNumber) {
+      console.log(serialNumber);
       this.setState({
-        result: data
+        result: serialNumber
       });
+      this.props.saveId(serialNumber);
     }
   }
   handleError(err) {
     console.error(err);
   }
+
   render() {
+    const { classes } = this.props;
+    const { delay, result } = this.state;
     return (
-      <div>
+      <div className={classes.container}>
         <QrReader
-          delay={this.state.delay}
+          delay={delay}
           onError={this.handleError}
           onScan={this.handleScan}
           style={{ width: "100%" }}
         />
-        <p>{this.state.result}</p>
+        {result ? (
+          <SimpleSnackbar text={"Текущее устройство: " + result} />
+        ) : null}
+        <p>Опознанный серийный номер: {result}</p>
       </div>
     );
   }
@@ -40,4 +57,9 @@ class Identify extends Component {
 Identify.propTypes = {};
 Identify.defaultProps = {};
 
-export default Identify;
+export default connect(
+  state => {
+    return {};
+  },
+  { saveId }
+)(injectSheet(styles)(Identify));

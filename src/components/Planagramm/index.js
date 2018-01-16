@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
-import Stepper, { Step, StepLabel } from "material-ui/Stepper";
+import Stepper, { Step, StepButton } from "material-ui/Stepper";
 import Button from "material-ui/Button";
 import Typography from "material-ui/Typography";
 import Identify from "./identify";
@@ -41,13 +41,39 @@ function getStepContent(stepIndex) {
 
 class Planagramm extends React.Component {
   state = {
-    activeStep: 0
+    activeStep: 0,
+    completed: {}
   };
 
+  completedSteps() {
+    return Object.keys(this.state.completed).length;
+  }
+
+  totalSteps = () => {
+    return getSteps().length;
+  };
+
+  isLastStep() {
+    return this.state.activeStep === this.totalSteps() - 1;
+  }
+
+  allStepsCompleted() {
+    return this.completedSteps() === this.totalSteps();
+  }
+
   handleNext = () => {
-    const { activeStep } = this.state;
+    let activeStep;
+
+    if (this.isLastStep() && !this.allStepsCompleted()) {
+      // It's the last step, but not all steps have been completed,
+      // find the first step that has been completed
+      const steps = getSteps();
+      activeStep = steps.findIndex((step, i) => !(i in this.state.completed));
+    } else {
+      activeStep = this.state.activeStep + 1;
+    }
     this.setState({
-      activeStep: activeStep + 1
+      activeStep
     });
   };
 
@@ -58,9 +84,25 @@ class Planagramm extends React.Component {
     });
   };
 
+  handleStep = step => () => {
+    this.setState({
+      activeStep: step
+    });
+  };
+
+  handleComplete = () => {
+    const { completed } = this.state;
+    completed[this.state.activeStep] = true;
+    this.setState({
+      completed
+    });
+    this.handleNext();
+  };
+
   handleReset = () => {
     this.setState({
-      activeStep: 0
+      activeStep: 0,
+      completed: {}
     });
   };
 
@@ -71,39 +113,65 @@ class Planagramm extends React.Component {
 
     return (
       <div className={classes.root}>
-        <Stepper activeStep={activeStep} alternativeLabel>
-          {steps.map(label => {
+        <Stepper nonLinear activeStep={activeStep}>
+          {steps.map((label, index) => {
             return (
               <Step key={label}>
-                <StepLabel>{label}</StepLabel>
+                <StepButton
+                  onClick={this.handleStep(index)}
+                  completed={this.state.completed[index]}
+                >
+                  {label}
+                </StepButton>
               </Step>
             );
           })}
         </Stepper>
         <div>
-          {this.state.activeStep === steps.length ? (
+          {this.allStepsCompleted() ? (
             <div>
               <Typography className={classes.instructions}>
-                Все шаги пройдены, вы можете начать сначала
+                Все шаги пройдены - вы закончили
               </Typography>
-              <Button onClick={this.handleReset}>Сбросить</Button>
+              <Button onClick={this.handleReset}>Начать заново</Button>
             </div>
           ) : (
             <div>
-              <Typography className={classes.instructions}>
+              <div className={classes.instructions}>
                 {getStepContent(activeStep)}
-              </Typography>
+              </div>
               <div>
                 <Button
                   disabled={activeStep === 0}
                   onClick={this.handleBack}
-                  className={classes.backButton}
+                  className={classes.button}
                 >
                   Назад
                 </Button>
-                <Button raised color="primary" onClick={this.handleNext}>
-                  {activeStep === steps.length - 1 ? "Финал" : "Далее"}
+                <Button
+                  raised
+                  color="primary"
+                  onClick={this.handleNext}
+                  className={classes.button}
+                >
+                  Далее
                 </Button>
+                {activeStep !== steps.length &&
+                  (this.state.completed[this.state.activeStep] ? (
+                    <Typography type="caption" className={classes.completed}>
+                      Шаг {activeStep + 1} уже завершен
+                    </Typography>
+                  ) : (
+                    <Button
+                      raised
+                      color="primary"
+                      onClick={this.handleComplete}
+                    >
+                      {this.completedSteps() === this.totalSteps() - 1
+                        ? "Завершить"
+                        : "Завершить шаг"}
+                    </Button>
+                  ))}
               </div>
             </div>
           )}
