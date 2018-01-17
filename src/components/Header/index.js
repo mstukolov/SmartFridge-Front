@@ -211,7 +211,7 @@ class Header extends React.Component {
                   <ListItemText
                     classes={{ text: classes.text }}
                     inset
-                    primary="Контроль планаграммы"
+                    primary="Контроль планограммы"
                   />
                 </MenuItem>
               </Link>

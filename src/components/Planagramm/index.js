@@ -7,6 +7,13 @@ import Typography from "material-ui/Typography";
 import Identify from "./identify";
 import Shot from "./shot";
 import Result from "./result";
+import {
+  loadedSelector,
+  loadingSelector,
+  serialNumberSelector
+} from "../../ducks/Planagramm";
+import injectSheet from "react-jss";
+import { connect } from "react-redux";
 
 const styles = theme => ({
   root: {
@@ -44,6 +51,17 @@ class Planagramm extends React.Component {
     activeStep: 0,
     completed: {}
   };
+
+  componentWillReceiveProps(nextProps) {
+    const { identifySuccess } = nextProps;
+    if (identifySuccess) {
+      this.setState({
+        completed: {
+          "0": true
+        }
+      });
+    }
+  }
 
   completedSteps() {
     return Object.keys(this.state.completed).length;
@@ -185,4 +203,10 @@ Planagramm.propTypes = {
   classes: PropTypes.object
 };
 
-export default withStyles(styles)(Planagramm);
+export default connect(state => {
+  return {
+    loading: loadingSelector(state),
+    loaded: loadedSelector(state),
+    identifySuccess: serialNumberSelector(state)
+  };
+}, {})(injectSheet(styles)(Planagramm));

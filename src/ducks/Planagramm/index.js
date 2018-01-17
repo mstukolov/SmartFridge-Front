@@ -60,6 +60,11 @@ export const loadedSelector = createSelector(
   state => state.loaded
 );
 
+export const serialNumberSelector = createSelector(
+  stateSelector,
+  state => state.serialNumber
+);
+
 // const valueout = state[moduleName].data.map(item => {
 //     return { x: item.recdate, y: item.valueout };
 // });

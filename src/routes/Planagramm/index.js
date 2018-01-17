@@ -37,7 +37,7 @@ class PlanagrammPage extends Component {
         <Grid item xs={12}>
           <Paper className={classes.paper}>
             <Typography type="title" gutterBottom>
-              Контроль планаграммы
+              Контроль планограммы
             </Typography>
           </Paper>
         </Grid>
