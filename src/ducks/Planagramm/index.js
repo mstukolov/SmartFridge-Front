@@ -1,6 +1,6 @@
 import { all, put, takeEvery } from "redux-saga/effects";
 import { appName } from "../../config";
-import { Record, List } from "immutable";
+import { Record, Map } from "immutable";
 import { schedule as report } from "../../fakeData";
 import { createSelector } from "reselect";
 
@@ -15,11 +15,19 @@ export const LOAD_PLANAGRAMM_DATA_START = `${prefix}/LOAD_PLANAGRAMM_DATA_START`
 export const LOAD_PLANAGRAMM_DATA_SUCCESS = `${prefix}/LOAD_PLANAGRAMM_DATA_SUCCESS`;
 export const LOAD_PLANAGRAMM_DATA_ERROR = `${prefix}/LOAD_PLANAGRAMM_DATA_ERROR`;
 export const SAVE_FIRDGE_ID = `${prefix}/SAVE_FIRDGE_ID`;
+export const SAVE_FIRDGE_LOACTION = `${prefix}/SAVE_FIRDGE_LOACTION`;
+
+const locationModel = new Map({
+  latitude: null,
+  longitude: null,
+  accuracy: null
+});
 
 /**
  * Reducer
  * */
 export const ReducerRecord = Record({
+  location: locationModel,
   serialNumber: null,
   loading: false,
   loaded: false
@@ -42,6 +50,8 @@ export default function reducer(state = new ReducerRecord(), action) {
       return state.setIn(["loading"], false).setIn(["loaded"], false);
     case SAVE_FIRDGE_ID:
       return state.setIn(["serialNumber"], payload.serialNumber);
+    case SAVE_FIRDGE_LOACTION:
+      return state.setIn(["location"], new Map(payload.location));
     default:
       return state;
   }
@@ -63,6 +73,10 @@ export const loadedSelector = createSelector(
 export const serialNumberSelector = createSelector(
   stateSelector,
   state => state.serialNumber
+);
+
+export const locationSelector = createSelector(stateSelector, state =>
+  state.location.toJS()
 );
 
 // const valueout = state[moduleName].data.map(item => {
@@ -97,6 +111,20 @@ export function saveId(serialNumber) {
   const action = {
     type: SAVE_FIRDGE_ID,
     payload: { serialNumber }
+  };
+
+  return action;
+}
+
+/**
+ * Создает экшн для сохранения расположения холодильника
+ * @param location
+ * @returns {{type: *, payload: {location: *}}}
+ */
+export function saveLocation(location) {
+  const action = {
+    type: SAVE_FIRDGE_LOACTION,
+    payload: { location }
   };
 
   return action;

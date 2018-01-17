@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
 import Button from "material-ui/Button";
 import PhotoCameraIcon from "material-ui-icons/PhotoCamera";
+import { connect } from "react-redux";
+import { locationSelector, saveLocation } from "../../ducks/Planagramm";
 
 const styles = theme => ({
   main: { textAlign: "center" },
@@ -20,16 +22,50 @@ class Shot extends Component {
     this.webcam = webcam;
   };
 
+  getLocation = () => {
+    const options = {
+      enableHighAccuracy: true
+    };
+
+    const success = pos => {
+      let crd = pos.coords;
+      this.props.saveLocation({
+        latitude: crd.latitude,
+        longitude: crd.longitude,
+        accuracy: crd.accuracy
+      });
+      console.log("Your current position is:");
+      console.log(`Latitude : ${crd.latitude}`);
+      console.log(`Longitude: ${crd.longitude}`);
+      console.log(`More or less ${crd.accuracy} meters.`);
+    };
+
+    const error = err => {
+      console.warn(`ERROR(${err.code}): ${err.message}`);
+    };
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(success, error, options);
+    } else {
+      console.error("Geolocation is not supported by this browser.");
+    }
+  };
+
   capture = () => {
     const imageSrc = this.webcam.getScreenshot();
-    console.log(imageSrc);
+    console.log(this.getLocation());
     this.setState({
       shot: imageSrc
     });
+
+    // this.setState({
+    //   location: this.getLocation(),
+    // });
   };
 
   render() {
     const { classes } = this.props;
+    const { shot } = this.state;
     return (
       <div className={classes.main}>
         <Webcam
@@ -52,7 +88,10 @@ class Shot extends Component {
         </div>
 
         <div>
-          <img src={this.state.shot} />
+          <img src={shot} />
+          <p>latitude: {this.props.location.latitude}</p>
+          <p>longitude: {this.props.location.longitude}</p>
+          <p>accuracy: {this.props.location.accuracy}</p>
         </div>
       </div>
     );
@@ -63,4 +102,11 @@ Shot.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Shot);
+export default connect(
+  state => {
+    return {
+      location: locationSelector(state)
+    };
+  },
+  { saveLocation }
+)(withStyles(styles)(Shot));

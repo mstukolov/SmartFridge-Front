@@ -10,6 +10,7 @@ import Result from "./result";
 import {
   loadedSelector,
   loadingSelector,
+  locationSelector,
   serialNumberSelector
 } from "../../ducks/Planagramm";
 import injectSheet from "react-jss";
@@ -53,14 +54,19 @@ class Planagramm extends React.Component {
   };
 
   componentWillReceiveProps(nextProps) {
-    const { identifySuccess } = nextProps;
+    const { identifySuccess, locationSuccess } = nextProps;
+    let completed = {};
     if (identifySuccess) {
-      this.setState({
-        completed: {
-          "0": true
-        }
-      });
+      completed["0"] = true;
     }
+
+    if (locationSuccess) {
+      completed["1"] = true;
+    }
+
+    this.setState({
+      completed
+    });
   }
 
   completedSteps() {
@@ -207,6 +213,8 @@ export default connect(state => {
   return {
     loading: loadingSelector(state),
     loaded: loadedSelector(state),
-    identifySuccess: serialNumberSelector(state)
+    identifySuccess: serialNumberSelector(state),
+    locationSuccess:
+      locationSelector(state).latitude && locationSelector(state).longitude
   };
 }, {})(injectSheet(styles)(Planagramm));
