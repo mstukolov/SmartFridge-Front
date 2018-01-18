@@ -39,9 +39,9 @@ const styles = theme => ({
   },
   root: {
     marginTop: 0,
-    width: "100%",
     position: "fixed",
     top: 0,
+    width: "100%",
     zIndex: 1001
   },
   flex: {
@@ -52,9 +52,9 @@ const styles = theme => ({
     marginRight: 20
   },
   logo: {
-    marginRight: "20px",
+    fill: "#fff",
     height: "28px",
-    fill: "#fff"
+    marginRight: "20px"
   }
 });
 

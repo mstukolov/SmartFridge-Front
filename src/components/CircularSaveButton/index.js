@@ -10,8 +10,8 @@ import SaveIcon from "material-ui-icons/Save";
 
 const styles = theme => ({
   root: {
-    display: "inline-flex",
-    alignItems: "center"
+    alignItems: "center",
+    display: "inline-flex"
   },
   wrapper: {
     margin: theme.spacing.unit,
@@ -25,18 +25,18 @@ const styles = theme => ({
   },
   fabProgress: {
     color: green[500],
+    left: -6,
     position: "absolute",
     top: -6,
-    left: -6,
     zIndex: 1
   },
   buttonProgress: {
     color: green[500],
-    position: "absolute",
-    top: "50%",
     left: "50%",
+    marginLeft: -12,
     marginTop: -12,
-    marginLeft: -12
+    position: "absolute",
+    top: "50%"
   }
 });
 

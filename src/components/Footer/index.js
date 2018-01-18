@@ -8,9 +8,9 @@ import Typography from "material-ui/Typography";
 
 const styles = theme => ({
   root: {
-    width: "100%",
-    position: "fixed",
     bottom: 0,
+    position: "fixed",
+    width: "100%",
     zIndex: 1001
   },
   flex: {
@@ -24,8 +24,8 @@ const styles = theme => ({
 
 type Props = {
   classes: {
-    root: string,
-    flex: string
+    flex: string,
+    root: string
   }
 };
 

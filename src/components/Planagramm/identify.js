@@ -7,8 +7,8 @@ import SimpleSnackbar from "../SimpleSnackbar";
 
 const styles = {
   container: {
-    maxWidth: "600px",
-    margin: "auto"
+    margin: "auto",
+    maxWidth: "600px"
   }
 };
 
