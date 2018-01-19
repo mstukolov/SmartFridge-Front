@@ -8,6 +8,10 @@ import Table, {
   TableRow
 } from "material-ui/Table";
 import Paper from "material-ui/Paper";
+import ReportProblemIcon from "material-ui-icons/ReportProblem";
+import CheckCircleIcon from "material-ui-icons/CheckCircle";
+import green from "material-ui/colors/green";
+import red from "material-ui/colors/red";
 
 const styles = theme => ({
   root: {
@@ -18,24 +22,42 @@ const styles = theme => ({
   },
   table: {
     minWidth: 700
+  },
+
+  done: {
+    color: green[500]
+  },
+  report: {
+    color: red[500]
   }
 });
 
 let id = 0;
-function createData(name, calories, fat, carbs, protein) {
+function createData(index, product, plan, fact, status) {
   id += 1;
-  return { id, name, calories, fat, carbs, protein };
+  return { id, index, product, plan, fact, status };
 }
-
-const data = [
-  createData("Количество слотов по SKU", 159, 6.0, 24, 4.0),
-  createData("Отсутствующие SKU", 237, 9.0, 37, 4.3),
-  createData("Пустые ячейки", 262, 16.0, 24, 6.0)
-];
 
 function BasicTable(props) {
   const { classes } = props;
 
+  const data = [
+    createData(
+      "Количество слотов по SKU",
+      [<div>SKU_1</div>, <div>SKU_2</div>, <div>SKU_3</div>],
+      [<div>20</div>, <div>10</div>, <div>8</div>],
+      [<div>20</div>, <div>10</div>, <div>6</div>],
+      <CheckCircleIcon className={classes.done} />
+    ),
+    createData(
+      "Отсутствующие SKU",
+      [<div>SKU_1</div>, <div>SKU_2</div>, <div>SKU_3</div>],
+      [<div>20</div>, <div>10</div>, <div>8</div>],
+      [<div>20</div>, <div>10</div>, <div>6</div>],
+      <ReportProblemIcon className={classes.report} />
+    ),
+    createData("Пустые ячейки", null, 0, 5, null)
+  ];
   return (
     <Paper className={classes.root}>
       <Table className={classes.table}>
@@ -52,11 +74,11 @@ function BasicTable(props) {
           {data.map(n => {
             return (
               <TableRow key={n.id}>
-                <TableCell>{n.name}</TableCell>
-                <TableCell numeric>{n.calories}</TableCell>
-                <TableCell numeric>{n.fat}</TableCell>
-                <TableCell numeric>{n.carbs}</TableCell>
-                <TableCell numeric>{n.protein}</TableCell>
+                <TableCell>{n.index}</TableCell>
+                <TableCell numeric>{n.product}</TableCell>
+                <TableCell numeric>{n.plan}</TableCell>
+                <TableCell numeric>{n.fact}</TableCell>
+                <TableCell numeric>{n.status}</TableCell>
               </TableRow>
             );
           })}
