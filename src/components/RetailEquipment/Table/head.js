@@ -55,7 +55,7 @@ const columnData = [
     id: "dateUpdate",
     numeric: true,
     disablePadding: false,
-    label: "Время изменерения"
+    label: "Время измерения"
   }
 ];
 

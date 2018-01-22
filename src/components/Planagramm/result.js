@@ -44,16 +44,40 @@ function BasicTable(props) {
   const data = [
     createData(
       "Количество слотов по SKU",
-      [<div>SKU_1</div>, <div>SKU_2</div>, <div>SKU_3</div>],
-      [<div>20</div>, <div>10</div>, <div>8</div>],
-      [<div>20</div>, <div>10</div>, <div>6</div>],
+      [
+        <div key={"1"}>SKU_1</div>,
+        <div key={"2"}>SKU_2</div>,
+        <div key={"3"}>SKU_3</div>
+      ],
+      [
+        <div key={"4"}>20</div>,
+        <div key={"5"}>10</div>,
+        <div key={"6"}>8</div>
+      ],
+      [
+        <div key={"7"}>20</div>,
+        <div key={"8"}>10</div>,
+        <div key={"9"}>6</div>
+      ],
       <CheckCircleIcon className={classes.done} />
     ),
     createData(
       "Отсутствующие SKU",
-      [<div>SKU_1</div>, <div>SKU_2</div>, <div>SKU_3</div>],
-      [<div>20</div>, <div>10</div>, <div>8</div>],
-      [<div>20</div>, <div>10</div>, <div>6</div>],
+      [
+        <div key={"1"}>SKU_1</div>,
+        <div key={"2"}>SKU_2</div>,
+        <div key={"3"}>SKU_3</div>
+      ],
+      [
+        <div key={"4"}>20</div>,
+        <div key={"5"}>10</div>,
+        <div key={"6"}>8</div>
+      ],
+      [
+        <div key={"7"}>20</div>,
+        <div key={"8"}>10</div>,
+        <div key={"9"}>6</div>
+      ],
       <ReportProblemIcon className={classes.report} />
     ),
     createData("Пустые ячейки", null, 0, 5, null)
