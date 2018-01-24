@@ -21,13 +21,13 @@ class Identify extends Component {
     };
     this.handleScan = this.handleScan.bind(this);
   }
-  handleScan(serialNumber) {
-    if (serialNumber) {
-      console.log(serialNumber);
+  handleScan(Serialnumber) {
+    if (Serialnumber) {
+      console.log(Serialnumber);
       this.setState({
-        result: serialNumber
+        result: Serialnumber
       });
-      this.props.saveId(serialNumber);
+      this.props.saveId(Serialnumber);
     }
   }
   handleError(err) {

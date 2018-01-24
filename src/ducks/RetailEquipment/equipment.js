@@ -1,8 +1,9 @@
 import { appName } from "../../config";
-import { Record, Map, OrderedMap } from "immutable";
+import { Record, Map, OrderedMap, List } from "immutable";
 import { createSelector } from "reselect";
+import axios from "axios";
 import {
-  equipment as items,
+  // equipment as items,
   tradePoint,
   commercialNetwork
 } from "../../fakeData";
@@ -11,6 +12,7 @@ import { all, takeEvery, put } from "redux-saga/effects";
 import { delay } from "redux-saga";
 import { RouteEquipmentPage, RouteReportsPage } from "../../routes/constants";
 import { getName } from "../../utils";
+import { backendUrl } from "../../config";
 
 /**
  * Constants
@@ -43,7 +45,7 @@ export const FILTER_BY_TRADE_POINT = `${prefix}/FILTER_BY_TRADE_POINT`;
  * */
 let DefaulrReducerState = new Record({
   loading: false,
-  items: new OrderedMap({}),
+  items: new List([]),
   commercialNetwork: new Map({}),
   tradePoint: new Map({}),
   selected: new Map({}),
@@ -71,7 +73,7 @@ export default function reducer(state = defaultState, action) {
     case LOAD_ALL_SUCCESS:
       return state
         .set("loading", false)
-        .set("items", new OrderedMap(payload.items))
+        .set("items", new List(payload.items))
         .set("commercialNetwork", new Map(commercialNetwork))
         .set("tradePoint", new Map(tradePoint));
 
@@ -81,21 +83,22 @@ export default function reducer(state = defaultState, action) {
     case SHOW_REQUEST:
       return state;
     case SELECT:
-      const { item } = payload;
+      const { id } = payload;
       let newState = null;
+      console.log("selected   ----", selected.toJS());
 
-      if (selected.has(item.id)) {
-        newState = state.setIn(["selected"], selected.delete(item.id));
+      if (selected.has(id)) {
+        newState = state.setIn(["selected"], selected.delete(id));
       } else {
-        newState = state.setIn(["selected"], selected.set(item.id, true));
+        newState = state.setIn(["selected"], selected.set(id, true));
       }
 
-      localStorage.removeItem("RetailEquipmentSelected");
-      // Сохраняем id выбранных в локальное хранилище
-      localStorage.setItem(
-        "RetailEquipmentSelected",
-        JSON.stringify(newState.selected.toJS())
-      );
+      // localStorage.removeItem("RetailEquipmentSelected");
+      // // Сохраняем id выбранных в локальное хранилище
+      // localStorage.setItem(
+      //   "RetailEquipmentSelected",
+      //   JSON.stringify(newState.selected.toJS()),
+      // );
       return newState;
 
     case SELECT_ALL:
@@ -104,18 +107,18 @@ export default function reducer(state = defaultState, action) {
       let result = {};
 
       state.items.forEach(item => {
-        result[item.id] = true;
+        result[item.Id] = true;
       });
 
-      localStorage.removeItem("RetailEquipmentSelected");
-      localStorage.setItem("RetailEquipmentSelected", JSON.stringify(result));
+      // localStorage.removeItem("RetailEquipmentSelected");
+      // localStorage.setItem("RetailEquipmentSelected", JSON.stringify(result));
       return state.setIn(["selected"], new Map(result));
 
     case DELETE_START:
       return state.set("loading", true);
 
     case DELETE_SUCCESS:
-      localStorage.removeItem("RetailEquipmentSelected");
+      // localStorage.removeItem("RetailEquipmentSelected");
 
       return state
         .set("loading", false)
@@ -142,10 +145,10 @@ export default function reducer(state = defaultState, action) {
         .setIn(["orderData", "orderBy"], property);
 
       // TODO: Переделать организацию хранения данных в сторэдж
-      localStorage.setItem(
-        "RetailEquipmentTableOrderData",
-        JSON.stringify(orderedState.get("orderData").toJS())
-      );
+      // localStorage.setItem(
+      //   "RetailEquipmentTableOrderData",
+      // JSON.stringify(orderedState.get("orderData").toJS()),
+      // );
       return orderedState;
 
     case FILTER_BY_COMMERCIAL_NETWORK:
@@ -159,20 +162,20 @@ export default function reducer(state = defaultState, action) {
       return state.setIn(["filters", "tradePoint"], byField);
 
     default:
-      const orderDataStorage = localStorage.getItem(
-        "RetailEquipmentTableOrderData"
-      );
-
-      const selectedItemsStorage = localStorage.getItem(
-        "RetailEquipmentSelected"
-      );
-
-      // Достаем данные сортировки из локального хранилища
-      if (orderDataStorage || selectedItemsStorage) {
-        return state
-          .setIn(["orderData"], new Map(JSON.parse(orderDataStorage)))
-          .setIn(["selected"], new Map(JSON.parse(selectedItemsStorage)));
-      }
+      // const orderDataStorage = localStorage.getItem(
+      //   "RetailEquipmentTableOrderData",
+      // );
+      //
+      // const selectedItemsStorage = localStorage.getItem(
+      //   "RetailEquipmentSelected",
+      // );
+      //
+      // // Достаем данные сортировки из локального хранилища
+      // if (orderDataStorage || selectedItemsStorage) {
+      //   return state
+      //     .setIn(["orderData"], new Map(JSON.parse(orderDataStorage)))
+      //     .setIn(["selected"], new Map(JSON.parse(selectedItemsStorage)));
+      // }
 
       return state;
   }
@@ -214,19 +217,19 @@ export const filteredRowsSelector = createSelector(
   [filtersStateGetter, rowsGetter],
   (filters, items) => {
     let filteredCollection = items.toArray();
-    const { commercialNetwork, tradePoint } = filters.toJS();
-
-    if (commercialNetwork.length && !tradePoint.length) {
-      return filteredCollection.filter(item => {
-        return item.commercialNetwork === commercialNetwork;
-      });
-    }
-
-    if (commercialNetwork.length && tradePoint.length) {
-      return filteredCollection.filter(item => {
-        return item.tradePoint === tradePoint;
-      });
-    }
+    // const { commercialNetwork, tradePoint } = filters.toJS();
+    //
+    // if (commercialNetwork.length && !tradePoint.length) {
+    //   return filteredCollection.filter(item => {
+    //     return item.commercialNetwork === commercialNetwork;
+    //   });
+    // }
+    //
+    // if (commercialNetwork.length && tradePoint.length) {
+    //   return filteredCollection.filter(item => {
+    //     return item.tradePoint === tradePoint;
+    //   });
+    // }
 
     return filteredCollection;
   }
@@ -234,7 +237,18 @@ export const filteredRowsSelector = createSelector(
 
 // Селектор сортировки в комбинации с фильтрами
 const orderStateGetter = state => state.equipment.get("orderData");
-
+//
+// {
+//   Createdat: "2018-01-23T16:01:39.220692Z";
+//   Filling: 80;
+//   Id: 1;
+//   Lastvalue: 80;
+//   Locationequipmentid: 1;
+//   Maxvalue: 100;
+//   Retailstoreid: 10471;
+//   Serialnumber: "203149104-0";
+//   Updatedat: "2018-01-23T16:01:39.220692Z";
+// }
 export const orderedFilterRowsSelector = createSelector(
   filteredRowsSelector,
   commercialNetworkSelector,
@@ -244,12 +258,7 @@ export const orderedFilterRowsSelector = createSelector(
     let sortedCollection = items;
 
     switch (orderBy) {
-      case "sn":
-        orderData.get("order") === "desc"
-          ? sortedCollection.sort().reverse()
-          : sortedCollection.sort();
-        return sortedCollection;
-
+      case "Serialnumber":
       case "tradePoint":
       case "commercialNetwork":
         return orderData.get("order") === "desc"
@@ -266,8 +275,8 @@ export const orderedFilterRowsSelector = createSelector(
                   : 1
             );
       case "remain":
-      case "refill":
-      case "dateUpdate":
+      case "Filling":
+      case "Updatedat":
       default:
         orderData.get("order") === "asc"
           ? sortedCollection.sort((a, b) => b[orderBy] - a[orderBy])
@@ -311,11 +320,11 @@ export function selectAllEquipment() {
  * @param  {String} selected массив выбранных  холодильников
  * @return {Object}         объект экшена
  */
-export function selectEquipment(item) {
+export function selectEquipment(id) {
   const action = {
     type: SELECT,
     payload: {
-      item
+      id
     }
   };
   return action;
@@ -412,23 +421,35 @@ export function showReport(id) {
 
 export const loadAllSaga = function*(action) {
   // const { items } = action.payload;
-
+  // axios
+  //   .get("retailequipment/all", {
+  //     baseURL: backendUrl,
+  //     withCredentials: false,
+  //   })
+  //   .then(function(response) {
+  //     console.log(response);
+  //   })
+  //   .catch(function(error) {
+  //     console.log(error);
+  //   });
   yield put({
     type: LOAD_ALL_START
   });
 
-  let promise = new Promise(function(resolve) {
-    resolve(items);
+  let promise = axios.get("retailequipment/all", {
+    baseURL: backendUrl,
+    withCredentials: false
   });
 
-  yield delay(3000);
+  yield delay(1000);
 
   try {
     //TODO: Здесь сделать нормальную логику запроса данных
 
     // throw new Error("Ошибка получения данных");
-    yield promise.then(result => {
-      return result;
+    const items = yield promise.then(result => {
+      console.log("result ==>", result.data.retailequipment);
+      return result.data.retailequipment;
     });
 
     yield put({
@@ -448,7 +469,7 @@ export const deleteSaga = function*(action) {
     type: DELETE_START
   });
 
-  let asyncNewCollection = new OrderedMap(items).filter(item => {
+  let asyncNewCollection = new OrderedMap().filter(item => {
     return !action.payload.deleted.get(item.id);
   });
 

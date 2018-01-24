@@ -99,7 +99,7 @@ class RetailEquipmentTable extends React.Component {
   handleKeyDown = (event, item) => {
     event.preventDefault();
     if (keycode(event) === "space") {
-      this.handleClick(event, item);
+      this.handleClick(event, item.Id);
     }
   };
   /**
@@ -108,9 +108,9 @@ class RetailEquipmentTable extends React.Component {
    * @param  {String} id           идентификатор
    * @return {void}
    */
-  handleClick = (event, item) => {
+  handleClick = (event, id) => {
     event.preventDefault();
-    this.props.selectEquipment(item);
+    this.props.selectEquipment(id);
   };
 
   /**
@@ -122,7 +122,7 @@ class RetailEquipmentTable extends React.Component {
   handleChangePage = (event, page) => {
     this.setState({ page });
     // TODO: Переделать организацию хранения данных в сторэдж
-    localStorage.setItem("page", page);
+    // localStorage.setItem("page", page);
   };
   /**
    * Устанавливает колличество отображаемых строк на странице
@@ -132,7 +132,7 @@ class RetailEquipmentTable extends React.Component {
   handleChangeRowsPerPage = event => {
     this.setState({ rowsPerPage: event.target.value });
     // TODO: Переделать организацию хранения данных в сторэдж
-    localStorage.setItem("rowsPerPage", +event.target.value);
+    // localStorage.setItem("rowsPerPage", +event.target.value);
   };
   /**
    * Проверяет, выбрана ли текущая строка
@@ -157,17 +157,17 @@ class RetailEquipmentTable extends React.Component {
   componentDidMount() {
     if (!this.props.data.length) this.props.callAll();
     // TODO: Переделать организацию хранения данных в сторэдж
-    const rowsPerPage = localStorage.getItem("rowsPerPage");
-    const page = localStorage.getItem("page");
-    if (rowsPerPage)
-      this.setState({
-        rowsPerPage: +rowsPerPage
-      });
-
-    if (page)
-      this.setState({
-        page: +page
-      });
+    // const rowsPerPage = localStorage.getItem("rowsPerPage");
+    // const page = localStorage.getItem("page");
+    // if (rowsPerPage)
+    //   this.setState({
+    //     rowsPerPage: +rowsPerPage,
+    //   });
+    //
+    // if (page)
+    //   this.setState({
+    //     page: +page,
+    //   });
   }
 
   /**
@@ -220,7 +220,8 @@ class RetailEquipmentTable extends React.Component {
               {data
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map(n => {
-                  const isSelected = this.isSelected(n.id);
+                  const isSelected = this.isSelected(n.Id);
+                  console.log("n ", this.isSelected(n.Id), n);
                   return (
                     <TableRow
                       hover
@@ -229,19 +230,19 @@ class RetailEquipmentTable extends React.Component {
                       role="checkbox"
                       aria-checked={isSelected}
                       tabIndex={-1}
-                      key={n.id}
+                      key={n.Id}
                       selected={isSelected}
                     >
                       <TableCell padding="checkbox">
                         <Checkbox checked={isSelected} />
                       </TableCell>
 
-                      <TableCell padding="none">{n.serialNumber}</TableCell>
+                      <TableCell padding="none">{n.Serialnumber}</TableCell>
 
-                      <TableCell numeric>{n.remain}%</TableCell>
+                      <TableCell numeric>{n.Filling}%</TableCell>
 
                       <TableCell padding="checkbox">
-                        {n.refill ? (
+                        {n.Filling >= n.Lastvalue ? (
                           <TrendingUpIcon className={classes.refillIconUp} />
                         ) : (
                           <TrendingDownIcon
@@ -259,9 +260,7 @@ class RetailEquipmentTable extends React.Component {
                       </TableCell>
 
                       <TableCell numeric>
-                        <Moment format="DD/MM/YYYY HH:MM">
-                          {n.dateUpdate}
-                        </Moment>
+                        <Moment format="DD.MM.YYYY HH:MM">{n.Updatedat}</Moment>
                       </TableCell>
                     </TableRow>
                   );
@@ -297,6 +296,7 @@ RetailEquipmentTable.propTypes = {
 
 export default connect(
   state => {
+    console.log("items ==========>>", orderedFilterRowsSelector(state));
     return {
       data: orderedFilterRowsSelector(state),
       networks: commercialNetworkSelector(state),

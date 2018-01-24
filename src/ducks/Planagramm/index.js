@@ -28,7 +28,7 @@ const locationModel = new Map({
  * */
 export const ReducerRecord = Record({
   location: locationModel,
-  serialNumber: null,
+  Serialnumber: null,
   loading: false,
   loaded: false
 });
@@ -49,7 +49,7 @@ export default function reducer(state = new ReducerRecord(), action) {
     case LOAD_PLANAGRAMM_DATA_ERROR:
       return state.setIn(["loading"], false).setIn(["loaded"], false);
     case SAVE_FIRDGE_ID:
-      return state.setIn(["serialNumber"], payload.serialNumber);
+      return state.setIn(["Serialnumber"], payload.Serialnumber);
     case SAVE_FIRDGE_LOACTION:
       return state.setIn(["location"], new Map(payload.location));
     default:
@@ -70,9 +70,9 @@ export const loadedSelector = createSelector(
   state => state.loaded
 );
 
-export const serialNumberSelector = createSelector(
+export const SerialnumberSelector = createSelector(
   stateSelector,
-  state => state.serialNumber
+  state => state.Serialnumber
 );
 
 export const locationSelector = createSelector(stateSelector, state =>
@@ -104,13 +104,13 @@ export function loadData() {
 }
 
 /**
- * Создает экшн для сохранения serialNumber холодильника
+ * Создает экшн для сохранения Serialnumber холодильника
  * @return {Object}         объект экшена
  */
-export function saveId(serialNumber) {
+export function saveId(Serialnumber) {
   const action = {
     type: SAVE_FIRDGE_ID,
-    payload: { serialNumber }
+    payload: { Serialnumber }
   };
 
   return action;

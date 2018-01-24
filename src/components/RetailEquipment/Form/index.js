@@ -92,7 +92,7 @@ class RetailMoreInfo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      serialNumber: "Данные отсутствуют",
+      Serialnumber: "Данные отсутствуют",
       remain: "Данные отсутствуют",
       location: "Москва" + "",
       date: "Данные отсутствуют",
@@ -199,7 +199,7 @@ class RetailMoreInfo extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.fridge) {
       const {
-        serialNumber,
+        Serialnumber,
         commercialNetwork,
         tradePoint,
         remain,
@@ -210,7 +210,7 @@ class RetailMoreInfo extends React.Component {
       } = nextProps.fridge;
 
       this.setState({
-        serialNumber,
+        Serialnumber,
         commercialNetwork,
         tradePoint,
         remain,
@@ -273,9 +273,9 @@ class RetailMoreInfo extends React.Component {
           <TextField
             id="full-width"
             label="Серийный номер"
-            onChange={this.handleChange("serialNumber")}
+            onChange={this.handleChange("Serialnumber")}
             name={"serial"}
-            value={this.state.serialNumber}
+            value={this.state.Serialnumber}
             disabled={this.isDisabledControl()}
             InputLabelProps={{
               shrink: true
@@ -288,7 +288,7 @@ class RetailMoreInfo extends React.Component {
         ) : (
           <FormControl className={classes.text}>
             <FormHelperText>Серийный номер</FormHelperText>
-            <span className={classes.text}>{this.state.serialNumber}</span>
+            <span className={classes.text}>{this.state.Serialnumber}</span>
           </FormControl>
         )}
 
