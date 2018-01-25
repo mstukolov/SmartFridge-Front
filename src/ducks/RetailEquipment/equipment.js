@@ -85,7 +85,6 @@ export default function reducer(state = defaultState, action) {
     case SELECT:
       const { id } = payload;
       let newState = null;
-      console.log("selected   ----", selected.toJS());
 
       if (selected.has(id)) {
         newState = state.setIn(["selected"], selected.delete(id));

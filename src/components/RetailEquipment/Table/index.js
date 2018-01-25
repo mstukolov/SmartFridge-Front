@@ -140,7 +140,11 @@ class RetailEquipmentTable extends React.Component {
    * @param  {String}  id идентификатор текущей строки
    * @return {Boolean}
    */
-  isSelected = id => this.props.selected.has(id);
+  isSelected = id => {
+    console.log(id, this.props.selected.has(id), this.props.selected.toJS());
+
+    return this.props.selected.has(id);
+  };
 
   /**
    * Показывает нотификатор с текстом ошибки
@@ -251,8 +255,8 @@ class RetailEquipmentTable extends React.Component {
                   return (
                     <TableRow
                       hover
-                      onClick={event => this.handleClick(event, n)}
-                      onKeyDown={event => this.handleKeyDown(event, n)}
+                      onClick={event => this.handleClick(event, n.Id)}
+                      onKeyDown={event => this.handleKeyDown(event, n.Id)}
                       role="checkbox"
                       aria-checked={isSelected}
                       tabIndex={-1}

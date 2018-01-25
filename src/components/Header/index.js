@@ -19,7 +19,7 @@ import DvrIcon from "material-ui-icons/Dvr";
 import HomeIcon from "material-ui-icons/Home";
 import MapIcon from "material-ui-icons/Map";
 import ViewComfyIcon from "material-ui-icons/ViewComfy";
-import logo from "../../logo_C2M_alternative_ru.svg";
+import logo from "../../cola.svg";
 import {
   RouteEquipmentPage,
   RouteMapPage,
