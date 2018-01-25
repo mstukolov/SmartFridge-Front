@@ -425,19 +425,10 @@ export const loadAllSaga = function*(action) {
 
   let promise = axios.get("retailequipment/all", {
     baseURL: backendUrl,
-    // headers: {
-    //   "Access-Control-Allow-Origin": "*",
-    // },
-    //   crossdomain: true,
-    //   headers: {
-    //       'Accept': 'application/json',
-    //       'Content-Type': 'application/json',
-    //   },
-
     withCredentials: false
   });
 
-  yield delay(1000);
+  // yield delay(1000);
 
   try {
     const items = yield promise.then(result => {

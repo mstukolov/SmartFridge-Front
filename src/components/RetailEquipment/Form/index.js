@@ -16,8 +16,8 @@ import {
   saveEditEquipment
 } from "../../../ducks/RetailEquipment/moreInfo";
 import {
-  commercialNetworkSelector,
-  tradePointSelector
+  ChainSelector,
+  StoreSelector
 } from "../../../ducks/RetailEquipment/equipment";
 import ModeEditIcon from "material-ui-icons/ModeEdit";
 import SimpleSnackbar from "../../SimpleSnackbar";
@@ -26,6 +26,7 @@ import CircularSaveButton from "../../CircularSaveButton";
 import moment from "moment";
 import TrendingUpIcon from "material-ui-icons/TrendingUp";
 import TrendingDownIcon from "material-ui-icons/TrendingDown";
+import TrendingFlatIcon from "material-ui-icons/TrendingFlat";
 import red from "material-ui/colors/red";
 import green from "material-ui/colors/green";
 import Tooltip from "material-ui/Tooltip";
@@ -81,6 +82,9 @@ const styles = theme => ({
       color: "#000",
       padding: "6px 0"
     }
+  },
+  updateIcon: {
+    width: "100%"
   }
 });
 
@@ -92,11 +96,16 @@ class RetailMoreInfo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      Address: "Данные отсутствуют",
+      Chain: "Данные отсутствуют",
+      Filling: "Данные отсутствуют",
+      Id: "Данные отсутствуют",
+      Lastvalue: "Данные отсутствуют",
+      Lat: "Данные отсутствуют",
+      Lng: "Данные отсутствуют",
+      Maxvalue: "Данные отсутствуют",
       Serialnumber: "Данные отсутствуют",
-      remain: "Данные отсутствуют",
-      location: "Москва" + "",
-      date: "Данные отсутствуют",
-      additionalInformation: "Данные отсутствуют"
+      Store: "Данные отсутствуют"
     };
   }
 
@@ -199,25 +208,29 @@ class RetailMoreInfo extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.fridge) {
       const {
+        Address,
+        Chain,
+        Filling,
+        Id,
+        Lastvalue,
+        Lat,
+        Lng,
+        Maxvalue,
         Serialnumber,
-        commercialNetwork,
-        tradePoint,
-        remain,
-        refill,
-        location,
-        dateUpdate,
-        additionalInformation
+        Store
       } = nextProps.fridge;
 
       this.setState({
+        Address,
+        Chain,
+        Filling,
+        Id,
+        Lastvalue,
+        Lat,
+        Lng,
+        Maxvalue,
         Serialnumber,
-        commercialNetwork,
-        tradePoint,
-        remain,
-        refill,
-        location,
-        dateUpdate,
-        additionalInformation
+        Store
       });
     }
   }
@@ -249,6 +262,66 @@ class RetailMoreInfo extends React.Component {
   showSuccessSaved = () => {
     if (!this.props.saved) return;
     return <SimpleSnackbar text="Данные сохранены" />;
+  };
+
+  /**
+   * Создает индикацию пополнения
+   * @param filling текущее заполнение
+   * @param lastValue предыдущее значение заполнения
+   * @return {ReactElement} разметка иконки
+   */
+  getUpdateIcon = (filling, lastValue) => {
+    const { classes } = this.props;
+    const result = filling - lastValue;
+    if (result > 0) {
+      return (
+        <Tooltip
+          id="tooltip-icon"
+          title="Остаток пополнился"
+          placement="bottom"
+        >
+          <TrendingUpIcon
+            style={{
+              width: 48,
+              height: 48
+            }}
+            className={classes.refillIconUp}
+          />
+        </Tooltip>
+      );
+    }
+    if (result < 0) {
+      return (
+        <Tooltip
+          id="tooltip-icon"
+          title="Остаток уменьшился"
+          placement="bottom"
+        >
+          <TrendingDownIcon
+            style={{
+              width: 48,
+              height: 48
+            }}
+            className={classes.refillIconDown}
+          />
+        </Tooltip>
+      );
+    }
+
+    return (
+      <Tooltip
+        id="tooltip-icon"
+        title="Остаток не изменился"
+        placement="bottom"
+      >
+        <TrendingFlatIcon
+          style={{
+            width: 48,
+            height: 48
+          }}
+        />
+      </Tooltip>
+    );
   };
 
   /**
@@ -296,9 +369,9 @@ class RetailMoreInfo extends React.Component {
           <TextField
             id="full-width"
             label="Торговая сеть"
-            onChange={this.handleChange("commercialNetwork")}
-            name={"serial"}
-            value={this.state.commercialNetwork}
+            onChange={this.handleChange("Chain")}
+            name={"network"}
+            value={this.state.Chain}
             disabled={this.isDisabledControl()}
             InputLabelProps={{
               shrink: true
@@ -311,7 +384,7 @@ class RetailMoreInfo extends React.Component {
         ) : (
           <FormControl className={classes.text}>
             <FormHelperText>Торговая сеть</FormHelperText>
-            <span className={classes.text}>{this.state.commercialNetwork}</span>
+            <span className={classes.text}>{this.state.Chain}</span>
           </FormControl>
         )}
 
@@ -319,9 +392,9 @@ class RetailMoreInfo extends React.Component {
           <TextField
             id="full-width"
             label="Торговая точка"
-            // onChange={this.handleChange("commercialNetwork")}
+            // onChange={this.handleChange("Chain")}
             // name={"serial"}
-            value={this.state.tradePoint}
+            value={this.state.Store}
             disabled={this.isDisabledControl()}
             InputLabelProps={{
               shrink: true
@@ -334,7 +407,7 @@ class RetailMoreInfo extends React.Component {
         ) : (
           <FormControl className={classes.text}>
             <FormHelperText>Торговая точка</FormHelperText>
-            <span className={classes.text}>{this.state.tradePoint}</span>
+            <span className={classes.text}>{this.state.Store}</span>
           </FormControl>
         )}
 
@@ -342,8 +415,8 @@ class RetailMoreInfo extends React.Component {
           <TextField
             id="full-width"
             label="Максимальный вес"
-            value={this.state.remain}
-            onChange={this.handleChange("remain")}
+            value={this.state.Maxvalue}
+            onChange={this.handleChange("Maxvalue")}
             disabled={this.isDisabledControl()}
             InputLabelProps={{
               shrink: true
@@ -356,7 +429,7 @@ class RetailMoreInfo extends React.Component {
         ) : (
           <FormControl className={classes.text}>
             <FormHelperText>Максимальный вес</FormHelperText>
-            <span className={classes.text}>{this.state.remain}</span>
+            <span className={classes.text}>{this.state.Maxvalue}</span>
           </FormControl>
         )}
 
@@ -364,8 +437,8 @@ class RetailMoreInfo extends React.Component {
           <TextField
             id="full-width"
             label="Текущий вес"
-            value={this.state.remain}
-            onChange={this.handleChange("remain")}
+            value={this.state.Filling}
+            onChange={this.handleChange("Filling")}
             disabled={this.isDisabledControl()}
             InputLabelProps={{
               shrink: true
@@ -378,29 +451,7 @@ class RetailMoreInfo extends React.Component {
         ) : (
           <FormControl className={classes.text}>
             <FormHelperText>Текущий вес</FormHelperText>
-            <span className={classes.text}>{this.state.remain}</span>
-          </FormControl>
-        )}
-
-        {edit ? (
-          <TextField
-            id="full-width"
-            label="Процент наполнения"
-            value={this.state.remain}
-            onChange={this.handleChange("remain")}
-            disabled={this.isDisabledControl()}
-            InputLabelProps={{
-              shrink: true
-            }}
-            placeholder=""
-            helperText="%"
-            fullWidth
-            margin="normal"
-          />
-        ) : (
-          <FormControl className={classes.text}>
-            <FormHelperText>Процент наполнения</FormHelperText>
-            <span className={classes.text}>{this.state.remain}</span>
+            <span className={classes.text}>{this.state.Filling}</span>
           </FormControl>
         )}
 
@@ -421,40 +472,13 @@ class RetailMoreInfo extends React.Component {
           <FormControl>
             <FormHelperText>Последнее измерение</FormHelperText>
             <span className={classes.text}>
-              {moment(this.state.dateUpdate).format("YYYY-MM-DDThh:mm")}
+              {moment(this.state.dateUpdate).format("YYYY.MM.DD hh:mm")}
             </span>
           </FormControl>
         )}
-
-        {this.state.refill ? (
-          <Tooltip
-            id="tooltip-icon"
-            title="Остаток пополнился"
-            placement="bottom"
-          >
-            <TrendingUpIcon
-              style={{
-                width: 48,
-                height: 48
-              }}
-              className={classes.refillIconUp}
-            />
-          </Tooltip>
-        ) : (
-          <Tooltip
-            id="tooltip-icon"
-            title="Остаток уменьшился"
-            placement="bottom"
-          >
-            <TrendingDownIcon
-              style={{
-                width: 48,
-                height: 48
-              }}
-              className={classes.refillIconDown}
-            />
-          </Tooltip>
-        )}
+        <div className={classes.updateIcon}>
+          {this.getUpdateIcon(this.state.Filling, this.state.Lastvalue)}
+        </div>
 
         {edit ? (
           <TextField
@@ -490,8 +514,8 @@ export default connect(
     console.log(state.moreInfo.activeItem);
 
     return {
-      networks: commercialNetworkSelector(state),
-      points: tradePointSelector(state),
+      // networks: ChainSelector(state),
+      // points: StoreSelector(state),
       fridge: state.moreInfo.activeItem,
       error: state.moreInfo.error,
       loading: state.moreInfo.loading,

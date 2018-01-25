@@ -1,10 +1,11 @@
 // eslint-disable-next-line
 import { Record, OrderedMap } from "immutable";
-import { appName } from "../../config";
+import { appName, backendUrl } from "../../config";
 import { all, put, takeEvery } from "redux-saga/effects";
 import { delay } from "redux-saga";
 import { equipment } from "../../fakeData";
 import history from "../../redux/history";
+import axios from "axios/index";
 
 /**
  * Constants
@@ -158,25 +159,18 @@ export function cancelEquipment() {
 
 export const loadSaga = function*(action) {
   const id = action.payload.location.split(":")[1];
-  const activeItem = new OrderedMap(equipment).get(id);
-
   yield put({
     type: LOAD_START
   });
 
-  let promise = new Promise(function(resolve) {
-    resolve(activeItem);
+  let promise = axios.get(`/retailequipment/details?id=${id}`, {
+    baseURL: backendUrl,
+    withCredentials: false
   });
 
-  yield delay(1000);
-
   try {
-    //TODO: Здесь сделать нормальную логику запроса данных
-
-    // throw new Error("Ошибка получения данных");
-
     const activeItem = yield promise.then(result => {
-      return result;
+      return result.data.requipdetails;
     });
 
     yield put({
