@@ -43,7 +43,7 @@ function BasicTable(props) {
 
   const data = [
     createData(
-      "Количество слотов по SKU",
+      "Кол-во рядов с представленными SKU",
       [
         <div key={"1"}>SKU_1</div>,
         <div key={"2"}>SKU_2</div>,
