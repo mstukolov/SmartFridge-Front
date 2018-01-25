@@ -420,35 +420,28 @@ export function showReport(id) {
  */
 
 export const loadAllSaga = function*(action) {
-  // const { items } = action.payload;
-  // axios
-  //   .get("retailequipment/all", {
-  //     baseURL: backendUrl,
-  //     withCredentials: false,
-  //   })
-  //   .then(function(response) {
-  //     console.log(response);
-  //   })
-  //   .catch(function(error) {
-  //     console.log(error);
-  //   });
   yield put({
     type: LOAD_ALL_START
   });
 
   let promise = axios.get("retailequipment/all", {
     baseURL: backendUrl,
+    // headers: {
+    //   "Access-Control-Allow-Origin": "*",
+    // },
+    //   crossdomain: true,
+    //   headers: {
+    //       'Accept': 'application/json',
+    //       'Content-Type': 'application/json',
+    //   },
+
     withCredentials: false
   });
 
   yield delay(1000);
 
   try {
-    //TODO: Здесь сделать нормальную логику запроса данных
-
-    // throw new Error("Ошибка получения данных");
     const items = yield promise.then(result => {
-      console.log("result ==>", result.data.retailequipment);
       return result.data.retailequipment;
     });
 

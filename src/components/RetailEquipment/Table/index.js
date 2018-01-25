@@ -31,6 +31,7 @@ import RetailEquipmentTableToolbar from "./toolbar";
 import SimpleSnackbar from "../../SimpleSnackbar/index";
 import TrendingUpIcon from "material-ui-icons/TrendingUp";
 import TrendingDownIcon from "material-ui-icons/TrendingDown";
+import TrendingFlatIcon from "material-ui-icons/TrendingFlat";
 import red from "material-ui/colors/red";
 import green from "material-ui/colors/green";
 import { getName } from "../../../utils";
@@ -191,6 +192,32 @@ class RetailEquipmentTable extends React.Component {
   };
 
   /**
+   * Создает индикацию пополнения
+   * @param filling текущее заполнение
+   * @param lastValue предыдущее значение заполнения
+   * @return {ReactElement} разметка иконки
+   */
+  getUpdateIcon = (filling, lastValue) => {
+    const { classes } = this.props;
+    const result = filling - lastValue;
+    if (result > 0) {
+      return <TrendingUpIcon className={classes.refillIconUp} />;
+    }
+    if (result < 0) {
+      return <TrendingDownIcon className={classes.refillIconDown} />;
+    }
+
+    return <TrendingFlatIcon />;
+  };
+  // n.Filling >= n.Lastvalue ? (
+  //     <TrendingUpIcon className={classes.refillIconUp} />
+  // ) : (
+  //     <TrendingDownIcon
+  //         className={classes.refillIconDown}
+  //     />
+  // )
+
+  /**
    * render
    * @return {ReactElement} разметка React
    */
@@ -221,7 +248,6 @@ class RetailEquipmentTable extends React.Component {
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map(n => {
                   const isSelected = this.isSelected(n.Id);
-                  console.log("n ", this.isSelected(n.Id), n);
                   return (
                     <TableRow
                       hover
@@ -242,13 +268,7 @@ class RetailEquipmentTable extends React.Component {
                       <TableCell numeric>{n.Filling}%</TableCell>
 
                       <TableCell padding="checkbox">
-                        {n.Filling >= n.Lastvalue ? (
-                          <TrendingUpIcon className={classes.refillIconUp} />
-                        ) : (
-                          <TrendingDownIcon
-                            className={classes.refillIconDown}
-                          />
-                        )}
+                        {this.getUpdateIcon(n.Filling, n.Lastvalue)}
                       </TableCell>
 
                       <TableCell>
@@ -296,7 +316,6 @@ RetailEquipmentTable.propTypes = {
 
 export default connect(
   state => {
-    console.log("items ==========>>", orderedFilterRowsSelector(state));
     return {
       data: orderedFilterRowsSelector(state),
       networks: commercialNetworkSelector(state),
