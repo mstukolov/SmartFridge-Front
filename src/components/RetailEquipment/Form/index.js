@@ -511,7 +511,6 @@ RetailMoreInfo.propTypes = {
 export default connect(
   state => {
     const edit = state.moreInfo.get("edit");
-    console.log(state.moreInfo.activeItem);
 
     return {
       // networks: ChainSelector(state),

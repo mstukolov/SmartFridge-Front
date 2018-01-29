@@ -38,14 +38,14 @@ const columnData = [
   },
 
   {
-    id: "commercialNetwork",
+    id: "chains",
     numeric: false,
     disablePadding: false,
     label: "Торговая сеть"
   },
 
   {
-    id: "tradePoint",
+    id: "stores",
     numeric: false,
     disablePadding: true,
     label: "Торговая точка"

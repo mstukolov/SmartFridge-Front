@@ -79,7 +79,7 @@ class GlobalMap extends React.Component {
           attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
         />
 
-        <MarkerClusterGroup markers={this.props.items.toArray()} />
+        <MarkerClusterGroup markers={this.props.items} />
       </Map>
     );
   }
@@ -119,8 +119,8 @@ class GlobalMap extends React.Component {
    * @return {void}
    */
   componentDidMount() {
-    this.props.loadLocation();
     this.props.loadEquipment();
+    this.props.loadLocation();
   }
   /**
    * При наличии активной точки, устанавливает ее параметры в состояние
@@ -154,6 +154,8 @@ export default connect(
     } else {
       activeMapItemId = firstSelectedItemId;
     }
+
+    console.log("markerSelector(state) ==> ", markerSelector(state));
 
     return {
       items: markerSelector(state),

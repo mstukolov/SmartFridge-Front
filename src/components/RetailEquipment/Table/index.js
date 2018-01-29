@@ -20,8 +20,8 @@ import {
   selectEquipment,
   selectAllEquipment,
   sortOrderBy,
-  commercialNetworkSelector,
-  tradePointSelector,
+  chainsSelector,
+  storesSelector,
   orderedFilterRowsSelector
 } from "../../../ducks/RetailEquipment/equipment";
 import { loadAll as loadAllChains } from "../../../ducks/RetailEquipment/chains";
@@ -143,8 +143,6 @@ class RetailEquipmentTable extends React.Component {
    * @return {Boolean}
    */
   isSelected = id => {
-    console.log(id, this.props.selected.has(id), this.props.selected.toJS());
-
     return this.props.selected.has(id);
   };
 
@@ -280,11 +278,13 @@ class RetailEquipmentTable extends React.Component {
                       </TableCell>
 
                       <TableCell>
-                        {getName(n.commercialNetwork, this.props.networks)}
+                        {n.Retailstoreid}
+                        {/*{getName(n.Retailstoreid, this.props.networks)}*/}
                       </TableCell>
 
                       <TableCell padding="none">
-                        {getName(n.tradePoint, this.props.points)}
+                        {n.Retailstoreid}
+                        {/*{getName(n.stores, this.props.points)}*/}
                       </TableCell>
 
                       <TableCell numeric>
@@ -326,8 +326,8 @@ export default connect(
   state => {
     return {
       data: orderedFilterRowsSelector(state),
-      networks: commercialNetworkSelector(state),
-      points: tradePointSelector(state),
+      networks: chainsSelector(state),
+      points: storesSelector(state),
       selected: state.equipment.selected,
       loading: state.equipment.loading,
       order: state.equipment.orderData.get("order"),

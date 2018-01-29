@@ -1,14 +1,19 @@
 import { RouteEquipmentPage } from "../../routes/constants";
 
 // that function returns Leaflet.Popup
-export default function getStringPopup(fridge) {
-  const { Serialnumber, commercialNetwork, tradePoint, remain, id } = fridge;
+export default function getStringPopup(
+  serialNumber = "Нет данных",
+  chain = "Нет данных",
+  store = "Нет данных",
+  filling = "Нет данных",
+  id
+) {
   return `
     <div>
-      <b>Торговое оборудование № ${Serialnumber} </b>
-      <p>Сеть: ${commercialNetwork}</p>
-      <p>Торговая точка: ${tradePoint}</p>
-      <p>Наполнение: ${remain}%</p>
+      <b>Торговое оборудование № ${serialNumber} </b>
+      <p>Сеть: ${chain}</p>
+      <p>Торговая точка: ${store}</p>
+      <p>Наполнение: ${filling}%</p>
       <p><a href=${RouteEquipmentPage}:${id}>Подробная информация</a></p>
     </div>
   `;

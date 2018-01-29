@@ -2,11 +2,7 @@ import { appName } from "../../config";
 import { Record, Map, OrderedMap, List } from "immutable";
 import { createSelector } from "reselect";
 import axios from "axios";
-import {
-  // equipment as items,
-  tradePoint,
-  commercialNetwork
-} from "../../fakeData";
+
 import history from "../../redux/history";
 import { all, takeEvery, put } from "redux-saga/effects";
 import { delay } from "redux-saga";
@@ -37,8 +33,8 @@ export const SELECT_ALL = `${prefix}/SELECT_ALL`;
 
 export const ORDER_BY = `${prefix}/ORDER_BY`;
 
-export const FILTER_BY_COMMERCIAL_NETWORK = `${prefix}/FILTER_BY_COMMERCIAL_NETWORK`;
-export const FILTER_BY_TRADE_POINT = `${prefix}/FILTER_BY_TRADE_POINT`;
+export const FILTER_BY_CHAIN = `${prefix}/FILTER_BY_CHAIN`;
+export const FILTER_BY_STORE = `${prefix}/FILTER_BY_STORE`;
 
 /**
  * Reducer
@@ -46,16 +42,14 @@ export const FILTER_BY_TRADE_POINT = `${prefix}/FILTER_BY_TRADE_POINT`;
 let DefaulrReducerState = new Record({
   loading: false,
   items: new List([]),
-  commercialNetwork: new Map({}),
-  tradePoint: new Map({}),
   selected: new Map({}),
   orderData: new Map({
     order: "asc",
     orderBy: "model"
   }),
   filters: new Map({
-    commercialNetwork: "",
-    tradePoint: ""
+    chain: "",
+    store: ""
   }),
   error: null
 });
@@ -71,12 +65,7 @@ export default function reducer(state = defaultState, action) {
       return state.set("loading", true);
 
     case LOAD_ALL_SUCCESS:
-      return state
-        .set("loading", false)
-        .set("items", new List(payload.items))
-        .set("commercialNetwork", new Map(commercialNetwork))
-        .set("tradePoint", new Map(tradePoint));
-
+      return state.set("loading", false).set("items", new List(payload.items));
     case LOAD_ALL_ERROR:
       return state.setIn(["error"], payload.error).set("loading", false);
 
@@ -150,15 +139,13 @@ export default function reducer(state = defaultState, action) {
       // );
       return orderedState;
 
-    case FILTER_BY_COMMERCIAL_NETWORK:
-      const { fieldName } = payload;
+    case FILTER_BY_CHAIN:
       return state
-        .setIn(["filters", "commercialNetwork"], fieldName)
-        .setIn(["filters", "tradePoint"], "");
+        .setIn(["filters", "chain"], payload.id)
+        .setIn(["filters", "store"], "");
 
-    case FILTER_BY_TRADE_POINT:
-      const { byField } = payload;
-      return state.setIn(["filters", "tradePoint"], byField);
+    case FILTER_BY_STORE:
+      return state.setIn(["filters", "store"], payload.id);
 
     default:
       // const orderDataStorage = localStorage.getItem(
@@ -185,18 +172,17 @@ export default function reducer(state = defaultState, action) {
  * */
 
 //Селектор данных торговых сетей
-const commercialNetworkGetter = state =>
-  state.equipment.get("commercialNetwork");
+const chainsGetter = state => state.chains.get("items");
 
-export const commercialNetworkSelector = createSelector(
-  commercialNetworkGetter,
-  networks => networks.toArray()
+export const chainsSelector = createSelector(
+  chainsGetter,
+  networks => networks
 );
 
 //Селектор данных торговых точек
-const tradePointGetter = state => state.equipment.get("tradePoint");
+const storesGetter = state => state.stores.get("items");
 
-export const tradePointSelector = createSelector(tradePointGetter, points =>
+export const storesSelector = createSelector(storesGetter, points =>
   points.toArray()
 );
 
@@ -216,17 +202,17 @@ export const filteredRowsSelector = createSelector(
   [filtersStateGetter, rowsGetter],
   (filters, items) => {
     let filteredCollection = items.toArray();
-    // const { commercialNetwork, tradePoint } = filters.toJS();
+    const { chain, store } = filters.toJS();
+
+    if (chain) {
+      return filteredCollection.filter(item => {
+        return item.chain === chain;
+      });
+    }
     //
-    // if (commercialNetwork.length && !tradePoint.length) {
+    // if (chains.length && stores.length) {
     //   return filteredCollection.filter(item => {
-    //     return item.commercialNetwork === commercialNetwork;
-    //   });
-    // }
-    //
-    // if (commercialNetwork.length && tradePoint.length) {
-    //   return filteredCollection.filter(item => {
-    //     return item.tradePoint === tradePoint;
+    //     return item.stores === stores;
     //   });
     // }
 
@@ -250,7 +236,7 @@ const orderStateGetter = state => state.equipment.get("orderData");
 // }
 export const orderedFilterRowsSelector = createSelector(
   filteredRowsSelector,
-  commercialNetworkSelector,
+  chainsSelector,
   orderStateGetter,
   (items, networks, orderData) => {
     const orderBy = orderData.get("orderBy");
@@ -258,8 +244,8 @@ export const orderedFilterRowsSelector = createSelector(
 
     switch (orderBy) {
       case "Serialnumber":
-      case "tradePoint":
-      case "commercialNetwork":
+      case "stores":
+      case "chains":
         return orderData.get("order") === "desc"
           ? sortedCollection.sort(
               (a, b) =>
@@ -361,11 +347,11 @@ export function sortOrderBy(property) {
  * @param  {String} значение фильтра
  * @return {Object}    объект экшена
  */
-export function filterByNetwork(fieldName) {
+export function filterByNetwork(id) {
   const action = {
-    type: FILTER_BY_COMMERCIAL_NETWORK,
+    type: FILTER_BY_CHAIN,
     payload: {
-      fieldName
+      id
     }
   };
 
@@ -377,11 +363,11 @@ export function filterByNetwork(fieldName) {
  * @param  {String} значение фильтра
  * @return {Object}    объект экшена
  */
-export function filterByPoint(fieldName) {
+export function filterByPoint(id) {
   const action = {
-    type: FILTER_BY_TRADE_POINT,
+    type: FILTER_BY_STORE,
     payload: {
-      byField: fieldName
+      id
     }
   };
 

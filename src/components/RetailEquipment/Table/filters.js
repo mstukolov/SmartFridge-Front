@@ -5,11 +5,9 @@ import {
   filterByPoint
 } from "../../../ducks/RetailEquipment/equipment";
 import { withStyles } from "material-ui/styles";
-import {
-  commercialNetworkSelector,
-  tradePointSelector,
-  filtersDataSelector
-} from "../../../ducks/RetailEquipment/equipment";
+import { filtersDataSelector } from "../../../ducks/RetailEquipment/equipment";
+import { storesSelector } from "../../../ducks/RetailEquipment/stores";
+import { chainsSelector } from "../../../ducks/RetailEquipment/chains";
 import Input, { InputLabel } from "material-ui/Input";
 import { MenuItem } from "material-ui/Menu";
 import { FormControl } from "material-ui/Form";
@@ -34,17 +32,17 @@ const styles = theme => ({
  */
 class RetailEquipmentTableFilters extends Component {
   state = {
-    commercialNetwork: "",
-    tradePoint: ""
+    chains: "",
+    stores: ""
   };
 
   /**
    * Обработка изменения значений выпадающего списка
    * @param {SytheticEvent} event    событие react
-   * @return {void}
+   * @return {voId}
    */
   handleChangeNetwork = event => {
-    this.setState({ commercialNetwork: event.target.value });
+    this.setState({ chains: event.target.value });
     // отправляем изменения параметров фильтрации в стор
     this.props.filterByNetwork(event.target.value);
   };
@@ -52,10 +50,10 @@ class RetailEquipmentTableFilters extends Component {
   /**
    * Обработка изменения значений выпадающего списка
    * @param {SytheticEvent} event    событие react
-   * @return {void}
+   * @return {voId}
    */
   handleChangePoint = event => {
-    this.setState({ tradePoint: event.target.value });
+    this.setState({ stores: event.target.value });
     // отправляем изменения параметров фильтрации в стор
     this.props.filterByPoint(event.target.value);
   };
@@ -64,10 +62,10 @@ class RetailEquipmentTableFilters extends Component {
    * @return {ReactElement} разметка React
    */
   getNetworkItems = () => {
-    return this.props.commercialNetwork.map(item => {
+    return this.props.chains.map(item => {
       return (
-        <MenuItem key={item.id} value={item.id}>
-          {item.name}
+        <MenuItem key={item.Id} value={item.Id}>
+          {item.Name}
         </MenuItem>
       );
     });
@@ -78,18 +76,12 @@ class RetailEquipmentTableFilters extends Component {
    */
   getTradePoints = () => {
     try {
-      const networkId = this.props.filters.commercialNetwork;
-      const commercialNetworks = this.props.commercialNetwork;
-      const commercialNetwork = commercialNetworks.find(
-        item => item.id === networkId
-      );
-
-      return commercialNetwork.tradePoints.map(item => {
-        const point = this.props.tradePoint.find(point => point.id === item);
+      return this.props.stores.map(item => {
+        const point = item;
 
         return (
-          <MenuItem key={point.id} value={point.id}>
-            {point.name}
+          <MenuItem key={point.Id} value={point.Id}>
+            {point.Name}
           </MenuItem>
         );
       });
@@ -104,15 +96,11 @@ class RetailEquipmentTableFilters extends Component {
     return (
       <form className={classes.container} autoComplete="off">
         <FormControl className={classes.formControl}>
-          <InputLabel htmlFor="commercialNetwork-simple">
-            Торговая сеть
-          </InputLabel>
+          <InputLabel htmlFor="chains-simple">Торговая сеть</InputLabel>
           <Select
-            value={this.state.commercialNetwork}
+            value={this.state.chains}
             onChange={this.handleChangeNetwork}
-            input={
-              <Input name="commercialNetwork" id="commercialNetwork-simple" />
-            }
+            input={<Input name="chains" id="chains-simple" />}
           >
             <MenuItem value="">
               <em>Нет</em>
@@ -123,13 +111,13 @@ class RetailEquipmentTableFilters extends Component {
 
         <FormControl
           className={classes.formControl}
-          disabled={!this.state.commercialNetwork.length}
+          // disabled={!this.state.chains.length}
         >
-          <InputLabel htmlFor="tradePoint-simple">Торговая точка</InputLabel>
+          <InputLabel htmlFor="stores-simple">Торговая точка</InputLabel>
           <Select
-            value={this.state.tradePoint}
+            value={this.state.stores}
             onChange={this.handleChangePoint}
-            input={<Input name="tradePoint" id="tradePoint-simple" />}
+            input={<Input name="stores" id="stores-simple" />}
           >
             <MenuItem value="">
               <em>Нет</em>
@@ -142,15 +130,12 @@ class RetailEquipmentTableFilters extends Component {
   }
 }
 
-RetailEquipmentTableFilters.propTypes = {};
-RetailEquipmentTableFilters.defaultProps = {};
-
 export default connect(
   state => {
     return {
       filters: filtersDataSelector(state),
-      commercialNetwork: commercialNetworkSelector(state),
-      tradePoint: tradePointSelector(state)
+      chains: chainsSelector(state),
+      stores: storesSelector(state)
     };
   },
   {

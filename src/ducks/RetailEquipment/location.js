@@ -1,11 +1,12 @@
 import { all, takeEvery, put } from "redux-saga/effects";
-import { appName } from "../../config";
-import { OrderedMap, Record } from "immutable";
-import { location as items } from "../../fakeData";
+import { appName, backendUrl } from "../../config";
+import { List, Record } from "immutable";
 import { createSelector } from "reselect";
 import getStringPopup from "../../components/GlobalMap/popup";
 import redMarker from "../../components/GlobalMap/redMarker";
 import blueMarker from "../../components/GlobalMap/blueMarker";
+import { LOAD_ALL_START } from "./equipment";
+import axios from "axios/index";
 
 /**
  * Constants
@@ -23,7 +24,7 @@ export const SHOW_FULLSCREEN = `${prefix}/SHOW_FULLSCREEN`;
  * Reducer
  * */
 export const ReducerRecord = Record({
-  items: new OrderedMap({}),
+  items: new List([]),
   fullscreen: false,
   loading: false
 });
@@ -37,7 +38,7 @@ export default function reducer(state = new ReducerRecord(), action) {
     case LOAD_SUCCESS:
       return state
         .set("loading", false)
-        .setIn(["items"], new OrderedMap(payload.items));
+        .setIn(["items"], new List(payload.items));
 
     case LOAD_ERROR:
       return state.setIn(["error"], payload.error).set("loading", false);
@@ -70,26 +71,41 @@ export const markerSelector = createSelector(
   selectedItemsGetter,
   fridgesGetter,
   (markers, selectedItems, fridges) => {
-    return markers.map(item => {
-      const fridge = fridges.get(item.id);
+    return markers
+      .map(item => {
+        const fridge = fridges.get(item.Id);
 
-      let element = {
-        position: [item.lat, item.lng]
-      };
+        let element = {
+          position: [item.Lat, item.Lng]
+        };
 
-      // Создаем попап, если есть полная информация об устройстве
-      if (fridge) {
-        element.popup = getStringPopup(fridge);
-      }
+        // Создаем попап, если есть полная информация об устройстве
+        if (fridge) {
+          const {
+            Serialnumber,
+            Retailchainid,
+            Retailstoreid,
+            Filling,
+            Id
+          } = fridge;
+          element.popup = getStringPopup(
+            Serialnumber,
+            Retailchainid,
+            Retailstoreid,
+            Filling,
+            Id
+          );
+        }
 
-      // Если в списке выбранных точек есть данная, выделяем ее красным маркером
-      if (selectedItems.get(item.id)) {
-        element.options = { icon: redMarker };
-      } else {
-        element.options = { icon: blueMarker };
-      }
-      return element;
-    });
+        // Если в списке выбранных точек есть данная, выделяем ее красным маркером
+        if (selectedItems.get(item.Id)) {
+          element.options = { icon: redMarker };
+        } else {
+          element.options = { icon: blueMarker };
+        }
+        return element;
+      })
+      .toArray();
   }
 );
 
@@ -126,24 +142,23 @@ export function showFullScreen(isVisible) {
  * Sagas
  * */
 export const loadLocationSaga = function*(action) {
-  // const { items } = action.payload;
-
   yield put({
     type: LOAD_START
   });
 
-  let promise = new Promise(function(resolve) {
-    setTimeout(() => {
-      resolve(items);
-    }, 2000);
-  });
-
   try {
-    //TODO: Здесь сделать нормальную логику запроса данных
+    yield put({
+      type: LOAD_ALL_START
+    });
+
+    let promise = axios.get("retailequipment/gps/all", {
+      baseURL: backendUrl,
+      withCredentials: false
+    });
 
     // throw new Error("Ошибка получения данных");
     const locations = yield promise.then(result => {
-      return result;
+      return result.data.retailequipmentgps;
     });
 
     yield put({

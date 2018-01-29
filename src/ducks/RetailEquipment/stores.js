@@ -57,8 +57,10 @@ export const loadingSelector = createSelector(
   state => state.loading
 );
 
-// селектор точек для карты
-const storesSelectorGetter = state => state[moduleName].get("items");
+// селектор торговых точек
+export const storesSelector = createSelector(stateSelector, state =>
+  state.items.toJS()
+);
 
 /**
  * Action Creators

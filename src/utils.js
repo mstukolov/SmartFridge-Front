@@ -61,8 +61,9 @@ export function randomInteger(min, max) {
  */
 export function getName(id, arr) {
   let name = "";
+  // debugger
   try {
-    name = arr.find(item => item.id === id).name;
+    name = arr.find(item => item.Id === id).Name;
   } catch (e) {
     name = "Нет данных";
   }
