@@ -155,8 +155,6 @@ export default connect(
       activeMapItemId = firstSelectedItemId;
     }
 
-    console.log("markerSelector(state) ==> ", markerSelector(state));
-
     return {
       items: markerSelector(state),
       activeMapItemId

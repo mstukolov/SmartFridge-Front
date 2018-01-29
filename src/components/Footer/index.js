@@ -5,6 +5,7 @@ import { withStyles } from "material-ui/styles";
 import AppBar from "material-ui/AppBar";
 import Toolbar from "material-ui/Toolbar";
 import Typography from "material-ui/Typography";
+import Button from "material-ui/Button";
 
 const styles = theme => ({
   root: {
@@ -48,8 +49,11 @@ function Footer(props: Props) {
             color="inherit"
             className={classes.flex}
           >
-            Тел.: 8(499) 999-99-99<br />
-            Контакты: г. Москва, ул. Гагарина, д. 7
+            <Button href="http://center2m.ru/" color="secondary">
+              ООО «Центр 2М»
+            </Button>
+            Тел.: +7 (499)754-07-77<br />
+            Адрес: 119034, Москва, Пречистенская наб. 17
           </Typography>
         </Toolbar>
       </AppBar>
