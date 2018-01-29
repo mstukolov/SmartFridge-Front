@@ -3,7 +3,6 @@ import { appName } from "../../config";
 import { Record, List } from "immutable";
 import { schedule as report } from "../../fakeData";
 import { createSelector } from "reselect";
-import moment from "moment";
 
 /**
  * Constants

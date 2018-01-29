@@ -428,8 +428,6 @@ export const loadAllSaga = function*(action) {
     withCredentials: false
   });
 
-  // yield delay(1000);
-
   try {
     const items = yield promise.then(result => {
       return result.data.retailequipment;

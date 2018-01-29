@@ -24,6 +24,8 @@ import {
   tradePointSelector,
   orderedFilterRowsSelector
 } from "../../../ducks/RetailEquipment/equipment";
+import { loadAll as loadAllChains } from "../../../ducks/RetailEquipment/chains";
+import { loadAll as loadAllStores } from "../../../ducks/RetailEquipment/stores";
 import LinearQuery from "../../LinearQuery/index";
 import Moment from "react-moment";
 import RetailEquipmentTableHead from "./head";
@@ -161,6 +163,8 @@ class RetailEquipmentTable extends React.Component {
    */
   componentDidMount() {
     if (!this.props.data.length) this.props.callAll();
+    this.props.loadAllChains();
+    this.props.loadAllStores();
     // TODO: Переделать организацию хранения данных в сторэдж
     // const rowsPerPage = localStorage.getItem("rowsPerPage");
     // const page = localStorage.getItem("page");
@@ -333,6 +337,8 @@ export default connect(
   },
   {
     callAll,
+    loadAllChains,
+    loadAllStores,
     selectEquipment,
     selectAllEquipment,
     sortOrderBy
