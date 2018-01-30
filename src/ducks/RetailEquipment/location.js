@@ -73,25 +73,28 @@ export const markerSelector = createSelector(
   (markers, selectedItems, fridges) => {
     return markers
       .map(item => {
-        const fridge = fridges.get(item.Requipid);
+        const fridge = fridges.find(
+          fridge => item.Serialnumber === fridge.Requipserialnumber
+        );
 
         let element = {
           position: [item.Lat, item.Lng]
         };
-
         // Создаем попап, если есть полная информация об устройстве
+
         if (fridge) {
           const {
             Requipserialnumber,
-            Retailchainid,
-            Retailstoreid,
+            Rchainname,
+            Storename,
             Requipfilling,
             Requipid
           } = fridge;
+
           element.popup = getStringPopup(
             Requipserialnumber,
-            Retailchainid,
-            Retailstoreid,
+            Rchainname,
+            Storename,
             Requipfilling,
             Requipid
           );
