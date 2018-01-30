@@ -49,7 +49,7 @@ function Footer(props: Props) {
             color="inherit"
             className={classes.flex}
           >
-            <Button href="http://center2m.ru/" color="secondary">
+            <Button href="http://center2m.ru/" color="contrast">
               ООО «Центр 2М»
             </Button>
             Тел.: +7 (499)754-07-77<br />
