@@ -40,20 +40,27 @@ const columnData = [
   {
     id: "chains",
     numeric: false,
-    disablePadding: false,
+    disablePadding: true,
     label: "Торговая сеть"
   },
 
   {
     id: "stores",
     numeric: false,
-    disablePadding: true,
+    disablePadding: false,
     label: "Торговая точка"
   },
 
   {
+    id: "Sensorvalue",
+    numeric: false,
+    disablePadding: true,
+    label: "Вес"
+  },
+
+  {
     id: "Updatedat",
-    numeric: true,
+    numeric: false,
     disablePadding: false,
     label: "Время измерения"
   }

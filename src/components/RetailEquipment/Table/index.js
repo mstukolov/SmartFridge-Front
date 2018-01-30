@@ -277,12 +277,15 @@ class RetailEquipmentTable extends React.Component {
                         {this.getUpdateIcon(n.Requipfilling, n.Requiplastvalue)}
                       </TableCell>
 
-                      <TableCell>{n.Rchainname}</TableCell>
+                      <TableCell padding="none">{n.Rchainname}</TableCell>
 
-                      <TableCell padding="none">{n.Storename}</TableCell>
+                      <TableCell>{n.Storename}</TableCell>
+                      <TableCell padding="none">{n.Sensorvalue}</TableCell>
 
                       <TableCell numeric>
-                        <Moment format="DD.MM.YYYY HH:MM">{n.Updatedat}</Moment>
+                        <Moment format="DD.MM.YYYY HH:MM">
+                          {n.Measuredate}
+                        </Moment>
                       </TableCell>
                     </TableRow>
                   );
