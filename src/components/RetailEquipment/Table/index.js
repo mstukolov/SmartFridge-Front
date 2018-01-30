@@ -141,7 +141,7 @@ class RetailEquipmentTable extends React.Component {
    * @return {Boolean}
    */
   isSelected = id => {
-    return this.props.selected.has(id);
+    return this.props.selected.indexOf(id) >= 0;
   };
 
   /**

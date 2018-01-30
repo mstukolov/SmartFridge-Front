@@ -74,14 +74,12 @@ export default function reducer(state = defaultState, action) {
       return state;
     case SELECT:
       const { id } = payload;
-      let newState = null;
-
-      return (newState = state.setIn(["selected"], selected.push(id)));
-
-      if (selected.has(id)) {
-        newState = state.setIn(["selected"], selected.delete(id));
+      let newState = state;
+      const position = selected.indexOf(id);
+      if (position < 0) {
+        newState = newState.setIn(["selected"], selected.push(id));
       } else {
-        newState = state.setIn(["selected"], selected.push(id));
+        newState = state.setIn(["selected"], selected.delete(position));
       }
 
       // localStorage.removeItem("RetailEquipmentSelected");
