@@ -11,7 +11,7 @@ import {
   loadedSelector,
   loadingSelector,
   locationSelector,
-  SerialnumberSelector
+  RequipserialnumberSelector
 } from "../../ducks/Planagramm";
 import injectSheet from "react-jss";
 import { connect } from "react-redux";
@@ -213,7 +213,7 @@ export default connect(state => {
   return {
     loading: loadingSelector(state),
     loaded: loadedSelector(state),
-    identifySuccess: SerialnumberSelector(state),
+    identifySuccess: RequipserialnumberSelector(state),
     locationSuccess:
       locationSelector(state).latitude && locationSelector(state).longitude
   };

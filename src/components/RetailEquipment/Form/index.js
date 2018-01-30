@@ -98,13 +98,13 @@ class RetailMoreInfo extends React.Component {
     this.state = {
       Address: "Данные отсутствуют",
       Chain: "Данные отсутствуют",
-      Filling: "Данные отсутствуют",
-      Id: "Данные отсутствуют",
-      Lastvalue: "Данные отсутствуют",
+      Requipfilling: "Данные отсутствуют",
+      Requipid: "Данные отсутствуют",
+      Requiplastvalue: "Данные отсутствуют",
       Lat: "Данные отсутствуют",
       Lng: "Данные отсутствуют",
       Maxvalue: "Данные отсутствуют",
-      Serialnumber: "Данные отсутствуют",
+      Requipserialnumber: "Данные отсутствуют",
       Store: "Данные отсутствуют"
     };
   }
@@ -210,26 +210,26 @@ class RetailMoreInfo extends React.Component {
       const {
         Address,
         Chain,
-        Filling,
-        Id,
-        Lastvalue,
+        Requipfilling,
+        Requipid,
+        Requiplastvalue,
         Lat,
         Lng,
         Maxvalue,
-        Serialnumber,
+        Requipserialnumber,
         Store
       } = nextProps.fridge;
 
       this.setState({
         Address,
         Chain,
-        Filling,
-        Id,
-        Lastvalue,
+        Requipfilling,
+        Requipid,
+        Requiplastvalue,
         Lat,
         Lng,
         Maxvalue,
-        Serialnumber,
+        Requipserialnumber,
         Store
       });
     }
@@ -346,9 +346,9 @@ class RetailMoreInfo extends React.Component {
           <TextField
             id="full-width"
             label="Серийный номер"
-            onChange={this.handleChange("Serialnumber")}
+            onChange={this.handleChange("Requipserialnumber")}
             name={"serial"}
-            value={this.state.Serialnumber}
+            value={this.state.Requipserialnumber}
             disabled={this.isDisabledControl()}
             InputLabelProps={{
               shrink: true
@@ -361,7 +361,9 @@ class RetailMoreInfo extends React.Component {
         ) : (
           <FormControl className={classes.text}>
             <FormHelperText>Серийный номер</FormHelperText>
-            <span className={classes.text}>{this.state.Serialnumber}</span>
+            <span className={classes.text}>
+              {this.state.Requipserialnumber}
+            </span>
           </FormControl>
         )}
 
@@ -437,8 +439,8 @@ class RetailMoreInfo extends React.Component {
           <TextField
             id="full-width"
             label="Текущий вес"
-            value={this.state.Filling}
-            onChange={this.handleChange("Filling")}
+            value={this.state.Requipfilling}
+            onChange={this.handleChange("Requipfilling")}
             disabled={this.isDisabledControl()}
             InputLabelProps={{
               shrink: true
@@ -451,7 +453,7 @@ class RetailMoreInfo extends React.Component {
         ) : (
           <FormControl className={classes.text}>
             <FormHelperText>Текущий вес</FormHelperText>
-            <span className={classes.text}>{this.state.Filling}</span>
+            <span className={classes.text}>{this.state.Requipfilling}</span>
           </FormControl>
         )}
 
@@ -477,7 +479,10 @@ class RetailMoreInfo extends React.Component {
           </FormControl>
         )}
         <div className={classes.updateIcon}>
-          {this.getUpdateIcon(this.state.Filling, this.state.Lastvalue)}
+          {this.getUpdateIcon(
+            this.state.Requipfilling,
+            this.state.Requiplastvalue
+          )}
         </div>
 
         {edit ? (

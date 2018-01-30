@@ -42,7 +42,8 @@ export const FILTER_BY_STORE = `${prefix}/FILTER_BY_STORE`;
 let DefaulrReducerState = new Record({
   loading: false,
   items: new List([]),
-  selected: new Map({}),
+  selected: new List([]),
+  selectAll: false,
   orderData: new Map({
     order: "asc",
     orderBy: "model"
@@ -75,10 +76,12 @@ export default function reducer(state = defaultState, action) {
       const { id } = payload;
       let newState = null;
 
+      return (newState = state.setIn(["selected"], selected.push(id)));
+
       if (selected.has(id)) {
         newState = state.setIn(["selected"], selected.delete(id));
       } else {
-        newState = state.setIn(["selected"], selected.set(id, true));
+        newState = state.setIn(["selected"], selected.push(id));
       }
 
       // localStorage.removeItem("RetailEquipmentSelected");
@@ -90,17 +93,21 @@ export default function reducer(state = defaultState, action) {
       return newState;
 
     case SELECT_ALL:
-      if (state.items.size === state.selected.size)
-        return state.setIn(["selected"], new Map({}));
-      let result = {};
+      if (state.selectAll) {
+        return state
+          .setIn(["selected"], new List([]))
+          .setIn(["selectAll"], false);
+      } else {
+        return state
+          .setIn(
+            ["selected"],
+            new List([...state.items.map(item => item.Requipid)])
+          )
+          .setIn(["selectAll"], true);
+      }
 
-      state.items.forEach(item => {
-        result[item.Id] = true;
-      });
-
-      // localStorage.removeItem("RetailEquipmentSelected");
-      // localStorage.setItem("RetailEquipmentSelected", JSON.stringify(result));
-      return state.setIn(["selected"], new Map(result));
+    // localStorage.removeItem("RetailEquipmentSelected");
+    // localStorage.setItem("RetailEquipmentSelected", JSON.stringify(result));
 
     case DELETE_START:
       return state.set("loading", true);
@@ -225,13 +232,13 @@ const orderStateGetter = state => state.equipment.get("orderData");
 //
 // {
 //   Createdat: "2018-01-23T16:01:39.220692Z";
-//   Filling: 80;
-//   Id: 1;
-//   Lastvalue: 80;
+//   Requipfilling: 80;
+//   Requipid: 1;
+//   Requiplastvalue: 80;
 //   Locationequipmentid: 1;
 //   Maxvalue: 100;
 //   Retailstoreid: 10471;
-//   Serialnumber: "203149104-0";
+//   Requipserialnumber: "203149104-0";
 //   Updatedat: "2018-01-23T16:01:39.220692Z";
 // }
 export const orderedFilterRowsSelector = createSelector(
@@ -243,7 +250,7 @@ export const orderedFilterRowsSelector = createSelector(
     let sortedCollection = items;
 
     switch (orderBy) {
-      case "Serialnumber":
+      case "Requipserialnumber":
       case "stores":
       case "chains":
         return orderData.get("order") === "desc"
@@ -260,7 +267,7 @@ export const orderedFilterRowsSelector = createSelector(
                   : 1
             );
       case "remain":
-      case "Filling":
+      case "Requipfilling":
       case "Updatedat":
       default:
         orderData.get("order") === "asc"

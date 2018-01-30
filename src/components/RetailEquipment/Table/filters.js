@@ -64,7 +64,7 @@ class RetailEquipmentTableFilters extends Component {
   getNetworkItems = () => {
     return this.props.chains.map(item => {
       return (
-        <MenuItem key={item.Id} value={item.Id}>
+        <MenuItem key={item.Requipid} value={item.Requipid}>
           {item.Name}
         </MenuItem>
       );
@@ -80,7 +80,7 @@ class RetailEquipmentTableFilters extends Component {
         const point = item;
 
         return (
-          <MenuItem key={point.Id} value={point.Id}>
+          <MenuItem key={point.Requipid} value={point.Requipid}>
             {point.Name}
           </MenuItem>
         );

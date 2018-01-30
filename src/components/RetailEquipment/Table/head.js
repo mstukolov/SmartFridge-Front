@@ -18,13 +18,13 @@ import Tooltip from "material-ui/Tooltip";
  */
 const columnData = [
   {
-    id: "Serialnumber",
+    id: "Requipserialnumber",
     numeric: false,
     disablePadding: true,
     label: "Серийный номер"
   },
   {
-    id: "Filling",
+    id: "Requipfilling",
     numeric: true,
     disablePadding: false,
     label: "Наполнение"

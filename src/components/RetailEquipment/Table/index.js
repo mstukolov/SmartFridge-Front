@@ -86,11 +86,9 @@ class RetailEquipmentTable extends React.Component {
 
   /**
    * Выбор всех строк оборудования
-   * @param  {SytheticEvent} event    событие react
-   * @param  {Boolean} checked        признак выбора всех пунктов
    * @return {void}
    */
-  handleSelectAllClick = (event, checked) => {
+  handleSelectAllClick = () => {
     this.props.selectAllEquipment();
   };
   /**
@@ -102,7 +100,7 @@ class RetailEquipmentTable extends React.Component {
   handleKeyDown = (event, item) => {
     event.preventDefault();
     if (keycode(event) === "space") {
-      this.handleClick(event, item.Id);
+      this.handleClick(event, item.Requipid);
     }
   };
   /**
@@ -191,7 +189,7 @@ class RetailEquipmentTable extends React.Component {
    * @param  {String} id   значение
    * @return {String}      читаемое значение
    */
-  getVocabularyNameById = (type, id) => {
+  getVocabularyNameByRequipid = (type, id) => {
     const lib = this.props.vocabulary.get(type);
 
     return type && id && lib ? lib.get(id) : "Значение не определено";
@@ -215,7 +213,7 @@ class RetailEquipmentTable extends React.Component {
 
     return <TrendingFlatIcon />;
   };
-  // n.Filling >= n.Lastvalue ? (
+  // n.Requipfilling >= n.Requiplastvalue ? (
   //     <TrendingUpIcon className={classes.refillIconUp} />
   // ) : (
   //     <TrendingDownIcon
@@ -253,39 +251,35 @@ class RetailEquipmentTable extends React.Component {
               {data
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map(n => {
-                  const isSelected = this.isSelected(n.Id);
+                  const isSelected = this.isSelected(n.Requipid);
                   return (
                     <TableRow
                       hover
-                      onClick={event => this.handleClick(event, n.Id)}
-                      onKeyDown={event => this.handleKeyDown(event, n.Id)}
+                      onClick={event => this.handleClick(event, n.Requipid)}
+                      onKeyDown={event => this.handleKeyDown(event, n.Requipid)}
                       role="checkbox"
                       aria-checked={isSelected}
                       tabIndex={-1}
-                      key={n.Id}
+                      key={n.Requipid}
                       selected={isSelected}
                     >
                       <TableCell padding="checkbox">
                         <Checkbox checked={isSelected} />
                       </TableCell>
 
-                      <TableCell padding="none">{n.Serialnumber}</TableCell>
+                      <TableCell padding="none">
+                        {n.Requipserialnumber}
+                      </TableCell>
 
-                      <TableCell numeric>{n.Filling}%</TableCell>
+                      <TableCell numeric>{n.Requipfilling}%</TableCell>
 
                       <TableCell padding="checkbox">
-                        {this.getUpdateIcon(n.Filling, n.Lastvalue)}
+                        {this.getUpdateIcon(n.Requipfilling, n.Requiplastvalue)}
                       </TableCell>
 
-                      <TableCell>
-                        {n.Retailstoreid}
-                        {/*{getName(n.Retailstoreid, this.props.networks)}*/}
-                      </TableCell>
+                      <TableCell>{n.Rchainname}</TableCell>
 
-                      <TableCell padding="none">
-                        {n.Retailstoreid}
-                        {/*{getName(n.stores, this.props.points)}*/}
-                      </TableCell>
+                      <TableCell padding="none">{n.Storename}</TableCell>
 
                       <TableCell numeric>
                         <Moment format="DD.MM.YYYY HH:MM">{n.Updatedat}</Moment>

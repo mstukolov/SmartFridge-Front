@@ -73,7 +73,7 @@ export const markerSelector = createSelector(
   (markers, selectedItems, fridges) => {
     return markers
       .map(item => {
-        const fridge = fridges.get(item.Id);
+        const fridge = fridges.get(item.Requipid);
 
         let element = {
           position: [item.Lat, item.Lng]
@@ -82,23 +82,23 @@ export const markerSelector = createSelector(
         // Создаем попап, если есть полная информация об устройстве
         if (fridge) {
           const {
-            Serialnumber,
+            Requipserialnumber,
             Retailchainid,
             Retailstoreid,
-            Filling,
-            Id
+            Requipfilling,
+            Requipid
           } = fridge;
           element.popup = getStringPopup(
-            Serialnumber,
+            Requipserialnumber,
             Retailchainid,
             Retailstoreid,
-            Filling,
-            Id
+            Requipfilling,
+            Requipid
           );
         }
 
         // Если в списке выбранных точек есть данная, выделяем ее красным маркером
-        if (selectedItems.get(item.Id)) {
+        if (selectedItems.get(item.Requipid)) {
           element.options = { icon: redMarker };
         } else {
           element.options = { icon: blueMarker };
