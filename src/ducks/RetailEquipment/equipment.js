@@ -212,16 +212,16 @@ export const filteredRowsSelector = createSelector(
     const { chain, store } = filters.toJS();
 
     if (chain) {
-      return filteredCollection.filter(item => {
-        return item.chain === chain;
+      filteredCollection = filteredCollection.filter(item => {
+        return item.Rchainid === chain;
       });
     }
-    //
-    // if (chains.length && stores.length) {
-    //   return filteredCollection.filter(item => {
-    //     return item.stores === stores;
-    //   });
-    // }
+
+    if (store) {
+      filteredCollection = filteredCollection.filter(item => {
+        return item.Storeid === store;
+      });
+    }
 
     return filteredCollection;
   }
@@ -229,18 +229,7 @@ export const filteredRowsSelector = createSelector(
 
 // Селектор сортировки в комбинации с фильтрами
 const orderStateGetter = state => state.equipment.get("orderData");
-//
-// {
-//   Createdat: "2018-01-23T16:01:39.220692Z";
-//   Requipfilling: 80;
-//   Requipid: 1;
-//   Requiplastvalue: 80;
-//   Locationequipmentid: 1;
-//   Maxvalue: 100;
-//   Retailstoreid: 10471;
-//   Requipserialnumber: "203149104-0";
-//   Updatedat: "2018-01-23T16:01:39.220692Z";
-// }
+
 export const orderedFilterRowsSelector = createSelector(
   filteredRowsSelector,
   chainsSelector,

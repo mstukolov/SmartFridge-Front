@@ -4,6 +4,7 @@ import {
   filterByNetwork,
   filterByPoint
 } from "../../../ducks/RetailEquipment/equipment";
+import { filterStores } from "../../../ducks/RetailEquipment/stores";
 import { withStyles } from "material-ui/styles";
 import { filtersDataSelector } from "../../../ducks/RetailEquipment/equipment";
 import { storesSelector } from "../../../ducks/RetailEquipment/stores";
@@ -32,8 +33,8 @@ const styles = theme => ({
  */
 class RetailEquipmentTableFilters extends Component {
   state = {
-    chains: "",
-    stores: ""
+    chain: "",
+    store: ""
   };
 
   /**
@@ -42,7 +43,8 @@ class RetailEquipmentTableFilters extends Component {
    * @return {voId}
    */
   handleChangeNetwork = event => {
-    this.setState({ chains: event.target.value });
+    this.setState({ chain: event.target.value });
+    this.props.filterStores(event.target.value);
     // отправляем изменения параметров фильтрации в стор
     this.props.filterByNetwork(event.target.value);
   };
@@ -53,7 +55,7 @@ class RetailEquipmentTableFilters extends Component {
    * @return {voId}
    */
   handleChangePoint = event => {
-    this.setState({ stores: event.target.value });
+    this.setState({ store: event.target.value });
     // отправляем изменения параметров фильтрации в стор
     this.props.filterByPoint(event.target.value);
   };
@@ -62,9 +64,9 @@ class RetailEquipmentTableFilters extends Component {
    * @return {ReactElement} разметка React
    */
   getNetworkItems = () => {
-    return this.props.chains.map(item => {
+    return this.props.chain.map(item => {
       return (
-        <MenuItem key={item.Requipid} value={item.Requipid}>
+        <MenuItem key={item.Id} value={item.Id}>
           {item.Name}
         </MenuItem>
       );
@@ -76,11 +78,11 @@ class RetailEquipmentTableFilters extends Component {
    */
   getTradePoints = () => {
     try {
-      return this.props.stores.map(item => {
+      return this.props.store.map(item => {
         const point = item;
 
         return (
-          <MenuItem key={point.Requipid} value={point.Requipid}>
+          <MenuItem key={point.Id} value={point.Id}>
             {point.Name}
           </MenuItem>
         );
@@ -96,11 +98,11 @@ class RetailEquipmentTableFilters extends Component {
     return (
       <form className={classes.container} autoComplete="off">
         <FormControl className={classes.formControl}>
-          <InputLabel htmlFor="chains-simple">Торговая сеть</InputLabel>
+          <InputLabel htmlFor="chain-simple">Торговая сеть</InputLabel>
           <Select
-            value={this.state.chains}
+            value={this.state.chain}
             onChange={this.handleChangeNetwork}
-            input={<Input name="chains" id="chains-simple" />}
+            input={<Input name="chain" id="chain-simple" />}
           >
             <MenuItem value="">
               <em>Нет</em>
@@ -111,13 +113,13 @@ class RetailEquipmentTableFilters extends Component {
 
         <FormControl
           className={classes.formControl}
-          // disabled={!this.state.chains.length}
+          disabled={!this.state.chain}
         >
           <InputLabel htmlFor="stores-simple">Торговая точка</InputLabel>
           <Select
-            value={this.state.stores}
+            value={this.state.store}
             onChange={this.handleChangePoint}
-            input={<Input name="stores" id="stores-simple" />}
+            input={<Input name="store" id="stores-simple" />}
           >
             <MenuItem value="">
               <em>Нет</em>
@@ -134,13 +136,14 @@ export default connect(
   state => {
     return {
       filters: filtersDataSelector(state),
-      chains: chainsSelector(state),
-      stores: storesSelector(state)
+      chain: chainsSelector(state),
+      store: storesSelector(state)
     };
   },
   {
     filterByNetwork,
-    filterByPoint
+    filterByPoint,
+    filterStores
   }
 )(
   (RetailEquipmentTableFilters = withStyles(styles)(

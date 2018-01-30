@@ -10,6 +10,8 @@ import axios from "axios/index";
 export const moduleName = "stores";
 const prefix = `${appName}/${moduleName}`;
 
+export const FILTER = `${prefix}/FILTER`;
+
 export const LOAD_REQUEST = `${prefix}/LOAD_REQUEST`;
 export const LOAD_START = `${prefix}/LOAD_START`;
 export const LOAD_SUCCESS = `${prefix}/LOAD_SUCCESS`;
@@ -19,6 +21,7 @@ export const LOAD_ERROR = `${prefix}/LOAD_ERROR`;
  * */
 export const ReducerRecord = Record({
   items: new List(),
+  filter: null,
   loading: false,
   loaded: false
 });
@@ -27,6 +30,8 @@ export default function reducer(state = new ReducerRecord(), action) {
   const { type, payload } = action;
 
   switch (type) {
+    case FILTER:
+      return state.set("filter", payload.chain);
     case LOAD_START:
       return state.set("loading", true);
     case LOAD_SUCCESS:
@@ -58,9 +63,14 @@ export const loadingSelector = createSelector(
 );
 
 // селектор торговых точек
-export const storesSelector = createSelector(stateSelector, state =>
-  state.items.toJS()
-);
+export const storesSelector = createSelector(stateSelector, state => {
+  let stores = state.items.toJS();
+  return stores.filter(item => {
+    return state.filter === item.RetailchainId;
+  });
+
+  return stores;
+});
 
 /**
  * Action Creators
@@ -73,6 +83,21 @@ export const storesSelector = createSelector(stateSelector, state =>
 export function loadAll() {
   const action = {
     type: LOAD_REQUEST
+  };
+
+  return action;
+}
+
+/**
+ * Фильтрует торговые точки по торговой сети
+ * @return {Object}         объект экшена
+ */
+export function filterStores(chain) {
+  const action = {
+    type: FILTER,
+    payload: {
+      chain
+    }
   };
 
   return action;
