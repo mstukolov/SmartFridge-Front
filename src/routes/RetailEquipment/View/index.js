@@ -50,7 +50,7 @@ function RetailEquipmentPageView(props: Props) {
           </Paper>
         </Grid>
         <Grid item xs={12} sm={6}>
-          <Paper className={classes.map}>{/*<GlobalMap />*/}</Paper>
+          <Paper className={classes.map}>{<GlobalMap />}</Paper>
         </Grid>
       </Grid>
     </div>

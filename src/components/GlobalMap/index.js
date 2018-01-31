@@ -132,11 +132,12 @@ class GlobalMap extends React.Component {
    */
   componentWillReceiveProps(nextProps) {
     const { activeMapItemId } = nextProps;
-    if (activeMapItemId) {
-      const item = nextProps.items.get(activeMapItemId);
-
-      this.setCenterPosition(item.position[0], item.position[1], 8);
-    }
+    console.log("active ", activeMapItemId);
+    // if (activeMapItemId) {
+    //   const item = nextProps.items.get(activeMapItemId);
+    //
+    //   this.setCenterPosition(item.position[0], item.position[1], 8);
+    // }
   }
 }
 

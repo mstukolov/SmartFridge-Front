@@ -30,6 +30,7 @@ import TrendingFlatIcon from "material-ui-icons/TrendingFlat";
 import red from "material-ui/colors/red";
 import green from "material-ui/colors/green";
 import Tooltip from "material-ui/Tooltip";
+import BlockingPreloader from "../../BlockingPreloader";
 
 const styles = theme => ({
   container: {
@@ -59,12 +60,6 @@ const styles = theme => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    width: "100%"
-  },
-  lineLoader: {
-    position: "absolute",
-    top: "-10px",
-    height: "5px",
     width: "100%"
   },
   refillIconUp: {
@@ -337,7 +332,7 @@ class RetailMoreInfo extends React.Component {
         noValidate
         autoComplete="off"
       >
-        <div className={classes.lineLoader}>{this.showLoading()}</div>
+        {this.props.loading ? <BlockingPreloader /> : ""}
 
         {this.showError()}
         {this.showSuccessSaved()}
@@ -463,7 +458,7 @@ class RetailMoreInfo extends React.Component {
             label="Последнее измерение"
             type="datetime-local"
             defaultValue={moment(this.state.dateUpdate).format(
-              "YYYY-MM-DDThh:mm"
+              "DD-MM-YYYY hh:mm"
             )}
             disabled={this.isDisabledControl()}
             InputLabelProps={{
