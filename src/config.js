@@ -1,2 +1,2 @@
 export const appName = "colaEquipment";
-export const backendUrl = "http://fridgeserver.mybluemix.net";
+export const backendUrl = "https://fridgeserver.mybluemix.net";
