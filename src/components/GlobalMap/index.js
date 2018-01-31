@@ -8,7 +8,8 @@ import MarkerClusterGroup from "react-leaflet-markercluster";
 import { connect } from "react-redux";
 import {
   loadAll as loadLocation,
-  markerSelector
+  markerSelector,
+  loadingSelector
 } from "../../ducks/RetailEquipment/location";
 import { callAll as loadEquipment } from "../../ducks/RetailEquipment/equipment";
 import history from "../../redux/history";
@@ -18,6 +19,7 @@ import Button from "material-ui/Button";
 import FullScreenIcon from "material-ui-icons/Fullscreen";
 import FullScreenExitIcon from "material-ui-icons/FullscreenExit";
 import { RouteFullScreenMapPage, RouteMapPage } from "../../routes/constants";
+import BlockingPreloader from "../BlockingPreloader";
 
 const styles = theme => ({
   main: {
@@ -65,6 +67,7 @@ class GlobalMap extends React.Component {
         zoom={mapZoom}
         maxZoom={mapMaxZoom}
       >
+        {this.props.loading ? <BlockingPreloader /> : ""}
         <Button
           fab
           color="primary"
@@ -157,6 +160,7 @@ export default connect(
 
     return {
       items: markerSelector(state),
+      loading: loadingSelector(state),
       activeMapItemId
     };
   },
