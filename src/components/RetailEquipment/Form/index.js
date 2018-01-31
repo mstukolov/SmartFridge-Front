@@ -458,7 +458,7 @@ class RetailMoreInfo extends React.Component {
             label="Последнее измерение"
             type="datetime-local"
             defaultValue={moment(this.state.dateUpdate).format(
-              "DD-MM-YYYY hh:mm"
+              "DD.MM.YYYY hh:mm"
             )}
             disabled={this.isDisabledControl()}
             InputLabelProps={{
@@ -469,7 +469,7 @@ class RetailMoreInfo extends React.Component {
           <FormControl>
             <FormHelperText>Последнее измерение</FormHelperText>
             <span className={classes.text}>
-              {moment(this.state.dateUpdate).format("YYYY.MM.DD hh:mm")}
+              {moment(this.state.dateUpdate).format("DD.MM.YYYY hh:mm")}
             </span>
           </FormControl>
         )}
