@@ -1,18 +1,19 @@
-import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
-import Header from "../Header";
 import Footer from "../Footer";
+import FullScreenMapPage from "../../routes/Map/fullscreenMap";
+import Header from "../Header";
+import history from "../../redux/history";
+import injectSheet from "react-jss";
+import LoginPage from "../../routes/Login";
+import MainPage from "../../routes/Main";
+import MapPage from "../../routes/Map";
+import NoMatch from "../../routes/NoMatch";
+import PlanagrammPage from "../../routes/Planagramm";
+import React, { Component } from "react";
+import ReportsPage from "../../routes/Reports";
 import RetailEquipmentPageMain from "../../routes/RetailEquipment/Main/index";
 import RetailEquipmentPageViewPage from "../../routes/RetailEquipment/View";
-import MainPage from "../../routes/Main";
-import NoMatch from "../../routes/NoMatch";
-import MapPage from "../../routes/Map";
-import PlanagrammPage from "../../routes/Planagramm";
-import FullScreenMapPage from "../../routes/Map/fullscreenMap";
-import ReportsPage from "../../routes/Reports";
-import injectSheet from "react-jss";
 import { ConnectedRouter } from "react-router-redux";
-import history from "../../redux/history";
+import { Switch, Route } from "react-router-dom";
 import {
   RouteEquipmentPage,
   RouteReportsPage,
@@ -62,30 +63,34 @@ class App extends Component {
         <section className={classes.container}>
           <ConnectedRouter history={history}>
             <Switch>
-              <Route path="/" exact component={MainPage} />
-              <Route
-                path={RouteEquipmentPage}
-                exact
-                component={RetailEquipmentPageMain}
-              />
-              <Route
-                path={`${RouteEquipmentPage}:id`}
-                component={RetailEquipmentPageViewPage}
-              />
-
-              {/*<Route path={RouteReportsPage} component={ReportsPage} />*/}
-              <Route path={`${RouteReportsPage}:id`} component={ReportsPage} />
-
-              <Route path={RouteMapPage} component={MapPage} />
-              <Route
-                path={RouteFullScreenMapPage}
-                component={FullScreenMapPage}
-              />
-
-              <Route path={RoutePlanagrammPage} component={PlanagrammPage} />
-
-              <Route component={NoMatch} />
+              <Route path="/login" component={LoginPage} />
+              <Route path="/" component={MainPage} />
             </Switch>
+            {/*<Switch>*/}
+            {/*<Route path="/" exact component={MainPage} />*/}
+            {/*<Route*/}
+            {/*path={RouteEquipmentPage}*/}
+            {/*exact*/}
+            {/*component={RetailEquipmentPageMain}*/}
+            {/*/>*/}
+            {/*<Route*/}
+            {/*path={`${RouteEquipmentPage}:id`}*/}
+            {/*component={RetailEquipmentPageViewPage}*/}
+            {/*/>*/}
+
+            {/*/!*<Route path={RouteReportsPage} component={ReportsPage} />*!/*/}
+            {/*<Route path={`${RouteReportsPage}:id`} component={ReportsPage} />*/}
+
+            {/*<Route path={RouteMapPage} component={MapPage} />*/}
+            {/*<Route*/}
+            {/*path={RouteFullScreenMapPage}*/}
+            {/*component={FullScreenMapPage}*/}
+            {/*/>*/}
+
+            {/*<Route path={RoutePlanagrammPage} component={PlanagrammPage} />*/}
+
+            {/*<Route component={NoMatch} />*/}
+            {/*</Switch>*/}
           </ConnectedRouter>
         </section>
 

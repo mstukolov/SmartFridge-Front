@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import { Route, Redirect } from "react-router-dom";
 import Paper from "material-ui/Paper";
 import Grid from "material-ui/Grid";
 import Typography from "material-ui/Typography";
 import { withStyles } from "material-ui/styles";
 import AuthForm from "../../components/AuthForm/index";
+import { connect } from "react-redux";
 
 const styles = theme => ({
   root: {
@@ -31,25 +33,33 @@ class MainPage extends Component {
    * @return {ReactElement} разметка
    */
   render() {
-    const { classes } = this.props;
-    return (
-      <Grid container spacing={24}>
-        <Grid item xs={12}>
-          <Paper className={classes.paper}>
-            <Typography type="title" gutterBottom>
-              Главная страница
-            </Typography>
-          </Paper>
-        </Grid>
+    const { classes, token } = this.props;
+    // return (
+    //   <Grid container spacing={24}>
+    //     <Grid item xs={12}>
+    //       <Paper className={classes.paper}>
+    //         <Typography type="title" gutterBottom>
+    //           Главная страница
+    //         </Typography>
+    //       </Paper>
+    //     </Grid>
+    //
+    //     <Grid item xs={12}>
+    //       <Paper className={classes.paper}>
+    //         <AuthForm />
+    //       </Paper>
+    //     </Grid>
+    //   </Grid>
+    // );
 
-        <Grid item xs={12}>
-          <Paper className={classes.paper}>
-            <AuthForm />
-          </Paper>
-        </Grid>
-      </Grid>
-    );
+    if (!token) {
+      return <Redirect to="/login" />;
+    }
+
+    return <div> You are logged in.</div>;
   }
 }
 
-export default withStyles(styles)(MainPage);
+export default connect(state => ({
+  token: state.auth.token
+}))(withStyles(styles)(MainPage));

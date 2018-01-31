@@ -6,6 +6,7 @@ import { saga as chainsSaga } from "../ducks/RetailEquipment/chains";
 import { saga as storesSaga } from "../ducks/RetailEquipment/stores";
 import { saga as reportsSaga } from "../ducks/RetailEquipment/report";
 import { saga as planagrammSaga } from "../ducks/Planagramm";
+import { saga as authSaga } from "../ducks/Auth";
 
 export default function* rootSaga() {
   yield all([
@@ -15,6 +16,7 @@ export default function* rootSaga() {
     chainsSaga(),
     storesSaga(),
     reportsSaga(),
-    planagrammSaga()
+    planagrammSaga(),
+    authSaga()
   ]);
 }

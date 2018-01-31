@@ -7,6 +7,7 @@ import chains from "../ducks/RetailEquipment/chains";
 import stores from "../ducks/RetailEquipment/stores";
 import report, { moduleName } from "../ducks/RetailEquipment/report";
 import planagramm from "../ducks/Planagramm";
+import auth from "../ducks/Auth";
 
 /**
  * Подключение редьюсеров
@@ -19,5 +20,6 @@ export default combineReducers({
   chains,
   stores,
   [moduleName]: report,
-  planagramm
+  planagramm,
+  auth
 });
