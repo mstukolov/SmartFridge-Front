@@ -114,6 +114,7 @@ class Header extends React.Component {
         <AppBar position="static">
           <Toolbar>
             <IconButton
+              disabled={!auth}
               onClick={this.toggleDrawer}
               className={classes.menuButton}
               color="contrast"
