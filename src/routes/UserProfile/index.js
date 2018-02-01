@@ -7,6 +7,7 @@ import { withStyles } from "material-ui/styles";
 import Paper from "material-ui/Paper";
 import Typography from "material-ui/Typography";
 import Grid from "material-ui/Grid";
+import { LOGIN_PAGE } from "../../routes/constants";
 
 import { tokenSelector } from "../../ducks/Auth";
 
@@ -46,8 +47,8 @@ class UserProfilePage extends PureComponent {
     const { token } = this.props;
     const { classes } = this.props;
 
-    if (token) {
-      return <Redirect to="/login" />;
+    if (!token) {
+      return <Redirect to={LOGIN_PAGE} />;
     }
 
     return (
@@ -63,13 +64,11 @@ class UserProfilePage extends PureComponent {
 
           <Grid item xs={12}>
             <Paper className={classes.paper}>
-              <Typography type="headline" component="h3">
-                Имя: {token.name}
+              <Typography type="subheading">Имя: {token.name}</Typography>
+              <Typography type="subheading">
+                Фамилия: {token.surname}
               </Typography>
-              <Typography type="headline" component="h3">
-                Фамилия: {token.family}
-              </Typography>
-              <Typography type="headline" component="h3">
+              <Typography type="subheading">
                 Должность: Главнокомандующий
               </Typography>
             </Paper>

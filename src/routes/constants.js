@@ -1,4 +1,4 @@
-export const EQUIPMEN_PAGE = "/equipment";
+export const EQUIPMENT_PAGE = "/equipment";
 export const MAP_PAGE = "/map";
 export const FULL_SCREEN_MAP_PAGE = "/full-map";
 export const REPORTS_PAGE = "/reports";

@@ -1,4 +1,4 @@
-import { EQUIPMEN_PAGE } from "../../routes/constants";
+import { EQUIPMENT_PAGE } from "../../routes/constants";
 
 // that function returns Leaflet.Popup
 export default function getStringPopup(
@@ -14,7 +14,7 @@ export default function getStringPopup(
       <p>Сеть: ${chain}</p>
       <p>Торговая точка: ${store}</p>
       <p>Наполнение: ${filling}%</p>
-      <p><a href=${EQUIPMEN_PAGE}:${id}>Подробная информация</a></p>
+      <p><a href=${EQUIPMENT_PAGE}:${id}>Подробная информация</a></p>
     </div>
   `;
 }

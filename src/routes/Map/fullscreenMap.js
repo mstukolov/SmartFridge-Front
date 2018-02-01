@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { withStyles } from "material-ui/styles";
 import GlobalMap from "../../components/GlobalMap/index";
+import { LOGIN_PAGE } from "../constants";
+import { tokenSelector } from "../../ducks/Auth";
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 const styles = theme => ({
   map: {
@@ -23,7 +27,12 @@ class FullScreenMapPage extends Component {
    * @return {ReactElement} разметка
    */
   render() {
+    const { token } = this.props;
     const { classes } = this.props;
+
+    if (!token) {
+      return <Redirect to={LOGIN_PAGE} />;
+    }
     return (
       <div className={classes.map}>
         <GlobalMap fullScreen={true} />
@@ -31,5 +40,6 @@ class FullScreenMapPage extends Component {
     );
   }
 }
-
-export default withStyles(styles)(FullScreenMapPage);
+export default connect(state => ({
+  token: tokenSelector(state)
+}))(withStyles(styles)(FullScreenMapPage));

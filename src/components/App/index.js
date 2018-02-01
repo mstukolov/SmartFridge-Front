@@ -16,7 +16,7 @@ import RetailEquipmentPageViewPage from "../../routes/RetailEquipment/View";
 import { ConnectedRouter } from "react-router-redux";
 import { Switch, Route } from "react-router-dom";
 import {
-  EQUIPMEN_PAGE,
+  EQUIPMENT_PAGE,
   REPORTS_PAGE,
   MAP_PAGE,
   FULL_SCREEN_MAP_PAGE,
@@ -70,9 +70,12 @@ class App extends Component {
 
               <Route path={PROFILE_PAGE} component={UserProfile} />
 
-              <Route path={EQUIPMEN_PAGE} component={RetailEquipmentPageMain} />
               <Route
-                path={`${EQUIPMEN_PAGE}:id`}
+                path={EQUIPMENT_PAGE}
+                component={RetailEquipmentPageMain}
+              />
+              <Route
+                path={`${EQUIPMENT_PAGE}:id`}
                 component={RetailEquipmentPageViewPage}
               />
               <Route path={REPORTS_PAGE} component={ReportsPage} />

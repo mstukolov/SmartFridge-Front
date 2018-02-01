@@ -4,6 +4,10 @@ import Grid from "material-ui/Grid";
 import Typography from "material-ui/Typography";
 import { withStyles } from "material-ui/styles";
 import Planagramm from "../../components/Planagramm/index";
+import { connect } from "react-redux";
+import { LOGIN_PAGE } from "../constants";
+import { tokenSelector } from "../../ducks/Auth";
+import { Redirect } from "react-router-dom";
 
 const styles = theme => ({
   root: {
@@ -31,7 +35,12 @@ class PlanagrammPage extends Component {
    * @return {ReactElement} разметка
    */
   render() {
+    const { token } = this.props;
     const { classes } = this.props;
+
+    if (!token) {
+      return <Redirect to={LOGIN_PAGE} />;
+    }
     return (
       <Grid container spacing={24} alignItems="stretch">
         <Grid item xs={12}>
@@ -52,4 +61,6 @@ class PlanagrammPage extends Component {
   }
 }
 
-export default withStyles(styles)(PlanagrammPage);
+export default connect(state => ({
+  token: tokenSelector(state)
+}))(withStyles(styles)(PlanagrammPage));

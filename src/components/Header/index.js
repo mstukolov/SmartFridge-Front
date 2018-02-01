@@ -23,7 +23,7 @@ import MapIcon from "material-ui-icons/Map";
 import ViewComfyIcon from "material-ui-icons/ViewComfy";
 import logo from "../../cola.svg";
 import {
-  EQUIPMEN_PAGE,
+  EQUIPMENT_PAGE,
   MAP_PAGE,
   PLANAGRAMM_PAGE,
   PROFILE_PAGE
@@ -186,8 +186,8 @@ class Header extends React.Component {
                   />
                 </MenuItem>
               </Link>
-              <Link to={EQUIPMEN_PAGE} className={classes.link}>
-                <MenuItem selected={pathname === EQUIPMEN_PAGE}>
+              <Link to={EQUIPMENT_PAGE} className={classes.link}>
+                <MenuItem selected={pathname === EQUIPMENT_PAGE}>
                   <ListItemIcon className={classes.icon}>
                     <DvrIcon />
                   </ListItemIcon>

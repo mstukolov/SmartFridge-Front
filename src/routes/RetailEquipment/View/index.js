@@ -6,6 +6,10 @@ import Grid from "material-ui/Grid";
 import GlobalMap from "../../../components/GlobalMap/index";
 import Typography from "material-ui/Typography";
 import RetailMoreInfo from "../../../components/RetailEquipment/Form/index";
+import { connect } from "react-redux";
+import { tokenSelector } from "../../../ducks/Auth";
+import { LOGIN_PAGE } from "../../constants";
+import { Redirect } from "react-router-dom";
 
 const styles = theme => ({
   root: {
@@ -32,7 +36,12 @@ type Props = {
 };
 
 function RetailEquipmentPageView(props: Props) {
+  const { token } = props;
   const { classes } = props;
+
+  if (!token) {
+    return <Redirect to={LOGIN_PAGE} />;
+  }
 
   return (
     <div className={classes.root}>
@@ -57,4 +66,6 @@ function RetailEquipmentPageView(props: Props) {
   );
 }
 
-export default withStyles(styles)(RetailEquipmentPageView);
+export default connect(state => ({
+  token: tokenSelector(state)
+}))(withStyles(styles)(RetailEquipmentPageView));

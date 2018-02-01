@@ -5,6 +5,10 @@ import { withStyles } from "material-ui/styles";
 import Paper from "material-ui/Paper";
 import Grid from "material-ui/Grid";
 import Typography from "material-ui/Typography";
+import { connect } from "react-redux";
+import { LOGIN_PAGE } from "../../constants";
+import { Redirect } from "react-router-dom";
+import { tokenSelector } from "../../../ducks/Auth";
 
 const styles = theme => ({
   root: {
@@ -32,7 +36,12 @@ class RetailEquipmentPageMain extends Component {
    * @return {ReactElement} разметка
    */
   render() {
+    const { token } = this.props;
     const { classes } = this.props;
+
+    if (!token) {
+      return <Redirect to={LOGIN_PAGE} />;
+    }
     return (
       <div className={classes.root}>
         <Grid container spacing={24} alignItems="stretch">
@@ -52,4 +61,6 @@ class RetailEquipmentPageMain extends Component {
   }
 }
 
-export default withStyles(styles)(RetailEquipmentPageMain);
+export default connect(state => ({
+  token: tokenSelector(state)
+}))(withStyles(styles)(RetailEquipmentPageMain));
