@@ -118,7 +118,7 @@ class LoginPage extends PureComponent {
                   raised
                   color="primary"
                 >
-                  Отправить
+                  Авторизоваться
                   <Send className={classes.rightIcon} />
                 </Button>
 

@@ -16,8 +16,8 @@ import {
   saveEditEquipment
 } from "../../../ducks/RetailEquipment/moreInfo";
 import {
-  ChainSelector,
-  StoreSelector
+  chainnameSelector,
+  storenameSelector
 } from "../../../ducks/RetailEquipment/equipment";
 import ModeEditIcon from "material-ui-icons/ModeEdit";
 import SimpleSnackbar from "../../SimpleSnackbar";
@@ -91,16 +91,16 @@ class RetailMoreInfo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      Address: "Данные отсутствуют",
-      Chain: "Данные отсутствуют",
-      Requipfilling: "Данные отсутствуют",
-      Requipid: "Данные отсутствуют",
-      Requiplastvalue: "Данные отсутствуют",
-      Lat: "Данные отсутствуют",
-      Lng: "Данные отсутствуют",
-      Maxvalue: "Данные отсутствуют",
-      Requipserialnumber: "Данные отсутствуют",
-      Store: "Данные отсутствуют"
+      address: "Данные отсутствуют",
+      chainname: "Данные отсутствуют",
+      fullness: "Данные отсутствуют",
+      equipid: "Данные отсутствуют",
+      sensorvalue: "Данные отсутствуют",
+      lat: "Данные отсутствуют",
+      lng: "Данные отсутствуют",
+      equipmaxvalue: "Данные отсутствуют",
+      serialnumber: "Данные отсутствуют",
+      storename: "Данные отсутствуют"
     };
   }
 
@@ -201,31 +201,39 @@ class RetailMoreInfo extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    // let a = {
+    //   equipid: 5,
+    //   equipmaxvalue: 184300,
+    //   sensorvalue: 164150,
+    //   measuredate: "2018-02-01T15:32:25.9059Z",
+    //   address: "Москва,Большая Якиманка,28",
+    // };
+
     if (nextProps.fridge) {
       const {
-        Address,
-        Chain,
-        Requipfilling,
-        Requipid,
-        Requiplastvalue,
-        Lat,
-        Lng,
-        Maxvalue,
-        Requipserialnumber,
-        Store
+        address,
+        chainname,
+        fullness,
+        equipid,
+        sensorvalue,
+        lat,
+        lng,
+        equipmaxvalue,
+        serialnumber,
+        storename
       } = nextProps.fridge;
 
       this.setState({
-        Address,
-        Chain,
-        Requipfilling,
-        Requipid,
-        Requiplastvalue,
-        Lat,
-        Lng,
-        Maxvalue,
-        Requipserialnumber,
-        Store
+        address,
+        chainname,
+        fullness,
+        equipid,
+        sensorvalue,
+        lat,
+        lng,
+        equipmaxvalue,
+        serialnumber,
+        storename
       });
     }
   }
@@ -341,9 +349,9 @@ class RetailMoreInfo extends React.Component {
           <TextField
             id="full-width"
             label="Серийный номер"
-            onChange={this.handleChange("Requipserialnumber")}
+            onChange={this.handleChange("serialnumber")}
             name={"serial"}
-            value={this.state.Requipserialnumber}
+            value={this.state.serialnumber}
             disabled={this.isDisabledControl()}
             InputLabelProps={{
               shrink: true
@@ -356,9 +364,7 @@ class RetailMoreInfo extends React.Component {
         ) : (
           <FormControl className={classes.text}>
             <FormHelperText>Серийный номер</FormHelperText>
-            <span className={classes.text}>
-              {this.state.Requipserialnumber}
-            </span>
+            <span className={classes.text}>{this.state.serialnumber}</span>
           </FormControl>
         )}
 
@@ -366,9 +372,9 @@ class RetailMoreInfo extends React.Component {
           <TextField
             id="full-width"
             label="Торговая сеть"
-            onChange={this.handleChange("Chain")}
+            onChange={this.handleChange("chainname")}
             name={"network"}
-            value={this.state.Chain}
+            value={this.state.chainname}
             disabled={this.isDisabledControl()}
             InputLabelProps={{
               shrink: true
@@ -381,7 +387,7 @@ class RetailMoreInfo extends React.Component {
         ) : (
           <FormControl className={classes.text}>
             <FormHelperText>Торговая сеть</FormHelperText>
-            <span className={classes.text}>{this.state.Chain}</span>
+            <span className={classes.text}>{this.state.chainname}</span>
           </FormControl>
         )}
 
@@ -389,9 +395,9 @@ class RetailMoreInfo extends React.Component {
           <TextField
             id="full-width"
             label="Торговая точка"
-            // onChange={this.handleChange("Chain")}
+            // onChange={this.handleChange("chainname")}
             // name={"serial"}
-            value={this.state.Store}
+            value={this.state.storename}
             disabled={this.isDisabledControl()}
             InputLabelProps={{
               shrink: true
@@ -404,7 +410,7 @@ class RetailMoreInfo extends React.Component {
         ) : (
           <FormControl className={classes.text}>
             <FormHelperText>Торговая точка</FormHelperText>
-            <span className={classes.text}>{this.state.Store}</span>
+            <span className={classes.text}>{this.state.storename}</span>
           </FormControl>
         )}
 
@@ -412,8 +418,8 @@ class RetailMoreInfo extends React.Component {
           <TextField
             id="full-width"
             label="Максимальный вес"
-            value={this.state.Maxvalue}
-            onChange={this.handleChange("Maxvalue")}
+            value={this.state.equipmaxvalue}
+            onChange={this.handleChange("equipmaxvalue")}
             disabled={this.isDisabledControl()}
             InputLabelProps={{
               shrink: true
@@ -426,7 +432,7 @@ class RetailMoreInfo extends React.Component {
         ) : (
           <FormControl className={classes.text}>
             <FormHelperText>Максимальный вес</FormHelperText>
-            <span className={classes.text}>{this.state.Maxvalue}</span>
+            <span className={classes.text}>{this.state.equipmaxvalue}</span>
           </FormControl>
         )}
 
@@ -434,8 +440,8 @@ class RetailMoreInfo extends React.Component {
           <TextField
             id="full-width"
             label="Текущий вес"
-            value={this.state.Requipfilling}
-            onChange={this.handleChange("Requipfilling")}
+            value={this.state.fullness}
+            onChange={this.handleChange("fullness")}
             disabled={this.isDisabledControl()}
             InputLabelProps={{
               shrink: true
@@ -448,7 +454,7 @@ class RetailMoreInfo extends React.Component {
         ) : (
           <FormControl className={classes.text}>
             <FormHelperText>Текущий вес</FormHelperText>
-            <span className={classes.text}>{this.state.Requipfilling}</span>
+            <span className={classes.text}>{this.state.fullness}</span>
           </FormControl>
         )}
 
@@ -474,10 +480,7 @@ class RetailMoreInfo extends React.Component {
           </FormControl>
         )}
         <div className={classes.updateIcon}>
-          {this.getUpdateIcon(
-            this.state.Requipfilling,
-            this.state.Requiplastvalue
-          )}
+          {this.getUpdateIcon(this.state.fullness, this.state.sensorvalue)}
         </div>
 
         {edit ? (
@@ -513,8 +516,8 @@ export default connect(
     const edit = state.moreInfo.get("edit");
 
     return {
-      // networks: ChainSelector(state),
-      // points: StoreSelector(state),
+      // networks: chainnameSelector(state),
+      // points: storenameSelector(state),
       fridge: state.moreInfo.activeItem,
       error: state.moreInfo.error,
       loading: state.moreInfo.loading,

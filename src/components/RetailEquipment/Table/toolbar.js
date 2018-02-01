@@ -79,7 +79,7 @@ class RetailEquipmentTableToolbar extends React.Component {
    * @return {void}    [description]
    */
   handleShowFullInfo = ev => {
-    this.props.showMoreInfo(this.props.selected.keySeq().first());
+    this.props.showMoreInfo(this.props.selected.first());
   };
 
   /**
@@ -88,7 +88,7 @@ class RetailEquipmentTableToolbar extends React.Component {
    * @return {void}    [description]
    */
   handleShowReport = ev => {
-    this.props.showReport(this.props.selected.keySeq().first());
+    this.props.showReport(this.props.selected.first());
   };
   /**
    * Блокирует клик по кнопке просмотра/редактирования
