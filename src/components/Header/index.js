@@ -15,7 +15,7 @@ import Menu, { MenuItem } from "material-ui/Menu";
 import { connect } from "react-redux";
 import { tokenSelector, errorSelector, logOutAction } from "../../ducks/Auth";
 import Drawer from "material-ui/Drawer";
-import { Link } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import { ListItemIcon, ListItemText } from "material-ui/List";
 import DvrIcon from "material-ui-icons/Dvr";
 import HomeIcon from "material-ui-icons/Home";
@@ -79,6 +79,14 @@ class Header extends React.Component {
   };
 
   /**
+   * Закрытие меню авторизации
+   * @param  {SytheticEvent} event
+   */
+  closeMenu = event => {
+    this.setState({ anchorEl: null });
+  };
+
+  /**
    * Обработка закрытия меню авторизации
    */
   handleRequestClose = () => {
@@ -101,7 +109,6 @@ class Header extends React.Component {
    */
   render() {
     const { auth, classes } = this.props;
-    console.log("auth ===>", auth);
     const { anchorEl } = this.state;
     const open = Boolean(anchorEl);
     const pathname = history.location.pathname;
@@ -145,12 +152,13 @@ class Header extends React.Component {
                     horizontal: "right"
                   }}
                   open={open}
-                  onRequestClose={this.handleRequestClose}
                 >
                   <MenuItem disabled={true}>
                     {auth.name} {auth.surname}
                   </MenuItem>
-                  <MenuItem>Профиль</MenuItem>
+                  <MenuItem onClick={this.closeMenu}>
+                    <Link to="/profile">Профиль</Link>
+                  </MenuItem>
                   <MenuItem onClick={this.handleRequestClose}>Выйти</MenuItem>
                 </Menu>
               </div>

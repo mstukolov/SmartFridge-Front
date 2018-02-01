@@ -5,6 +5,7 @@ import history from "../../redux/history";
 import injectSheet from "react-jss";
 import LoginPage from "../../routes/Login";
 import MainPage from "../../routes/Main";
+import UserProfile from "../../routes/UserProfile";
 import MapPage from "../../routes/Map";
 import NoMatch from "../../routes/NoMatch";
 import PlanagrammPage from "../../routes/Planagramm";
@@ -65,6 +66,7 @@ class App extends Component {
             <Switch>
               <Route path="/login" component={LoginPage} />
               <Route path="/" component={MainPage} />
+              <Route path="/profile" component={UserProfile} />
             </Switch>
             {/*<Switch>*/}
             {/*<Route path="/" exact component={MainPage} />*/}

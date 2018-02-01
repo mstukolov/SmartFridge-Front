@@ -1,7 +1,8 @@
-import { call, put, all, takeLatest } from "redux-saga/effects";
+import { call, put, all, takeLatest, takeEvery } from "redux-saga/effects";
 import { appName } from "../../config";
 import { Record } from "immutable";
 import { createSelector } from "reselect";
+import history from "../../redux/history";
 
 /**
  * Constants
@@ -38,7 +39,7 @@ export default function reducer(state = new ReducerRecord(), action) {
     }
 
     case LOG_OUT_SUCCESS: {
-      return (state = new ReducerRecord());
+      return state.set("token", null).set("error", null);
     }
     default:
       return state;
@@ -84,8 +85,9 @@ const fetchJSON = (url, options = {}) =>
   });
 
 function* logOut() {
+  window.localStorage.removeItem("token");
+  history.push("/login");
   try {
-    window.localStorage.removeItem("token");
     yield put({ type: LOG_OUT_SUCCESS });
   } catch (err) {
     yield put({ type: LOG_OUT_FAILURE });
@@ -129,6 +131,6 @@ function* authorize({ payload: { login, password } }) {
 export function* saga() {
   yield all([
     takeLatest(AUTH_REQUEST, authorize),
-    takeLatest(LOG_OUT_REQUEST, logOut)
+    takeEvery(LOG_OUT_REQUEST, logOut)
   ]);
 }
