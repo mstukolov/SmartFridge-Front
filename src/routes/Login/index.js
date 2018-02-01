@@ -1,7 +1,15 @@
+/* eslint-disable flowtype/require-valid-file-annotation */
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
+import SimpleSnackbar from "../../components/SimpleSnackbar";
+import { withStyles } from "material-ui/styles";
+import TextField from "material-ui/TextField";
+import Send from "material-ui-icons/Send";
+import Button from "material-ui/Button";
+import Paper from "material-ui/Paper";
+import Typography from "material-ui/Typography";
 
 import {
   tokenSelector,
@@ -9,51 +17,117 @@ import {
   authorizeAction
 } from "../../ducks/Auth";
 
+const styles = theme => ({
+  container: {
+    display: "flex",
+    flexWrap: "wrap"
+  },
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    width: 200
+  },
+  menu: {
+    width: 200
+  },
+  button: {
+    margin: theme.spacing.unit
+  },
+  leftIcon: {
+    marginRight: theme.spacing.unit
+  },
+  rightIcon: {
+    marginLeft: theme.spacing.unit
+  },
+  paper: {
+    padding: 16,
+    boxSizing: "border-box",
+    height: "100%",
+    color: theme.palette.text.secondary
+  }
+});
+
 class LoginPage extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = { login: "", password: "" };
-    this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-  }
+  state = { login: "", password: "" };
 
-  onChange(input, value) {
-    this.setState({ [input]: value });
-  }
+  onChange = ev => {
+    const { name, value } = ev.target;
+    this.setState({ [name]: value });
+  };
 
-  onSubmit() {
+  onSubmit = () => {
     const { login, password } = this.state;
     this.props.dispatch(authorizeAction(login, password));
-  }
+  };
+
+  showError = err => {
+    return this.props.error ? <SimpleSnackbar text={err} /> : null;
+  };
 
   render() {
     const { error, token } = this.props;
+    const { classes } = this.props;
 
     if (token) {
       return <Redirect to="/" />;
     }
 
     return (
-      <div>
-        <input
-          type="text"
-          placeholder="login"
-          value={this.state.login}
-          onChange={this.onChange.bind(this, "login")}
-        />
-        <input
-          type="password"
-          placeholder="password"
-          value={this.state.password}
-          onChange={this.onChange.bind(this, "password")}
-        />
-        <button onClick={this.onSubmit}>Submit</button>
+      <div className={classes.root}>
+        <Paper className={classes.paper} elevation={4}>
+          <Typography type="headline" component="h3">
+            Авторизация
+          </Typography>
+          <form className={classes.container} noValidate autoComplete="off">
+            {this.showError(this.props.error)}
+
+            <Typography component="p">
+              <TextField
+                id="name"
+                name="login"
+                label="Введите логин"
+                className={classes.textField}
+                value={this.state.login}
+                onChange={this.onChange}
+                margin="normal"
+              />
+            </Typography>
+            <Typography component="p">
+              <TextField
+                name="password"
+                id="password"
+                label="Введите пароль"
+                className={classes.textField}
+                type="password"
+                onChange={this.onChange}
+                value={this.state.password}
+                autoComplete="current-password"
+                margin="normal"
+              />
+            </Typography>
+            <Typography component="p">
+              <Button
+                onClick={this.onSubmit}
+                className={classes.button}
+                raised
+                color="primary"
+              >
+                Отправить
+                <Send className={classes.rightIcon} />
+              </Button>
+            </Typography>
+
+            <p>Login: {this.state.login}</p>
+            <p>Password: {this.state.password}</p>
+            <p>Error: {this.state.error}</p>
+          </form>
+        </Paper>
       </div>
     );
   }
 }
 
 export default connect(state => ({
-  token: state.auth.token,
-  error: state.auth.error
-}))(LoginPage);
+  token: tokenSelector(state),
+  error: errorSelector(state)
+}))(withStyles(styles)(LoginPage));

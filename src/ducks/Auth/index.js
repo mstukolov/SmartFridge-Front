@@ -17,7 +17,8 @@ export const AUTH_FAILURE = `${prefix}/AUTH_FAILURE`;
  * Reducer
  * */
 export const ReducerRecord = Record({
-  token: localStorage.getItem("token"),
+  token:
+    localStorage.getItem("token") && JSON.parse(localStorage.getItem("token")),
   error: null
 });
 
@@ -79,20 +80,26 @@ function* authorize({ payload: { login, password } }) {
   };
 
   try {
-    const { token } = yield call(fetchJSON, "/login", options);
+    // const { token } = yield call(fetchJSON, "/login", options);
+    const token = {
+      login: "lykovrs",
+      password: "1234",
+      name: "Roman",
+      surname: "Lykov"
+    };
     yield put({ type: AUTH_SUCCESS, payload: token });
-    localStorage.setItem("token", token);
+    localStorage.setItem("token", JSON.stringify(token));
   } catch (error) {
     let message;
     switch (error.status) {
       case 500:
-        message = "Internal Server Error";
+        message = "Внутренняя ошибка сервера";
         break;
       case 401:
-        message = "Invalid credentials";
+        message = "Недопустимые учетные данные";
         break;
       default:
-        message = "Something went wrong";
+        message = "Что-то пошло не так";
     }
     yield put({ type: AUTH_FAILURE, payload: message });
     localStorage.removeItem("token");

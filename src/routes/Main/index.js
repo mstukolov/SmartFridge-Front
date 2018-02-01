@@ -4,7 +4,6 @@ import Paper from "material-ui/Paper";
 import Grid from "material-ui/Grid";
 import Typography from "material-ui/Typography";
 import { withStyles } from "material-ui/styles";
-import AuthForm from "../../components/AuthForm/index";
 import { connect } from "react-redux";
 
 const styles = theme => ({
@@ -46,7 +45,6 @@ class MainPage extends Component {
     //
     //     <Grid item xs={12}>
     //       <Paper className={classes.paper}>
-    //         <AuthForm />
     //       </Paper>
     //     </Grid>
     //   </Grid>

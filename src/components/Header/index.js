@@ -12,6 +12,12 @@ import AccountCircle from "material-ui-icons/AccountCircle";
 // import Switch from "material-ui/Switch";
 // import { FormControlLabel, FormGroup } from "material-ui/Form";
 import Menu, { MenuItem } from "material-ui/Menu";
+import { connect } from "react-redux";
+import {
+  tokenSelector,
+  errorSelector,
+  authorizeAction
+} from "../../ducks/Auth";
 import Drawer from "material-ui/Drawer";
 import { Link } from "react-router-dom";
 import { ListItemIcon, ListItemText } from "material-ui/List";
@@ -64,14 +70,8 @@ const styles = theme => ({
  */
 class Header extends React.Component {
   state = {
-    auth: true,
     anchorEl: null,
     left: false
-  };
-
-  // TODO: убрать - создано для скрытия иконки авторизации
-  handleChange = (event, checked) => {
-    this.setState({ auth: checked });
   };
 
   /**
@@ -103,8 +103,9 @@ class Header extends React.Component {
    * @return {ReactElement} разметка
    */
   render() {
-    const { classes } = this.props;
-    const { auth, anchorEl } = this.state;
+    const { auth, classes } = this.props;
+    console.log("auth ===>", auth);
+    const { anchorEl } = this.state;
     const open = Boolean(anchorEl);
     const pathname = history.location.pathname;
 
@@ -148,10 +149,12 @@ class Header extends React.Component {
                   open={open}
                   onRequestClose={this.handleRequestClose}
                 >
-                  <MenuItem onClick={this.handleRequestClose}>Profile</MenuItem>
-                  <MenuItem onClick={this.handleRequestClose}>
-                    My account
+                  <MenuItem disabled={true}>
+                    {" "}
+                    {auth.name} {auth.surname}
                   </MenuItem>
+                  <MenuItem onClick={this.handleRequestClose}>Профиль</MenuItem>
+                  <MenuItem onClick={this.handleRequestClose}>Выйти</MenuItem>
                 </Menu>
               </div>
             )}
@@ -220,18 +223,6 @@ class Header extends React.Component {
             </div>
           </Drawer>
         </AppBar>
-        {/* <FormGroup>
-          <FormControlLabel
-            control={
-          <Switch
-          checked={auth}
-          onChange={this.handleChange}
-          aria-label="LoginSwitch"
-          />
-            }
-            label={auth ? "Logout" : "Login"}
-          />
-        </FormGroup> */}
       </div>
     );
   }
@@ -241,4 +232,7 @@ Header.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Header);
+export default connect(state => ({
+  auth: tokenSelector(state),
+  error: errorSelector(state)
+}))(withStyles(styles)(Header));
