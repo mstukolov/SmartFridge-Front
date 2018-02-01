@@ -18,7 +18,7 @@ import { withStyles } from "material-ui/styles";
 import Button from "material-ui/Button";
 import FullScreenIcon from "material-ui-icons/Fullscreen";
 import FullScreenExitIcon from "material-ui-icons/FullscreenExit";
-import { RouteFullScreenMapPage, RouteMapPage } from "../../routes/constants";
+import { FULL_SCREEN_MAP_PAGE, MAP_PAGE } from "../../routes/constants";
 import BlockingPreloader from "../BlockingPreloader";
 
 const styles = theme => ({
@@ -95,9 +95,9 @@ class GlobalMap extends React.Component {
   toGgleFullScreen = ev => {
     ev.preventDefault();
     if (this.props.fullScreen) {
-      history.push(RouteMapPage);
+      history.push(MAP_PAGE);
     } else {
-      history.push(RouteFullScreenMapPage);
+      history.push(FULL_SCREEN_MAP_PAGE);
     }
 
     this.setState({ fullScreen: !this.state.fullScreen });

@@ -20,7 +20,7 @@ import {
   showReport
 } from "../../../ducks/RetailEquipment/equipment";
 import { Link } from "react-router-dom";
-import { RouteMapPage } from "../../../routes/constants";
+import { MAP_PAGE } from "../../../routes/constants";
 import RetailEquipmentTableFilters from "./filters";
 
 const toolbarStyles = theme => ({
@@ -154,7 +154,7 @@ class RetailEquipmentTableToolbar extends React.Component {
                 </IconButton>
               </Tooltip>
               <Tooltip title="Просомотреть на карте">
-                <Link to={RouteMapPage}>
+                <Link to={MAP_PAGE}>
                   <IconButton aria-label="Visibility on map">
                     <MapIcon />
                   </IconButton>

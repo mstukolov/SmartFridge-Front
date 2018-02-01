@@ -3,6 +3,7 @@ import { appName } from "../../config";
 import { Record } from "immutable";
 import { createSelector } from "reselect";
 import history from "../../redux/history";
+import { LOGIN_PAGE } from "../../routes/constants";
 
 /**
  * Constants
@@ -86,7 +87,7 @@ const fetchJSON = (url, options = {}) =>
 
 function* logOut() {
   window.localStorage.removeItem("token");
-  history.push("/login");
+  history.push(LOGIN_PAGE);
   try {
     yield put({ type: LOG_OUT_SUCCESS });
   } catch (err) {

@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import Paper from "material-ui/Paper";
 import Grid from "material-ui/Grid";
 import Typography from "material-ui/Typography";
 import { withStyles } from "material-ui/styles";
 import { connect } from "react-redux";
+import { LOGIN_PAGE } from "../../routes/constants";
 
 const styles = theme => ({
   root: {
@@ -35,7 +36,7 @@ class MainPage extends Component {
     const { classes, token } = this.props;
 
     if (!token) {
-      return <Redirect to="/login" />;
+      return <Redirect to={LOGIN_PAGE} />;
     }
 
     return (

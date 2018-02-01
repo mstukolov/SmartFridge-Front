@@ -16,11 +16,13 @@ import RetailEquipmentPageViewPage from "../../routes/RetailEquipment/View";
 import { ConnectedRouter } from "react-router-redux";
 import { Switch, Route } from "react-router-dom";
 import {
-  RouteEquipmentPage,
-  RouteReportsPage,
-  RouteMapPage,
-  RouteFullScreenMapPage,
-  RoutePlanagrammPage
+  EQUIPMEN_PAGE,
+  REPORTS_PAGE,
+  MAP_PAGE,
+  FULL_SCREEN_MAP_PAGE,
+  PLANAGRAMM_PAGE,
+  PROFILE_PAGE,
+  LOGIN_PAGE
 } from "../../routes/constants";
 import moment from "moment/min/moment-with-locales";
 import Moment from "react-moment";
@@ -64,35 +66,31 @@ class App extends Component {
         <section className={classes.container}>
           <ConnectedRouter history={history}>
             <Switch>
-              <Route path="/login" component={LoginPage} />
-              <Route path="/" component={MainPage} />
-              <Route path="/profile" component={UserProfile} />
+              <Route path={LOGIN_PAGE} component={LoginPage} />
+
+              <Route path={PROFILE_PAGE} component={UserProfile} />
+
+              <Route path={EQUIPMEN_PAGE} component={RetailEquipmentPageMain} />
+              <Route
+                path={`${EQUIPMEN_PAGE}:id`}
+                component={RetailEquipmentPageViewPage}
+              />
+              <Route path={REPORTS_PAGE} component={ReportsPage} />
+
+              <Route path={`${REPORTS_PAGE}:id`} component={ReportsPage} />
+
+              <Route path={MAP_PAGE} component={MapPage} />
+
+              <Route
+                path={FULL_SCREEN_MAP_PAGE}
+                component={FullScreenMapPage}
+              />
+
+              <Route path={PLANAGRAMM_PAGE} component={PlanagrammPage} />
+              <Route exact path="/" component={MainPage} />
+
+              <Route component={NoMatch} />
             </Switch>
-            {/*<Switch>*/}
-            {/*<Route path="/" exact component={MainPage} />*/}
-            {/*<Route*/}
-            {/*path={RouteEquipmentPage}*/}
-            {/*exact*/}
-            {/*component={RetailEquipmentPageMain}*/}
-            {/*/>*/}
-            {/*<Route*/}
-            {/*path={`${RouteEquipmentPage}:id`}*/}
-            {/*component={RetailEquipmentPageViewPage}*/}
-            {/*/>*/}
-
-            {/*/!*<Route path={RouteReportsPage} component={ReportsPage} />*!/*/}
-            {/*<Route path={`${RouteReportsPage}:id`} component={ReportsPage} />*/}
-
-            {/*<Route path={RouteMapPage} component={MapPage} />*/}
-            {/*<Route*/}
-            {/*path={RouteFullScreenMapPage}*/}
-            {/*component={FullScreenMapPage}*/}
-            {/*/>*/}
-
-            {/*<Route path={RoutePlanagrammPage} component={PlanagrammPage} />*/}
-
-            {/*<Route component={NoMatch} />*/}
-            {/*</Switch>*/}
           </ConnectedRouter>
         </section>
 

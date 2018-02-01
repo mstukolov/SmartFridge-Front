@@ -6,7 +6,7 @@ import axios from "axios";
 import history from "../../redux/history";
 import { all, takeEvery, put } from "redux-saga/effects";
 import { delay } from "redux-saga";
-import { RouteEquipmentPage, RouteReportsPage } from "../../routes/constants";
+import { EQUIPMEN_PAGE, REPORTS_PAGE } from "../../routes/constants";
 import { getName } from "../../utils";
 import { backendUrl } from "../../config";
 
@@ -461,11 +461,11 @@ export const deleteSaga = function*(action) {
 };
 
 export const showSaga = function(action) {
-  history.push(RouteEquipmentPage + ":" + action.payload.id);
+  history.push(EQUIPMEN_PAGE + ":" + action.payload.id);
 };
 
 export const showReportSaga = function(action) {
-  history.push(RouteReportsPage + ":" + action.payload.id);
+  history.push(REPORTS_PAGE + ":" + action.payload.id);
 };
 
 export const saga = function*() {

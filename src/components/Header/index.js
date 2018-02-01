@@ -23,9 +23,10 @@ import MapIcon from "material-ui-icons/Map";
 import ViewComfyIcon from "material-ui-icons/ViewComfy";
 import logo from "../../cola.svg";
 import {
-  RouteEquipmentPage,
-  RouteMapPage,
-  RoutePlanagrammPage
+  EQUIPMEN_PAGE,
+  MAP_PAGE,
+  PLANAGRAMM_PAGE,
+  PROFILE_PAGE
 } from "../../routes/constants";
 import history from "../../redux/history";
 
@@ -157,7 +158,7 @@ class Header extends React.Component {
                     {auth.name} {auth.surname}
                   </MenuItem>
                   <MenuItem onClick={this.closeMenu}>
-                    <Link to="/profile">Профиль</Link>
+                    <Link to={PROFILE_PAGE}>Профиль</Link>
                   </MenuItem>
                   <MenuItem onClick={this.handleRequestClose}>Выйти</MenuItem>
                 </Menu>
@@ -185,8 +186,8 @@ class Header extends React.Component {
                   />
                 </MenuItem>
               </Link>
-              <Link to={RouteEquipmentPage} className={classes.link}>
-                <MenuItem selected={pathname === RouteEquipmentPage}>
+              <Link to={EQUIPMEN_PAGE} className={classes.link}>
+                <MenuItem selected={pathname === EQUIPMEN_PAGE}>
                   <ListItemIcon className={classes.icon}>
                     <DvrIcon />
                   </ListItemIcon>
@@ -198,8 +199,8 @@ class Header extends React.Component {
                 </MenuItem>
               </Link>
 
-              <Link to={RouteMapPage} className={classes.link}>
-                <MenuItem selected={pathname === RouteMapPage}>
+              <Link to={MAP_PAGE} className={classes.link}>
+                <MenuItem selected={pathname === MAP_PAGE}>
                   <ListItemIcon className={classes.icon}>
                     <MapIcon className={classes.icon} />
                   </ListItemIcon>
@@ -211,8 +212,8 @@ class Header extends React.Component {
                 </MenuItem>
               </Link>
 
-              <Link to={RoutePlanagrammPage} className={classes.link}>
-                <MenuItem selected={pathname === RoutePlanagrammPage}>
+              <Link to={PLANAGRAMM_PAGE} className={classes.link}>
+                <MenuItem selected={pathname === PLANAGRAMM_PAGE}>
                   <ListItemIcon className={classes.icon}>
                     <ViewComfyIcon className={classes.icon} />
                   </ListItemIcon>
