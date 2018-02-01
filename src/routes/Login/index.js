@@ -10,6 +10,7 @@ import Send from "material-ui-icons/Send";
 import Button from "material-ui/Button";
 import Paper from "material-ui/Paper";
 import Typography from "material-ui/Typography";
+import Grid from "material-ui/Grid";
 
 import {
   tokenSelector,
@@ -74,54 +75,60 @@ class LoginPage extends PureComponent {
 
     return (
       <div className={classes.root}>
-        <Paper className={classes.paper} elevation={4}>
-          <Typography type="headline" component="h3">
-            Авторизация
-          </Typography>
-          <form className={classes.container} noValidate autoComplete="off">
-            {this.showError(this.props.error)}
+        <Grid container spacing={24}>
+          <Grid item xs={12}>
+            <Paper className={classes.paper}>
+              <Typography type="title" gutterBottom>
+                Добро пожаловать!
+              </Typography>
+            </Paper>
+          </Grid>
 
-            <Typography component="p">
-              <TextField
-                id="name"
-                name="login"
-                label="Введите логин"
-                className={classes.textField}
-                value={this.state.login}
-                onChange={this.onChange}
-                margin="normal"
-              />
-            </Typography>
-            <Typography component="p">
-              <TextField
-                name="password"
-                id="password"
-                label="Введите пароль"
-                className={classes.textField}
-                type="password"
-                onChange={this.onChange}
-                value={this.state.password}
-                autoComplete="current-password"
-                margin="normal"
-              />
-            </Typography>
-            <Typography component="p">
-              <Button
-                onClick={this.onSubmit}
-                className={classes.button}
-                raised
-                color="primary"
-              >
-                Отправить
-                <Send className={classes.rightIcon} />
-              </Button>
-            </Typography>
+          <Grid item xs={12}>
+            <Paper className={classes.paper}>
+              <Typography type="headline" component="h3">
+                Авторизация
+              </Typography>
+              <form className={classes.container} noValidate autoComplete="off">
+                {this.showError(this.props.error)}
 
-            <p>Login: {this.state.login}</p>
-            <p>Password: {this.state.password}</p>
-            <p>Error: {this.state.error}</p>
-          </form>
-        </Paper>
+                <TextField
+                  id="name"
+                  name="login"
+                  label="Введите логин"
+                  className={classes.textField}
+                  value={this.state.login}
+                  onChange={this.onChange}
+                  margin="normal"
+                />
+                <TextField
+                  name="password"
+                  id="password"
+                  label="Введите пароль"
+                  className={classes.textField}
+                  type="password"
+                  onChange={this.onChange}
+                  value={this.state.password}
+                  autoComplete="current-password"
+                  margin="normal"
+                />
+                <Button
+                  onClick={this.onSubmit}
+                  className={classes.button}
+                  raised
+                  color="primary"
+                >
+                  Отправить
+                  <Send className={classes.rightIcon} />
+                </Button>
+
+                {/*<p>Login: {this.state.login}</p>*/}
+                {/*<p>Password: {this.state.password}</p>*/}
+                {/*<p>Error: {this.state.error}</p>*/}
+              </form>
+            </Paper>
+          </Grid>
+        </Grid>
       </div>
     );
   }

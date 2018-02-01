@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, put, all, takeLatest } from "redux-saga/effects";
 import { appName } from "../../config";
 import { Record } from "immutable";
 import { createSelector } from "reselect";
@@ -12,6 +12,10 @@ const prefix = `${appName}/${moduleName}`;
 export const AUTH_REQUEST = `${prefix}/AUTH_REQUEST`;
 export const AUTH_SUCCESS = `${prefix}/AUTH_SUCCESS`;
 export const AUTH_FAILURE = `${prefix}/AUTH_FAILURE`;
+
+export const LOG_OUT_REQUEST = `${prefix}/LOG_OUT_REQUEST`;
+export const LOG_OUT_SUCCESS = `${prefix}/LOG_OUT_SUCCESS`;
+export const LOG_OUT_FAILURE = `${prefix}/LOG_OUT_FAILURE`;
 
 /**
  * Reducer
@@ -31,6 +35,10 @@ export default function reducer(state = new ReducerRecord(), action) {
     }
     case AUTH_FAILURE: {
       return state.set("error", payload);
+    }
+
+    case LOG_OUT_SUCCESS: {
+      return (state = new ReducerRecord());
     }
     default:
       return state;
@@ -59,6 +67,9 @@ export const authorizeAction = (login, password) => ({
   payload: { login, password }
 });
 
+export const logOutAction = () => ({
+  type: LOG_OUT_REQUEST
+});
 /**
  * Sagas
  * */
@@ -72,6 +83,15 @@ const fetchJSON = (url, options = {}) =>
       .catch(error => reject(error));
   });
 
+function* logOut() {
+  try {
+    window.localStorage.removeItem("token");
+    yield put({ type: LOG_OUT_SUCCESS });
+  } catch (err) {
+    yield put({ type: LOG_OUT_FAILURE });
+  }
+}
+
 function* authorize({ payload: { login, password } }) {
   const options = {
     body: JSON.stringify({ login, password }),
@@ -82,10 +102,10 @@ function* authorize({ payload: { login, password } }) {
   try {
     // const { token } = yield call(fetchJSON, "/login", options);
     const token = {
-      login: "lykovrs",
+      login: "van",
       password: "1234",
-      name: "Roman",
-      surname: "Lykov"
+      name: "Иван",
+      surname: "Иванов"
     };
     yield put({ type: AUTH_SUCCESS, payload: token });
     localStorage.setItem("token", JSON.stringify(token));
@@ -107,5 +127,8 @@ function* authorize({ payload: { login, password } }) {
 }
 
 export function* saga() {
-  yield takeLatest(AUTH_REQUEST, authorize);
+  yield all([
+    takeLatest(AUTH_REQUEST, authorize),
+    takeLatest(LOG_OUT_REQUEST, logOut)
+  ]);
 }

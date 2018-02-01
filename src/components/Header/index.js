@@ -13,11 +13,7 @@ import AccountCircle from "material-ui-icons/AccountCircle";
 // import { FormControlLabel, FormGroup } from "material-ui/Form";
 import Menu, { MenuItem } from "material-ui/Menu";
 import { connect } from "react-redux";
-import {
-  tokenSelector,
-  errorSelector,
-  authorizeAction
-} from "../../ducks/Auth";
+import { tokenSelector, errorSelector, logOutAction } from "../../ducks/Auth";
 import Drawer from "material-ui/Drawer";
 import { Link } from "react-router-dom";
 import { ListItemIcon, ListItemText } from "material-ui/List";
@@ -86,6 +82,7 @@ class Header extends React.Component {
    * Обработка закрытия меню авторизации
    */
   handleRequestClose = () => {
+    this.props.logOutAction();
     this.setState({ anchorEl: null });
   };
 
@@ -151,10 +148,9 @@ class Header extends React.Component {
                   onRequestClose={this.handleRequestClose}
                 >
                   <MenuItem disabled={true}>
-                    {" "}
                     {auth.name} {auth.surname}
                   </MenuItem>
-                  <MenuItem onClick={this.handleRequestClose}>Профиль</MenuItem>
+                  <MenuItem>Профиль</MenuItem>
                   <MenuItem onClick={this.handleRequestClose}>Выйти</MenuItem>
                 </Menu>
               </div>
@@ -233,7 +229,12 @@ Header.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default connect(state => ({
-  auth: tokenSelector(state),
-  error: errorSelector(state)
-}))(withStyles(styles)(Header));
+export default connect(
+  state => ({
+    auth: tokenSelector(state),
+    error: errorSelector(state)
+  }),
+  {
+    logOutAction
+  }
+)(withStyles(styles)(Header));
