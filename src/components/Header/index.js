@@ -9,13 +9,11 @@ import Typography from "material-ui/Typography";
 import IconButton from "material-ui/IconButton";
 import MenuIcon from "material-ui-icons/Menu";
 import AccountCircle from "material-ui-icons/AccountCircle";
-// import Switch from "material-ui/Switch";
-// import { FormControlLabel, FormGroup } from "material-ui/Form";
 import Menu, { MenuItem } from "material-ui/Menu";
 import { connect } from "react-redux";
 import { tokenSelector, errorSelector, logOutAction } from "../../ducks/Auth";
 import Drawer from "material-ui/Drawer";
-import { Redirect, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ListItemIcon, ListItemText } from "material-ui/List";
 import DvrIcon from "material-ui-icons/Dvr";
 import HomeIcon from "material-ui-icons/Home";
@@ -73,7 +71,6 @@ class Header extends React.Component {
 
   /**
    * Открытие меню авторизации
-   * @param  {SytheticEvent} event
    */
   handleMenu = event => {
     this.setState({ anchorEl: event.currentTarget });
@@ -81,10 +78,16 @@ class Header extends React.Component {
 
   /**
    * Закрытие меню авторизации
-   * @param  {SytheticEvent} event
    */
-  closeMenu = event => {
+  closeMenu = () => {
     this.setState({ anchorEl: null });
+  };
+
+  /**
+   * Открываем страницу профиля пользователя
+   */
+  openProfile = () => {
+    history.push(PROFILE_PAGE);
   };
 
   /**
@@ -142,6 +145,7 @@ class Header extends React.Component {
                   <AccountCircle />
                 </IconButton>
                 <Menu
+                  onClick={this.closeMenu}
                   id="menu-appbar"
                   anchorEl={anchorEl}
                   anchorOrigin={{
@@ -157,9 +161,7 @@ class Header extends React.Component {
                   <MenuItem disabled={true}>
                     {auth.name} {auth.surname}
                   </MenuItem>
-                  <MenuItem onClick={this.closeMenu}>
-                    <Link to={PROFILE_PAGE}>Профиль</Link>
-                  </MenuItem>
+                  <MenuItem onClick={this.openProfile}>Профиль</MenuItem>
                   <MenuItem onClick={this.handleRequestClose}>Выйти</MenuItem>
                 </Menu>
               </div>
