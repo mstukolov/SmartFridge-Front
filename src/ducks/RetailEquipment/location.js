@@ -80,8 +80,8 @@ export const markerSelector = createSelector(
         let element = {
           position: [item.Lat, item.Lng]
         };
-        // Создаем попап, если есть полная информация об устройстве
 
+        // Создаем попап, если есть полная информация об устройстве
         if (fridge) {
           const {
             Requipserialnumber,
@@ -101,7 +101,7 @@ export const markerSelector = createSelector(
         }
 
         // Если в списке выбранных точек есть данная, выделяем ее красным маркером
-        if (selectedItems.get(item.Requipid)) {
+        if (selectedItems.indexOf(item.Id) >= 0) {
           element.options = { icon: redMarker };
         } else {
           element.options = { icon: blueMarker };
