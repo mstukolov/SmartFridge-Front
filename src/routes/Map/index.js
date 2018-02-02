@@ -8,6 +8,12 @@ import { connect } from "react-redux";
 import { tokenSelector } from "../../ducks/Auth";
 import { LOGIN_PAGE } from "../constants";
 import { Redirect } from "react-router-dom";
+import {
+  loadAll as loadLocation,
+  loadingSelector,
+  markerSelector
+} from "../../ducks/RetailEquipment/location";
+import { callAll as loadEquipment } from "../../ducks/RetailEquipment/equipment";
 
 const styles = theme => ({
   root: {
@@ -34,8 +40,7 @@ class MapPage extends Component {
    * @return {ReactElement} разметка
    */
   render() {
-    const { token } = this.props;
-    const { classes } = this.props;
+    const { classes, items, loading, token } = this.props;
 
     if (!token) {
       return <Redirect to={LOGIN_PAGE} />;
@@ -53,15 +58,29 @@ class MapPage extends Component {
         <Grid item xs={12}>
           <Paper className={classes.paper}>
             <div className={classes.map}>
-              <GlobalMap fullScreen={false} />
+              <GlobalMap items={items} loading={loading} />
             </div>
           </Paper>
         </Grid>
       </Grid>
     );
   }
+
+  /**
+   * Делаем запрос с сервера
+   * @return {void}
+   */
+  componentDidMount() {
+    this.props.loadEquipment();
+    this.props.loadLocation();
+  }
 }
 
-export default connect(state => ({
-  token: tokenSelector(state)
-}))(withStyles(styles)(MapPage));
+export default connect(
+  state => ({
+    token: tokenSelector(state),
+    items: markerSelector(state),
+    loading: loadingSelector(state)
+  }),
+  { loadLocation, loadEquipment }
+)(withStyles(styles)(MapPage));

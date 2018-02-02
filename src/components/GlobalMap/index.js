@@ -5,13 +5,6 @@ import "leaflet.markercluster/dist/MarkerCluster.css";
 import PropTypes from "prop-types";
 import { Map, TileLayer } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
-import { connect } from "react-redux";
-import {
-  loadAll as loadLocation,
-  markerSelector,
-  loadingSelector
-} from "../../ducks/RetailEquipment/location";
-import { callAll as loadEquipment } from "../../ducks/RetailEquipment/equipment";
 import history from "../../redux/history";
 import classNames from "classnames";
 import { withStyles } from "material-ui/styles";
@@ -26,8 +19,8 @@ const styles = theme => ({
     height: "100%"
   },
   button: {
-    bottom: theme.spacing.unit,
-    left: theme.spacing.unit,
+    top: theme.spacing.unit,
+    right: theme.spacing.unit,
     position: "absolute",
     zIndex: 1000
   }
@@ -39,22 +32,20 @@ const styles = theme => ({
  */
 class GlobalMap extends React.Component {
   state = {
-    mapCenterCoordinates: [55.6331614, 37.362987],
-    mapZoom: 4,
-    mapMaxZoom: 18,
     fullScreen: false
   };
 
   constructor(props) {
     super(props);
   }
+
   /**
    * render
    * @return {ReactElement} разметка React
    */
   render() {
     const { classes } = this.props;
-    const { mapCenterCoordinates, mapZoom, mapMaxZoom } = this.state;
+    const { centerCoordinates, zoom, maxZoom } = this.props;
     let cls = classNames({
       "markercluster-map": true,
       [classes.main]: true,
@@ -63,9 +54,9 @@ class GlobalMap extends React.Component {
     return (
       <Map
         className={cls}
-        center={mapCenterCoordinates}
-        zoom={mapZoom}
-        maxZoom={mapMaxZoom}
+        center={centerCoordinates}
+        zoom={zoom}
+        maxZoom={maxZoom}
       >
         {this.props.loading ? <BlockingPreloader /> : ""}
         <Button
@@ -102,68 +93,21 @@ class GlobalMap extends React.Component {
 
     this.setState({ fullScreen: !this.state.fullScreen });
   };
-
-  /**
-   * Устанавливает карту с параметрами
-   * @param lat {Number} широта
-   * @param lng {Number} долгота
-   * @param {Number} zoom приближение
-   * @return {void}
-   */
-  setCenterPosition = (lat = 55.6331614, lng = 37.362987, zoom = 4) => {
-    this.setState({
-      mapCenterCoordinates: [lat, lng],
-      mapZoom: zoom
-    });
-  };
-
-  /**
-   * Делаем запрос с сервера
-   * @return {void}
-   */
-  componentDidMount() {
-    this.props.loadEquipment();
-    this.props.loadLocation();
-  }
-  /**
-   * При наличии активной точки, устанавливает ее параметры в состояние
-   * @param  {Object} nextProps
-   * @return {void}
-   */
-  componentWillReceiveProps(nextProps) {
-    const { activeMapItemId } = nextProps;
-    console.log("active ", activeMapItemId);
-    // if (activeMapItemId) {
-    //   const item = nextProps.items.get(activeMapItemId);
-    //
-    //   this.setCenterPosition(item.position[0], item.position[1], 8);
-    // }
-  }
 }
 
-GlobalMap.propTypes = {
-  classes: PropTypes.object.isRequired
+GlobalMap.defaultProps = {
+  centerCoordinates: [55.6331614, 37.362987],
+  zoom: 10,
+  maxZoom: 18
 };
 
-export default connect(
-  state => {
-    // Получаем активный маркер по id
-    let activeMapItemId = null;
-    const locationItemId = history.location.pathname.split(":")[1];
-    const firstSelectedItemId = state.equipment.selected.keySeq().first();
+GlobalMap.propTypes = {
+  classes: PropTypes.object.isRequired,
+  centerCoordinates: PropTypes.array,
+  maxZoom: PropTypes.number,
+  zoom: PropTypes.number,
+  items: PropTypes.array,
+  loading: PropTypes.bool
+};
 
-    // Если есть активное сутройство
-    if (locationItemId) {
-      activeMapItemId = locationItemId;
-    } else {
-      activeMapItemId = firstSelectedItemId;
-    }
-
-    return {
-      items: markerSelector(state),
-      loading: loadingSelector(state),
-      activeMapItemId
-    };
-  },
-  { loadLocation, loadEquipment }
-)(withStyles(styles)(GlobalMap));
+export default withStyles(styles)(GlobalMap);
