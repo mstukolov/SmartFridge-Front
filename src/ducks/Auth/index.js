@@ -1,9 +1,11 @@
 import { call, put, all, takeLatest, takeEvery } from "redux-saga/effects";
-import { appName } from "../../config";
+import { appName, backendUrl } from "../../config";
 import { Record } from "immutable";
 import { createSelector } from "reselect";
 import history from "../../redux/history";
 import { LOGIN_PAGE } from "../../routes/constants";
+import axios from "axios";
+import qs from "qs";
 
 /**
  * Constants
@@ -12,10 +14,12 @@ export const moduleName = "auth";
 const prefix = `${appName}/${moduleName}`;
 
 export const AUTH_REQUEST = `${prefix}/AUTH_REQUEST`;
+export const AUTH_START = `${prefix}/AUTH_START`;
 export const AUTH_SUCCESS = `${prefix}/AUTH_SUCCESS`;
 export const AUTH_FAILURE = `${prefix}/AUTH_FAILURE`;
 
 export const LOG_OUT_REQUEST = `${prefix}/LOG_OUT_REQUEST`;
+export const LOG_OUT_START = `${prefix}/LOG_OUT_START`;
 export const LOG_OUT_SUCCESS = `${prefix}/LOG_OUT_SUCCESS`;
 export const LOG_OUT_FAILURE = `${prefix}/LOG_OUT_FAILURE`;
 
@@ -76,16 +80,8 @@ export const logOutAction = () => ({
  * Sagas
  * */
 
-const fetchJSON = (url, options = {}) =>
-  new Promise((resolve, reject) => {
-    return fetch(url, options)
-      .then(response => (response.status !== 200 ? reject(response) : response))
-      .then(response => response.json())
-      .then(response => resolve(response))
-      .catch(error => reject(error));
-  });
-
 function* logOut() {
+  yield put({ type: LOG_OUT_START });
   window.localStorage.removeItem("token");
   history.push(LOGIN_PAGE);
   try {
@@ -96,22 +92,27 @@ function* logOut() {
 }
 
 function* authorize({ payload: { login, password } }) {
-  const options = {
-    body: JSON.stringify({ login, password }),
-    method: "POST",
-    headers: { "Content-Type": "application/json" }
-  };
+  yield put({
+    type: AUTH_START
+  });
+
+  let promise = axios.post(
+    `${backendUrl}/users/auth`,
+    qs.stringify({
+      login: login,
+      password: password
+    })
+  );
 
   try {
-    // const { token } = yield call(fetchJSON, "/login", options);
-    const token = {
-      login: "van",
-      password: "1234",
-      name: "Иван",
-      surname: "Иванов"
-    };
-    yield put({ type: AUTH_SUCCESS, payload: token });
+    const token = yield promise.then(result => {
+      const user = result.data.users;
+      console.log(user.auth);
+      if (!user.auth) this.reject(new Error());
+      return user;
+    });
     localStorage.setItem("token", JSON.stringify(token));
+    yield put({ type: AUTH_SUCCESS, payload: token });
   } catch (error) {
     let message;
     switch (error.status) {
@@ -119,7 +120,7 @@ function* authorize({ payload: { login, password } }) {
         message = "Внутренняя ошибка сервера";
         break;
       case 401:
-        message = "Недопустимые учетные данные";
+        message = "Ошибка доступа";
         break;
       default:
         message = "Что-то пошло не так";

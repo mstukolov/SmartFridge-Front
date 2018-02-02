@@ -68,9 +68,9 @@ class UserProfilePage extends PureComponent {
               <Typography type="subheading">
                 Фамилия: {token.surname}
               </Typography>
-              <Typography type="subheading">
-                Должность: Главнокомандующий
-              </Typography>
+              {/*<Typography type="subheading">*/}
+              {/*Должность: Главнокомандующий*/}
+              {/*</Typography>*/}
             </Paper>
           </Grid>
         </Grid>
