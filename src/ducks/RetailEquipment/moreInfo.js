@@ -2,8 +2,6 @@
 import { Record, OrderedMap } from "immutable";
 import { appName, backendUrl } from "../../config";
 import { all, put, takeEvery } from "redux-saga/effects";
-import { delay } from "redux-saga";
-import { equipment } from "../../fakeData";
 import history from "../../redux/history";
 import axios from "axios/index";
 
@@ -195,7 +193,6 @@ export const saveEditSaga = function*(action) {
   let promise = new Promise(function(resolve) {
     resolve(editItem);
   });
-  yield delay(1000);
 
   try {
     //TODO: Здесь сделать нормальную логику запроса данных
