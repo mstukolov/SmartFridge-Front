@@ -254,7 +254,7 @@ export const orderedFilterRowsSelector = createSelector(
                   : 1
             );
       case "remain":
-      case "Requipfilling":
+      case "Requipfullness":
       case "Updatedat":
       default:
         orderData.get("order") === "asc"

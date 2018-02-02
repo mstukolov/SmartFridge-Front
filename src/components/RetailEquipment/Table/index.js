@@ -213,7 +213,7 @@ class RetailEquipmentTable extends React.Component {
 
     return <TrendingFlatIcon />;
   };
-  // n.Requipfilling >= n.Requiplastvalue ? (
+  // n.Requipfullness >= n.Requiplastvalue ? (
   //     <TrendingUpIcon className={classes.refillIconUp} />
   // ) : (
   //     <TrendingDownIcon
@@ -271,10 +271,13 @@ class RetailEquipmentTable extends React.Component {
                         {n.Requipserialnumber}
                       </TableCell>
 
-                      <TableCell numeric>{n.Requipfilling}%</TableCell>
+                      <TableCell numeric>{n.Requipfullness}%</TableCell>
 
                       <TableCell padding="checkbox">
-                        {this.getUpdateIcon(n.Requipfilling, n.Requiplastvalue)}
+                        {this.getUpdateIcon(
+                          n.Requipfullness,
+                          n.Requiplastvalue
+                        )}
                       </TableCell>
 
                       <TableCell padding="none">{n.Rchainname}</TableCell>

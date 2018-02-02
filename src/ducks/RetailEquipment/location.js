@@ -87,7 +87,7 @@ export const markerSelector = createSelector(
             Requipserialnumber,
             Rchainname,
             Storename,
-            Requipfilling,
+            Requipfullness,
             Requipid
           } = fridge;
 
@@ -95,7 +95,7 @@ export const markerSelector = createSelector(
             Requipserialnumber,
             Rchainname,
             Storename,
-            Requipfilling,
+            Requipfullness,
             Requipid
           );
         }

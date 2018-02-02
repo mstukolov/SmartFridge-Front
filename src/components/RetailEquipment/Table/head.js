@@ -24,7 +24,7 @@ const columnData = [
     label: "Серийный номер"
   },
   {
-    id: "Requipfilling",
+    id: "Requipfullness",
     numeric: true,
     disablePadding: false,
     label: "Наполнение"
