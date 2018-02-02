@@ -19,6 +19,7 @@
     "prettier": "^1.9.1",
     "qs": "^6.5.1",
     "react": "^16.1.1",
+    "react-csv": "^1.0.12",
     "react-dom": "^16.1.1",
     "react-jss": "^8.1.0",
     "react-leaflet": "^1.7.8",

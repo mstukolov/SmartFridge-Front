@@ -4,6 +4,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
+import FileDownload from "material-ui-icons/FileDownload";
+import Button from "material-ui/Button";
 import keycode from "keycode";
 import Table, {
   TableBody,
@@ -36,7 +38,7 @@ import TrendingDownIcon from "material-ui-icons/TrendingDown";
 import TrendingFlatIcon from "material-ui-icons/TrendingFlat";
 import red from "material-ui/colors/red";
 import green from "material-ui/colors/green";
-import { getName } from "../../../utils";
+import { CSVLink, CSVDownload } from "react-csv";
 
 const styles = theme => ({
   root: {
@@ -58,6 +60,15 @@ const styles = theme => ({
   },
   refillIconDown: {
     color: red[500]
+  },
+  rightIcon: {
+    marginLeft: theme.spacing.unit
+  },
+  buttonSet: {
+    padding: "16px"
+  },
+  csv: {
+    textDecoration: "none"
   }
 });
 
@@ -230,6 +241,13 @@ class RetailEquipmentTable extends React.Component {
 
     const { rowsPerPage, page } = this.state;
 
+    const csvData = [
+      ["firstname", "lastname", "email"],
+      ["Ahmed", "Tomi", "ah@smthing.co.com"],
+      ["Raed", "Labes", "rl@smthing.co.com"],
+      ["Yezzi", "Min l3b", "ymin@cocococo.com"]
+    ];
+
     return (
       <Paper className={classes.root}>
         {this.showError()}
@@ -312,6 +330,14 @@ class RetailEquipmentTable extends React.Component {
               </TableRow>
             </TableFooter>
           </Table>
+        </div>
+        <div className={classes.buttonSet}>
+          <CSVLink className={classes.csv} data={csvData}>
+            <Button raised color="default">
+              Скачать в CSV
+              <FileDownload className={classes.rightIcon} />
+            </Button>
+          </CSVLink>
         </div>
       </Paper>
     );
