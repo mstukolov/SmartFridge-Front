@@ -24,7 +24,8 @@ import {
   sortOrderBy,
   chainsSelector,
   storesSelector,
-  orderedFilterRowsSelector
+  orderedFilterRowsSelector,
+  CSVdataSelector
 } from "../../../ducks/RetailEquipment/equipment";
 import { loadAll as loadAllChains } from "../../../ducks/RetailEquipment/chains";
 import { loadAll as loadAllStores } from "../../../ducks/RetailEquipment/stores";
@@ -241,13 +242,6 @@ class RetailEquipmentTable extends React.Component {
 
     const { rowsPerPage, page } = this.state;
 
-    const csvData = [
-      ["firstname", "lastname", "email"],
-      ["Ahmed", "Tomi", "ah@smthing.co.com"],
-      ["Raed", "Labes", "rl@smthing.co.com"],
-      ["Yezzi", "Min l3b", "ymin@cocococo.com"]
-    ];
-
     return (
       <Paper className={classes.root}>
         {this.showError()}
@@ -332,7 +326,7 @@ class RetailEquipmentTable extends React.Component {
           </Table>
         </div>
         <div className={classes.buttonSet}>
-          <CSVLink className={classes.csv} data={csvData}>
+          <CSVLink className={classes.csv} data={this.props.CSVdata}>
             <Button raised color="default">
               Скачать в CSV
               <FileDownload className={classes.rightIcon} />
@@ -350,7 +344,9 @@ RetailEquipmentTable.propTypes = {
 
 export default connect(
   state => {
+    console.log("CSVdataSelector(state)", CSVdataSelector(state));
     return {
+      CSVdata: CSVdataSelector(state),
       data: orderedFilterRowsSelector(state),
       networks: chainsSelector(state),
       points: storesSelector(state),

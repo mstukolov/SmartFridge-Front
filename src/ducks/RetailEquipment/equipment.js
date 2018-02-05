@@ -265,6 +265,34 @@ export const orderedFilterRowsSelector = createSelector(
   }
 );
 
+export const CSVdataSelector = createSelector(
+  orderedFilterRowsSelector,
+  data => {
+    let result = [
+      [
+        "Серийный номер",
+        "Наполнение",
+        "Торговая сеть",
+        "Торговая точка",
+        "Вес",
+        "Время измерения"
+      ]
+    ];
+    return result.concat(
+      data.map(item => {
+        return [
+          item.Requipserialnumber,
+          item.Requipfullness,
+          item.Rchainname,
+          item.Storename,
+          item.Sensorvalue,
+          item.Measuredate
+        ];
+      })
+    );
+  }
+);
+
 /**
  * Action Creators
  * */

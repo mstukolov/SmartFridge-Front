@@ -31,21 +31,21 @@ const columnData = [
   },
 
   {
-    id: "refill",
+    id: "Requiplastvalue",
     numeric: false,
     disablePadding: true,
     label: "Пополнение"
   },
 
   {
-    id: "chains",
+    id: "Rchainname",
     numeric: false,
     disablePadding: true,
     label: "Торговая сеть"
   },
 
   {
-    id: "stores",
+    id: "Storename",
     numeric: false,
     disablePadding: false,
     label: "Торговая точка"
@@ -59,7 +59,7 @@ const columnData = [
   },
 
   {
-    id: "Updatedat",
+    id: "Measuredate",
     numeric: false,
     disablePadding: false,
     label: "Время измерения"
