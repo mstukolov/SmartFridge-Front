@@ -24,6 +24,9 @@ import {
   PROFILE_PAGE,
   LOGIN_PAGE
 } from "../../routes/constants";
+import { actions as networkActions } from "redux-saga-network-status";
+import { connect } from "react-redux";
+
 import moment from "moment/min/moment-with-locales";
 import Moment from "react-moment";
 // Sets the moment instance to use.
@@ -101,6 +104,13 @@ class App extends Component {
       </div>
     );
   }
+
+  componentWillMount() {
+    const { startWatchNetworkStatus } = this.props;
+    startWatchNetworkStatus("/api/ping");
+  }
 }
 
-export default injectSheet(styles)(App);
+export default connect(null, {
+  startWatchNetworkStatus: networkActions.startWatchNetworkStatus
+})(injectSheet(styles)(App));

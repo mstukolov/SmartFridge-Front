@@ -34,8 +34,8 @@
     "react-webcam": "^0.2.0",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
-    "redux-persist": "^5.6.10",
     "redux-saga": "^0.16.0",
+    "redux-saga-network-status": "^0.0.3",
     "reselect": "^3.0.1",
     "victory": "^0.24.3"
   },
