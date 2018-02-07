@@ -13,6 +13,7 @@ import React, { Component } from "react";
 import ReportsPage from "../../routes/Reports";
 import RetailEquipmentPageMain from "../../routes/RetailEquipment/Main/index";
 import RetailEquipmentPageViewPage from "../../routes/RetailEquipment/View";
+import Snackbar from "material-ui/Snackbar";
 import { ConnectedRouter } from "react-router-redux";
 import { Switch, Route } from "react-router-dom";
 import {
@@ -61,10 +62,22 @@ class App extends Component {
    * @return {ReactElement} разметка React
    */
   render() {
-    const { classes } = this.props;
+    const { classes, isOnline } = this.props;
 
     return (
       <div>
+        <Snackbar
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "left"
+          }}
+          open={!isOnline}
+          autoHideDuration={3000}
+          SnackbarContentProps={{
+            "aria-describedby": "message-id"
+          }}
+          message={<span id="message-id">Нет ссоединения с интернетом</span>}
+        />
         <Header />
         <section className={classes.container}>
           <ConnectedRouter history={history}>
@@ -111,6 +124,13 @@ class App extends Component {
   }
 }
 
-export default connect(null, {
-  startWatchNetworkStatus: networkActions.startWatchNetworkStatus
-})(injectSheet(styles)(App));
+export default connect(
+  state => {
+    return {
+      isOnline: state.network.isOnline
+    };
+  },
+  {
+    startWatchNetworkStatus: networkActions.startWatchNetworkStatus
+  }
+)(injectSheet(styles)(App));
