@@ -39,7 +39,7 @@ import TrendingDownIcon from "material-ui-icons/TrendingDown";
 import TrendingFlatIcon from "material-ui-icons/TrendingFlat";
 import red from "material-ui/colors/red";
 import green from "material-ui/colors/green";
-import { CSVLink, CSVDownload } from "react-csv";
+import { CSVLink } from "react-csv";
 
 const styles = theme => ({
   root: {
@@ -344,7 +344,6 @@ RetailEquipmentTable.propTypes = {
 
 export default connect(
   state => {
-    console.log("CSVdataSelector(state)", CSVdataSelector(state));
     return {
       CSVdata: CSVdataSelector(state),
       data: orderedFilterRowsSelector(state),
