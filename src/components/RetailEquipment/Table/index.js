@@ -30,7 +30,6 @@ import {
 import { loadAll as loadAllChains } from "../../../ducks/RetailEquipment/chains";
 import { loadAll as loadAllStores } from "../../../ducks/RetailEquipment/stores";
 import LinearQuery from "../../LinearQuery/index";
-import Moment from "react-moment";
 import RetailEquipmentTableHead from "./head";
 import RetailEquipmentTableToolbar from "./toolbar";
 import SimpleSnackbar from "../../SimpleSnackbar/index";
@@ -223,13 +222,26 @@ class RetailEquipmentTable extends React.Component {
 
     return <TrendingFlatIcon />;
   };
-  // n.Requipfullness >= n.Requiplastvalue ? (
-  //     <TrendingUpIcon className={classes.refillIconUp} />
-  // ) : (
-  //     <TrendingDownIcon
-  //         className={classes.refillIconDown}
-  //     />
-  // )
+
+  /**
+   * Выводит дату
+   * @param dateString
+   * @returns {ReactElement} разметка
+   */
+  getUpdateDate = dateString => {
+    const date = new Date(dateString);
+
+    const options = {
+      year: "numeric",
+      month: "numeric",
+      day: "numeric",
+      timezone: "UTC",
+      hour: "numeric",
+      minute: "numeric"
+    };
+
+    return <div>{date.toLocaleString("ru", options)}</div>;
+  };
 
   /**
    * render
@@ -296,9 +308,7 @@ class RetailEquipmentTable extends React.Component {
                       <TableCell padding="none">{n.Sensorvalue}</TableCell>
 
                       <TableCell numeric>
-                        <Moment format="DD.MM.YYYY HH:MM">
-                          {n.Measuredate}
-                        </Moment>
+                        {this.getUpdateDate(n.Measuredate)}
                       </TableCell>
                     </TableRow>
                   );
