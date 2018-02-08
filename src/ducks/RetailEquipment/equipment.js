@@ -39,7 +39,7 @@ export const FILTER_BY_STORE = `${prefix}/FILTER_BY_STORE`;
 /**
  * Reducer
  * */
-let DefaulrReducerState = new Record({
+export let DefaulrReducerState = new Record({
   loading: false,
   items: new List([]),
   selected: new List([]),

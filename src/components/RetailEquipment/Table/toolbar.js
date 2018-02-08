@@ -145,13 +145,15 @@ class RetailEquipmentTableToolbar extends React.Component {
                 </div>
               </Tooltip>
               <Tooltip title="Построить графики">
-                <IconButton
-                  onClick={this.handleShowReport}
-                  disabled={numSelected > 1}
-                  aria-label="Show report"
-                >
-                  <InsertCahrtIcon />
-                </IconButton>
+                <div>
+                  <IconButton
+                    onClick={this.handleShowReport}
+                    disabled={numSelected > 1}
+                    aria-label="Show report"
+                  >
+                    <InsertCahrtIcon />
+                  </IconButton>
+                </div>
               </Tooltip>
               <Tooltip title="Просомотреть на карте">
                 <Link to={MAP_PAGE}>

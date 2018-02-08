@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import App from "./components/App/index";
 import { Router } from "react-router-dom";
-import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import { MuiThemeProvider, createMuiTheme } from "material-ui/styles";

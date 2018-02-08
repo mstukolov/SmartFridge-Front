@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-import { Record, OrderedMap } from "immutable";
+import { Record } from "immutable";
 import { appName, backendUrl } from "../../config";
 import { all, put, takeEvery } from "redux-saga/effects";
 import history from "../../redux/history";
@@ -72,7 +72,6 @@ export default (state = defaultForm, action) => {
     case SAVE_EDIT_START:
       return state.set("saved", false).set("isSaving", true);
     case SAVE_EDIT_SUCCESS:
-      const { editedItem } = action.payload;
       return state.set("saved", true).set("isSaving", false);
 
     default:

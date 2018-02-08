@@ -15,10 +15,6 @@ import {
   loadEquipment,
   saveEditEquipment
 } from "../../../ducks/RetailEquipment/moreInfo";
-import {
-  chainnameSelector,
-  storenameSelector
-} from "../../../ducks/RetailEquipment/equipment";
 import ModeEditIcon from "material-ui-icons/ModeEdit";
 import SimpleSnackbar from "../../SimpleSnackbar";
 import LinearQuery from "../../LinearQuery/index";
@@ -201,14 +197,6 @@ class RetailMoreInfo extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // let a = {
-    //   equipid: 5,
-    //   equipmaxvalue: 184300,
-    //   sensorvalue: 164150,
-    //   measuredate: "2018-02-01T15:32:25.9059Z",
-    //   address: "Москва,Большая Якиманка,28",
-    // };
-
     if (nextProps.fridge) {
       const {
         address,
@@ -516,8 +504,6 @@ export default connect(
     const edit = state.moreInfo.get("edit");
 
     return {
-      // networks: chainnameSelector(state),
-      // points: storenameSelector(state),
       fridge: state.moreInfo.activeItem,
       error: state.moreInfo.error,
       loading: state.moreInfo.loading,

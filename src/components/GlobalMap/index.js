@@ -35,10 +35,6 @@ class GlobalMap extends React.Component {
     fullScreen: false
   };
 
-  constructor(props) {
-    super(props);
-  }
-
   /**
    * render
    * @return {ReactElement} разметка React

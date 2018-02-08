@@ -68,8 +68,6 @@ export const storesSelector = createSelector(stateSelector, state => {
   return stores.filter(item => {
     return state.filter === item.RetailchainId;
   });
-
-  return stores;
 });
 
 /**

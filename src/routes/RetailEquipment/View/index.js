@@ -10,7 +10,6 @@ import { connect } from "react-redux";
 import { tokenSelector } from "../../../ducks/Auth";
 import { LOGIN_PAGE } from "../../constants";
 import { Redirect } from "react-router-dom";
-import history from "../../../redux/history";
 import {
   loadAll as loadLocation,
   loadingSelector,

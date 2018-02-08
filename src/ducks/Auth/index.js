@@ -1,4 +1,4 @@
-import { call, put, all, takeLatest, takeEvery } from "redux-saga/effects";
+import { put, all, takeLatest, takeEvery } from "redux-saga/effects";
 import { appName, backendUrl } from "../../config";
 import { Record } from "immutable";
 import { createSelector } from "reselect";
@@ -27,8 +27,7 @@ export const LOG_OUT_FAILURE = `${prefix}/LOG_OUT_FAILURE`;
  * Reducer
  * */
 export const ReducerRecord = Record({
-  token:
-    localStorage.getItem("token") && JSON.parse(localStorage.getItem("token")),
+  token: null,
   error: null
 });
 
@@ -82,7 +81,6 @@ export const logOutAction = () => ({
 
 function* logOut() {
   yield put({ type: LOG_OUT_START });
-  window.localStorage.removeItem("token");
   history.push(LOGIN_PAGE);
   try {
     yield put({ type: LOG_OUT_SUCCESS });
@@ -107,11 +105,9 @@ function* authorize({ payload: { login, password } }) {
   try {
     const token = yield promise.then(result => {
       const user = result.data.users;
-      console.log(user.auth);
       if (!user.auth) this.reject(new Error());
       return user;
     });
-    localStorage.setItem("token", JSON.stringify(token));
     yield put({ type: AUTH_SUCCESS, payload: token });
   } catch (error) {
     let message;

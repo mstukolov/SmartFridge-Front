@@ -114,7 +114,6 @@ class Shot extends Component {
 
   render() {
     const { classes } = this.props;
-    const { shot } = this.state;
     return (
       <div className={classes.main}>
         <div className={classes.preview}>
