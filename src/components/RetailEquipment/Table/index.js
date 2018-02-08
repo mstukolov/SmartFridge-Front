@@ -167,6 +167,11 @@ class RetailEquipmentTable extends React.Component {
    */
   componentDidMount() {
     this.props.callAll();
+
+    setInterval(() => {
+      this.props.callAll();
+    }, 10000);
+
     this.props.loadAllChains();
     this.props.loadAllStores();
   }
