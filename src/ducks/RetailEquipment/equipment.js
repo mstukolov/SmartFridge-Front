@@ -82,12 +82,6 @@ export default function reducer(state = defaultState, action) {
         newState = state.setIn(["selected"], selected.delete(position));
       }
 
-      // localStorage.removeItem("RetailEquipmentSelected");
-      // // Сохраняем id выбранных в локальное хранилище
-      // localStorage.setItem(
-      //   "RetailEquipmentSelected",
-      //   JSON.stringify(newState.selected.toJS()),
-      // );
       return newState;
 
     case SELECT_ALL:
@@ -104,15 +98,10 @@ export default function reducer(state = defaultState, action) {
           .setIn(["selectAll"], true);
       }
 
-    // localStorage.removeItem("RetailEquipmentSelected");
-    // localStorage.setItem("RetailEquipmentSelected", JSON.stringify(result));
-
     case DELETE_START:
       return state.set("loading", true);
 
     case DELETE_SUCCESS:
-      // localStorage.removeItem("RetailEquipmentSelected");
-
       return state
         .set("loading", false)
         .set("items", new OrderedMap(payload.items))
@@ -153,21 +142,6 @@ export default function reducer(state = defaultState, action) {
       return state.setIn(["filters", "store"], payload.id);
 
     default:
-      // const orderDataStorage = localStorage.getItem(
-      //   "RetailEquipmentTableOrderData",
-      // );
-      //
-      // const selectedItemsStorage = localStorage.getItem(
-      //   "RetailEquipmentSelected",
-      // );
-      //
-      // // Достаем данные сортировки из локального хранилища
-      // if (orderDataStorage || selectedItemsStorage) {
-      //   return state
-      //     .setIn(["orderData"], new Map(JSON.parse(orderDataStorage)))
-      //     .setIn(["selected"], new Map(JSON.parse(selectedItemsStorage)));
-      // }
-
       return state;
   }
 }

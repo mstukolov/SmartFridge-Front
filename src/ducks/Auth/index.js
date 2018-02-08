@@ -122,7 +122,6 @@ function* authorize({ payload: { login, password } }) {
         message = "Что-то пошло не так";
     }
     yield put({ type: AUTH_FAILURE, payload: message });
-    localStorage.removeItem("token");
   }
 }
 

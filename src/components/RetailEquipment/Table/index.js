@@ -134,8 +134,6 @@ class RetailEquipmentTable extends React.Component {
    */
   handleChangePage = (event, page) => {
     this.setState({ page });
-    // TODO: Переделать организацию хранения данных в сторэдж
-    // localStorage.setItem("page", page);
   };
   /**
    * Устанавливает колличество отображаемых строк на странице
@@ -144,8 +142,6 @@ class RetailEquipmentTable extends React.Component {
    */
   handleChangeRowsPerPage = event => {
     this.setState({ rowsPerPage: event.target.value });
-    // TODO: Переделать организацию хранения данных в сторэдж
-    // localStorage.setItem("rowsPerPage", +event.target.value);
   };
   /**
    * Проверяет, выбрана ли текущая строка
@@ -170,21 +166,9 @@ class RetailEquipmentTable extends React.Component {
    * @return {void}
    */
   componentDidMount() {
-    if (!this.props.data.length) this.props.callAll();
+    this.props.callAll();
     this.props.loadAllChains();
     this.props.loadAllStores();
-    // TODO: Переделать организацию хранения данных в сторэдж
-    // const rowsPerPage = localStorage.getItem("rowsPerPage");
-    // const page = localStorage.getItem("page");
-    // if (rowsPerPage)
-    //   this.setState({
-    //     rowsPerPage: +rowsPerPage,
-    //   });
-    //
-    // if (page)
-    //   this.setState({
-    //     page: +page,
-    //   });
   }
 
   /**
