@@ -34,6 +34,10 @@ const styles = theme => ({
 });
 
 class RetailEquipmentPageView extends Component {
+  state: {
+    intervalRequestId: null
+  };
+
   render() {
     const { classes, token, items, activeItem, loading } = this.props;
     if (!token) {
@@ -76,8 +80,19 @@ class RetailEquipmentPageView extends Component {
    * @return {void}
    */
   componentDidMount() {
-    this.props.loadEquipment();
+    const id = setInterval(() => {
+      this.props.loadEquipment();
+    }, 10000);
+
     this.props.loadLocation();
+
+    this.setState({
+      intervalRequestId: id
+    });
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.intervalRequestId);
   }
 }
 

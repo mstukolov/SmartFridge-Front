@@ -83,7 +83,8 @@ class RetailEquipmentTable extends React.Component {
 
     this.state = {
       page: 0,
-      rowsPerPage: 5
+      rowsPerPage: 5,
+      intervalRequestId: null
     };
   }
   /**
@@ -168,12 +169,20 @@ class RetailEquipmentTable extends React.Component {
   componentDidMount() {
     this.props.callAll();
 
-    setInterval(() => {
+    const id = setInterval(() => {
       this.props.callAll();
     }, 10000);
 
     this.props.loadAllChains();
     this.props.loadAllStores();
+
+    this.setState({
+      intervalRequestId: id
+    });
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.intervalRequestId);
   }
 
   /**
