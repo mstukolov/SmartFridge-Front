@@ -66,19 +66,19 @@ class App extends Component {
 
     return (
       <div>
-        {isOnline ? null : (
-          <Snackbar
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "left"
-            }}
-            open={true}
-            SnackbarContentProps={{
-              "aria-describedby": "message-id"
-            }}
-            message={<span id="message-id">Нет ссоединения с интернетом</span>}
-          />
-        )}
+        {/*{isOnline ? null : (*/}
+        {/*<Snackbar*/}
+        {/*anchorOrigin={{*/}
+        {/*vertical: "bottom",*/}
+        {/*horizontal: "left"*/}
+        {/*}}*/}
+        {/*open={true}*/}
+        {/*SnackbarContentProps={{*/}
+        {/*"aria-describedby": "message-id"*/}
+        {/*}}*/}
+        {/*message={<span id="message-id">Нет ссоединения с интернетом</span>}*/}
+        {/*/>*/}
+        {/*)}*/}
 
         <Header />
         <section className={classes.container}>

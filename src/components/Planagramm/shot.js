@@ -7,7 +7,11 @@ import IconButton from "material-ui/IconButton";
 import PhotoCameraIcon from "material-ui-icons/PhotoCamera";
 
 import { connect } from "react-redux";
-import { locationSelector, saveLocation } from "../../ducks/Planagramm";
+import {
+  locationSelector,
+  saveLocation,
+  saveFileData
+} from "../../ducks/Planagramm";
 
 import addPhotoIcon from "./ic_add_a_photo_black_24px.svg";
 
@@ -106,6 +110,7 @@ class Shot extends Component {
         this.setState({
           shot: e.target.result
         });
+        this.props.saveFileData(file);
       };
 
       reader.readAsDataURL(file);
@@ -185,5 +190,5 @@ export default connect(
       location: locationSelector(state)
     };
   },
-  { saveLocation }
+  { saveLocation, saveFileData }
 )(withStyles(styles)(Shot));

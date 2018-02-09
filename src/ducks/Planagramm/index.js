@@ -3,6 +3,9 @@ import { appName } from "../../config";
 import { Record, Map } from "immutable";
 import { schedule as report } from "../../fakeData";
 import { createSelector } from "reselect";
+import { setFile } from "./indexDBHelpers";
+
+// connectDB(console.log)
 
 /**
  * Constants
@@ -16,6 +19,7 @@ export const LOAD_PLANAGRAMM_DATA_SUCCESS = `${prefix}/LOAD_PLANAGRAMM_DATA_SUCC
 export const LOAD_PLANAGRAMM_DATA_ERROR = `${prefix}/LOAD_PLANAGRAMM_DATA_ERROR`;
 export const SAVE_FIRDGE_ID = `${prefix}/SAVE_FIRDGE_ID`;
 export const SAVE_FIRDGE_LOACTION = `${prefix}/SAVE_FIRDGE_LOACTION`;
+export const SAVE_FILE = `${prefix}/SAVE_FILE`;
 
 const locationModel = new Map({
   latitude: null,
@@ -52,6 +56,10 @@ export default function reducer(state = new ReducerRecord(), action) {
       return state.setIn(["Requipserialnumber"], payload.Requipserialnumber);
     case SAVE_FIRDGE_LOACTION:
       return state.setIn(["location"], new Map(payload.location));
+    case SAVE_FILE:
+      console.log("payload.fileData ===> ", payload.fileData);
+      setFile(payload.fileData);
+      return state;
     default:
       return state;
   }
@@ -125,6 +133,20 @@ export function saveLocation(location) {
   const action = {
     type: SAVE_FIRDGE_LOACTION,
     payload: { location }
+  };
+
+  return action;
+}
+
+/**
+ * Создает экшн для сохранения изображения
+ * @param fileData
+ * @returns {{type: *, payload: {location: *}}}
+ */
+export function saveFileData(fileData) {
+  const action = {
+    type: SAVE_FILE,
+    payload: { fileData }
   };
 
   return action;

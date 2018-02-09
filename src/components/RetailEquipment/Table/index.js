@@ -229,18 +229,22 @@ class RetailEquipmentTable extends React.Component {
    * @returns {ReactElement} разметка
    */
   getUpdateDate = dateString => {
-    const date = new Date(dateString);
+    try {
+      const date = new Date(dateString);
 
-    const options = {
-      year: "numeric",
-      month: "numeric",
-      day: "numeric",
-      timezone: "UTC",
-      hour: "numeric",
-      minute: "numeric"
-    };
+      const options = {
+        year: "numeric",
+        month: "numeric",
+        day: "numeric",
+        timezone: "UTC",
+        hour: "numeric",
+        minute: "numeric"
+      };
 
-    return <div>{date.toLocaleString("ru", options)}</div>;
+      return <div>{date.toLocaleString("ru", options)}</div>;
+    } catch (e) {
+      console.error("Ошибка парсинга даты", e);
+    }
   };
 
   /**
