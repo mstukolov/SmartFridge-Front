@@ -10,7 +10,8 @@ import { connect } from "react-redux";
 import {
   locationSelector,
   saveLocation,
-  saveFileData
+  saveFileData,
+  getFileFromIndexedDB
 } from "../../ducks/Planagramm";
 
 import addPhotoIcon from "./ic_add_a_photo_black_24px.svg";
@@ -58,7 +59,8 @@ const styles = theme => ({
 
 class Shot extends Component {
   state = {
-    shot: null
+    shot: null,
+    testPhotoData: null
   };
   // setRef = webcam => {
   //   this.webcam = webcam;
@@ -93,6 +95,20 @@ class Shot extends Component {
     }
   };
 
+  getTestPhotoFile = () => {
+    const file = this.props.photo;
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = e => {
+        this.setState({
+          testPhotoData: e.target.result
+        });
+      };
+
+      reader.readAsDataURL(file);
+    }
+  };
+
   // capture = () => {
   //   const imageSrc = this.webcam.getScreenshot();
   //   console.log(this.getLocation());
@@ -118,6 +134,7 @@ class Shot extends Component {
   };
 
   render() {
+    this.props.getFileFromIndexedDB();
     const { classes } = this.props;
     return (
       <div className={classes.main}>
@@ -170,7 +187,11 @@ class Shot extends Component {
         </div>
 
         <div>
-          {/*<img src={shot} />*/}
+          <button onClick={this.getTestPhotoFile}>get file img</button>
+        </div>
+
+        <div>
+          <img src={this.state.testPhotoData} />
           <p>latitude: {this.props.location.latitude}</p>
           <p>longitude: {this.props.location.longitude}</p>
           <p>accuracy: {this.props.location.accuracy}</p>
@@ -187,8 +208,9 @@ Shot.propTypes = {
 export default connect(
   state => {
     return {
-      location: locationSelector(state)
+      location: locationSelector(state),
+      photo: state.planagramm.photo
     };
   },
-  { saveLocation, saveFileData }
+  { saveLocation, saveFileData, getFileFromIndexedDB }
 )(withStyles(styles)(Shot));

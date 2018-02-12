@@ -3,9 +3,9 @@ import { appName } from "../../config";
 import { Record, Map } from "immutable";
 import { schedule as report } from "../../fakeData";
 import { createSelector } from "reselect";
-import { setFile } from "./indexDBHelpers";
+import { storageDB } from "./indexDBHelpers";
 
-// connectDB(console.log)
+storageDB.init();
 
 /**
  * Constants
@@ -21,6 +21,11 @@ export const SAVE_FIRDGE_ID = `${prefix}/SAVE_FIRDGE_ID`;
 export const SAVE_FIRDGE_LOACTION = `${prefix}/SAVE_FIRDGE_LOACTION`;
 export const SAVE_FILE = `${prefix}/SAVE_FILE`;
 
+export const GET_FILE_FROM_INDEXEDDB_REQUEST = `${prefix}/GET_FILE_FROM_INDEXEDDB_REQUEST`;
+export const GET_FILE_FROM_INDEXEDDB_START = `${prefix}/GET_FILE_FROM_INDEXEDDB_START`;
+export const GET_FILE_FROM_INDEXEDDB_SUCCESS = `${prefix}/GET_FILE_FROM_INDEXEDDB_SUCCESS`;
+export const GET_FILE_FROM_INDEXEDDB_ERROR = `${prefix}/GET_FILE_FROM_INDEXEDDB_ERROR`;
+
 const locationModel = new Map({
   latitude: null,
   longitude: null,
@@ -34,7 +39,8 @@ export const ReducerRecord = Record({
   location: locationModel,
   Requipserialnumber: null,
   loading: false,
-  loaded: false
+  loaded: false,
+  photo: null
 });
 
 export default function reducer(state = new ReducerRecord(), action) {
@@ -58,8 +64,10 @@ export default function reducer(state = new ReducerRecord(), action) {
       return state.setIn(["location"], new Map(payload.location));
     case SAVE_FILE:
       console.log("payload.fileData ===> ", payload.fileData);
-      setFile(payload.fileData);
+      storageDB.set(payload.fileData);
       return state;
+    case GET_FILE_FROM_INDEXEDDB_SUCCESS:
+      return state.setIn(["photo"], payload.file);
     default:
       return state;
   }
@@ -152,6 +160,14 @@ export function saveFileData(fileData) {
   return action;
 }
 
+export function getFileFromIndexedDB() {
+  const action = {
+    type: GET_FILE_FROM_INDEXEDDB_REQUEST
+  };
+
+  return action;
+}
+
 /**
  * Sagas
  * */
@@ -193,6 +209,35 @@ export const identifyFridgeSaga = function*(action) {
   }
 };
 
+export const getFilesFromDBSaga = function*(action) {
+  // const { report } = action.payload;
+
+  yield put({
+    type: GET_FILE_FROM_INDEXEDDB_START
+  });
+
+  try {
+    const file = yield storageDB.get(1).then(result => {
+      return result;
+    });
+
+    yield put({
+      type: GET_FILE_FROM_INDEXEDDB_SUCCESS,
+      payload: {
+        file
+      }
+    });
+  } catch (error) {
+    yield put({
+      type: GET_FILE_FROM_INDEXEDDB_ERROR,
+      payload: { error }
+    });
+  }
+};
+
 export function* saga() {
-  yield all([takeEvery(LOAD_PLANAGRAMM_DATA_REQUEST, identifyFridgeSaga)]);
+  yield all([
+    takeEvery(LOAD_PLANAGRAMM_DATA_REQUEST, identifyFridgeSaga),
+    takeEvery(GET_FILE_FROM_INDEXEDDB_REQUEST, getFilesFromDBSaga)
+  ]);
 }
