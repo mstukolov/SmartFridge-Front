@@ -37,6 +37,7 @@
     "redux-logger": "^3.0.6",
     "redux-saga": "^0.16.0",
     "redux-saga-network-status": "^0.0.3",
+    "redux-saga-testing": "^1.0.5",
     "reselect": "^3.0.1",
     "victory": "^0.24.3"
   },

@@ -8,10 +8,15 @@ import {
   LOG_OUT_REQUEST,
   AUTH_SUCCESS,
   AUTH_FAILURE,
-  LOG_OUT_SUCCESS
+  LOG_OUT_SUCCESS,
+  saga,
+  authorize,
+  AUTH_START
 } from "./index";
+import sagaHelper from "redux-saga-testing";
 
 import reducer from "./index";
+import { put, takeLatest } from "redux-saga/effects";
 
 const state = new ReducerRecord();
 
@@ -97,3 +102,56 @@ describe("Auth reducer", () => {
     expect(reducer(logInState, logoutAction)).toEqual(new ReducerRecord());
   });
 });
+
+describe("Sagas", () => {
+  describe("Authorize saga", () => {
+    const api = jest.fn();
+    const someAction = () => ({ type: AUTH_REQUEST, payload: loginPayload });
+
+    describe("When testing a very simple Saga", () => {
+      const it = sagaHelper(authorize(someAction()));
+
+      it("should have called the mock API first", result => {
+        expect(result).toEqual(put({ type: AUTH_START }));
+      });
+
+      // it('should have called the mock API first', result => {
+      //     console.log('result', result)
+      //     expect(result).toEqual(call(api));
+      //
+      // });
+
+      // console.log('result ==> ', result)
+
+      // it('and then trigger an action', result => {
+      //     // We then test that on the next step some action is called
+      //     // Here, obviously, 'someAction' is called but it doesn't have any effect
+      //     // since it only returns an object describing the action
+      //     expect(result).toEqual(put(someAction()));
+      // });
+
+      // it('and then nothing', result => {
+      //     expect(result).toBeUndefined();
+      // });
+    });
+
+    // const generator = authorize({payload: loginPayload});
+    //
+    // assert.deepEqual(
+    //   generator.next().value,
+    //   fork(takeLatest, AUTH_REQUEST, authorize),
+    //   "fetch the latest requested auth",
+    // );
+  });
+});
+
+// TODO: Написать тесты для саг
+// describe("Auth root saga", () => {
+//     const generator = saga()
+//
+//     assert.deepEqual(
+//         generator.next().value,
+//         fork(takeLatest, AUTH_REQUEST, authorize),
+//         'fetch the latest requested auth'
+//     )
+// })

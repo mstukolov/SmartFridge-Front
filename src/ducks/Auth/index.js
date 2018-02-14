@@ -75,11 +75,12 @@ export const authorizeAction = (login, password) => ({
 export const logOutAction = () => ({
   type: LOG_OUT_REQUEST
 });
+
 /**
  * Sagas
  * */
 
-function* logOut() {
+export function* logOut() {
   yield put({ type: LOG_OUT_START });
   history.push(LOGIN_PAGE);
   try {
@@ -89,7 +90,7 @@ function* logOut() {
   }
 }
 
-function* authorize({ payload: { login, password } }) {
+export function* authorize({ payload: { login, password } }) {
   yield put({
     type: AUTH_START
   });
