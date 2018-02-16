@@ -23,6 +23,13 @@ const columnData = [
     disablePadding: true,
     label: "Серийный номер"
   },
+
+  {
+    id: "Requipfullness",
+    numeric: true,
+    disablePadding: false,
+    label: "Адрес"
+  },
   {
     id: "Requipfullness",
     numeric: true,
@@ -49,13 +56,6 @@ const columnData = [
     numeric: false,
     disablePadding: false,
     label: "Торговая точка"
-  },
-
-  {
-    id: "Sensorvalue",
-    numeric: false,
-    disablePadding: true,
-    label: "Вес"
   },
 
   {

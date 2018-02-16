@@ -297,6 +297,11 @@ class RetailEquipmentTable extends React.Component {
                         {n.Requipserialnumber}
                       </TableCell>
 
+                      <TableCell padding="none">
+                        Адрес
+                        {/*{n.Requipserialnumber}*/}
+                      </TableCell>
+
                       <TableCell numeric>{n.Requipfullness}%</TableCell>
 
                       <TableCell padding="checkbox">
@@ -309,7 +314,6 @@ class RetailEquipmentTable extends React.Component {
                       <TableCell padding="none">{n.Rchainname}</TableCell>
 
                       <TableCell>{n.Storename}</TableCell>
-                      <TableCell padding="none">{n.Sensorvalue}</TableCell>
 
                       <TableCell numeric>
                         {this.getUpdateDate(n.Measuredate)}
