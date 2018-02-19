@@ -1,7 +1,7 @@
 /* eslint-disable flowtype/require-valid-file-annotation */
 /* eslint-disable react/no-multi-comp */
 
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
 import FileDownload from "material-ui-icons/FileDownload";
@@ -76,7 +76,7 @@ const styles = theme => ({
  * Компонент таблицы
  * @extends React
  */
-class RetailEquipmentTable extends React.Component {
+class RetailEquipmentTable extends Component {
   constructor(props, context) {
     super(props, context);
 
@@ -278,6 +278,18 @@ class RetailEquipmentTable extends React.Component {
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map(n => {
                   const isSelected = this.isSelected(n.Requipid);
+                  const sn = n.Requipserialnumber;
+                  const id = n.Requipid;
+                  const addr = "Адрес";
+                  const fullness = n.Requipfullness;
+                  const updateIcon = this.getUpdateIcon(
+                    n.Requipfullness,
+                    n.Requiplastvalue
+                  );
+                  const chain = n.Rchainname;
+                  const store = n.Storename;
+                  const date = this.getUpdateDate(n.Measuredate);
+
                   return (
                     <TableRow
                       hover
@@ -286,38 +298,26 @@ class RetailEquipmentTable extends React.Component {
                       role="checkbox"
                       aria-checked={isSelected}
                       tabIndex={-1}
-                      key={n.Requipid}
+                      key={id}
                       selected={isSelected}
                     >
                       <TableCell padding="checkbox">
                         <Checkbox checked={isSelected} />
                       </TableCell>
 
-                      <TableCell padding="none">
-                        {n.Requipserialnumber}
-                      </TableCell>
+                      <TableCell padding="none">{sn}</TableCell>
 
-                      <TableCell padding="none">
-                        Адрес
-                        {/*{n.Requipserialnumber}*/}
-                      </TableCell>
+                      <TableCell padding="none">{addr}</TableCell>
 
-                      <TableCell numeric>{n.Requipfullness}%</TableCell>
+                      <TableCell padding="none">{fullness}%</TableCell>
 
-                      <TableCell padding="checkbox">
-                        {this.getUpdateIcon(
-                          n.Requipfullness,
-                          n.Requiplastvalue
-                        )}
-                      </TableCell>
+                      <TableCell padding="none">{updateIcon}</TableCell>
 
-                      <TableCell padding="none">{n.Rchainname}</TableCell>
+                      <TableCell padding="none">{chain}</TableCell>
 
-                      <TableCell>{n.Storename}</TableCell>
+                      <TableCell padding="none">{store}</TableCell>
 
-                      <TableCell numeric>
-                        {this.getUpdateDate(n.Measuredate)}
-                      </TableCell>
+                      <TableCell padding="none">{date}</TableCell>
                     </TableRow>
                   );
                 })}

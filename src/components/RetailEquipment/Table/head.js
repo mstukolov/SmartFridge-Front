@@ -25,15 +25,15 @@ const columnData = [
   },
 
   {
-    id: "Requipfullness",
-    numeric: true,
-    disablePadding: false,
+    id: "addr",
+    numeric: false,
+    disablePadding: true,
     label: "Адрес"
   },
   {
     id: "Requipfullness",
-    numeric: true,
-    disablePadding: false,
+    numeric: false,
+    disablePadding: true,
     label: "Наполнение"
   },
 
@@ -54,14 +54,14 @@ const columnData = [
   {
     id: "Storename",
     numeric: false,
-    disablePadding: false,
+    disablePadding: true,
     label: "Торговая точка"
   },
 
   {
     id: "Measuredate",
     numeric: false,
-    disablePadding: false,
+    disablePadding: true,
     label: "Время измерения"
   }
 ];
