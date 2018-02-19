@@ -39,6 +39,7 @@ import TrendingFlatIcon from "material-ui-icons/TrendingFlat";
 import red from "material-ui/colors/red";
 import green from "material-ui/colors/green";
 import { CSVLink } from "react-csv";
+import classNames from "classnames";
 
 const styles = theme => ({
   root: {
@@ -69,6 +70,14 @@ const styles = theme => ({
   },
   csv: {
     textDecoration: "none"
+  },
+  fullnessEmpty: {
+    color: red[500],
+    fontWeight: 600
+  },
+  fullnessFull: {
+    color: green[500],
+    fontWeight: 600
   }
 });
 
@@ -289,6 +298,10 @@ class RetailEquipmentTable extends Component {
                   const chain = n.Rchainname;
                   const store = n.Storename;
                   const date = this.getUpdateDate(n.Measuredate);
+                  const fullnessClassname = classNames({
+                    [classes.fullnessFull]: +fullness > 30,
+                    [classes.fullnessEmpty]: +fullness <= 30
+                  });
 
                   return (
                     <TableRow
@@ -309,7 +322,9 @@ class RetailEquipmentTable extends Component {
 
                       <TableCell padding="none">{addr}</TableCell>
 
-                      <TableCell padding="none">{fullness}%</TableCell>
+                      <TableCell padding="none" className={fullnessClassname}>
+                        {fullness + "%"}
+                      </TableCell>
 
                       <TableCell padding="none">{updateIcon}</TableCell>
 
