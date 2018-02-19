@@ -291,10 +291,10 @@ class RetailEquipmentTable extends Component {
                   const id = n.Requipid;
                   const addr = "Адрес";
                   const fullness = n.Requipfullness;
-                  const updateIcon = this.getUpdateIcon(
-                    n.Requipfullness,
-                    n.Requiplastvalue
-                  );
+                  // const updateIcon = this.getUpdateIcon(
+                  //   n.Requipfullness,
+                  //   n.Requiplastvalue
+                  // );
                   const chain = n.Rchainname;
                   const store = n.Storename;
                   const date = this.getUpdateDate(n.Measuredate);
@@ -325,8 +325,6 @@ class RetailEquipmentTable extends Component {
                       <TableCell padding="none" className={fullnessClassname}>
                         {fullness + "%"}
                       </TableCell>
-
-                      <TableCell padding="none">{updateIcon}</TableCell>
 
                       <TableCell padding="none">{chain}</TableCell>
 

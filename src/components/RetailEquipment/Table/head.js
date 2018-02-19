@@ -36,13 +36,13 @@ const columnData = [
     disablePadding: true,
     label: "Наполнение"
   },
-
-  {
-    id: "Requiplastvalue",
-    numeric: false,
-    disablePadding: true,
-    label: "Пополнение"
-  },
+  //
+  // {
+  //   id: "Requiplastvalue",
+  //   numeric: false,
+  //   disablePadding: true,
+  //   label: "Пополнение"
+  // },
 
   {
     id: "Rchainname",
