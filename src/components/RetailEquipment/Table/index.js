@@ -33,9 +33,6 @@ import LinearQuery from "../../LinearQuery/index";
 import RetailEquipmentTableHead from "./head";
 import RetailEquipmentTableToolbar from "./toolbar";
 import SimpleSnackbar from "../../SimpleSnackbar/index";
-import TrendingUpIcon from "material-ui-icons/TrendingUp";
-import TrendingDownIcon from "material-ui-icons/TrendingDown";
-import TrendingFlatIcon from "material-ui-icons/TrendingFlat";
 import red from "material-ui/colors/red";
 import green from "material-ui/colors/green";
 import { CSVLink } from "react-csv";
@@ -214,22 +211,16 @@ class RetailEquipmentTable extends Component {
   };
 
   /**
-   * Создает индикацию пополнения
+   * Создает разметку для колонки уведомлений
    * @param filling текущее заполнение
-   * @param lastValue предыдущее значение заполнения
-   * @return {ReactElement} разметка иконки
+   * @return {ReactElement}
    */
-  getUpdateIcon = (filling, lastValue) => {
-    const { classes } = this.props;
-    const result = filling - lastValue;
-    if (result > 0) {
-      return <TrendingUpIcon className={classes.refillIconUp} />;
-    }
-    if (result < 0) {
-      return <TrendingDownIcon className={classes.refillIconDown} />;
+  getUpdateIcon = filling => {
+    if (+filling <= 30) {
+      return "Требуется пополнение";
     }
 
-    return <TrendingFlatIcon />;
+    return null;
   };
 
   /**
@@ -291,10 +282,10 @@ class RetailEquipmentTable extends Component {
                   const id = n.Requipid;
                   const addr = "Адрес";
                   const fullness = n.Requipfullness;
-                  // const updateIcon = this.getUpdateIcon(
-                  //   n.Requipfullness,
-                  //   n.Requiplastvalue
-                  // );
+                  const updateIcon = this.getUpdateIcon(
+                    n.Requipfullness,
+                    n.Requiplastvalue
+                  );
                   const chain = n.Rchainname;
                   const store = n.Storename;
                   const date = this.getUpdateDate(n.Measuredate);
@@ -325,6 +316,8 @@ class RetailEquipmentTable extends Component {
                       <TableCell padding="none" className={fullnessClassname}>
                         {fullness + "%"}
                       </TableCell>
+
+                      <TableCell padding="none">{updateIcon}</TableCell>
 
                       <TableCell padding="none">{chain}</TableCell>
 
