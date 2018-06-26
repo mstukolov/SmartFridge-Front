@@ -1,4 +1,7 @@
-## Coca Cola Smart Equipment
+## SmartFridge Front Systems
+
+Front module of the system for forecasting replenishment of goods stored in refrigeration equipment at distributed points of retail networks.
+
 
 ###Frontend
 Проект сгенерирован при помощи
